@@ -22,9 +22,9 @@
       <span class="logo-text">m kirk</span>
     </a>
     <nav class="nav-links">
-      <a href="/books"         class="nav-link">Books</a>
-      <a href="/about"         class="nav-link">About</a>
-      <a href="/contact"       class="nav-link">Contact</a>
+      <a href="mkirk-books.html"         class="nav-link">Books</a>
+      <a href="mkirk-about.html"         class="nav-link">About</a>
+      <a href="mailto:matt@thatsgoodedesign.com"       class="nav-link">Contact</a>
     </nav>
   </div>
 </header>
@@ -263,7 +263,7 @@
       <p>CLUTCH is looking for its first readers. If you work with founders, lead teams, or coach leaders — and you want early access to the manuscript in exchange for an honest Amazon review when the book launches — reach out.</p>
       <p>ARC readers get the full book, early. In return: one honest review on Amazon, posted within two weeks of launch day. That's it.</p>
       <div class="arc-ctas">
-        <a href="mailto:matt@thatsgoodedesign.com" class="btn-primary">Request an ARC Copy →</a>
+        <a href="/cdn-cgi/l/email-protection#9df0fce9e9dde9f5fce9eefaf2f2f9f8f9f8eef4faf3b3fef2f0" class="btn-primary">Request an ARC Copy →</a>
       </div>
 
     </div>
@@ -357,16 +357,11 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Quote carousel
 (function() {
   const slides = document.querySelectorAll('.quote-slide');
   let current = 0;
 
   document.getElementById('qPrev').addEventListener('click', () => goTo((current - 1 + slides.length) % slides.length));
-  document.getElementById('qNext').addEventListener('click', () => goTo((current + 1) % slides.length));
-
-  function goTo(n) {
-    slides[current].classList.remove('active');
-    current = n;
-    slides
+  document.getElementById('qNext').addEventLis
