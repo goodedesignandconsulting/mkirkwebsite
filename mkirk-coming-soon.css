@@ -1,0 +1,244 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:    #14181C;
+  --ink2:   #0E1216;
+  --warm:   #EDE9E2;
+  --parch:  #EAE0D0;
+  --sage:   #5BA67C;
+  --sage-d: #3D8A62;
+  --terra:  #B85638;
+  --gold:   #C9A85C;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--ink);
+  color: var(--warm);
+  font-family: 'Source Serif 4', Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--ink2);
+  border-bottom: 1px solid rgba(220,220,230,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--gold);
+  text-decoration: none;
+  line-height: 1;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 18px;
+  color: var(--terra);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #D4704A; }
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+.center {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 24px;
+}
+
+.headline {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 42px;
+  line-height: 1.2;
+  color: var(--warm);
+  margin-bottom: 20px;
+}
+
+.subtext {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(237,233,226,0.65);
+  margin-bottom: 48px;
+}
+
+/* ── RULE ── */
+.rule {
+  width: 40px;
+  height: 1px;
+  background: var(--sage);
+  margin: 0 auto 48px;
+}
+
+/* ── FORM ── */
+.form-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(237,233,226,0.5);
+  margin-bottom: 16px;
+}
+
+.form-note {
+  font-size: 12px;
+  color: rgba(237,233,226,0.35);
+  margin-top: 10px;
+}
+
+/* Kit overrides */
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-powered-by-convertkit-container { display: none !important; }
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-fields {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  max-width: 440px !important;
+  margin: 0 auto !important;
+}
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-field {
+  flex: 1 1 auto !important;
+  margin: 0 !important;
+  display: flex !important;
+}
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-input {
+  width: 100% !important;
+}
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-submit {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 3px 3px 0 !important;
+  background-color: #5BA67C !important;
+  color: #14181C !important;
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  white-space: nowrap !important;
+}
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-submit:hover > span,
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-submit:focus > span { background-color: rgba(0,0,0,0.15) !important; }
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-input {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(220,220,230,0.2) !important;
+  border-right: none !important;
+  border-radius: 3px 0 0 3px !important;
+  color: #EDE9E2 !important;
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  font-size: 15px !important;
+  padding: 13px 16px !important;
+}
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-input::placeholder { color: rgba(237,233,226,0.35) !important; }
+.formkit-form[data-uid="32f9f4ea8f"] .formkit-input:focus { border-color: rgba(91,166,124,0.6) !important; outline: none !important; }
+@media (max-width: 480px) {
+  .formkit-form[data-uid="32f9f4ea8f"] .formkit-fields { flex-wrap: wrap !important; }
+  .formkit-form[data-uid="32f9f4ea8f"] .formkit-input { border-right: 1px solid rgba(220,220,230,0.2) !important; border-bottom: none !important; border-radius: 3px 3px 0 0 !important; }
+  .formkit-form[data-uid="32f9f4ea8f"] .formkit-submit { border-radius: 0 0 3px 3px !important; width: 100% !important; }
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 52px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 14px;
+  color: var(--terra);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #D4704A; }
+.back-link::before { content: '← '; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink2);
+  border-top: 1px solid rgba(91,166,124,0.12);
+  padding: 40px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--gold);
+  text-decoration: none;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--warm);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+}
+.footer-social svg { flex-shrink: 0; }
+.footer-social:hover { opacity: 0.8; }
+.footer-copy {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 18px;
+  color: var(--terra);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .nav-inner { padding: 12px 24px; }
+  .logo { font-size: 36px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 15px; }
+  main { padding: 60px 24px; }
+  .headline { font-size: 32px; }
+  footer { padding: 28px 24px; }
+}

@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balance — m kirk</title>
+<meta name="description" content="Balance by m kirk — a debut literary novel about love, identity, and what it means to want more than one thing at once.">
+<meta property="og:title" content="Balance — m kirk">
+<meta property="og:description" content="A debut novel about two people who love each other — and what that costs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mkirkwrites.com/mkirk-balance.html">
+<meta property="og:image" content="https://mkirkwrites.com/assets/cover-balance.webp">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+/* ═══════════════════════════════════════════
+   MKIRK CHROME TOKENS — nav, email, footer only
+   ═══════════════════════════════════════════ */
+:root{
+  --mk-dark:   #14181C;
+  --mk-dark2:  #0E1216;
+  --mk-warm:   #EDE9E2;
+  --mk-parch:  #EAE0D0;
+  --mk-sage:   #5BA67C;
+  --mk-sage-d: #3D8A62;
+  --mk-dim:    rgba(255,255,255,.38);
+  --mk-rule:   rgba(255,255,255,.07);
+
+  /* Balance brand tokens */
+  --b-navy:    #0D1B2A;
+  --b-navy2:   #0A1520;
+  --b-cream:   #F5ECD7;
+  --b-cream-d: #EDE0C4;   /* slightly deeper for borders/rules on cream */
+  --b-gold:    #C9A85C;
+  --b-gold-d:  #A8893E;
+  --b-burg:    #6B2737;
+  --b-green:   #1A3A2D;
+  --b-plum:    #3B1F47;
+  --b-rose:    #DEC5B9;
+  --b-terra:   #E8806A;
+  --b-ink:     #1A1208;   /* near-black for body text on cream */
+}
+
+body{
+  background:var(--b-cream);
+  color:var(--b-ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ═══════════════════════════════════════════
+   MKIRK NAV — matches home page
+   ═══════════════════════════════════════════ */
+nav.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:var(--mk-dark2);
+  border-bottom:1px solid rgba(220,220,230,0.25);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 40px;
+}
+.nav-mark{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:48px;letter-spacing:.04em;word-spacing:-.1em;
+  color:#C9A85C;text-decoration:none;
+}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{
+  font-family:'Source Serif 4',serif;font-size:18px;
+  letter-spacing:.04em;text-transform:none;
+  color:#B85638;text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:#D4704A;}
+.nav-links a.active{color:#D4704A;}
+
+/* ═══════════════════════════════════════════
+   MKIRK EMAIL + FOOTER
+   ═══════════════════════════════════════════ */
+.email-strip{
+  background:var(--mk-dark2);
+  padding:64px 72px;
+  border-top:1px solid var(--mk-rule);
+  border-bottom:1px solid var(--mk-rule);
+  display:flex;gap:80px;align-items:center;
+}
+.email-left{flex:1;}
+.email-heading{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:34px;line-height:1.2;
+  color:var(--mk-parch);margin-bottom:10px;
+}
+.email-sub{
+  font-family:'Source Serif 4',serif;font-size:14px;
+  color:rgba(237,233,226,.45);line-height:1.75;max-width:420px;
+}
+.email-form{display:flex;gap:12px;flex-shrink:0;}
+.email-input{
+  font-family:'Source Serif 4',serif;font-size:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:3px;padding:13px 18px;
+  color:var(--mk-warm);width:260px;outline:none;
+  transition:border-color .2s;
+}
+.email-input::placeholder{color:rgba(237,233,226,.3);}
+.email-input:focus{border-color:rgba(91,166,124,.4);}
+.email-btn{
+  font-family:'Source Serif 4',serif;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  background:var(--mk-sage);color:var(--mk-dark);
+  border:none;border-radius:3px;
+  padding:13px 24px;cursor:pointer;
+  transition:background .2s;white-space:nowrap;
+}
+.email-btn:hover{background:var(--mk-sage-d);}
+
+footer{
+  background:#0E1216;
+  border-top:1px solid rgba(91,166,124,0.12);
+  padding:40px;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:20px;
+}
+.foot-logo-wrap{display:flex;flex-direction:column;}
+.foot-mark{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:48px;letter-spacing:.04em;word-spacing:-.1em;
+  color:#C9A85C;margin-bottom:8px;line-height:1;
+}
+.foot-social{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Source Serif 4',serif;font-size:16px;
+  color:#ffffff;
+}
+.foot-social a{color:#ffffff;text-decoration:none;}
+.foot-nav-row{display:flex;gap:20px;flex-wrap:wrap;}
+.foot-nav-row a{
+  font-family:'Source Serif 4',serif;font-size:11px;
+  color:#B85638;text-decoration:none;
+  letter-spacing:.05em;transition:color .2s;
+}
+.foot-nav-row a:hover{color:#D4704A;}
+.foot-copy{
+  font-family:'Source Serif 4',serif;font-size:18px;
+  color:#B85638;letter-spacing:.04em;
+}
+.rights-bar{
+  background:var(--mk-dark);
+  font-family:'Source Serif 4',serif;font-size:11px;
+  letter-spacing:.06em;color:rgba(255,255,255,.14);
+  text-align:center;padding:14px 72px;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.rights-bar a{color:rgba(201,168,92,.3);text-decoration:none;transition:color .2s;}
+.rights-bar a:hover{color:rgba(201,168,92,.6);}
+
+/* ── SEQUEL INLINE STRIP ── */
+.bal-sequel-inline{
+  margin-top:40px;
+  padding:32px 36px;
+  background:var(--b-navy);
+  border-left:3px solid #E8C050;
+  border-radius:0 2px 2px 0;
+}
+.bal-sequel-inline-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(232,192,80,.7) !important;margin-bottom:12px;
+}
+.bal-sequel-inline-heading{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(22px,2vw,28px);line-height:1.2;
+  color:#E8C050 !important;margin-bottom:16px;
+}
+.bal-sequel-inline-text{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(19px,1.7vw,23px);line-height:1.75;
+  color:#ffffff !important;margin-bottom:18px;
+}
+.bal-sequel-inline-perks{
+  list-style:none;padding:0;
+  display:flex;flex-direction:column;gap:9px;
+  margin-bottom:18px;
+}
+.bal-sequel-inline-perks li{
+  font-family:'Cormorant Garamond',serif;font-size:19px;
+  color:#ffffff !important;
+  padding-left:20px;position:relative;
+}
+.bal-sequel-inline-perks li::before{
+  content:'—';position:absolute;left:0;
+  color:#E8C050 !important;
+}
+.bal-sequel-inline-social{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:17px;color:rgba(232,192,80,.85) !important;
+  margin-bottom:20px;
+}
+.bal-sequel-inline-note{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:13px;color:rgba(245,236,215,.45) !important;
+  margin-top:12px;line-height:1.5;
+}
+.bal-sequel-inline-form{
+  display:flex;gap:10px;flex-wrap:wrap;
+}
+.bal-sequel-inline-input{
+  font-family:'Cormorant Garamond',serif;font-size:16px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:2px;padding:13px 18px;
+  color:#F5ECD7;outline:none;
+  flex:1;min-width:180px;
+  transition:border-color .2s;
+}
+.bal-sequel-inline-input::placeholder{color:rgba(245,236,215,.38);}
+.bal-sequel-inline-input:focus{border-color:rgba(232,192,80,.55);}
+.bal-sequel-inline-btn{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  background:#B85638;color:#F5ECD7;
+  border:none;border-radius:2px;
+  padding:13px 22px;cursor:pointer;white-space:nowrap;
+  transition:background .2s,transform .15s;
+}
+.bal-sequel-inline-btn:hover{background:#D4704A;transform:translateY(-1px);}
+
+
+/* ═══════════════════════════════════════════
+   BALANCE BRAND ZONE
+   Cormorant Garamond — single typeface.
+   Cream default · Navy hero · Accent interruptions.
+   ═══════════════════════════════════════════ */
+
+/* ── ANNOUNCE STRIP (navy) ── */
+.bal-strip{
+  background:var(--b-navy2);
+  border-bottom:1px solid rgba(201,168,92,.15);
+  padding:11px 48px;
+  display:flex;align-items:center;justify-content:center;gap:20px;
+}
+.bal-strip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-gold);flex-shrink:0;opacity:.7;}
+.bal-strip-text{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
+  letter-spacing:.06em;color:rgba(201,168,92,.75);
+}
+.bal-strip-text em{font-style:normal;font-weight:600;color:var(--b-gold);}
+.bal-strip-link{
+  font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.12em;
+  color:var(--b-gold);text-decoration:none;
+  border-bottom:1px solid rgba(201,168,92,.35);transition:border-color .2s;
+}
+.bal-strip-link:hover{border-color:var(--b-gold);}
+
+/* ── HERO (navy) ── */
+.bal-hero{
+  background:linear-gradient(105deg, #0A1520 0%, #0D1B2A 40%, #142236 70%, #1C2E42 100%);
+  padding:80px 72px 0;
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.bal-hero-upper{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:64px;
+  padding-bottom:52px;
+}
+.bal-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 55% 70% at 10% 55%, rgba(201,168,92,.07) 0, transparent 60%),
+    radial-gradient(ellipse 45% 60% at 82% 50%, rgba(255,255,255,.06) 0, transparent 55%),
+    radial-gradient(ellipse 30% 40% at 82% 50%, rgba(201,168,92,.05) 0, transparent 45%);
+  pointer-events:none;
+}
+/* Soft glow disc sitting directly behind the cover */
+.bal-cover::before{
+  content:'';
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:140%;height:130%;
+  background:radial-gradient(ellipse 70% 65% at 50% 50%, rgba(255,255,255,.09) 0%, rgba(201,168,92,.04) 40%, transparent 70%);
+  pointer-events:none;
+  z-index:-1;
+  border-radius:50%;
+}
+
+/* Cover — flex item in right position */
+.bal-cover{
+  position:relative;
+  flex-shrink:0;
+  width:220px;
+  z-index:2;
+}
+.bal-cover-img{
+  width:100%;
+  display:block;
+  border-radius:2px;
+  box-shadow:16px 24px 72px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.08);
+  transform:rotate(-4deg);
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+  cursor:pointer;
+}
+.bal-cover-img:hover{
+  transform:rotate(-1.5deg) scale(1.03);
+  box-shadow:22px 32px 90px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.1);
+}
+
+/* Hero text */
+.bal-hero-text{flex:1;position:relative;z-index:1;padding-top:8px;}
+.bal-eyebrow{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;
+  letter-spacing:.14em;color:rgba(201,168,92,.6);
+  margin-bottom:18px;display:flex;align-items:center;gap:16px;
+}
+.bal-eyebrow::after{content:'';flex:1;height:1px;background:rgba(201,168,92,.18);}
+.bal-hero-title{
+  font-family:'Cormorant Garamond',serif;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  font-size:clamp(64px,8vw,112px);
+  color:var(--b-gold);line-height:.88;margin-bottom:10px;
+}
+.bal-hero-sub{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:21px;color:rgba(245,236,215,.4);
+  margin-bottom:16px;letter-spacing:.04em;
+}
+.bal-status{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:'Cormorant Garamond',serif;font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:#E8704A;margin-bottom:24px;
+}
+.bal-status-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--b-gold);flex-shrink:0;
+  animation:glimmer 2.8s ease-in-out infinite;
+}
+@keyframes glimmer{0%,100%{opacity:.7;}50%{opacity:.22;}}
+.bal-hook{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:clamp(26px,2.8vw,38px);line-height:1.4;
+  color:rgba(245,236,215,.88);
+  max-width:600px;margin-bottom:32px;
+  border-left:3px solid rgba(201,168,92,.45);padding-left:24px;
+}
+.bal-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px;}
+.bal-btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:13px;
+  letter-spacing:.2em;text-transform:uppercase;
+  background:var(--b-gold);color:var(--b-navy);
+  border:none;border-radius:2px;padding:16px 36px;
+  cursor:pointer;text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.bal-btn-primary:hover{background:var(--b-gold-d);transform:translateY(-1px);}
+.bal-btn-secondary{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Cormorant Garamond',serif;font-size:13px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(245,236,215,.75);text-decoration:none;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(245,236,215,.3);border-radius:2px;
+  padding:15px 28px;transition:color .2s,border-color .2s,background .2s;
+}
+.bal-btn-secondary:hover{color:#fff;border-color:rgba(245,236,215,.6);background:rgba(255,255,255,.12);}
+.bal-meta{
+  display:flex;gap:0;flex-wrap:wrap;
+  padding:22px 72px;
+  background:#3D6880; /* denim — mkirk site chrome color, bridges Balance to the parent brand */
+  border-top:2px solid rgba(201,168,92,.25);
+  border-bottom:2px solid rgba(201,168,92,.15);
+  width:100%;
+}
+.bal-meta > div{
+  flex:1;min-width:120px;
+  padding:0 28px;
+  border-right:1px solid rgba(255,255,255,.15);
+}
+.bal-meta > div:first-child{padding-left:0;}
+.bal-meta > div:last-child{border-right:none;}
+.bal-meta-label{
+  font-family:'Cormorant Garamond',serif;font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-bottom:7px;
+}
+.bal-meta-val{
+  font-family:'Cormorant Garamond',serif;font-size:20px;
+  color:rgba(255,255,255,.9);
+}
+.bal-meta-val a{color:#E8C050;text-decoration:none;transition:opacity .2s;}
+.bal-meta-val a:hover{opacity:.8;}
+
+
+/* ── SECTION COMMON ── */
+.bal-section{padding:64px 72px;border-bottom:1px solid var(--b-cream-d);}
+
+/* Section label — two versions: cream bg (dark ink) and dark bg (gold) */
+.bal-sec-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;
+  letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:52px;
+  display:flex;align-items:center;gap:18px;
+}
+.bal-sec-label::after{content:'';flex:1;height:1px;}
+
+/* On cream: dark ink label + dark rule */
+.on-cream .bal-sec-label{color:rgba(26,18,8,.55);}
+.on-cream .bal-sec-label::after{background:rgba(26,18,8,.15);}
+/* On dark: gold label + gold rule */
+.on-dark .bal-sec-label{color:rgba(201,168,92,.72);}
+.on-dark .bal-sec-label::after{background:rgba(201,168,92,.22);}
+/* Author note label override — dark navy on denim bg */
+.bal-author-note .bal-sec-label{color:var(--b-navy) !important;opacity:.8;}
+.bal-author-note .bal-sec-label::after{background:var(--b-navy) !important;opacity:.25;}
+
+
+/* ── ABOUT THE BOOK (cream) ── */
+.bal-blurb{background:var(--b-cream);border-bottom:none;}
+.bal-blurb-inner{display:grid;grid-template-columns:1fr 300px;gap:72px;align-items:stretch;}
+
+.bal-prose p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(21px,1.8vw,26px);line-height:1.85;
+  color:rgba(26,18,8,.72);margin-bottom:22px;
+}
+.bal-prose p:last-child{margin-bottom:0;}
+.bal-prose em{font-style:italic;font-weight:500;color:rgba(26,18,8,.88);}
+.bal-prose strong{font-weight:600;color:var(--b-ink);}
+/* Opening hook */
+.bal-prose p:first-child{
+  font-size:clamp(24px,2.4vw,32px);
+  font-style:italic;font-weight:400;
+  color:rgba(26,18,8,.85);
+  margin-bottom:28px;
+  line-height:1.45;
+}
+.bal-comp-line{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(18px,1.5vw,22px);
+  color:var(--b-gold);
+  margin-top:14px;
+  opacity:1;
+}
+
+.bal-pullquote{
+  margin:28px 0;padding:24px 28px;
+  background:transparent;
+  border-left:3px solid rgba(201,168,92,.55);
+}
+.bal-pullquote p{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(24px,2.2vw,30px);line-height:1.6;
+  color:rgba(26,18,8,.65) !important;margin-bottom:0 !important;
+}
+
+/* Aside card on cream */
+.bal-aside{
+  background:#fff;
+  border:1px solid rgba(26,18,8,.08);
+  border-top:3px solid var(--b-gold);
+  border-radius:2px;padding:28px;
+  position:sticky;top:80px;
+  align-self:start;
+  box-shadow:0 4px 24px rgba(26,18,8,.06);
+}
+.bal-aside-head{
+  font-family:'Source Serif 4',serif;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(26,18,8,.55);
+  margin-bottom:18px;padding-bottom:14px;
+  border-bottom:1px solid rgba(26,18,8,.1);
+}
+.bal-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.bal-tag{
+  font-family:'Source Serif 4',serif;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(26,18,8,.65);
+  border:1px solid rgba(26,18,8,.25);border-radius:1px;padding:5px 12px;
+}
+.bal-aside-stat{margin-bottom:13px;}
+.bal-aside-stat-label{
+  font-family:'Cormorant Garamond',serif;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(26,18,8,.3);margin-bottom:4px;
+}
+.bal-aside-stat-val{
+  font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(26,18,8,.6);
+}
+.bal-aside-rule{height:1px;background:rgba(26,18,8,.08);margin:20px 0;}
+.bal-aside-btn{
+  display:block;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:12px;
+  letter-spacing:.2em;text-transform:uppercase;
+  background:var(--b-gold);color:var(--b-navy);
+  text-decoration:none;border-radius:2px;
+  padding:13px 20px;transition:background .2s;
+}
+.bal-aside-btn:hover{background:var(--b-gold-d);}
+.bal-aside-btn-sec{
+  display:block;text-align:center;margin-top:10px;
+  font-family:'Cormorant Garamond',serif;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(26,18,8,.45);text-decoration:none;
+  border:1px solid rgba(26,18,8,.15);border-radius:2px;
+  padding:12px 20px;transition:color .2s,border-color .2s;
+}
+.bal-aside-btn-sec:hover{color:var(--b-ink);border-color:rgba(26,18,8,.35);}
+
+
+/* ── CHARACTERS (cream, white cards) ── */
+.bal-chars{background:var(--b-cream);}
+.bal-char-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.bal-char-photo{
+  width:100%;aspect-ratio:3/4;
+  object-fit:cover;object-position:top center;
+  display:block;
+  border-radius:2px 2px 0 0;
+  margin:-26px -22px 20px -22px;
+  width:calc(100% + 44px);
+  filter:grayscale(15%);
+  transition:filter .3s ease;
+}
+.bal-char-card:hover .bal-char-photo{filter:grayscale(0%);}
+.bal-char-card{
+  background:#fff;border:1px solid rgba(26,18,8,.07);
+  border-radius:2px;padding:26px 22px;
+  position:relative;overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;
+  box-shadow:0 2px 12px rgba(26,18,8,.04);
+}
+.bal-char-card:hover{border-color:rgba(201,168,92,.3);box-shadow:0 6px 24px rgba(26,18,8,.09);}
+.bal-char-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--b-gold);opacity:.35;
+}
+.bal-char-card.lead::before{opacity:1;}
+.bal-char-num{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:56px;line-height:1;color:rgba(26,18,8,.04);
+  position:absolute;top:14px;right:16px;
+}
+.bal-char-role{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(201,168,92,.7);margin-bottom:10px;
+}
+.bal-char-name{
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;
+  line-height:1.15;color:var(--b-navy);margin-bottom:12px;
+}
+.bal-char-desc{
+  font-family:'Cormorant Garamond',serif;font-size:15px;
+  line-height:1.75;color:rgba(26,18,8,.5);
+}
+.bal-char-pov{
+  display:inline-block;margin-top:16px;
+  font-family:'Cormorant Garamond',serif;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(26,18,8,.3);border:1px solid rgba(26,18,8,.1);
+  border-radius:1px;padding:3px 8px;
+}
+
+
+/* ── PULL QUOTES — Balance Navy, gold + white accents ── */
+.bal-quotes{
+  background:linear-gradient(168deg, #142236 0%, #0D1B2A 50%, #080F18 100%);
+  border-top:none;border-bottom:none;
+}
+.bal-quotes-carousel{position:relative;overflow:hidden;width:100%;}
+.bal-quotes-track{display:flex;gap:0;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;}
+.bal-quotes-slide{flex-shrink:0;width:100%;padding-right:28px;}
+.bal-quotes-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:40px;}
+.bal-quotes-btn{
+  width:44px;height:44px;border-radius:50%;
+  background:transparent;
+  border:1px solid rgba(232,192,80,.3);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:border-color .2s,background .2s;
+  font-family:'Cormorant Garamond',serif;font-size:20px;
+  color:rgba(232,192,80,.55);
+}
+.bal-quotes-btn:hover{border-color:#E8C050;color:#E8C050;background:rgba(232,192,80,.07);}
+.bal-quotes-btn:disabled{opacity:.2;cursor:default;}
+.bal-quotes-dots{display:flex;gap:10px;align-items:center;}
+.bal-qdot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(232,192,80,.25);
+  border:none;cursor:pointer;padding:0;
+  transition:background .2s,transform .2s;
+}
+.bal-qdot.active{background:#E8C050;transform:scale(1.35);}
+.bal-quote-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(230,185,80,.2);
+  border-top:3px solid #E8C050;
+  border-radius:2px;padding:44px 36px 36px;position:relative;
+}
+.bal-quote-mark{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:120px;line-height:.65;
+  color:rgba(232,192,80,.14);
+  position:absolute;top:14px;left:22px;pointer-events:none;
+}
+.bal-quote-text{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(22px,2vw,28px);line-height:1.65;
+  color:rgba(255,255,255,.9);padding-top:24px;position:relative;z-index:1;
+}
+.bal-quote-source{
+  font-family:'Cormorant Garamond',serif;font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:#E8C050;margin-top:28px;opacity:.7;
+}
+
+
+/* ── READER REVIEWS — carousel on cream, plum image cards float ── */
+.bal-reviews{background:var(--b-cream);}
+
+/* Carousel wrapper */
+.bal-carousel{position:relative;overflow:hidden;width:100%;}
+.bal-carousel-track{
+  display:flex;gap:0;align-items:stretch;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+}
+.bal-carousel-slide{
+  flex-shrink:0;
+  width:calc(33.333%);
+  padding-right:24px;
+}
+
+/* HTML review card — matches quotes section style, no fixed aspect ratio */
+.bal-review-card-html{
+  background:var(--b-plum);
+  border:1px solid rgba(59,31,71,.0);
+  border-top:3px solid #E8C050;
+  border-radius:2px;
+  padding:34px 28px 30px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  width:100%;
+  min-height:420px;
+  height:480px;
+  box-shadow:0 8px 32px rgba(26,18,8,.14), 0 2px 8px rgba(26,18,8,.08);
+}
+.rcard-header{
+  font-family:'Cormorant Garamond',serif;font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+  margin-bottom:22px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.rcard-stars{
+  color:#E8C050;
+  font-size:28px;
+  letter-spacing:5px;
+  line-height:1;
+  display:block;
+}
+.rcard-title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(22px,2vw,28px);line-height:1.15;
+  color:#E8C050;
+  margin-bottom:18px;
+}
+.rcard-rule{width:40px;height:1px;background:rgba(232,192,80,.3);margin-bottom:18px;}
+.rcard-quote{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(19px,1.7vw,23px);line-height:1.72;
+  color:rgba(255,255,255,.9);
+  flex:1;
+}
+.rcard-footer{
+  font-family:'Cormorant Garamond',serif;font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(232,192,80,.3);
+  margin-top:20px;
+}
+
+/* Carousel nav */
+.bal-carousel-nav{
+  display:flex;align-items:center;justify-content:center;
+  gap:16px;margin-top:36px;
+}
+.bal-carousel-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:transparent;
+  border:1px solid rgba(26,18,8,.18);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:border-color .2s,background .2s;
+  font-family:'Cormorant Garamond',serif;font-size:18px;
+  color:rgba(26,18,8,.45);
+}
+.bal-carousel-btn:hover{border-color:var(--b-gold);color:var(--b-gold);background:rgba(201,168,92,.06);}
+.bal-carousel-btn:disabled{opacity:.2;cursor:default;}
+.bal-carousel-dots{display:flex;gap:8px;align-items:center;}
+.bal-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(26,18,8,.18);
+  border:none;cursor:pointer;padding:0;
+  transition:background .2s,transform .2s;
+}
+.bal-dot.active{background:var(--b-gold);transform:scale(1.3);}
+
+
+/* ── AUTHOR NOTE — Forest Green accent interruption ── */
+.bal-author-note{
+  background:#4A7FA8;
+  border-top:none;border-bottom:none;
+}
+.bal-note-inner{display:grid;grid-template-columns:160px 1fr;gap:72px;align-items:start;}
+.bal-author-avatar{
+  width:120px;height:120px;border-radius:50%;
+  background:rgba(13,27,42,.5);border:1px solid rgba(201,168,92,.2);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;
+}
+.bal-avatar-mark{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:28px;color:rgba(201,168,92,.35);letter-spacing:.04em;
+}
+.bal-note-body p{
+  font-family:'Source Serif 4',serif;
+  font-size:clamp(17px,1.5vw,20px);line-height:1.88;
+  color:rgba(255,255,255,.88);margin-bottom:24px;
+}
+.bal-note-body p:last-child{margin-bottom:0;}
+.bal-note-body em{font-style:italic;font-weight:500;color:rgba(255,255,255,.95);}
+.bal-note-pq{
+  margin:34px 0;padding:24px 30px;
+  background:rgba(0,0,0,.12);border-left:2px solid rgba(255,255,255,.3);
+}
+.bal-note-pq p{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(19px,1.7vw,23px);line-height:1.7;
+  color:rgba(255,255,255,.82) !important;margin-bottom:0 !important;
+}
+.bal-note-sig{
+  font-family:'Source Serif 4',serif;font-style:italic;
+  font-size:20px;color:rgba(255,255,255,.5);margin-top:34px;
+}
+
+
+/* ── WHERE TO BUY (cream) ── */
+.bal-buy{background:var(--b-cream);}
+.bal-buy-intro{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(18px,1.6vw,22px);color:rgba(26,18,8,.4);
+  line-height:1.5;margin-bottom:36px;
+}
+.bal-buy-options{display:flex;flex-direction:column;gap:14px;max-width:680px;}
+.bal-buy-option{
+  display:flex;align-items:center;gap:24px;
+  background:#fff;
+  border:1px solid rgba(26,18,8,.08);
+  border-radius:2px;padding:20px 28px;text-decoration:none;
+  box-shadow:0 2px 10px rgba(26,18,8,.04);
+  transition:border-color .2s,box-shadow .2s;
+}
+.bal-buy-option:hover{border-color:rgba(201,168,92,.4);box-shadow:0 6px 24px rgba(26,18,8,.09);}
+.bal-buy-icon{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(201,168,92,.1);border:1px solid rgba(201,168,92,.2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:18px;color:rgba(201,168,92,.6);
+}
+.bal-buy-title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:18px;color:var(--b-navy);margin-bottom:3px;
+}
+.bal-buy-desc{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:14px;color:rgba(26,18,8,.38);
+}
+.bal-buy-arrow{
+  margin-left:auto;flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;color:rgba(26,18,8,.2);
+  transition:color .2s,transform .2s;
+}
+.bal-buy-option:hover .bal-buy-arrow{color:var(--b-gold);transform:translateX(4px);}
+
+
+/* ── SOCIAL (cream, white cards) ── */
+.bal-social{background:var(--b-cream);}
+.bal-social-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.bal-social-card{
+  background:#fff;border:1px solid rgba(26,18,8,.07);
+  border-radius:2px;padding:30px 26px;
+  box-shadow:0 2px 12px rgba(26,18,8,.04);
+  transition:border-color .2s;
+}
+.bal-social-card:hover{border-color:rgba(201,168,92,.3);}
+.bal-social-platform{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(201,168,92,.65);margin-bottom:12px;
+}
+.bal-social-handle{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:26px;color:var(--b-navy);margin-bottom:12px;line-height:1.2;
+}
+.bal-social-desc{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:15px;line-height:1.75;
+  color:rgba(26,18,8,.48);margin-bottom:22px;
+}
+.bal-social-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Cormorant Garamond',serif;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(26,18,8,.45);text-decoration:none;
+  transition:gap .2s,color .2s;
+}
+.bal-social-link:hover{gap:13px;color:var(--b-navy);}
+.bal-social-link::after{content:'→';}
+
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.a1{animation:fadeUp .5s ease both;}
+.a2{animation:fadeUp .6s .08s ease both;}
+.a3{animation:fadeUp .6s .16s ease both;}
+.a4{animation:fadeUp .6s .26s ease both;}
+.a5{animation:fadeUp .6s .36s ease both;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .bal-char-grid{grid-template-columns:repeat(2,1fr);}
+
+  .bal-carousel-slide{width:calc(50%);padding-right:20px;}
+}
+@media(max-width:900px){
+  .bal-strip{padding:10px 24px;}
+  .bal-hero{padding:52px 24px 32px;}
+  .bal-hero-upper{gap:40px;}
+  .bal-cover{width:180px;}
+  .bal-meta{padding:18px 24px;flex-wrap:wrap;gap:16px 0;}
+  .bal-meta > div{flex:1 0 45%;border-right:none;padding:0 12px 0 0;}
+  .bal-blurb-inner{grid-template-columns:1fr;gap:40px;}
+  .bal-aside{position:static;}
+  .bal-char-grid{grid-template-columns:1fr 1fr;}
+  .bal-social-grid{grid-template-columns:1fr;}
+  .bal-note-inner{grid-template-columns:1fr;gap:32px;}
+  .bal-carousel-slide{width:100%;padding-right:0;}
+  .bal-section{padding:56px 24px;}
+  .rights-bar{padding:14px 24px;}
+}
+@media(max-width:600px){
+  /* Nav */
+  nav.site-nav{padding:12px 24px;}
+  .nav-links{display:none;}
+
+  /* Hero — stack title on top, cover below */
+  .bal-hero-upper{flex-direction:column;align-items:flex-start;gap:32px;}
+  .bal-cover{width:200px;align-self:center;}
+  .bal-cta-row{flex-direction:column;}
+  .bal-btn-primary,.bal-btn-secondary{text-align:center;justify-content:center;}
+
+  /* Characters */
+  .bal-char-grid{grid-template-columns:1fr;}
+
+  /* Email section */
+  .email-strip{flex-direction:column;gap:32px;padding:56px 24px;}
+  .email-form{flex-direction:column;width:100%;}
+  .email-input{width:100%;}
+  .email-strip .formkit-fields{flex-direction:column;}
+  .email-strip .formkit-input{width:100%;}
+
+  /* Footer */
+  footer{padding:24px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;}
+}
+
+/* ── KIT FORM OVERRIDE ── */
+.email-strip .formkit-form{display:contents;}
+.email-strip .formkit-fields{display:flex;gap:12px;align-items:stretch;}
+.email-strip .formkit-field{flex:1;}
+.email-strip .formkit-input{
+  font-family:'Source Serif 4',serif;font-size:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);border-radius:3px;
+  padding:13px 18px;color:var(--mk-warm);width:100%;outline:none;
+  transition:border-color .2s;
+}
+.email-strip .formkit-input::placeholder{color:rgba(237,233,226,.3);}
+.email-strip .formkit-input:focus{border-color:rgba(91,166,124,.4);}
+.email-strip .formkit-submit{
+  font-family:'Source Serif 4',serif !important;font-size:12px !important;
+  letter-spacing:.12em !important;text-transform:uppercase !important;
+  background:#C9A85C !important;color:#0C0B09 !important;
+  border:none !important;border-radius:3px !important;
+  padding:13px 24px !important;cursor:pointer !important;
+  transition:background .2s !important;white-space:nowrap !important;
+}
+.email-strip .formkit-submit:hover{background:#A8893E !important;}
+.formkit-form[data-uid="a3bad13994"] .formkit-powered-by-convertkit-container{display:none !important;}
+</style>
+</head>
+<body>
+
+<!-- ════════ MKIRK NAV ════════ -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-mark">m kirk</a>
+  <div class="nav-links">
+    <a href="mkirk-books.html" class="active">Books</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ════════ BALANCE ZONE BEGINS ════════ -->
+
+<!-- HERO — navy -->
+<section class="bal-hero">
+
+  <div class="bal-hero-upper">
+  <div class="bal-hero-text">
+    <div class="bal-eyebrow a2">Literary Fiction · A Novel</div>
+    <h1 class="bal-hero-title a2">Balance</h1>
+    <p class="bal-hero-sub a3">A novel by m kirk</p>
+    <div class="bal-status a3">
+      <span class="bal-status-dot"></span>
+      Out Now · March 11, 2026
+    </div>
+    <p class="bal-hook a4">What if loving someone else didn't mean loving your partner less?</p>
+    <div class="bal-cta-row a5">
+      <a href="https://www.amazon.com/dp/B0GS75LMNX" target="_blank" class="bal-btn-primary">Buy on Amazon</a>
+      <a href="https://www.goodreads.com" target="_blank" class="bal-btn-secondary">Add to Goodreads →</a>
+    </div>
+  </div>
+
+  <div class="bal-cover a1">
+    <img src="assets/cover-balance.webp" alt="Balance — a novel by m kirk" class="bal-cover-img">
+  </div>
+
+  </div>
+  </div>
+
+
+</section>
+
+<!-- META BAR — full bleed between hero and blurb -->
+<div class="bal-meta">
+  <div><div class="bal-meta-label">Published</div><div class="bal-meta-val">March 11, 2026</div></div>
+  <div><div class="bal-meta-label">Format</div><div class="bal-meta-val">Paperback · Kindle</div></div>
+  <div><div class="bal-meta-label">Genre</div><div class="bal-meta-val">Literary Fiction</div></div>
+  <div><div class="bal-meta-label">Find it</div><div class="bal-meta-val"><a href="https://www.goodreads.com" target="_blank">Goodreads</a></div></div>
+</div>
+
+<!-- ABOUT THE BOOK — cream -->
+<section class="bal-section bal-blurb on-cream">
+  <div class="bal-sec-label">About the Book</div>
+  <div class="bal-blurb-inner">
+    <div class="bal-prose">
+      <p>What if loving someone else didn't mean loving your partner less?</p>
+      <p><strong>Ellie Beckett</strong> doesn't think she's looking for more. She has Alex — thirteen years, a shared life, the kind of love built slowly from the inside out. But when she finds herself drawn to Mark, a man who had stopped expecting things, she starts to wonder why she'll push at the edges of science and not at the edges of love itself.</p>
+      <div class="bal-pullquote">
+        <p>What follows isn't an affair. It's something each of them has to work out for themselves.</p>
+      </div>
+      <p>Alex, learning what it costs when the person you have built everything around chooses to love more than just you. Mark, remembering what wanting feels like. Ellie, discovering that love only grows.</p>
+      <p><em>Balance is a novel about expansion, fear, and the ongoing work of loving people well.</em></p>
+      <p class="bal-comp-line">For readers of Sally Rooney and Esther Perel.</p>
+
+      <div class="bal-sequel-inline">
+        <div class="bal-sequel-inline-label">What comes next</div>
+        <h3 class="bal-sequel-inline-heading">Be part of the next book.</h3>
+        <p class="bal-sequel-inline-text">The sequel to Balance is being written now. Readers who join early get content nobody else sees — manuscript excerpts before they're published, polls that genuinely shape the story, and first access when it releases.</p>
+        <ul class="bal-sequel-inline-perks">
+          <li>Exclusive excerpts from the draft</li>
+          <li>Reader polls — your vote influences the work</li>
+          <li>Early release access before the public</li>
+        </ul>
+        <p class="bal-sequel-inline-social">Join the readers already shaping what comes next.</p>
+        <div class="bal-sequel-inline-form">
+          <input class="bal-sequel-inline-input" type="email" placeholder="your@email.com">
+          <button class="bal-sequel-inline-btn">Stay with the story →</button>
+        </div>
+        <p class="bal-sequel-inline-note">No spam. Sent only when there's something worth reading.</p>
+      </div>
+    </div>
+    <div>
+      <div class="bal-aside">
+        <div class="bal-aside-head">Shelve Under</div>
+        <div class="bal-tags">
+          <span class="bal-tag">Literary Fiction</span>
+          <span class="bal-tag">Contemporary Women's Fiction</span>
+          <span class="bal-tag">Romance · Contemporary</span>
+          <span class="bal-tag">Multi-POV</span>
+          <span class="bal-tag">Ethical Non-Monogamy</span>
+          <span class="bal-tag">Polyamory</span>
+          <span class="bal-tag">STEM Protagonist</span>
+          <span class="bal-tag">Open Relationships</span>
+          <span class="bal-tag">Emotional Complexity</span>
+        </div>
+        <div class="bal-aside-rule"></div>
+        <div class="bal-aside-stat"><div class="bal-aside-stat-label">Publication Date</div><div class="bal-aside-stat-val">March 9, 2026</div></div>
+        <div class="bal-aside-stat"><div class="bal-aside-stat-label">Format</div><div class="bal-aside-stat-val">Paperback · Kindle</div></div>
+        <div class="bal-aside-stat"><div class="bal-aside-stat-label">Print Length</div><div class="bal-aside-stat-val">394 pages</div></div>
+        <div class="bal-aside-rule"></div>
+        <div class="bal-aside-stat"><div class="bal-aside-stat-label">Structure</div><div class="bal-aside-stat-val">Four close-third POVs</div></div>
+        <div class="bal-aside-rule"></div>
+        <div class="bal-aside-stat"><div class="bal-aside-stat-label">ISBN-13</div><div class="bal-aside-stat-val">979-8251410105</div></div>
+        <div class="bal-aside-stat"><div class="bal-aside-stat-label">ASIN</div><div class="bal-aside-stat-val">B0GS75LMNX</div></div>
+
+        <div class="bal-aside-rule"></div>
+        <a href="https://www.amazon.com/dp/B0GS75LMNX" target="_blank" class="bal-aside-btn">Buy on Amazon</a>
+        <a href="https://www.goodreads.com" target="_blank" class="bal-aside-btn-sec">Add to Goodreads</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS — cream -->
+<section class="bal-section bal-chars on-cream">
+  <div class="bal-sec-label">The Four Voices</div>
+  <div class="bal-char-grid">
+    <div class="bal-char-card lead">
+      <div class="bal-char-num">I</div>
+      <img src="assets/char-ellie.jpg" alt="Ellie" class="bal-char-photo">
+      <div class="bal-char-role">Protagonist</div>
+      <h3 class="bal-char-name">Ellie Beckett</h3>
+      <p class="bal-char-desc">CRISPR scientist. Cambridge. Thirteen years with Alex. Trained to understand exactly what changes in a system. She thinks she understands herself.</p>
+      <span class="bal-char-pov">POV Character</span>
+    </div>
+    <div class="bal-char-card">
+      <div class="bal-char-num">II</div>
+      <img src="assets/char-alex.jpg" alt="Alex" class="bal-char-photo">
+      <div class="bal-char-role">Partner</div>
+      <h3 class="bal-char-name">Alex</h3>
+      <p class="bal-char-desc">Quietly testing whether his generosity runs deeper than his fear — and what that answer means for the life they've built together.</p>
+      <span class="bal-char-pov">POV Character</span>
+    </div>
+    <div class="bal-char-card">
+      <div class="bal-char-num">III</div>
+      <img src="assets/char-mark.jpg" alt="Mark" class="bal-char-photo">
+      <div class="bal-char-role">Complication</div>
+      <h3 class="bal-char-name">Mark</h3>
+      <p class="bal-char-desc">Still learning how to want things again after loss. Asking himself whether he deserves a second chapter — and what it would cost him to try.</p>
+      <span class="bal-char-pov">POV Character</span>
+    </div>
+    <div class="bal-char-card">
+      <div class="bal-char-num">IV</div>
+      <img src="assets/char-jane.jpg" alt="Jane" class="bal-char-photo">
+      <div class="bal-char-role">Witness</div>
+      <h3 class="bal-char-name">Jane</h3>
+      <p class="bal-char-desc">Watching everything unfold. Asking the questions no one else will. The voice the other three can't afford to have.</p>
+      <span class="bal-char-pov">POV Character</span>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTES — navy carousel -->
+<section class="bal-section bal-quotes on-dark">
+  <div class="bal-sec-label">From the Novel</div>
+
+  <div class="bal-quotes-carousel" id="quotesCarousel">
+    <div class="bal-quotes-track" id="quotesTrack">
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">Her love for Alex hadn't diminished by a single atom. He was her foundation. Her home. So why did her heart feel as if it were trying to hold two suns?</p>
+          <div class="bal-quote-source">Balance · m kirk · Ellie</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">But what if balance wasn't the right metaphor anymore? What if it were an expansion? What if the trick wasn't holding steady, but learning to hold more?</p>
+          <div class="bal-quote-source">Balance · m kirk · Ellie</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">Alex knows me. All of me — the mess, the anxiety, the 2 AM version when I can't sleep. He's my home. But Mark sees something else. The scientist. The ambition. The part of me that wants to change the world and is terrified I'm not good enough to do it.</p>
+          <div class="bal-quote-source">Balance · m kirk · Ellie</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">She couldn't name what she was protecting him from, or herself from. She only knew that everything had shifted, and she didn't yet have the language for it.</p>
+          <div class="bal-quote-source">Balance · m kirk · Ellie</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">Both kinds of seeing were real — Alex's and Mark's. The question she couldn't answer was whether wanting both made her greedy or just honest.</p>
+          <div class="bal-quote-source">Balance · m kirk · Ellie</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">He knew her body the way you know your own apartment — which doors stuck, where the light fell best.</p>
+          <div class="bal-quote-source">Balance · m kirk · Alex</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">The particular quality of attention he'd given to no one else, as if brilliance in a woman was a frequency only he could hear.</p>
+          <div class="bal-quote-source">Balance · m kirk · Jane</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">Errors cascade. One variable out of balance throws everything downstream.</p>
+          <div class="bal-quote-source">Balance · m kirk · Ellie</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">This is the bravest thing you could have done.</p>
+          <div class="bal-quote-source">Balance · m kirk · Alex</div>
+        </div>
+      </div>
+
+      <div class="bal-quotes-slide">
+        <div class="bal-quote-card">
+          <div class="bal-quote-mark">"</div>
+          <p class="bal-quote-text">Jane had lost her love, then her career, then her purpose — all collateral damage from a grief that wasn't even hers to claim.</p>
+          <div class="bal-quote-source">Balance · m kirk · Jane</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bal-quotes-nav">
+    <button class="bal-quotes-btn" id="qPrevBtn" onclick="moveQuotes(-1)">◀</button>
+    <div class="bal-quotes-dots" id="quotesDots"></div>
+    <button class="bal-quotes-btn" id="qNextBtn" onclick="moveQuotes(1)">▶</button>
+  </div>
+</section>
+
+<!-- READER REVIEWS — cream with floating plum image cards -->
+<section class="bal-section bal-reviews on-cream">
+  <div class="bal-sec-label">Readers on Balance</div>
+  <div class="bal-carousel" id="reviewCarousel">
+    <div class="bal-carousel-track" id="carouselTrack">
+
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Empathize,<br>Not Judge.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Encouraging readers to empathize rather than judge."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Entertaining and<br>Thought-Provoking.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Both entertaining and thought-provoking."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Expectation<br>and Truth.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"It approaches complex relationships with nuance and care, allowing readers to sit with the tension between societal expectations and personal truth."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">For Ali Hazlewood<br>Fans.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"The real sciency-stuff will please Ali Hazlewood fans and other STEMinist romance fans."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">From the Lab<br>to the Stage.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Vivid imagery brings each setting to life — from the lab to the concert stage to intimate restaurant moments — making the reader feel fully present."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Heart and Mind.<br>Loyalty and Desire.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"At its core, Balance is about the delicate equilibrium between heart and mind, loyalty and desire, certainty and doubt."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">A New Twist.<br>Very Real.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"A new twist on traditional romance — but very real."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Couldn't Put<br>It Down.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Truthful, raw, the perfect level of steamy, and very well written."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Invested in<br>All of Them.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"You are invested in all of them."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Lingers Long<br>After.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Lingers with you long after you've finished the last page."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Steamy, Meaningful,<br>Real.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"The romance is steamy, meaningful and you can't wait to see what happens."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">An Idea You've<br>Considered.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"A window into an idea some have considered — or read about in salacious terms — but not understood. This book is for deep thinkers."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Authentic Even When<br>They Challenge You.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Their choices feel authentic even when they challenge traditional ideas about romance."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Can Emotional Honesty<br>Coexist With This?</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"Whether emotional honesty can coexist with complicated realities."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Gloriously<br>Flawed.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"The characters are gloriously flawed — and perfect in that."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Intimate and<br>Philosophical.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"A narrative that feels both intimate and philosophical."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">Must Love Be<br>Singular?</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"The novel invites readers to reflect on the nature of love itself — asking difficult, sometimes uncomfortable, questions about whether love must be singular, absolute, and clearly defined."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+      <div class="bal-carousel-slide">
+        <div class="bal-review-card-html">
+          <div class="rcard-header"><span class="rcard-stars">★★★★★</span> · Amazon Review</div>
+          <div class="rcard-title">One of the<br>Best.</div>
+          <div class="rcard-rule"></div>
+          <div class="rcard-quote">"One of the best fiction books I've read in a long time."</div>
+          <div class="rcard-footer">Balance · m kirk · Out Now</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bal-carousel-nav">
+    <button class="bal-carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">←</button>
+    <div class="bal-carousel-dots" id="carouselDots"></div>
+    <button class="bal-carousel-btn" id="nextBtn" onclick="moveCarousel(1)">→</button>
+  </div>
+</section>
+
+<!-- AUTHOR NOTE — forest green accent interruption -->
+<section class="bal-section bal-author-note on-dark" style="--sec-label-color:var(--b-navy2);">
+  <div class="bal-sec-label">A Note from the Author</div>
+  <div class="bal-note-inner">
+    <div>
+      <div class="bal-author-avatar">
+        <div class="bal-avatar-mark">mk</div>
+      </div>
+    </div>
+    <div class="bal-note-body">
+      <p>Thirty years ago I made my wife a promise: I'd write her a romance novel. A couple of years ago, I finally kept it.</p>
+      <p>I took the manuscript to a local office store, had it printed and bound. Published for an audience of one. She enjoyed it. Then it sat on her nightstand for a few years — which, if you've read the book, will mean something to you.</p>
+      <p>Then the federal government let me go. Reduction in force. And something shifted. I pulled the manuscript back out, started revising, and eventually handed it to friends. We ended up reading the sex scenes aloud in increasingly terrible accents. I have no regrets.</p>
+      <p>That was the moment I decided to publish it.</p>
+      <div class="bal-note-pq">
+        <p>What I didn't expect, somewhere in all of that, was how much the novel would insist on being about all four of them, not just her. I thought I'd invented Ellie, Alex, Mark, and Jane. Turns out I'd been watching them.</p>
+      </div>
+      <p>I knew early that I didn't have it in me for pirates or Scottish lords. I wanted to write something set in this century, about people who actually exist. A love triangle felt like the right architecture — a genuine structural problem. What do three people do when the math doesn't resolve cleanly?</p>
+      <p>My mother has Parkinson's. I'd been doing a lot of reading about CRISPR technology — the way it works, what it promises, what it can't yet do. From there it was a short step to Ellie: a scientist who understands exactly how systems break down, trying to understand why her own life won't follow the rules she's always trusted.</p>
+      <p>The book ended up more novel than romance novel. I'm at peace with that. I study people — dynamics, relationships, the gap between what people perform and what they actually live. That's where I took it. No vampires. No supernatural. I spent a lot of time stripping out every pounding heartbeat and thrusting cliché I could find. What's left, I hope, is something truer.</p>
+      <p>The jealousy doesn't dissolve once you understand where it comes from. The compersion doesn't arrive cleanly. None of it is easy. I stopped trying to resolve that and just followed them instead.</p>
+      <p>The book is not autobiographical. But I do still bring my wife tea every morning.</p>
+      <div class="bal-note-sig">— m kirk</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ MKIRK CHROME: EMAIL + FOOTER ════════ -->
+
+<section class="email-strip">
+  <div class="email-left">
+    <div class="email-heading">New work, when it's ready.</div>
+    <p class="email-sub">No schedule. No newsletter cadence. Just the work — sent when there's something worth sending.</p>
+  </div>
+  <form action="https://app.kit.com/forms/9251821/subscriptions" method="post" data-sv-form="9251821" data-uid="a3bad13994" class="formkit-form" novalidate>
+    <div class="formkit-fields">
+      <div class="formkit-field">
+        <input class="formkit-input" type="email" name="email_address" placeholder="your@email.com" aria-label="Email address" required>
+      </div>
+      <button data-element="submit" class="formkit-submit">STAY WITH BALANCE</button>
+    </div>
+    <div class="formkit-powered-by-convertkit-container"></div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="foot-logo-wrap">
+      <a href="index.html" class="foot-mark">m kirk</a>
+      <div class="foot-social">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <a href="https://instagram.com/mkirkwrites" target="_blank">@mkirkwrites</a>
+      </div>
+    </div>
+    <div class="foot-copy">© m kirk · All rights reserved</div>
+  </div>
+</footer><script>
+// ── Quotes Carousel ──
+const qSlides = document.querySelectorAll('.bal-quotes-slide');
+const qTrack  = document.getElementById('quotesTrack');
+const qDots   = document.getElementById('quotesDots');
+const qCarousel = document.getElementById('quotesCarousel');
+let qCurrent  = 0;
+
+function getQSlideWidth(){
+  return qCarousel.offsetWidth + 28;
+}
+
+function buildQDots(){
+  qDots.innerHTML = '';
+  qSlides.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'bal-qdot' + (i === qCurrent ? ' active' : '');
+    d.onclick = () => goToQuote(i);
+    qDots.appendChild(d);
+  });
+}
+
+function goToQuote(n){
+  qCurrent = Math.min(Math.max(n, 0), qSlides.length - 1);
+  qTrack.style.transform = `translateX(-${qCurrent * getQSlideWidth()}px)`;
+  document.querySelectorAll('.bal-qdot').forEach((d,i) => d.classList.toggle('active', i === qCurrent));
+  document.getElementById('qPrevBtn').disabled = qCurrent === 0;
+  document.getElementById('qNextBtn').disabled = qCurrent === qSlides.length - 1;
+}
+
+function moveQuotes(dir){ goToQuote(qCurrent + dir); }
+
+// Auto-rotate every 5 seconds
+let qAutoplay = setInterval(() => {
+  goToQuote(qCurrent < qSlides.length - 1 ? qCurrent + 1 : 0);
+}, 5000);
+
+// Pause on hover
+qCarousel.addEventListener('mouseenter', () => clearInterval(qAutoplay));
+qCarousel.addEventListener('mouseleave', () => {
+  qAutoplay = setInterval(() => goToQuote(qCurrent < qSlides.length - 1 ? qCurrent + 1 : 0), 5000);
+});
+
+buildQDots();
+goToQuote(0);
+window.addEventListener('resize', () => { buildQDots(); goToQuote(0); });
+
+
+const slides = document.querySelectorAll('.bal-carousel-slide');
+const track = document.getElementById('carouselTrack');
+const dotsContainer = document.getElementById('carouselDots');
+let current = 0;
+
+// How many slides visible at a time
+function visibleCount(){
+  return window.innerWidth <= 900 ? 1 : window.innerWidth <= 1100 ? 2 : 3;
+}
+
+// Build dots
+function buildDots(){
+  dotsContainer.innerHTML = '';
+  const count = slides.length - visibleCount() + 1;
+  for(let i = 0; i < Math.max(1, count); i++){
+    const d = document.createElement('button');
+    d.className = 'bal-dot' + (i === current ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+  }
+}
+
+function goTo(n){
+  const max = Math.max(0, slides.length - visibleCount());
+  current = Math.min(Math.max(n, 0), max);
+  const slideWidth = sl
