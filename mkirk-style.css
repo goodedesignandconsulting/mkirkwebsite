@@ -9,7 +9,7 @@
   --warm:     #EDE9E2;
   --parch:    #EAE0D0;
   --taupe:    #8A7060;
-  --bal-navy: #0D1B2A;
+  --bal-navy: #5C1928;
   --bal-gold: #C9A85C;
   --wr-black: #1A1714;
   --wr-brnz:  #8B6B3D;
@@ -65,8 +65,8 @@ body { background: var(--ink); color: var(--warm); font-family: 'Source Serif 4'
 .strip-link:hover { background: #b8943f; }
 .strip-link + .strip-link { margin-left: 0; }
 .strip-text + .strip-link { margin-left: auto; }
-.strip-link-review { background: #b8943f; color: var(--ink); }
-.strip-link-review:hover { background: #9a7d34; }
+.strip-link-review { background: #D4685A; color: #FFFFFF; }
+.strip-link-review:hover { background: #B85543; color: #FFFFFF; }
 
 /* EMAIL */
 .email-section { background: var(--parch); padding: 68px 40px; }
