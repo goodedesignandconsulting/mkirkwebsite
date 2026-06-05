@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review — CLUTCH by Matt Goode</title>
+<meta name="description" content="If you read CLUTCH by Matt Goode, leave a quick honest review on Amazon or Goodreads.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Source+Serif+4:wght@400&family=Montserrat:wght@400;500;600&family=Exo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ── CLUTCH content palette (GDC) ── */
+  --bg-top:   #14181C;            /* ink — top of gradient */
+  --bg-bot:   #2D2C2E;            /* charcoal — bottom of gradient */
+  --gold:     #B88F46;
+  --gold-lt:  #D4AA60;
+  --cream:    #EDE5D6;
+  --cream-lt: #F5F0E8;
+  --dim:      rgba(237,229,214,0.55);
+  --teal:     #3E9B75;            /* CREATE */
+  --blue:     #3766A2;            /* VOICES */
+  --burgundy: #8D3E40;            /* DELEGATE */
+  --border:   rgba(184,143,70,0.30);
+
+  /* ── m kirk site chrome — same as nav/footer site-wide ── */
+  --banner-bg:   #0E1216;
+  --banner-gold: #C9A85C;
+
+  --display: 'Exo 2', sans-serif;          /* CLUTCH wordmark / titles */
+  --body:    'Montserrat', sans-serif;     /* CLUTCH body + buttons */
+  --logo:    'Cormorant Garamond', Georgia, serif; /* m kirk chrome logo only */
+  --chrome:  'Source Serif 4', Georgia, serif;     /* m kirk chrome nav */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bot) 100%);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ── BANNERS — m kirk chrome bookends ── */
+.site-banner {
+  background: var(--banner-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-banner--top {
+  border-bottom: 1px solid rgba(220,220,230,0.25);
+  padding: 12px 40px;
+  justify-content: stretch;
+}
+.site-banner--top-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-banner--bottom {
+  border-top: 1px solid rgba(91,166,124,0.12);
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 24px;
+}
+
+.banner-mark {
+  font-family: var(--logo);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 48px;
+  letter-spacing: 0.04em;
+  word-spacing: -0.1em;
+  color: var(--banner-gold);
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+.banner-mark:hover { opacity: 0.82; }
+
+.banner-nav { display: flex; gap: 28px; align-items: center; }
+.banner-nav a {
+  font-family: var(--chrome);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: #B85638;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.banner-nav a:hover { color: #D4704A; }
+
+.banner-copy { font-family: var(--chrome); font-size: 13px; letter-spacing: 0.04em; color: #B85638; }
+.banner-copy a { color: #B85638; text-decoration: none; transition: color 0.2s; }
+.banner-copy a:hover { color: #D4704A; }
+
+@media (max-width: 600px) {
+  .site-banner--top { padding: 12px 24px; }
+  .banner-nav { display: none; }
+  .banner-mark { font-size: 40px; }
+}
+
+/* ── MAIN ── */
+main {
+  align-self: center;
+  justify-self: center;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  padding: 3.25rem 1.25rem;
+}
+
+/* shifter-gate motif */
+.gate { width: 58px; height: 58px; margin: 0 auto 1.75rem; display: block; }
+.gate line, .gate text { stroke: var(--gold); }
+.gate text { fill: var(--gold); stroke: none; font-family: var(--display); font-weight: 800; font-size: 22px; }
+
+.mark {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 1.5rem;
+}
+
+/* three-segment accent — CREATE / VOICES / DELEGATE colors */
+.accent {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 0 auto 2rem;
+}
+.accent span { width: 18px; height: 3px; border-radius: 2px; }
+.accent span:nth-child(1) { background: var(--teal); }
+.accent span:nth-child(2) { background: var(--blue); }
+.accent span:nth-child(3) { background: var(--burgundy); }
+
+h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 5.5vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+  color: var(--cream-lt);
+}
+h1 .clutch-word {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+.lede {
+  font-size: 1rem;
+  color: var(--dim);
+  margin: 0 auto 2.5rem;
+  max-width: 40ch;
+}
+
+.actions { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.btn {
+  display: block;
+  padding: 1.05rem 1.5rem;
+  text-decoration: none;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+.btn:hover, .btn:focus-visible { transform: translateY(-1px); outline: none; }
+
+.btn--amazon { background: var(--gold); color: #2D2C2E; }
+.btn--amazon:hover, .btn--amazon:focus-visible { background: var(--gold-lt); }
+
+.btn--goodreads { background: transparent; color: var(--cream); border-color: rgba(237,229,214,0.35); }
+.btn--goodreads:hover, .btn--goodreads:focus-visible { border-color: var(--cream); }
+
+/* ARC — kept for now, set apart below a divider */
+.arc-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--dim);
+  font-family: var(--body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.arc-divider::before, .arc-divider::after {
+  content: ""; flex: 1; height: 1px; background: var(--border);
+}
+.btn--arc { background: transparent; color: var(--gold); border-color: var(--gold); }
+.btn--arc:hover, .btn--arc:focus-visible { background: rgba(184,143,70,0.12); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+main > * { animation: rise 0.6s ease-out backwards; }
+.gate        { animation-delay: 0.03s; }
+.mark        { animation-delay: 0.10s; }
+.accent      { animation-delay: 0.18s; }
+h1           { animation-delay: 0.26s; }
+.lede        { animation-delay: 0.34s; }
+.actions     { animation-delay: 0.42s; }
+.arc-divider { animation-delay: 0.50s; }
+
+@media (prefers-reduced-motion: reduce) {
+  main > * { animation: none; }
+  .btn:hover, .btn:focus-visible { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-banner site-banner--top">
+  <div class="site-banner--top-inner">
+    <a href="index.html" class="banner-mark" aria-label="m kirk — home">m kirk</a>
+    <nav class="banner-nav" aria-label="Site">
+      <a href="mkirk-books.html">Books</a>
+      <a href="mkirk-about.html">About</a>
+      <a href="mailto:matt@thatsgoodedesign.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <svg class="gate" viewBox="0 0 120 130" aria-hidden="true" fill="none"
+       stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <text x="22"  y="20" text-anchor="middle">1</text>
+    <text x="60"  y="20" text-anchor="middle">3</text>
+    <text x="98"  y="20" text-anchor="middle">5</text>
+    <line x1="22" y1="32" x2="22" y2="98"/>
+    <line x1="60" y1="32" x2="60" y2="98"/>
+    <line x1="98" y1="32" x2="98" y2="98"/>
+    <line x1="22" y1="65" x2="98" y2="65"/>
+    <text x="22"  y="124" text-anchor="middle">2</text>
+    <text x="60"  y="124" text-anchor="middle">4</text>
+    <text x="98"  y="124" text-anchor="middle">R</text>
+  </svg>
+
+  <div class="mark">A book by Matt Goode</div>
+  <div class="accent"><span></span><span></span><span></span></div>
+
+  <h1>Thank you for reading <span class="clutch-word">CLUTCH</span>.</h1>
+  <p class="lede">If it changed how you think about building, leave a few honest words. It's how the next leader finds it.</p>
+
+  <div class="actions">
+    <a class="btn btn--amazon" href="#" target="_blank" rel="noopener">Review on Amazon</a>
+    <a class="btn btn--goodreads" href="#" target="_blank" rel="noopener">Review on Goodreads</a>
+
+    <div class="arc-divider">Not a reader yet?</div>
+    <a class="btn btn--arc" href="https://goode-design-consulting.kit.com/7b3b4b4f38" target="_blank" rel="noopener">Request an ARC Copy →</a>
+  </div>
+</main>
+
+<footer class="site-banner site-banner--bottom">
+  <a href="index.html" class="banner-mark" aria-label="m kirk — home">m kirk</a>
+  <p class="banner-copy">© m kirk · <a href="index.html">mkirkwrites.com</a></p>
+</footer>
+
+</body>
+</html>
