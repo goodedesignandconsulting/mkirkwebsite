@@ -17,10 +17,14 @@
      page's default bronze accent (same as everything else on the page) so it read as just another
      line on a big dark field. Recolored with the strategy-blue from Field Tested's own category
      palette (--ft-cat-strategy) so it reads as distinct, same reasoning as Wrath's purple companion
-     card, plus a bigger card and shadow to actually raise its visual weight. */
-  #page-fieldtested .ft-companion-elevated{ --book-accent:#3766A2; --book-panel:rgba(55,102,162,.16); --book-border:rgba(55,102,162,.45); margin-bottom:56px; }
-  #page-fieldtested .ft-companion-elevated .book-companion-card{ padding:34px 36px; box-shadow:0 14px 44px rgba(0,0,0,.35); }
-  #page-fieldtested .ft-companion-elevated .book-companion-card h3{ font-size:22px; }
+     card, plus a bigger card and shadow to actually raise its visual weight.
+     2026-07-30 (same day, round 2): elevated further per Matt — added the real cover thumbnail
+     (assets/cover_email.png) so the card reads as its own product, not just a text banner, plus a
+     bigger cover, deeper shadow, and an "eyebrow" label ahead of the title for more hierarchy. */
+  #page-fieldtested .ft-companion-elevated{ --book-accent:#3766A2; --book-panel:rgba(55,102,162,.18); --book-border:rgba(55,102,162,.5); margin-bottom:56px; }
+  #page-fieldtested .ft-companion-elevated .book-companion-card{ padding:30px 36px; box-shadow:0 18px 52px rgba(0,0,0,.4); }
+  #page-fieldtested .ft-companion-elevated .book-companion-card h3{ font-size:23px; }
+  #page-fieldtested .ft-companion-elevated .book-companion-cover{ width:76px; height:114px; }
   </style>
 
   <nav class="site-nav" style="background:var(--gdc-charcoal);"><div class="nav-inner">
@@ -81,7 +85,9 @@
        Matt's note to raise this product's visual profile. -->
   <div class="book-companion-wrap ft-companion-elevated reveal">
     <a href="mkirk-fieldtested-supplement.html" class="book-companion-card">
-      <div>
+      <img class="book-companion-cover" src="assets/cover_email.png" alt="Couldn't Have Been an Email — cover" onerror="this.classList.add('img-missing')">
+      <div class="book-companion-card-body">
+        <span class="book-companion-eyebrow">Teacher Companion</span>
         <h3>Couldn't Have Been an Email</h3>
         <p>The teacher-only companion to Field Tested — website only, no Amazon.</p>
       </div>

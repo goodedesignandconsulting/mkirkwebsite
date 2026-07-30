@@ -24,7 +24,7 @@
    to red too), Clutch→clutch-cover.png,
    Wrath→cover-wrath.png (2026-07-30: corrected to match Matt's real uploaded
    filename, which uses a hyphen and the standard spelling — the earlier
-   cover_warth.png/dual-spelling-fallback guess was wrong on both counts;
+   cover_wrath.png/dual-spelling-fallback guess was wrong on both counts;
    used for both the main cover and the ARC-page cover, same file), Seven→cover-seven.png,
    Field Tested→cover-fieldtested.png, No Average Brain→cover-noaveragebrain.png,
    Noble Island→cover-nobleisland.png, "Couldn't Have Been an Email"→cover-couldnthavebeen.png,
@@ -263,6 +263,12 @@ img.real-cover.img-missing{ opacity:0; }
 .book-companion-card h3{ font-family:'Source Serif 4',serif; font-weight:700; font-size:18px; margin-bottom:6px; }
 .book-companion-card p{ font-family:'Source Serif 4',serif; font-size:13px; opacity:.7; max-width:44ch; margin:0; }
 .book-companion-link{ font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--book-accent, currentColor); white-space:nowrap; }
+/* Optional cover thumbnail + eyebrow, for companion cards that should read as their own product
+   rather than a plain text banner (e.g. Field Tested's "Couldn't Have Been an Email"). */
+.book-companion-cover{ width:64px; height:96px; object-fit:cover; border-radius:3px; flex-shrink:0; box-shadow:0 10px 24px rgba(0,0,0,.4); }
+.book-companion-cover.img-missing{ background:rgba(255,255,255,.08); border:1px dashed rgba(255,255,255,.3); }
+.book-companion-card-body{ flex:1; min-width:180px; }
+.book-companion-eyebrow{ display:block; font-family:'Source Serif 4',serif; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--book-accent, currentColor); opacity:.9; margin-bottom:6px; }
 
 /* Ebook "how to read" sidebar primer — added 2026-07-30 per Matt's note to include this on every
    page that sells an ebook (native app / Kindle-import guidance). Small collapsible-feeling card,

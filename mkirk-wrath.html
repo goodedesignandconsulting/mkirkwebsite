@@ -10,17 +10,22 @@
 </head>
 <body>
 <section class="page pal-wrath" id="page-wrath">
-  <div class="page-tag">PAGE: <b>mkirk-wrath.html</b> — REBUILT per Matt's direction to treat Wrath as live/pre-sale, same as Clutch: status flipped from "looking for advanced readers" to pre-sale framing, a marketing/review carousel added (structure only — 4:5 slots for Matt's marketing material, no reviews yet), and the Teacher Supplement surfaced as a prominent storefront card. Real Q&amp;A copy and real cover art dropped in 2026-07-29. <b style="color:#8f8;">2026-07-30: "About the Book" rebuilt again — the numbered Q&amp;A list (which duplicated the Books catalog page's format) is now flowing prose + a "Shelve Under" aside, matching Balance's real structure. Added a "Two Officers" POV section (Ellis/Eck, mirrors Balance's Four Voices card grid — Matt said he'll write the fuller character copy himself) and a placeholder "A Note from the Author" section (Balance's is real; Wrath's has none yet). This page is now the template for Field Tested, No Average Brain, and Seven.</b> GFS Didot applied to all Wrath title treatments per Matt's "more Greek font" note. <b style="color:#8f8;">2026-07-30: dropped the "Buy on Amazon" storefront card below the POV section — Matt noted it was unclear why it was there, and it duplicated the hero's own "Buy on Amazon" CTA above. Teacher Supplement is now the sole card there, elevated to a full-width raised-profile callout and recolored purple (was bronze, matching the rest of the page) so it reads as its own product rather than blending in.</b> <b style="color:#8f8;">2026-07-30: moved the Teacher Supplement card up — now sits right after "About the Book," ahead of the "Two Officers" POV section, per Matt's request to give it more visibility. Also forced the "About the Book" heading ("Two officers. Opposite sides of the wire.") onto two lines, one sentence per line, so it doesn't wrap mid-sentence.</b> <b style="color:#8f8;">2026-07-30: added visible placeholder boxes to the Ellis and Eck photo slots in the "Two Officers" cards (dashed box, matches the sitewide Cover Art Policy) — Matt has real photos to drop in later; previously a missing char-ellis.jpg/char-eck.jpg just made the photo area disappear with no visible placeholder.</b> <b style="color:#8f8;">2026-07-30: wired in Matt's real filenames — Ellis/Eck cards, the book cover, and the "Early reads" carousel's structure slots (expanded from 4 to Matt's 10 real marketing/poem images) all got real asset paths for the first time.</b> <b style="color:#8f8;">Same day, later: Matt did a full asset rename pass — every filename from the edit above was updated a second time to match his final naming scheme. Ellis/Eck now point at char_wrath_ellis.png/char_wrath_eck.png, the cover (incl. the ARC page, which no longer has its own separate cover file) points at cover_warth.png, and the carousel points at card_wrath_iliadOpening/andromache/achilles/shawstewart/owen/sorley/dulce/gas/leaves.png plus card_warth_owen.png — see the Cover Art Policy note at the top of the stylesheet for the full sitewide mapping. The earlier truncated-filename flag is resolved: it's card_wrath_andromache.png.</b></div>
+  <div class="page-tag">PAGE: <b>mkirk-wrath.html</b> — REBUILT per Matt's direction to treat Wrath as live/pre-sale, same as Clutch: status flipped from "looking for advanced readers" to pre-sale framing, a marketing/review carousel added (structure only — 4:5 slots for Matt's marketing material, no reviews yet), and the Teacher Supplement surfaced as a prominent storefront card. Real Q&amp;A copy and real cover art dropped in 2026-07-29. <b style="color:#8f8;">2026-07-30: "About the Book" rebuilt again — the numbered Q&amp;A list (which duplicated the Books catalog page's format) is now flowing prose + a "Shelve Under" aside, matching Balance's real structure. Added a "Two Officers" POV section (Ellis/Eck, mirrors Balance's Four Voices card grid — Matt said he'll write the fuller character copy himself) and a placeholder "A Note from the Author" section (Balance's is real; Wrath's has none yet). This page is now the template for Field Tested, No Average Brain, and Seven.</b> GFS Didot applied to all Wrath title treatments per Matt's "more Greek font" note. <b style="color:#8f8;">2026-07-30: dropped the "Buy on Amazon" storefront card below the POV section — Matt noted it was unclear why it was there, and it duplicated the hero's own "Buy on Amazon" CTA above. Teacher Supplement is now the sole card there, elevated to a full-width raised-profile callout and recolored purple (was bronze, matching the rest of the page) so it reads as its own product rather than blending in.</b> <b style="color:#8f8;">2026-07-30: moved the Teacher Supplement card up — now sits right after "About the Book," ahead of the "Two Officers" POV section, per Matt's request to give it more visibility. Also forced the "About the Book" heading ("Two officers. Opposite sides of the wire.") onto two lines, one sentence per line, so it doesn't wrap mid-sentence.</b> <b style="color:#8f8;">2026-07-30: added visible placeholder boxes to the Ellis and Eck photo slots in the "Two Officers" cards (dashed box, matches the sitewide Cover Art Policy) — Matt has real photos to drop in later; previously a missing char-ellis.jpg/char-eck.jpg just made the photo area disappear with no visible placeholder.</b> <b style="color:#8f8;">2026-07-30: wired in Matt's real filenames — Ellis/Eck cards, the book cover, and the "Early reads" carousel's structure slots (expanded from 4 to Matt's 10 real marketing/poem images) all got real asset paths for the first time.</b> <b style="color:#8f8;">Same day, later: Matt did a full asset rename pass — every filename from the edit above was updated a second time to match his final naming scheme. Ellis/Eck now point at char_wrath_ellis.png/char_wrath_eck.png, the cover (incl. the ARC page, which no longer has its own separate cover file) points at cover_wrath.png, and the carousel points at card_wrath_iliadOpening/andromache/achilles/shawstewart/owen/sorley/dulce/gas/leaves.png plus card_warth_owen.png — see the Cover Art Policy note at the top of the stylesheet for the full sitewide mapping. The earlier truncated-filename flag is resolved: it's card_wrath_andromache.png.</b></div>
 
   <style>
   /* Teacher Supplement callout — 2026-07-30: was a 2-up "storefront" grid (novel card + supplement
      card). Matt flagged the novel card as redundant/confusing since "Buy on Amazon" is already the
      hero's primary CTA above, and asked for the supplement to be elevated and set apart with its own
      color. Reuses the shared .book-companion-card "raised-profile callout" pattern (same one Field
-     Tested's "Couldn't Have Been an Email" companion uses) as a single full-width card, recolored
-     purple via the --book-accent/--book-panel/--book-border vars so it reads as distinct from
-     Wrath's bronze accent everywhere else on this page. */
-  #page-wrath .wr-teacher-companion{ --book-accent:#8E5FC7; --book-panel:rgba(142,95,199,.12); --book-border:rgba(142,95,199,.42); }
+     Tested's "Couldn't Have Been an Email" companion uses) as a single full-width card.
+     2026-07-30 (round 2): switched from purple to Wrath's own real bronze accent (--wrath-accent,
+     #8B6B3D) per Matt's request for "a different box color" — needed once the cover thumbnail below
+     also went purple (tinted from cover_wrath.png), since purple-on-purple stopped reading as
+     distinct. Cover-tint filter recipe was picked by rendering a few options against the real cover
+     and eyeballing which stayed legible while clearly reading as "placeholder," not the real cover. */
+  #page-wrath .wr-teacher-companion{ --book-accent:var(--wrath-accent); --book-panel:rgba(139,107,61,.12); --book-border:rgba(139,107,61,.4); }
+  #page-wrath .wr-teacher-companion .book-companion-cover{ width:76px; height:114px; }
+  #page-wrath .wr-teacher-cover-tint{ filter:grayscale(1) sepia(1) hue-rotate(240deg) saturate(3) brightness(.75) contrast(1.1); }
 
   #page-wrath .wr-carousel-track{ position:relative; max-width:420px; margin:0 auto; aspect-ratio:4/5; }
   #page-wrath .wr-slide{ position:absolute; inset:0; display:none; background:var(--ink2); border:1px dashed rgba(196,154,82,.35); }
@@ -125,6 +130,11 @@
   #page-wrath .wr-note-avatar{ width:96px; height:96px; border-radius:50%; background:rgba(139,107,61,.14); border:1px solid rgba(196,154,82,.3); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:24px; color:var(--wrath-accent); overflow:hidden; }
   #page-wrath .wr-note-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
   #page-wrath .wr-note-body p{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.85; color:rgba(242,240,236,.8); margin-bottom:20px; }
+  #page-wrath .wr-note-kicker{ font-family:'Source Serif 4',serif; font-style:italic; font-size:15px; line-height:1.6; color:rgba(242,240,236,.5); margin-bottom:22px; }
+  #page-wrath .wr-note-body h4{ font-family:'GFS Didot',serif; font-size:19px; font-weight:400; color:var(--wrath-title); margin:36px 0 14px; }
+  #page-wrath .wr-note-pq{ margin:30px 0; padding:22px 28px; background:rgba(196,154,82,.08); border-left:2px solid rgba(196,154,82,.4); }
+  #page-wrath .wr-note-pq p{ font-family:'GFS Didot',serif; font-style:italic; font-size:clamp(18px,1.6vw,21px); line-height:1.65; color:rgba(242,240,236,.9); margin-bottom:0; }
+  #page-wrath .wr-note-body hr{ border:none; border-top:1px solid rgba(196,154,82,.25); margin:36px 0; }
   #page-wrath .wr-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:17px; color:rgba(242,240,236,.45); margin-top:18px; }
   @media (max-width:700px){ #page-wrath .wr-note-inner{ grid-template-columns:1fr; } #page-wrath .wr-note-avatar{ margin:0 auto; } }
   </style>
@@ -154,7 +164,7 @@
         </div>
       </div>
       <div class="wr-hero-cover">
-        <img class="real-cover" src="assets/cover_warth.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.classList.add('img-missing')">
+        <img class="real-cover" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.classList.add('img-missing')">
         <p class="wr-pub-line">Publishes 1 October 2026 · ISBN / ASIN TBD</p>
       </div>
     </div>
@@ -168,6 +178,24 @@
       <div class="wr-meta-item"><div class="wr-meta-label">Format</div><div class="wr-meta-value">Hardcover / Paperback / Kindle</div></div>
       <div class="wr-meta-item"><div class="wr-meta-label">Genre</div><div class="wr-meta-value">Literary Fiction · Historical</div></div>
     </div>
+  </div>
+
+  <!-- TEACHER SUPPLEMENT — raised-profile callout, single card. Moved up again 2026-07-30 (was
+       right after "About the Book") per Matt's request to give it even more visibility, now
+       directly under the meta bar. No dedicated supplement cover exists yet, so the cover thumbnail
+       reuses cover_wrath.png with a purple CSS tint as a stand-in — swap for a real supplement
+       cover whenever Matt has one. Card recolored bronze (Wrath's real accent color) instead of
+       purple, so it doesn't visually blend into the purple-tinted placeholder cover. -->
+  <div class="book-companion-wrap wr-teacher-companion reveal">
+    <a href="mkirk-wrath-supplement.html" class="book-companion-card">
+      <img class="book-companion-cover wr-teacher-cover-tint" src="assets/cover_wrath.png" alt="Teacher Supplement — placeholder cover, tinted from the novel's cover" onerror="this.classList.add('img-missing')">
+      <div class="book-companion-card-body">
+        <span class="book-companion-eyebrow">Teacher Supplement</span>
+        <h3>Teacher Supplement</h3>
+        <p>Discussion guide &amp; classroom materials — PDF/ebook from this site, hardcopy on Amazon (tentative).</p>
+      </div>
+      <span class="book-companion-link">View Supplement →</span>
+    </a>
   </div>
 
   <!-- ABOUT THE BOOK — 2026-07-30: rebuilt as flowing prose + aside (mirrors Balance's real
@@ -214,18 +242,6 @@
     </div>
   </div>
 
-  <!-- TEACHER SUPPLEMENT — raised-profile callout, single card. Moved up 2026-07-30 (was below the
-       POV section) per Matt's request to give it more visibility, higher on the page. -->
-  <div class="book-companion-wrap wr-teacher-companion reveal">
-    <a href="mkirk-wrath-supplement.html" class="book-companion-card">
-      <div>
-        <h3>Teacher Supplement</h3>
-        <p>Discussion guide &amp; classroom materials — PDF/ebook from this site, hardcopy on Amazon (tentative).</p>
-      </div>
-      <span class="book-companion-link">View Supplement →</span>
-    </a>
-  </div>
-
   <!-- TWO OFFICERS (POV section) — 2026-07-30: added per Matt's note to borrow Balance's "Four
        Voices" character-grid pattern for Wrath's two POV characters. Descriptions below use only
        facts already established in Matt's real copy (rank, VC, 1912 Olympics, Dresden engineer,
@@ -254,10 +270,13 @@
     </div>
   </div>
 
-  <div class="carousel-section reveal">
+  <div class="carousel-section reveal" id="wrCarouselWrap">
     <h2 class="carousel-heading" style="color:var(--wrath-accent);">Early reads</h2>
     <!-- Review/marketing carousel — structure only. No reviews yet; Matt has 4x5 marketing
-         material to drop into these slots in the meantime (same pattern as Clutch's carousel). -->
+         material to drop into these slots in the meantime (same pattern as Clutch's carousel).
+         2026-07-30: rebuilt the interactivity — old inline-onclick handlers toggled slides but had
+         no auto-advance at all. Replaced with the same JS module already proven on Balance's
+         carousel (real timer, pause-on-hover, restart-on-manual-click). -->
     <div class="wr-carousel-track" id="wrCarouselTrack">
       <div class="wr-slide active"><img class="wr-slide-img" src="assets/card_wrath_iliadOpening.png" alt="Homer — Opening Lines" onerror="this.classList.add('img-missing')"></div>
       <!-- FLAGGED: Matt's Finder listing showed this filename truncated with an ellipsis
@@ -275,25 +294,68 @@
       <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_leaves.png" alt="Wrath — plate 2" onerror="this.classList.add('img-missing')"></div>
     </div>
     <div class="wr-carousel-nav">
-      <button type="button" onclick="(function(t){var s=t.querySelectorAll('.wr-slide');var i=0;for(var k=0;k<s.length;k++){if(s[k].classList.contains('active')){i=k;break;}}s[i].classList.remove('active');i=(i-1+s.length)%s.length;s[i].classList.add('active');})(document.getElementById('wrCarouselTrack'))">← Prev</button>
-      <button type="button" onclick="(function(t){var s=t.querySelectorAll('.wr-slide');var i=0;for(var k=0;k<s.length;k++){if(s[k].classList.contains('active')){i=k;break;}}s[i].classList.remove('active');i=(i+1)%s.length;s[i].classList.add('active');})(document.getElementById('wrCarouselTrack'))">Next →</button>
+      <button type="button" onclick="wrCarouselMove(-1)">← Prev</button>
+      <button type="button" onclick="wrCarouselMove(1)">Next →</button>
     </div>
   </div>
+  <script>
+    (function(){
+      var track = document.getElementById('wrCarouselTrack');
+      if (!track) return;
+      var slides = track.querySelectorAll('.wr-slide');
+      if (!slides.length) return;
+      var idx = 0, autoTimer = null;
+      function update(){
+        slides.forEach(function(s, i){ s.classList.toggle('active', i === idx); });
+      }
+      function goTo(i){ idx = (i + slides.length) % slides.length; update(); }
+      window.wrCarouselMove = function(dir){ goTo(idx + dir); restartAuto(); };
+      function startAuto(){ autoTimer = setInterval(function(){ goTo(idx + 1); }, 6000); }
+      function restartAuto(){ if (autoTimer) clearInterval(autoTimer); startAuto(); }
+      var wrap = document.getElementById('wrCarouselWrap');
+      if (wrap) {
+        wrap.addEventListener('mouseenter', function(){ if (autoTimer) clearInterval(autoTimer); });
+        wrap.addEventListener('mouseleave', startAuto);
+      }
+      update();
+      startAuto();
+    })();
+  </script>
 
   <div class="daughter-banner reveal" style="--accent:var(--wrath-accent);max-width:1200px;margin:0 auto 40px;">
     There's a companion <a href="mkirk-wrath-supplement.html">Teacher Supplement →</a> — digital from this site, hardcopy on Amazon.
   </div>
 
-  <!-- A NOTE FROM THE AUTHOR — 2026-07-30: added per Matt's note that every major book page
-       should include an author's-note section like Balance's real .bal-author-note. Fully
-       placeholder — no author's-note content for Wrath exists yet; structure only, matching
-       Balance's avatar + prose + pull-quote + signature pattern. -->
+  <!-- A NOTE FROM THE AUTHOR — 2026-07-30: real author's note dropped in from Matt, verbatim.
+       Avatar uses the generic author photo (author_goode.jpg) — card_brain_superheros.jpg was
+       removed per Matt's note that it belongs to No Average Brain only. -->
   <section class="wr-note reveal">
     <div class="wr-note-inner">
-      <div class="wr-note-avatar"><img src="assets/card_brain_superheros.jpg" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
+      <div class="wr-note-avatar"><img src="assets/author_goode.jpg" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="wr-note-body">
         <p class="wr-section-label" style="margin-bottom:20px;">A Note from the Author</p>
-        <p><em class="ph">[Placeholder — Matt's note on writing Wrath goes here: why this book, why the Iliad structure, why Ypres. Matching Balance's author's-note section, which is real, personal, first-person copy Matt wrote himself.]</em></p>
+        <p class="wr-note-kicker">Or: Why a Social Studies Teacher Wrote a Novel About Ancient Greece and the Western Front</p>
+        <p>I have been teaching thirteen-year-olds about ancient civilizations and the First World War for twenty years. Same age group, same two subjects, twenty years. You would think, after that long, I would have run out of new things to say about either one. The opposite happened. The longer I taught both, the more convinced I became that they were, in fact, the same subject.</p>
+        <p>The story Homer told around 700 BCE, and the story the trenches of Flanders told in 1917, are, underneath the three thousand years between them, the same story. About what happens when a world becomes very connected and then, under pressure, cracks all at once. About the kind of men those worlds produce, and what those men are prepared for, and what they are not prepared for at all. About honor, and what it costs, and who pays.</p>
+        <p>I wrote this novel because I could not find the book I wanted to hand to my students. Not a textbook. Not a documentary. A story that would make them feel both eras at once – the ancient world and the modern one. This is that book.</p>
+        <hr>
+        <h4>Why You Should Care</h4>
+        <p>You are being asked to care about people who died 3,000 years ago, or 110 years ago – people whose names you do not know, in places you have never been, in wars whose causes are confusing and whose endings you already know. Here is why.</p>
+        <p>You have lived through a pandemic. You have watched wars start in places you'd never heard of a year before. You have watched supply chains break – shortages that seemed to come from nowhere and disappear just as fast. None of that felt like ancient history while it was happening. It felt like Tuesday.</p>
+        <p>That is what this book is about: what it feels like to be inside a world that is changing faster than anyone in it can see, and what the people inside it do with the codes of honor and duty they were raised on, when those codes meet a war their world had no name for yet.</p>
+        <div class="wr-note-pq"><p>This novel is about two men on opposite sides of a strand of barbed wire, in a small piece of Belgium, in 1917 – carrying, into an industrial war neither of them was built for, values that belong to a much older one. It is the oldest story there is, and it keeps not staying in the past.</p></div>
+        <hr>
+        <h4>How to Read This Book</h4>
+        <p>The story takes place in the Ypres Salient in Belgium, in the autumn of 1917, during the Third Battle of Ypres. The British called it Passchendaele, after the village on the ridge they were trying to take. Approximately half a million men were killed or wounded across both armies. Most of the ground gained was given back the following spring.</p>
+        <p>The novel runs twenty-four chapters, following the broad shape of Homer's <em>Iliad</em>. This is not a gimmick. It's the argument: here is what the ancient world understood about war, honor, and the lives of men – and here is what an industrial war did to each of those understandings, one at a time.</p>
+        <p>You do not need to have read the <em>Iliad</em> to follow this story – the novel gives you everything you need. If you have read it, or read it alongside this book, you'll notice the gap between what Homer assumed about war and what 1917 actually delivered. That gap is where the novel lives. A short guide to that gap – a chapter-by-chapter map between this book and Homer's – is at the back, along with a full cast list. Read either one now or later; neither is required to follow the story.</p>
+        <p>The novel follows two officers. Captain Archie Ellis, of the British Army, is drawn from Achilles. Hauptmann Harald Eck, of the German Army, is drawn from Hector. They are on opposite sides of the same piece of destroyed ground, and they are more alike than either of them knows.</p>
+        <p>Ellis is built from two real men. Admiral Horatio Nelson supplies the wrath, and the wearing of decorations into battle: at Trafalgar in 1805, Nelson went into action with four orders of chivalry sewn to the breast of his coat, which is how the marksman in the rigging of the French ship <em>Redoutable</em> picked him out and killed him. Ellis wears his ribbons into action the same way. Arnold Strode-Jackson supplies the rest – a real British officer who had won Olympic gold in the 1500 meters at Stockholm in 1912, in a race the newspapers of the day called the greatest ever run, and who went on to command a battalion at Passchendaele, was wounded three times, and lived to be an old man. That's one path open to Ellis, if he survives. The novel doesn't tell you whether he takes it.</p>
+        <p>Eck is the everyman. He is forty-one, a civil engineer from Dresden, fifteen years into a career building bridges and lock gates when the mobilization orders came. He left his plans on the drafting table, told his wife Clara he'd be back before anything needed deciding, and went. Dresden is not an arbitrary choice of hometown: the city he leaves in 1914 was destroyed by Allied bombing in February 1945, in a firestorm that killed some 25,000 people, most of them the age Eck's own son would have been by then. The novel does not point this out to you. It is simply true, and it is why the German side of this story is given exactly the same weight, care, and interior life as the British side – which is the book's central argument, made through form rather than through anything anyone says.</p>
+        <p>The novel is written in British English, so a few familiar words will look slightly different (see the Glossary at the back). Where German or Latin is essential to following the plot, it appears in English. Where it is not – private conversations, a handful of untranslated lines – it stays in the original language. That's deliberate. Look the words up if you want them; the novel will still make sense if you don't.</p>
+        <p>Ellis, unusually for this book's cast, is never taken inside his own head – you learn who he is only from what he does and what he carries, never from what he thinks. Even his questions are written as flat statements, without question marks, because he already knows the answer and is only saying what he's about to do. Watch for it.</p>
+        <p>The prose itself is deliberately plain. No elevated language, no lingering grief, no narrator telling you how to feel about a death. That flatness is not coldness – it's the form the material demands. As Wilfred Owen, one of the war's own poets, put it: the poetry is in the pity, and the pity is in the accuracy.</p>
+        <div class="wr-note-sig">— m kirk</div>
       </div>
     </div>
   </section>
