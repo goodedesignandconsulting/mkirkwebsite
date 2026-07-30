@@ -10,16 +10,18 @@
 </head>
 <body>
 <section class="page pal-ft" id="page-fieldtested-storefront">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-fieldtested-purchase.html</b> — <b style="color:#8f8;">2026-07-30: real Kit commerce embed dropped in — Matt sent the actual <code>commerce.js</code> script + checkout button (product: <code>goode-design-consulting.kit.com/products/field-tested</code>). Price still not visible on this page — Kit renders it inside the hosted checkout button once the script loads, which needs live network access to kit.com (this sandboxed prototype can't load it, so the button may render unstyled/inert here — same caveat as every other Kit embed already on the site). Also added the ebook "how to read" sidebar primer per Matt's sitewide request.</b></div>
+  <style>
   #page-fieldtested-storefront{ --book-accent:var(--ft-accent); --book-panel:rgba(255,255,255,.045); --book-border:rgba(184,143,70,.22); }
   #page-fieldtested-storefront .ft-buy-grid{ display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start; margin-top:28px; }
   #page-fieldtested-storefront .convertkit-button{ display:inline-block; background:var(--ft-accent); color:#fff; font-family:'Mulish',sans-serif; font-weight:700; font-size:14px; letter-spacing:.02em; padding:14px 26px; text-decoration:none; border-radius:2px; }
+  #page-fieldtested-storefront .ft-buy-cover{ width:180px; display:block; margin-bottom:24px; border-radius:2px; box-shadow:0 12px 30px rgba(0,0,0,.4); }
   @media (max-width:800px){ #page-fieldtested-storefront .ft-buy-grid{ grid-template-columns:1fr; } }
   </style>
   <script src="https://goode-design-consulting.kit.com/commerce.js" async defer></script>
   <nav class="site-nav" style="background:var(--gdc-charcoal);"><div class="nav-inner">
-    <a href="index.html" class="logo" style="color:var(--ft-accent);">m kirk</a>
-    <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <a href="#page-home" class="logo" style="color:var(--ft-accent);">m kirk</a>
+    <ul class="nav-links"><li><a href="#page-books">Books</a></li><li><a href="#page-about">About</a></li><li><a href="#page-contact">Contact</a></li></ul>
   </div></nav>
   <div class="section section-narrow reveal" style="padding-top:70px;padding-bottom:40px;">
     <div class="status-tag">FIELD TESTED</div>
@@ -27,6 +29,7 @@
     <p class="lede">70 field-tested facilitation methods, website only — no Amazon.</p>
     <div class="ft-buy-grid">
       <div>
+        <img class="ft-buy-cover" src="assets/cover-fieldtested.png" alt="Field Tested — book cover" onerror="this.style.display='none'">
         <a class="convertkit-button" href="https://goode-design-consulting.kit.com/products/field-tested?step=checkout" data-commerce>Buy Field Tested</a>
       </div>
       <div class="ebook-howto">
@@ -40,7 +43,7 @@
     </div>
   </div>
   <footer class="site-footer" style="background:var(--gdc-charcoal);"><div class="footer-inner">
-    <a href="index.html" class="logo" style="font-size:30px;color:var(--ft-accent);">m kirk</a>
+    <a href="#page-home" class="logo" style="font-size:30px;color:var(--ft-accent);">m kirk</a>
     <span class="footer-copy">© m kirk · All rights reserved</span>
   </div></footer>
 </section>

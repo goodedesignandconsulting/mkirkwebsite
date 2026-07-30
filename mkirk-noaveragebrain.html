@@ -10,24 +10,38 @@
 </head>
 <body>
 <section class="page pal-nab" id="page-noaveragebrain">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-noaveragebrain.html</b> — palette/type below REAL, from Matt's uploaded <b>NAB style guide</b> (working draft, sampled from one confirmed social carousel slide + author brief). Purple is the identity colour, the four-band "Spectrum Bar" is this book's signature device. Per the guide: <b>NAB is a sibling to CLUTCH, not a follow-up/sequel to it</b>. Headline face still open (Baloo 2 vs. Poppins ExtraBold) — Baloo 2 used here as the guide's lead candidate. <b style="color:#8f8;">2026-07-30: background flipped to light cream per Matt's note (many book pages are already dark) — see the comment on --nab-bg near the top of the stylesheet. Hero's Q&amp;A rebuilt as prose + aside, matching Balance/Clutch/Wrath/Field Tested; author's-note section added (placeholder). Carousel kept (Matt's "no carousel" instruction was Field-Tested-specific).</b></div>
+  <style>
   #page-noaveragebrain{ --book-accent:var(--nab-accent); --book-panel:rgba(0,0,0,.035); --book-panel2:rgba(0,0,0,.06); --book-border:rgba(0,0,0,.14); }
+  /* "Early reads" carousel — added 2026-07-30, mirrors Wrath's #page-wrath .wr-carousel-track
+     pattern exactly (same box treatment, active-slide toggle, missing-image fallback). Matt sent
+     one real photo for now (card_brain_superheros.jpg); structure supports adding more slides
+     later the same way Wrath's did. */
+  #page-noaveragebrain .nab-carousel-track{ position:relative; max-width:420px; margin:0 auto; aspect-ratio:4/5; }
+  #page-noaveragebrain .nab-slide{ position:absolute; inset:0; display:none; background:#fff; border:1px dashed rgba(0,0,0,.16); }
+  #page-noaveragebrain .nab-slide.active{ display:flex; align-items:center; justify-content:center; }
+  #page-noaveragebrain .nab-slide-img{ width:100%; height:100%; object-fit:contain; display:block; }
+  #page-noaveragebrain .nab-slide-img.img-missing{ display:none; }
+  #page-noaveragebrain .nab-slide:has(.nab-slide-img.img-missing)::after{ content:'Image not found — check assets/ path'; font-family:'Source Serif 4',serif; font-size:13px; color:rgba(0,0,0,.45); text-align:center; padding:20px; }
+  #page-noaveragebrain .nab-carousel-nav{ display:flex; justify-content:center; gap:16px; margin-top:24px; }
+  #page-noaveragebrain .nab-carousel-nav button{ background:transparent; border:1px solid var(--nab-accent); color:var(--nab-accent); font-family:'Source Serif 4',serif; font-size:12px; letter-spacing:.08em; text-transform:uppercase; padding:8px 18px; cursor:pointer; }
+  #page-noaveragebrain .nab-carousel-nav button:hover{ background:var(--nab-accent); color:#fff; }
   </style>
 
   <nav class="site-nav" style="background:var(--gdc-charcoal);"><div class="nav-inner">
-    <a href="index.html" class="logo" style="color:var(--nab-accent);">m kirk</a>
-    <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <a href="#page-home" class="logo" style="color:var(--nab-accent);">m kirk</a>
+    <ul class="nav-links"><li><a href="#page-books">Books</a></li><li><a href="#page-about">About</a></li><li><a href="#page-contact">Contact</a></li></ul>
   </div></nav>
 
   <div class="spectrum-bar"></div>
   <div class="book-hero-status reveal"><span class="status-tag">Coming Dec 1</span></div>
   <div class="book-detail reveal">
     <div class="book-cover-col">
-      <img class="real-cover" src="assets/cover_noAverage.png" alt="No Average Brain — book cover" onerror="this.classList.add('img-missing')">
-      <a href="mkirk-coming-soon.html" class="btn btn-gdc-burgundy" style="background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Buy on Amazon</a>
-      <a href="mkirk-noaveragebrain-arc.html" class="btn btn-outline" style="margin-top:10px;color:var(--nab-ink);border-color:var(--nab-ink);">Request an ARC</a>
-      <a href="mkirk-noaveragebrain-chapter.html" class="btn btn-outline" style="margin-top:10px;color:var(--nab-ink);border-color:var(--nab-ink);">Read a free chapter</a>
-      <p class="pub-line">Amazon link assumed, not yet confirmed — see brief §7</p>
+      <img class="real-cover" src="assets/cover-noaveragebrain.png" alt="No Average Brain — book cover" onerror="this.classList.add('img-missing')">
+      <a href="#page-comingsoon" class="btn btn-gdc-burgundy btn-coming-soon" style="background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Buy on Amazon</a>
+      <a href="#page-nab-arc" class="btn btn-outline" style="margin-top:10px;background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Request an ARC</a>
+      <a href="#page-nab-freechapter" class="btn btn-outline" style="margin-top:10px;background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Read a free chapter</a>
+      <!-- INTERNAL NOTE (was visible pub-line span, hidden 2026-07-30 per Matt): Amazon link assumed, not yet confirmed — see brief §7 -->
     </div>
     <div>
       <h1 class="book-title" style="font-family:'Baloo 2',sans-serif;">No Average <span class="emph">Brain</span></h1>
@@ -64,8 +78,8 @@
           <div class="book-aside-stat"><div class="book-aside-stat-label">Publication Date</div><div class="book-aside-stat-val">December 1, 2026</div></div>
           <div class="book-aside-stat"><div class="book-aside-stat-label">Format</div><div class="book-aside-stat-val"><em class="ph">TBD — see brief §7</em></div></div>
           <div class="book-aside-rule"></div>
-          <a href="mkirk-coming-soon.html" class="book-aside-btn">Buy on Amazon</a>
-          <a href="mkirk-noaveragebrain-arc.html" class="book-aside-btn">Request an ARC</a>
+          <a href="#page-comingsoon" class="book-aside-btn btn-coming-soon">Buy on Amazon</a>
+          <a href="#page-nab-arc" class="book-aside-btn" style="background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Request an ARC</a>
         </div>
       </div>
     </div>
@@ -73,13 +87,22 @@
 
   <div class="carousel-section reveal">
     <h2 class="carousel-heading" style="color:var(--nab-accent);">Early reads</h2>
-    <div class="carousel-empty">No approved quotes yet — carousel stays empty until real content exists.</div>
+    <!-- 2026-07-30: Matt sent one real photo to start ("card_brain_superheros.jpg" — family shot,
+         "dyslexic" shirts) — wired as the first slide of a real carousel, matching Wrath's pattern.
+         Not review quotes yet, just the one image; add more slides here the same way as they land. -->
+    <div class="nab-carousel-track" id="nabCarouselTrack">
+      <div class="nab-slide active"><img class="nab-slide-img" src="assets/card_brain_superheros.jpg" alt="Matt Goode and family, wearing 'dyslexic' shirts" onerror="this.classList.add('img-missing')"></div>
+    </div>
+    <div class="nab-carousel-nav">
+      <button type="button" onclick="(function(t){var s=t.querySelectorAll('.nab-slide');var i=0;for(var k=0;k<s.length;k++){if(s[k].classList.contains('active')){i=k;break;}}s[i].classList.remove('active');i=(i-1+s.length)%s.length;s[i].classList.add('active');})(document.getElementById('nabCarouselTrack'))">← Prev</button>
+      <button type="button" onclick="(function(t){var s=t.querySelectorAll('.nab-slide');var i=0;for(var k=0;k<s.length;k++){if(s[k].classList.contains('active')){i=k;break;}}s[i].classList.remove('active');i=(i+1)%s.length;s[i].classList.add('active');})(document.getElementById('nabCarouselTrack'))">Next →</button>
+    </div>
   </div>
 
   <!-- A NOTE FROM THE AUTHOR — placeholder; no NAB author's note exists yet. -->
   <section class="book-note reveal">
     <div class="book-note-inner">
-      <div class="book-note-avatar">mk</div>
+      <div class="book-note-avatar"><img src="assets/author_goode.jpg" alt="Matt Goode" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="book-note-body">
         <p class="book-about-label" style="margin-bottom:18px;">A Note from the Author</p>
         <p><em class="ph">[Placeholder — Matt's note on No Average Brain goes here: the son he pulled from school, the leadership meetings, why now/why AI changes the calculus.]</em></p>
@@ -90,11 +113,11 @@
   <div class="email-section" style="background:var(--gdc-cream);">
     <h2 class="email-heading">Follow No Average Brain</h2>
     <form class="email-form" onsubmit="return false;"><input type="email" placeholder="you@example.com"><button class="btn-follow" style="background:var(--nab-accent);color:#fff;">Join the list</button></form>
-    <span class="placeholder-flag">Kit form UID needed — new form</span>
+    <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): Kit form UID needed — new form -->
   </div>
 
   <footer class="site-footer" style="background:var(--gdc-charcoal);"><div class="footer-inner">
-    <a href="index.html" class="logo" style="font-size:30px;color:var(--nab-accent);">m kirk</a>
+    <a href="#page-home" class="logo" style="font-size:30px;color:var(--nab-accent);">m kirk</a>
     <span class="footer-copy">© m kirk · All rights reserved</span>
   </div></footer>
 </section>

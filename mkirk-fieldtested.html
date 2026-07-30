@@ -10,20 +10,29 @@
 </head>
 <body>
 <section class="page pal-ft" id="page-fieldtested">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-fieldtested.html</b> — no Amazon anywhere. Palette/type below REAL, from Matt's uploaded <b>Field Tested style guide</b> — Field Tested's system is GDC's own base palette (cream/charcoal/gold) plus a 7-colour category system for its method cards, not a distinct hue. Display type Montserrat 800, body Mulish, data/labels JetBrains Mono. An asset pack (icons + 16 hero diagrams) exists too, referenced but not uploaded here. <b style="color:#8f8;">2026-07-30: rebuilt per Matt's general-rule note — hero's numbered Q&amp;A (duplicated the Books catalog page) is now a trimmed hook + a separate prose "About the Book" section with aside, matching Balance/Clutch/Wrath. Teacher Companion raised into its own callout card. Carousel removed entirely (Matt: Field Tested doesn't need one). Author's-note section added (placeholder — no FT author's note exists yet). Real Kit commerce embed Matt sent (goode-design-consulting.kit.com/products/field-tested) now wired into the storefront page's Buy button.</b></div>
+  <style>
   #page-fieldtested{ --book-accent:var(--ft-accent); --book-panel:rgba(255,255,255,.045); --book-panel2:rgba(255,255,255,.07); --book-border:rgba(184,143,70,.22); }
+  /* 2026-07-30: "Couldn't Have Been an Email" companion card elevated per Matt — was using the
+     page's default bronze accent (same as everything else on the page) so it read as just another
+     line on a big dark field. Recolored with the strategy-blue from Field Tested's own category
+     palette (--ft-cat-strategy) so it reads as distinct, same reasoning as Wrath's purple companion
+     card, plus a bigger card and shadow to actually raise its visual weight. */
+  #page-fieldtested .ft-companion-elevated{ --book-accent:#3766A2; --book-panel:rgba(55,102,162,.16); --book-border:rgba(55,102,162,.45); margin-bottom:56px; }
+  #page-fieldtested .ft-companion-elevated .book-companion-card{ padding:34px 36px; box-shadow:0 14px 44px rgba(0,0,0,.35); }
+  #page-fieldtested .ft-companion-elevated .book-companion-card h3{ font-size:22px; }
   </style>
 
   <nav class="site-nav" style="background:var(--gdc-charcoal);"><div class="nav-inner">
-    <a href="index.html" class="logo" style="color:var(--ft-accent);">m kirk</a>
-    <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <a href="#page-home" class="logo" style="color:var(--ft-accent);">m kirk</a>
+    <ul class="nav-links"><li><a href="#page-books">Books</a></li><li><a href="#page-about">About</a></li><li><a href="#page-contact">Contact</a></li></ul>
   </div></nav>
 
   <div class="book-hero-status reveal"><span class="status-tag">Available now</span></div>
   <div class="book-detail reveal">
     <div class="book-cover-col">
-      <img class="real-cover" src="assets/cover_field.png" alt="Field Tested — book cover" onerror="this.classList.add('img-missing')">
-      <a href="mkirk-fieldtested-purchase.html" class="btn btn-gdc-blue" style="background:var(--ft-accent);border-color:var(--ft-accent);">Buy the ebook</a>
+      <img class="real-cover" src="assets/cover-fieldtested.png" alt="Field Tested — book cover" onerror="this.classList.add('img-missing')">
+      <a href="#page-fieldtested-storefront" class="btn btn-gdc-blue" style="background:var(--ft-accent);border-color:var(--ft-accent);">Buy the ebook</a>
       <p class="pub-line">Website only · no Amazon</p>
     </div>
     <div>
@@ -62,7 +71,7 @@
           <div class="book-aside-stat"><div class="book-aside-stat-label">Format</div><div class="book-aside-stat-val">Ebook — website only</div></div>
           <div class="book-aside-stat"><div class="book-aside-stat-label">Contents</div><div class="book-aside-stat-val">70 methods, 7 categories</div></div>
           <div class="book-aside-rule"></div>
-          <a href="mkirk-fieldtested-purchase.html" class="book-aside-btn">Buy the ebook</a>
+          <a href="#page-fieldtested-storefront" class="book-aside-btn">Buy the ebook</a>
         </div>
       </div>
     </div>
@@ -70,8 +79,8 @@
 
   <!-- TEACHER COMPANION — raised-profile callout, replaces the plain daughter-banner line per
        Matt's note to raise this product's visual profile. -->
-  <div class="book-companion-wrap reveal">
-    <a href="mkirk-fieldtested-supplement.html" class="book-companion-card">
+  <div class="book-companion-wrap ft-companion-elevated reveal">
+    <a href="#page-couldnthavebeen" class="book-companion-card">
       <div>
         <h3>Couldn't Have Been an Email</h3>
         <p>The teacher-only companion to Field Tested — website only, no Amazon.</p>
@@ -83,10 +92,20 @@
   <!-- A NOTE FROM THE AUTHOR — placeholder; no Field Tested author's note exists yet. -->
   <section class="book-note reveal">
     <div class="book-note-inner">
-      <div class="book-note-avatar">mk</div>
+      <div class="book-note-avatar"><img src="assets/author_goode.jpg" alt="Matt Goode" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="book-note-body">
         <p class="book-about-label" style="margin-bottom:18px;">A Note from the Author</p>
-        <p><em class="ph">[Placeholder — Matt's note on Field Tested goes here: where the 70 methods came from, why the neurodiversity/virtual-format notes matter, what fieldwork it's drawn from.]</em></p>
+        <p>Every facilitator, trainer, or learning designer has hit this wall: you know the outcome you need, but you're not sure which method will get you there. Brainstorm or structured ideation? Reflection activity or feedback loop? Something visual, or something analytical?</p>
+        <p>This guide brings together 70 field-tested facilitation and instructional methods — built and refined in real training rooms, workshops, and strategy sessions — and organizes them so you can find the right one at the right moment, with enough practical detail to run it with confidence the first time.</p>
+        <p style="font-weight:700;">Who it's for</p>
+        <p>This guide is for anyone whose job involves designing or facilitating learning experiences for groups:</p>
+        <ul>
+          <li>Trainers and facilitators running workshops or learning events</li>
+          <li>L&amp;D professionals designing programs for teams and organizations</li>
+          <li>Humanitarian and nonprofit practitioners leading capacity-building or coordination sessions</li>
+          <li>Coaches and managers running team meetings, retrospectives, or planning sessions</li>
+          <li>Educators and instructional designers adapting methods for classroom or blended learning</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -94,11 +113,11 @@
   <div class="email-section" style="background:var(--gdc-cream);">
     <h2 class="email-heading">Follow Field Tested</h2>
     <form class="email-form" onsubmit="return false;"><input type="email" placeholder="you@example.com"><button class="btn-follow" style="background:var(--ft-accent);color:#fff;">Follow along</button></form>
-    <span class="placeholder-flag">Kit form UID needed — new form</span>
+    <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): Kit form UID needed — new form -->
   </div>
 
   <footer class="site-footer" style="background:var(--gdc-charcoal);"><div class="footer-inner">
-    <a href="index.html" class="logo" style="font-size:30px;color:var(--ft-accent);">m kirk</a>
+    <a href="#page-home" class="logo" style="font-size:30px;color:var(--ft-accent);">m kirk</a>
     <span class="footer-copy">© m kirk · All rights reserved</span>
   </div></footer>
 </section>

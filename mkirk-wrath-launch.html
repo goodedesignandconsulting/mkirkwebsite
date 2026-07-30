@@ -10,7 +10,8 @@
 </head>
 <body>
 <section class="page" id="page-wrath-launch">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-wrath-launch.html</b> — NEW page, added 2026-07-30 per Matt's request to build a "Launching October 1" page for Wrath using the same structure as Clutch's waitlist page (<code>#page-clutch-waitlist</code>). Structure/CSS pattern lifted directly from that real page; hero premise copy and cover reused from the real, Matt-uploaded ARC page (<code>#page-wrath-arc</code>) — nothing here is invented. <b style="color:#e0a;">Flag 1:</b> the signup form below reuses the same real Kit form/UID (<code>97f49e9459</code>, form <code>9571883</code>) as the ARC page, since no separate general "notify me at launch" list has been provided — everyone who signs up here currently lands on the same list as ARC requesters. Swap in a dedicated Kit form UID here once Matt has one. <b style="color:#e0a;">Flag 2:</b> I repointed the two sitewide "Join Pre-Sale Waitlist" buttons that used to go to the ARC page (front-page Featured module, and the Wrath Review-CTA page) so they now land here instead — mirroring how Clutch's ARC page was dropped in favor of its waitlist page as the general-audience CTA, while "Request an ARC" (Wrath's meta-bar button) still points at the real ARC page for reviewers specifically. Tell me if that split isn't what you wanted.</div>
+  <style>
 
 .real-wrath-launch {
   --bronze:    #8B6B3D;
@@ -137,6 +138,7 @@
 .real-wrath-launch .offer-cover { order: -1; }
 .real-wrath-launch .cover-img { max-width: 260px; }
 .real-wrath-launch .offer h1 { font-size: 30px; }
+.real-wrath-launch .offer h1 .wrath { white-space: normal; font-size: 30px; } /* 2026-07-30: base rule's nowrap was forcing horizontal overflow on phones, per Matt's mobile audit */
 }
 @media (max-width: 560px) {
 .real-wrath-launch .nav-inner { padding: 12px 24px; }
@@ -150,10 +152,10 @@
 <!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><span class="logo-text">m kirk</span></a>
+    <a href="#page-home" class="logo"><span class="logo-text">m kirk</span></a>
     <nav class="nav-links">
-      <a href="books.html" class="nav-link">Books</a>
-      <a href="mkirk-about.html" class="nav-link">About</a>
+      <a href="#page-books" class="nav-link">Books</a>
+      <a href="#page-about" class="nav-link">About</a>
       <a href="mailto:matt@thatsgoodedesign.com" class="nav-link">Contact</a>
     </nav>
   </div>
@@ -196,13 +198,13 @@
     </div>
 
     <div class="offer-cover">
-      <img src="assets/cover_warth.png" fetchpriority="high" loading="eager" alt="The Wrath of Archie Ellis — book cover" class="cover-img" onerror="this.classList.add('img-missing')">
+      <img src="assets/cover-wrath.png" fetchpriority="high" loading="eager" alt="The Wrath of Archie Ellis — book cover" class="cover-img" onerror="this.classList.add('img-missing')">
     </div>
   </section>
 
   <!-- WHAT'S INSIDE -->
   <section class="inside">
-    <p>Want to read it early and leave an honest review? <a href="mkirk-wrath-arc.html">Request an Advance Reader Copy →</a></p>
+    <p>Want to read it early and leave an honest review? <a href="#page-wrath-arc">Request an Advance Reader Copy →</a></p>
   </section>
 
 </main>
@@ -211,7 +213,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="index.html" class="footer-logo">m kirk</a>
+      <a href="#page-home" class="footer-logo">m kirk</a>
       <p class="footer-social">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>

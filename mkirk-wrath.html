@@ -10,7 +10,9 @@
 </head>
 <body>
 <section class="page pal-wrath" id="page-wrath">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-wrath.html</b> — REBUILT per Matt's direction to treat Wrath as live/pre-sale, same as Clutch: status flipped from "looking for advanced readers" to pre-sale framing, a marketing/review carousel added (structure only — 4:5 slots for Matt's marketing material, no reviews yet), and the Teacher Supplement surfaced as a prominent storefront card. Real Q&amp;A copy and real cover art dropped in 2026-07-29. <b style="color:#8f8;">2026-07-30: "About the Book" rebuilt again — the numbered Q&amp;A list (which duplicated the Books catalog page's format) is now flowing prose + a "Shelve Under" aside, matching Balance's real structure. Added a "Two Officers" POV section (Ellis/Eck, mirrors Balance's Four Voices card grid — Matt said he'll write the fuller character copy himself) and a placeholder "A Note from the Author" section (Balance's is real; Wrath's has none yet). This page is now the template for Field Tested, No Average Brain, and Seven.</b> GFS Didot applied to all Wrath title treatments per Matt's "more Greek font" note. <b style="color:#8f8;">2026-07-30: dropped the "Buy on Amazon" storefront card below the POV section — Matt noted it was unclear why it was there, and it duplicated the hero's own "Buy on Amazon" CTA above. Teacher Supplement is now the sole card there, elevated to a full-width raised-profile callout and recolored purple (was bronze, matching the rest of the page) so it reads as its own product rather than blending in.</b> <b style="color:#8f8;">2026-07-30: moved the Teacher Supplement card up — now sits right after "About the Book," ahead of the "Two Officers" POV section, per Matt's request to give it more visibility. Also forced the "About the Book" heading ("Two officers. Opposite sides of the wire.") onto two lines, one sentence per line, so it doesn't wrap mid-sentence.</b> <b style="color:#8f8;">2026-07-30: added visible placeholder boxes to the Ellis and Eck photo slots in the "Two Officers" cards (dashed box, matches the sitewide Cover Art Policy) — Matt has real photos to drop in later; previously a missing char-ellis.jpg/char-eck.jpg just made the photo area disappear with no visible placeholder.</b> <b style="color:#8f8;">2026-07-30: wired in Matt's real filenames — Ellis/Eck cards, the book cover, and the "Early reads" carousel's structure slots (expanded from 4 to Matt's 10 real marketing/poem images) all got real asset paths for the first time.</b> <b style="color:#8f8;">Same day, later: Matt did a full asset rename pass — every filename from the edit above was updated a second time to match his final naming scheme. Ellis/Eck now point at char_wrath_ellis.png/char_wrath_eck.png, the cover (incl. the ARC page, which no longer has its own separate cover file) points at cover_warth.png, and the carousel points at card_wrath_iliadOpening/andromache/achilles/shawstewart/owen/sorley/dulce/gas/leaves.png plus card_warth_owen.png — see the Cover Art Policy note at the top of the stylesheet for the full sitewide mapping. The earlier truncated-filename flag is resolved: it's card_wrath_andromache.png.</b></div>
+
+  <style>
   /* Teacher Supplement callout — 2026-07-30: was a 2-up "storefront" grid (novel card + supplement
      card). Matt flagged the novel card as redundant/confusing since "Buy on Amazon" is already the
      hero's primary CTA above, and asked for the supplement to be elevated and set apart with its own
@@ -120,15 +122,16 @@
 
   #page-wrath .wr-note{ background:var(--ink2); padding:64px 32px; border-top:1px solid rgba(196,154,82,.2); border-bottom:1px solid rgba(196,154,82,.2); }
   #page-wrath .wr-note-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:120px 1fr; gap:56px; align-items:start; }
-  #page-wrath .wr-note-avatar{ width:96px; height:96px; border-radius:50%; background:rgba(139,107,61,.14); border:1px solid rgba(196,154,82,.3); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:24px; color:var(--wrath-accent); }
+  #page-wrath .wr-note-avatar{ width:96px; height:96px; border-radius:50%; background:rgba(139,107,61,.14); border:1px solid rgba(196,154,82,.3); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:24px; color:var(--wrath-accent); overflow:hidden; }
+  #page-wrath .wr-note-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
   #page-wrath .wr-note-body p{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.85; color:rgba(242,240,236,.8); margin-bottom:20px; }
   #page-wrath .wr-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:17px; color:rgba(242,240,236,.45); margin-top:18px; }
   @media (max-width:700px){ #page-wrath .wr-note-inner{ grid-template-columns:1fr; } #page-wrath .wr-note-avatar{ margin:0 auto; } }
   </style>
 
   <nav class="site-nav" style="background:var(--ink2);"><div class="nav-inner">
-    <a href="index.html" class="logo">m kirk</a>
-    <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <a href="#page-home" class="logo">m kirk</a>
+    <ul class="nav-links"><li><a href="#page-books">Books</a></li><li><a href="#page-about">About</a></li><li><a href="#page-contact">Contact</a></li></ul>
   </div></nav>
 
   <!-- HERO — mirrors Clutch's hero pattern (eyebrow / big title / subtitle / byline / accent bar /
@@ -146,12 +149,12 @@
           <p>The book is built, chapter for chapter, on the structure of the Iliad: Ellis is Achilles, Eck is Hector.</p>
         </div>
         <div class="wr-hero-ctas">
-          <a href="mkirk-coming-soon.html" class="btn btn-outline" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Buy on Amazon</a>
-          <a href="mkirk-wrath-arc.html" class="btn btn-outline" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Request an ARC</a>
+          <a href="#page-comingsoon" class="btn btn-outline btn-coming-soon" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Buy on Amazon</a>
+          <a href="#page-wrath-arc" class="btn btn-outline" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Request an ARC</a>
         </div>
       </div>
       <div class="wr-hero-cover">
-        <img class="real-cover" src="assets/cover_warth.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.classList.add('img-missing')">
+        <img class="real-cover" src="assets/cover-wrath.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.classList.add('img-missing')">
         <p class="wr-pub-line">Publishes 1 October 2026 · ISBN / ASIN TBD</p>
       </div>
     </div>
@@ -204,8 +207,8 @@
           <div class="wr-aside-rule"></div>
           <div class="wr-aside-stat"><div class="wr-aside-stat-label">ISBN / ASIN</div><div class="wr-aside-stat-val"><em class="ph">TBD — not yet published</em></div></div>
           <div class="wr-aside-rule"></div>
-          <a href="mkirk-coming-soon.html" class="wr-aside-btn">Buy on Amazon</a>
-          <a href="mkirk-wrath-arc.html" class="wr-aside-btn">Request an ARC</a>
+          <a href="#page-comingsoon" class="wr-aside-btn btn-coming-soon">Buy on Amazon</a>
+          <a href="#page-wrath-arc" class="wr-aside-btn">Request an ARC</a>
         </div>
       </div>
     </div>
@@ -214,7 +217,7 @@
   <!-- TEACHER SUPPLEMENT — raised-profile callout, single card. Moved up 2026-07-30 (was below the
        POV section) per Matt's request to give it more visibility, higher on the page. -->
   <div class="book-companion-wrap wr-teacher-companion reveal">
-    <a href="mkirk-wrath-supplement.html" class="book-companion-card">
+    <a href="#page-wrath-supplement" class="book-companion-card">
       <div>
         <h3>Teacher Supplement</h3>
         <p>Discussion guide &amp; classroom materials — PDF/ebook from this site, hardcopy on Amazon (tentative).</p>
@@ -278,7 +281,7 @@
   </div>
 
   <div class="daughter-banner reveal" style="--accent:var(--wrath-accent);max-width:1200px;margin:0 auto 40px;">
-    There's a companion <a href="mkirk-wrath-supplement.html">Teacher Supplement →</a> — digital from this site, hardcopy on Amazon.
+    There's a companion <a href="#page-wrath-supplement">Teacher Supplement →</a> — digital from this site, hardcopy on Amazon.
   </div>
 
   <!-- A NOTE FROM THE AUTHOR — 2026-07-30: added per Matt's note that every major book page
@@ -287,7 +290,7 @@
        Balance's avatar + prose + pull-quote + signature pattern. -->
   <section class="wr-note reveal">
     <div class="wr-note-inner">
-      <div class="wr-note-avatar">mk</div>
+      <div class="wr-note-avatar"><img src="assets/card_brain_superheros.jpg" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="wr-note-body">
         <p class="wr-section-label" style="margin-bottom:20px;">A Note from the Author</p>
         <p><em class="ph">[Placeholder — Matt's note on writing Wrath goes here: why this book, why the Iliad structure, why Ypres. Matching Balance's author's-note section, which is real, personal, first-person copy Matt wrote himself.]</em></p>
@@ -302,7 +305,7 @@
   </div>
 
   <footer class="site-footer"><div class="footer-inner">
-    <a href="index.html" class="logo" style="font-size:30px;">m kirk</a>
+    <a href="#page-home" class="logo" style="font-size:30px;">m kirk</a>
     <a href="https://instagram.com/mkirkwrites" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram: @mkirkwrites">@mkirkwrites</a>
     <span class="footer-copy">© m kirk · All rights reserved</span>
   </div></footer>

@@ -10,7 +10,8 @@
 </head>
 <body>
 <section class="page" id="page-clutch-review">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-clutch-review.html</b> — "leave a review" CTA, Amazon only per Matt's spec. Linked from the front page's CLUTCH card ("Leave a review"). <b style="color:#8f8;">2026-07-30: rebuilt to match Balance's real review-page template exactly (Matt sent screenshots of both and asked for the Balance card's structure/style sitewide, recolored per book) — light card, mark, rule, two-line "Thank you for reading" headline, lede, action button(s). Was previously a dark/pal-clutch variant; now uses Clutch's own cream/charcoal/gold instead of Balance's cream/oxblood.</b> QR code removed per Matt's earlier direction — he's adding one to the physical book himself, pointed at this page's live URL. Amazon button still points nowhere real — CLUTCH has no ASIN yet since it isn't published; wire the real "&hellip;#customerReviews" deep link (same pattern as Balance's review page) once it exists. Single button (no Goodreads) since that's what Matt's spec/screenshot show for CLUTCH.</div>
+  <style>
 
 .real-clutch-review {
   --bg: #EDE5D6;
@@ -88,10 +89,10 @@
 
 <header class="site-banner site-banner--top">
   <div class="site-banner--top-inner">
-    <a href="index.html" class="banner-mark" aria-label="m kirk — home">m kirk</a>
+    <a href="#page-home" class="banner-mark" aria-label="m kirk — home">m kirk</a>
     <nav class="banner-nav" aria-label="Site">
-      <a href="books.html">Books</a>
-      <a href="mkirk-about.html">About</a>
+      <a href="#page-books">Books</a>
+      <a href="#page-about">About</a>
       <a href="mailto:matt@thatsgoodedesign.com">Contact</a>
     </nav>
   </div>
@@ -103,13 +104,13 @@
   <h1>Thank you for reading <span class="clutch-word">CLUTCH</span>.</h1>
   <p class="lede">If it changed how you think about your team, leave a few honest words. It's how the next reader finds it.</p>
   <div class="actions">
-    <a class="btn btn--amazon" href="mkirk-coming-soon.html">Review on Amazon</a>
+    <a class="btn btn--amazon btn-coming-soon" href="#page-comingsoon">Review on Amazon</a>
   </div>
 </main>
 
 <footer class="site-banner site-banner--bottom">
-  <a href="index.html" class="banner-mark" aria-label="m kirk — home">m kirk</a>
-  <p class="banner-copy">© m kirk · <a href="index.html">mkirkwrites.com</a></p>
+  <a href="#page-home" class="banner-mark" aria-label="m kirk — home">m kirk</a>
+  <p class="banner-copy">© m kirk · <a href="#page-home">mkirkwrites.com</a></p>
 </footer>
 
   </div>

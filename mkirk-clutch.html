@@ -10,7 +10,8 @@
 </head>
 <body>
 <section class="page" id="page-clutch">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-clutch.html</b> — REAL content &amp; design, uploaded by Matt. CSS = mkirk-clutch.css (real, uploaded). <b style="color:#c33;">⚠ SOURCE FILE WAS TRUNCATED on upload (cut off mid-script) — this page's trailing JS/interactivity is incomplete. Please re-upload the complete file.</b> 2026-07-29: moved the "Storefront" (Resources/eBooks) section up from just above the footer to directly under the meta bar, per Matt's note to make the digital content more prominent — no copy changed, section only relocated.</div>
+  <style>
 .real-clutch {
   --gold:       #B88F46;
   --gold-lt:    #D4AA60;
@@ -820,6 +821,13 @@
   font-family:'Exo 2',sans-serif; font-size:13px; letter-spacing:.04em;
   color: var(--gold); background: rgba(184,143,70,.05); border-radius:4px;
 }
+/* 2026-07-30: Matt's card_clutch1–7.png marketing images dropped in as a stand-in for the
+   review carousel until real reader reviews come in (same "marketing material now, reviews
+   later" pattern as the .mm-carousel-track structure was built for). Same object-fit:contain
+   + graceful img-missing fallback treatment as Wrath's .wr-slide-img. */
+.real-clutch .mm-slide-img { width:100%; height:100%; object-fit:contain; display:block; border-radius:4px; }
+.real-clutch .mm-slide-img.img-missing { display:none; }
+.real-clutch .mm-slide:has(.mm-slide-img.img-missing)::after{ content:'Image not found — check assets/ path'; font-family:'Exo 2',sans-serif; font-size:13px; color:rgba(184,143,70,.7); text-align:center; padding:20px; display:block; }
 .real-clutch .mm-carousel-nav { display:flex; justify-content:center; gap:16px; margin-top:24px; }
 
 /* STOREFRONT — echoes front-page book-card gateway styling */
@@ -1367,12 +1375,12 @@
 <!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">
+    <a href="#page-home" class="logo">
       <span class="logo-text">m kirk</span>
     </a>
     <nav class="nav-links">
-      <a href="books.html"         class="nav-link">Books</a>
-      <a href="mkirk-about.html"         class="nav-link">About</a>
+      <a href="#page-books"         class="nav-link">Books</a>
+      <a href="#page-about"         class="nav-link">About</a>
       <a href="mailto:matt@thatsgoodedesign.com"       class="nav-link">Contact</a>
     </nav>
   </div>
@@ -1398,12 +1406,11 @@
         <p>"If your team can't move without you, that's not a sign you're indispensable. It's a sign you haven't finished the design."</p>
       </div>
       <div class="hero-ctas">
-        <a href="mkirk-clutch-waitlist.html" class="btn-primary">Join the Waitlist →</a>
-        <a href="mkirk-clutch-chapter.html" class="btn-outline">Read Chapter 7 →</a>
+        <a href="#page-clutch-waitlist" class="btn-primary">Join the Waitlist →</a>
       </div>
     </div>
     <div class="hero-cover">
-      <img src="assets/clutch_cover.png" fetchpriority="high" loading="eager" alt="CLUTCH book cover" class="cover-img" onerror="this.classList.add('img-missing')">
+      <img src="assets/clutch-cover.png" fetchpriority="high" loading="eager" alt="CLUTCH book cover" class="cover-img" onerror="this.classList.add('img-missing')">
     </div>
   </div>
 </section>
@@ -1438,14 +1445,10 @@
   <h2 class="section-title" style="color:var(--charcoal);">Get the digital content now.</h2>
   <p style="max-width:60ch;color:var(--charcoal);opacity:.75;margin-bottom:24px;">Resources and eBooks built from the CLUTCH frameworks — available today, no waiting for launch day.</p>
 
-  <a href="mkirk-clutch-chapter.html" class="mm-freechapter-banner">
-    <div>
-      <h3>Read Chapter 7, free</h3>
-      <p>The full chapter on delegation — no email required to preview, no waiting for launch day.</p>
-    </div>
-    <span class="mm-storefront-link">Read Chapter 7 →</span>
-  </a>
-
+  <!-- 2026-07-30: free-chapter banner removed per Matt — he's discontinuing that offer. Also
+       dropped the matching "Read Chapter 7" CTAs from the hero and sidebar on this page. The
+       #page-clutch-freechapter page itself is left in place (not deleted) since removing a whole
+       page/jump-nav entry is a bigger change than what was asked — flag if you want that page gone too. -->
   <p class="mm-storefront-tag" style="margin-bottom:10px;">Four framework eBooks — $3.99 each</p>
   <div class="mm-ebook-grid">
     <a href="https://goode-design-consulting.kit.com/products/create_chapter" class="mm-ebook-card">
@@ -1469,10 +1472,10 @@
       <span class="mm-ebook-price">$3.99</span>
     </a>
   </div>
-  <a href="mkirk-clutch-ebooks.html" class="mm-storefront-link" style="display:inline-block;margin-bottom:28px;">See all 4 eBooks →</a>
+  <a href="#page-clutch-ebooks" class="mm-storefront-link" style="display:inline-block;margin-bottom:28px;">See all 4 eBooks →</a>
 
   <div class="mm-storefront-grid" style="grid-template-columns:1fr;max-width:820px;">
-    <a href="mkirk-clutch-downloads.html" class="mm-storefront-card">
+    <a href="#page-clutch-downloads" class="mm-storefront-card">
       <span class="mm-storefront-tag">Resources</span>
       <span class="mm-storefront-title">CLUTCH Resources</span>
       <span class="mm-storefront-desc">Coaching questions, worksheets, and framework tools — filterable by system.</span>
@@ -1546,8 +1549,7 @@
       <div class="sidebar-card">
         <p class="sidebar-section-label">Read It First</p>
         <div class="buy-buttons">
-          <a href="mkirk-clutch-waitlist.html" class="btn-primary">Join the Waitlist →</a>
-          <a href="mkirk-clutch-chapter.html" class="btn-outline">Read Chapter 7 →</a>
+          <a href="#page-clutch-waitlist" class="btn-primary">Join the Waitlist →</a>
         </div>
       </div>
     </div>
@@ -1563,28 +1565,28 @@
   <p class="systems-intro">CLUTCH is built on four integrated frameworks. Each one does a specific job. Together, they form a complete leadership operating system.</p>
   <div class="systems-grid">
     <div class="system-card create">
-      <div class="system-icon"><img data-stripped-base64="1" alt="" aria-hidden="true"></div>
+      <div class="system-icon"><img src="assets/icon_create.png" alt="" aria-hidden="true" onerror="this.style.display='none'"></div>
       <div class="system-num">I</div>
       <div class="system-metaphor">The Engine</div>
       <div class="system-name">CREATE</div>
       <p class="system-desc">Culture, Relationships, Execution, Adaptability, Teaching, Ethics. The six cylinders that power everything else. If your engine is misfiring, no amount of gear-shifting fixes the problem.</p>
     </div>
     <div class="system-card voices">
-      <div class="system-icon"><img data-stripped-base64="1" alt="" aria-hidden="true"></div>
+      <div class="system-icon"><img src="assets/icon_voices.png" alt="" aria-hidden="true" onerror="this.style.display='none'"></div>
       <div class="system-num">II</div>
       <div class="system-metaphor">The Gearbox</div>
       <div class="system-name">VOICES</div>
       <p class="system-desc">Visionary, Operator, Independent, Coach, Encourager, Sculptor. Six leadership stances — not roles, not titles. The gearbox doesn't choose your destination. It determines whether you get there smoothly.</p>
     </div>
     <div class="system-card sixc">
-      <div class="system-icon"><img data-stripped-base64="1" alt="" aria-hidden="true"></div>
+      <div class="system-icon"><img src="assets/icon_6C.png" alt="" aria-hidden="true" onerror="this.style.display='none'"></div>
       <div class="system-num">III</div>
       <div class="system-metaphor">The Navigation System</div>
       <div class="system-name">6C COMPASS</div>
       <p class="system-desc">Command, Consultative, Collaborative, Consensus, Core Expert, Choice. Six modes for making decisions. The question isn't what to decide — it's how to decide who decides.</p>
     </div>
     <div class="system-card delegate">
-      <div class="system-icon"><img data-stripped-base64="1" alt="" aria-hidden="true"></div>
+      <div class="system-icon"><img src="assets/icon_delegate.png" alt="" aria-hidden="true" onerror="this.style.display='none'"></div>
       <div class="system-num">IV</div>
       <div class="system-metaphor">The Handoff System</div>
       <div class="system-name">DELEGATE</div>
@@ -1592,7 +1594,7 @@
     </div>
   </div>
   <div class="eq-callout">
-    <div class="eq-label"><img data-stripped-base64="1" alt="" aria-hidden="true"></div>
+    <div class="eq-label"><img src="assets/icon_EQ.png" alt="" aria-hidden="true" onerror="this.style.display='none'"></div>
     <div class="eq-text">
       <strong>The Clutch Itself</strong>
       <p>Emotional Intelligence is the mechanism connecting all four systems. EQ is what enables smooth transitions between modes — the reason the title is CLUTCH. Without it, the engine revs and the wheels don't turn.</p>
@@ -1683,12 +1685,15 @@
 <div class="section">
   <p class="section-label" style="color:var(--gold);">What Readers Are Saying</p>
   <h2 class="section-title" style="color:var(--charcoal);">Reviews land here.</h2>
-  <p style="max-width:60ch;color:var(--charcoal);opacity:.75;margin-bottom:24px;">Structure is ready for the review carousel — empty until real reviews come in. In the meantime, showing marketing material. <em class="ph" style="font-style:italic;color:#b33;">[Placeholder — Matt has 4x5 marketing images to drop in here; carousel is built to take either reviews or campaign images, swap freely.]</em></p>
+  <p style="max-width:60ch;color:var(--charcoal);opacity:.75;margin-bottom:24px;">Structure is ready for the review carousel — showing marketing material until real reviews come in.</p>
   <div class="mm-carousel-track" id="mmCarouselTrack">
-    <div class="mm-slide active"><div class="mm-slot">4:5 marketing image slot 1</div></div>
-    <div class="mm-slide"><div class="mm-slot">4:5 marketing image slot 2</div></div>
-    <div class="mm-slide"><div class="mm-slot">4:5 marketing image slot 3</div></div>
-    <div class="mm-slide"><div class="mm-slot">4:5 marketing image slot 4</div></div>
+    <div class="mm-slide active"><img class="mm-slide-img" src="assets/card_clutch1.png" alt="CLUTCH marketing card 1" onerror="this.classList.add('img-missing')"></div>
+    <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch2.png" alt="CLUTCH marketing card 2" onerror="this.classList.add('img-missing')"></div>
+    <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch3.png" alt="CLUTCH marketing card 3" onerror="this.classList.add('img-missing')"></div>
+    <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch4.png" alt="CLUTCH marketing card 4" onerror="this.classList.add('img-missing')"></div>
+    <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch5.png" alt="CLUTCH marketing card 5" onerror="this.classList.add('img-missing')"></div>
+    <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch6.png" alt="CLUTCH marketing card 6" onerror="this.classList.add('img-missing')"></div>
+    <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch7.png" alt="CLUTCH marketing card 7" onerror="this.classList.add('img-missing')"></div>
   </div>
   <div class="mm-carousel-nav">
     <button class="quote-arrow" onclick="document.querySelectorAll('#mmCarouselTrack .mm-slide').forEach((s,i,a)=>{if(s.classList.contains('active')){s.classList.remove('active');a[(i-1+a.length)%a.length].classList.add('active');}})">&#9664;</button>
@@ -1773,7 +1778,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="index.html" class="footer-logo">m kirk</a>
+      <a href="#page-home" class="footer-logo">m kirk</a>
       <p class="footer-social">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>

@@ -10,7 +10,8 @@
 </head>
 <body>
 <section class="page" id="page-wrath-arc">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-wrath-arc.html</b> — REAL content &amp; design, uploaded by Matt.</div>
+  <style>
 
 .real-wrath-arc {
   --bronze:    #8B6B3D;
@@ -137,7 +138,7 @@
 .real-wrath-arc .offer { grid-template-columns: 1fr; gap: 40px; padding: 48px 28px 52px; }
 .real-wrath-arc .offer-cover { order: -1; }
 .real-wrath-arc .cover-img { max-width: 260px; }
-.real-wrath-arc .offer h1 { font-size: 30px; }
+.real-wrath-arc .offer h1 { font-size: 30px; white-space: normal; } /* 2026-07-30: base rule's nowrap was forcing horizontal overflow on phones, per Matt's mobile audit */
 }
 @media (max-width: 560px) {
 .real-wrath-arc .nav-inner { padding: 12px 24px; }
@@ -151,10 +152,10 @@
 <!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><span class="logo-text">m kirk</span></a>
+    <a href="#page-home" class="logo"><span class="logo-text">m kirk</span></a>
     <nav class="nav-links">
-      <a href="books.html" class="nav-link">Books</a>
-      <a href="mkirk-about.html" class="nav-link">About</a>
+      <a href="#page-books" class="nav-link">Books</a>
+      <a href="#page-about" class="nav-link">About</a>
       <a href="mailto:matt@thatsgoodedesign.com" class="nav-link">Contact</a>
     </nav>
   </div>
@@ -198,7 +199,7 @@
     </div>
 
     <div class="offer-cover">
-      <img src="assets/cover_warth.png" fetchpriority="high" loading="eager" alt="The Wrath of Archie Ellis — book cover" class="cover-img" onerror="this.classList.add('img-missing')">
+      <img src="assets/cover-wrath.png" fetchpriority="high" loading="eager" alt="The Wrath of Archie Ellis — book cover" class="cover-img" onerror="this.classList.add('img-missing')">
     </div>
   </section>
 
@@ -215,7 +216,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="index.html" class="footer-logo">m kirk</a>
+      <a href="#page-home" class="footer-logo">m kirk</a>
       <p class="footer-social">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>

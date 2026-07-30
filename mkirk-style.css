@@ -15,16 +15,19 @@
    and every <img src="assets/..."> sitewide was repointed to match —
    superseding two earlier passes this same day that used older filenames
    (some of which were themselves mid-rename at the time). Current mapping,
-   for reference: Balance→cover_balance2.png (the original blue cover —
-   Matt confirmed this after a follow-up; cover_balance.png is the red
-   redesign, intentionally kept in assets/ but not wired into any page —
-   see the comment by Balance's .bal-cover img), Clutch→clutch_cover.png,
-   Wrath→cover_warth.png (note: "warth," Matt's own spelling, used for both
-   the main cover and the ARC-page cover — the site previously had a
-   separate cover-wrath-arc.png but only one Wrath cover file exists under
-   the new scheme, so both now point at the same file), Seven→cover_seven.png,
-   Field Tested→cover_field.png, No Average Brain→cover_noAverage.png,
-   Noble Island→cover_noble.png, "Couldn't Have Been an Email"→cover_email.png,
+   for reference: Balance→cover_balance.png is primary as of 2026-07-30 (the
+   red redesign — the original blue, cover_balance2.png, landed Matt in
+   Amazon trouble; still kept, now shown via hover-reveal on Balance's own
+   hero — see the comment by Balance's .bal-cover-swap block. Home/Books
+   catalog thumbnails still point at the blue cover_balance2.png per Matt's
+   earlier "back as primary everywhere" note — flag if those should switch
+   to red too), Clutch→clutch-cover.png,
+   Wrath→cover-wrath.png (2026-07-30: corrected to match Matt's real uploaded
+   filename, which uses a hyphen and the standard spelling — the earlier
+   cover_warth.png/dual-spelling-fallback guess was wrong on both counts;
+   used for both the main cover and the ARC-page cover, same file), Seven→cover-seven.png,
+   Field Tested→cover-fieldtested.png, No Average Brain→cover-noaveragebrain.png,
+   Noble Island→cover-nobleisland.png, "Couldn't Have Been an Email"→cover-couldnthavebeen.png,
    the CLUTCH framework guides→create_cover.png/cover_voices.png/
    cover_6c.png/cover_delegate.png, Balance's Four Voices→char_balance_
    alex/ellie/jane/mark.jpg, Wrath's Ellis/Eck→char_wrath_ellis.png/
@@ -105,25 +108,18 @@ button { font:inherit; cursor:pointer; }
   --ni-bg:#E4D4B0;   --ni-accent:#5C7A66;   --ni-ink:#2B2318;
 }
 
-/* ---------- Internal review chrome (not part of production output) ---------- */
-.jump-nav{
-  position:fixed; top:0; right:0; width:240px; height:100vh; overflow-y:auto;
-  background:#fff; border-left:1px solid #ddd; z-index:1000;
-  font-family:Arial,sans-serif; font-size:12px; padding:18px 16px;
-}
-.jump-nav h3{ font-size:13px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; color:#111; }
-.jump-nav h4{ font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#999; margin:16px 0 6px; }
-.jump-nav a{ display:block; padding:5px 0; color:#333; text-decoration:none; border-bottom:1px solid #f2f2f2; }
-.jump-nav a:hover{ color:#B85638; }
-body{ margin-right:240px; }
-@media (max-width:900px){ .jump-nav{position:static; width:auto; height:auto; margin-right:0; border-left:none; border-bottom:1px solid #ddd;} body{margin-right:0;} }
-
 .page{ position:relative; }
 .page-tag{
   background:#1d1d1d; color:#9aa; font-family:'Courier New',monospace; font-size:11px;
   padding:7px 20px; letter-spacing:.03em;
+  display:none; /* 2026-07-30: internal build/filename note, hidden sitewide per Matt ("remove notes like this") — was rendering as a visible bar at the top of every page. */
 }
 .page-tag b{ color:#fff; }
+/* 2026-07-30: bracketed internal placeholder/editorial notes ("[Placeholder — ...]" etc.), hidden
+   sitewide per Matt. A couple of individual .ph spots had their class removed instead, where the
+   text itself is reader-appropriate copy rather than a note-to-self (see wr-aside-stat ISBN/ASIN
+   and No Average Brain's "No ARC yet" line) — those stay visible without this rule touching them. */
+em.ph, .ph{ display:none !important; }
 
 /* ---------- Shared: nav ---------- */
 .site-nav{ background:var(--ink2); border-bottom:1px solid rgba(220,220,230,.25); position:sticky; top:0; z-index:100; }
@@ -147,6 +143,14 @@ body{ margin-right:240px; }
 .email-form input{ flex:1; padding:13px 16px; border:1px solid rgba(0,0,0,.15); font-family:'Source Serif 4'; font-size:14px; }
 .btn-follow{ background:var(--sage); color:var(--ink); font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.08em; padding:14px 26px; border:none; white-space:nowrap; }
 .kit-note{ font-size:11px; color:var(--taupe); margin-top:10px; font-family:'Source Serif 4'; }
+/* 2026-07-30: added per Matt's mobile audit — this shared email-signup form (used on Field Tested,
+   No Average Brain, Seven, Noble Island, Coming Soon) had no responsive handling at all; the
+   nowrap button (e.g. "Send me the chapter") forced the row wider than the screen on phones. */
+@media(max-width:480px){
+  .email-form{ flex-direction:column; gap:10px; max-width:100%; }
+  .email-form input{ width:100%; }
+  .btn-follow{ width:100%; white-space:normal; }
+}
 
 /* ---------- Buttons (general) ---------- */
 .btn{ display:inline-block; padding:12px 26px; font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.08em; text-decoration:none; border:1px solid transparent; }
@@ -239,8 +243,14 @@ img.real-cover.img-missing{ opacity:0; }
 
 .book-note{ padding:56px 40px; border-top:1px solid var(--book-border, rgba(255,255,255,.1)); border-bottom:1px solid var(--book-border, rgba(255,255,255,.1)); background:var(--book-panel, rgba(255,255,255,.02)); }
 .book-note-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:110px 1fr; gap:48px; align-items:start; }
-.book-note-avatar{ width:88px; height:88px; border-radius:50%; background:var(--book-panel2, rgba(255,255,255,.06)); border:1px solid var(--book-border, rgba(255,255,255,.18)); display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-style:italic; font-size:22px; color:var(--book-accent, currentColor); }
+.book-note-avatar{ width:88px; height:88px; border-radius:50%; background:var(--book-panel2, rgba(255,255,255,.06)); border:1px solid var(--book-border, rgba(255,255,255,.18)); display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-style:italic; font-size:22px; color:var(--book-accent, currentColor); overflow:hidden; }
+/* Real author photo, added 2026-07-30 per Matt: m-kirk-branded books use his beach photo,
+   Matt-Goode-branded books use the same professional portrait already wired on CLUTCH's real
+   author note (assets/author_goode.jpg). Falls back to the original "mk" mark if the file 404s. */
+.book-note-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
 .book-note-body p{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.8; opacity:.82; margin-bottom:18px; }
+.book-note-body ul{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.7; opacity:.82; margin:-6px 0 18px 20px; padding:0; }
+.book-note-body li{ margin-bottom:7px; }
 .book-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:16px; opacity:.5; margin-top:16px; }
 @media (max-width:700px){ .book-note-inner{ grid-template-columns:1fr; } .book-note-avatar{ margin:0 auto; } }
 
@@ -386,3 +396,13 @@ img.real-cover.img-missing{ opacity:0; }
 .pal-ni .daughter-banner{ color:var(--ni-ink); border-color:rgba(0,0,0,.15); }
 
 .placeholder-flag{ display:inline-block; font-family:Arial,sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#e0a; background:rgba(224,0,170,.12); border:1px solid rgba(224,0,170,.3); padding:3px 8px; border-radius:2px; margin-bottom:14px; }
+
+/* "Under construction" button treatment — added 2026-07-30 per Matt: every button that currently
+   routes to #page-comingsoon (because the real destination — Amazon ASIN, Kit product, etc. —
+   isn't ready yet) gets this same pure-black/white look sitewide, overriding whatever book-accent
+   color it would otherwise use. Signals "not live yet" consistently no matter which book's page
+   it's on. Applied via a .btn-coming-soon class added alongside each button's existing class(es);
+   !important is needed because several of these buttons also carry an inline style="" with a
+   book-specific color that would otherwise win. */
+.btn-coming-soon{ background:#000 !important; border-color:#000 !important; color:#fff !important; }
+.btn-coming-soon:hover{ background:#000 !important; border-color:#000 !important; color:#fff !important; opacity:.82; }

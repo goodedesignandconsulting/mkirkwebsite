@@ -10,7 +10,8 @@
 </head>
 <body>
 <section class="page" id="page-balance">
-<style>
+  <div class="page-tag">PAGE: <b>mkirk-balance.html</b> — REAL content &amp; design, uploaded by Matt. <b style="color:#c33;">⚠ SOURCE FILE WAS TRUNCATED on upload (cut off mid-script) — this page's trailing JS/interactivity is incomplete. Please re-upload the complete file.</b></div>
+  <style>
 
 .real-balance * {box-sizing:border-box;margin:0;padding:0;}
 
@@ -309,6 +310,19 @@
 .real-balance .bal-cover-img:hover {
   transform:rotate(-1.5deg) scale(1.03);
   box-shadow:22px 32px 90px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.1);
+}
+/* 2026-07-30: hover-to-reveal cover swap — red (cover_balance.png) is now the primary/current
+   cover per Matt, with the original blue (cover_balance2.png) revealed on hover. Both images sit
+   stacked in the same box; aspect-ratio is a standard 2:3 book-cover ratio since the real intrinsic
+   dimensions aren't confirmed — adjust if the real files come in at a different ratio. */
+.real-balance .bal-cover-swap { position:relative; aspect-ratio:2/3; }
+.real-balance .bal-cover-swap .bal-cover-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.real-balance .bal-cover-swap .bal-cover-front { z-index:2; transition:opacity .35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+.real-balance .bal-cover-swap .bal-cover-back { z-index:1; }
+.real-balance .bal-cover-swap:hover .bal-cover-front { opacity:0; }
+.real-balance .bal-cover-note {
+  font-family:'Source Serif 4',serif; font-style:italic; font-size:12px;
+  color:rgba(26,18,8,.5); text-align:center; margin-top:14px; max-width:220px;
 }
 
 /* Hero text */
@@ -739,7 +753,9 @@
   background:rgba(13,27,42,.5);border:1px solid rgba(212,169,92,.2);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:6px;
+  overflow:hidden;
 }
+.real-balance .bal-author-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
 .real-balance .bal-avatar-mark {
   font-family:'Cormorant Garamond',serif;font-style:italic;
   font-size:28px;color:rgba(212,169,92,.35);letter-spacing:.04em;
@@ -879,9 +895,17 @@
 
   /* Hero — stack title on top, cover below */
 .real-balance .bal-hero-upper {flex-direction:column;align-items:flex-start;gap:32px;}
+.real-balance .bal-hero-text {width:100%;max-width:100%;}
 .real-balance .bal-cover {width:200px;align-self:center;}
 .real-balance .bal-cta-row {flex-direction:column;}
 .real-balance .bal-btn-primary, .real-balance .bal-btn-secondary {text-align:center;justify-content:center;}
+/* 2026-07-30: added per Matt's mobile audit — "Balance" title's clamp() had a 64px floor that
+   never actually kicked in below ~800px viewports (8vw stayed under 64px the whole way down), so
+   at real phone widths the title (all-caps, wide letter-spacing) was far wider than the screen and
+   forced the whole hero to overflow instead of wrapping. Fixed size + tighter tracking on mobile
+   instead of trying to tune the clamp lower. */
+.real-balance .bal-hero-title {font-size:44px;letter-spacing:.12em;}
+.real-balance .bal-hook {font-size:22px;}
 
   /* Characters */
 .real-balance .bal-char-grid {grid-template-columns:1fr;}
@@ -928,10 +952,10 @@
 
 <!-- ════════ MKIRK NAV ════════ -->
 <nav class="site-nav">
-  <a href="index.html" class="nav-mark">m kirk</a>
+  <a href="#page-home" class="nav-mark">m kirk</a>
   <div class="nav-links">
-    <a href="books.html" class="active">Books</a>
-    <a href="mkirk-about.html">About</a>
+    <a href="#page-books" class="active">Books</a>
+    <a href="#page-about">About</a>
     <a href="mailto:matt@thatsgoodedesign.com">Contact</a>
   </div>
 </nav>
@@ -953,16 +977,18 @@
     <p class="bal-hook a4">What if loving someone else didn't mean loving your partner less?</p>
     <div class="bal-cta-row a5">
       <a href="https://www.amazon.com/dp/B0GS75LMNX" target="_blank" class="bal-btn-primary is-amazon">Buy on Amazon</a>
-      <a href="review-balance.html" class="bal-btn-primary is-coral">Leave a Review</a>
+      <a href="#page-balance-review" class="bal-btn-primary is-coral">Leave a Review</a>
     </div>
   </div>
 
-  <!-- 2026-07-30: Matt confirmed cover_balance2.png is the original blue cover and wants it back as
-       primary everywhere (was cover_balance.png). He also wants cover_balance.png (the red version)
-       kept, not deleted — it's not wired into any page right now since there's no "alternate cover"
-       slot on the site yet. Flag if there's a specific spot you want it to show up. -->
+  <!-- 2026-07-30: reversed again per Matt — cover_balance.png (red) is now primary/current here,
+       with cover_balance2.png (the original blue) revealed on hover via .bal-cover-swap. -->
   <div class="bal-cover a1">
-    <img src="assets/cover_balance2.png" alt="Balance — a novel by m kirk" class="bal-cover-img" onerror="this.classList.add('img-missing')">
+    <div class="bal-cover-swap">
+      <img src="assets/cover_balance.png" alt="Balance — a novel by m kirk (current cover)" class="bal-cover-img bal-cover-front" onerror="this.classList.add('img-missing')">
+      <img src="assets/cover_balance2.png" alt="Balance — the original cover" class="bal-cover-img bal-cover-back" onerror="this.classList.add('img-missing')">
+    </div>
+    <p class="bal-cover-note">The updated cover — hover to see the original. (It got me into a little Amazon trouble. I loved it too much to let it go.)</p>
   </div>
 
   </div>
@@ -1000,7 +1026,7 @@
         <div class="bal-sequel-inline-label">What comes next</div>
         <h3 class="bal-sequel-inline-heading">Be part of the next book.</h3>
         <p class="bal-sequel-inline-text">Balance is the first of three. Books two and three are currently in outline form. Readers who join early get content nobody else sees — manuscript excerpts as each book moves from outline into draft, polls that genuinely shape the story, and first access when they release.</p>
-        <span class="placeholder-flag" style="display:inline-block;margin:2px 0 12px;">[Placeholder — titles/working names for books two and three not yet confirmed; update this section once they're named.]</span>
+        <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): [Placeholder — titles/working names for books two and three not yet confirmed; update this section once they're named.] -->
         <ul class="bal-sequel-inline-perks">
           <li>Exclusive excerpts as each book moves from outline to draft</li>
           <li>Reader polls — your vote influences the work</li>
@@ -1040,7 +1066,7 @@
 
         <div class="bal-aside-rule"></div>
         <a href="https://www.amazon.com/dp/B0GS75LMNX" target="_blank" class="bal-aside-btn is-amazon">Buy on Amazon</a>
-        <a href="review-balance.html" class="bal-aside-btn is-coral" style="margin-top:10px;">Leave a Review</a>
+        <a href="#page-balance-review" class="bal-aside-btn is-coral" style="margin-top:10px;">Leave a Review</a>
       </div>
     </div>
   </div>
@@ -1360,6 +1386,49 @@
     <button class="bal-carousel-btn" id="nextBtn" onclick="moveCarousel(1)">→</button>
   </div>
 </section>
+<script>
+  /* 2026-07-30: the review carousel markup/CSS was fully built but moveCarousel() was never
+     defined, so the arrows silently did nothing and it never auto-advanced. Wired here: dots are
+     generated from the real slide count, arrows + dots move by one slide (measuring actual slide
+     width so it stays correct across the 3-up/2-up/1-up responsive breakpoints), it loops, and it
+     auto-advances every 6s, pausing on hover so readers can actually read a card. */
+  (function(){
+    var track = document.getElementById('carouselTrack');
+    var dotsWrap = document.getElementById('carouselDots');
+    if (!track || !dotsWrap) return;
+    var slides = track.querySelectorAll('.bal-carousel-slide');
+    if (!slides.length) return;
+    var idx = 0, autoTimer = null;
+
+    slides.forEach(function(_, i){
+      var dot = document.createElement('button');
+      dot.className = 'bal-dot' + (i === 0 ? ' active' : '');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+      dot.onclick = function(){ goTo(i); restartAuto(); };
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('.bal-dot');
+
+    function update(){
+      var step = slides[0].getBoundingClientRect().width;
+      track.style.transform = 'translateX(-' + (idx * step) + 'px)';
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+    }
+    function goTo(i){ idx = (i + slides.length) % slides.length; update(); }
+    window.moveCarousel = function(dir){ goTo(idx + dir); restartAuto(); };
+    function startAuto(){ autoTimer = setInterval(function(){ goTo(idx + 1); }, 6000); }
+    function restartAuto(){ if (autoTimer) clearInterval(autoTimer); startAuto(); }
+
+    var wrap = document.getElementById('reviewCarousel');
+    wrap.addEventListener('mouseenter', function(){ if (autoTimer) clearInterval(autoTimer); });
+    wrap.addEventListener('mouseleave', startAuto);
+    window.addEventListener('resize', update);
+
+    update();
+    startAuto();
+  })();
+</script>
 
 <!-- AUTHOR NOTE — forest green accent interruption -->
 <section class="bal-section bal-author-note on-dark" style="--sec-label-color:var(--b-navy2);">
@@ -1367,7 +1436,7 @@
   <div class="bal-note-inner">
     <div>
       <div class="bal-author-avatar">
-        <div class="bal-avatar-mark">mk</div>
+        <div class="bal-avatar-mark"><img src="assets/card_brain_superheros.jpg" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
       </div>
     </div>
     <div class="bal-note-body">
@@ -1409,7 +1478,7 @@
 <footer>
   <div class="footer-inner">
     <div class="foot-logo-wrap">
-      <a href="index.html" class="foot-mark">m kirk</a>
+      <a href="#page-home" class="foot-mark">m kirk</a>
       <div class="foot-social">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         <a href="https://instagram.com/mkirkwrites" target="_blank">@mkirkwrites</a>
