@@ -66,7 +66,7 @@
 .real-home .feature-card { display: flex; flex-direction: column; box-shadow: 0 10px 34px rgba(0,0,0,0.4); overflow: hidden; }
 .real-home .feat-balance { background: var(--bal-navy); border-top: 4px solid var(--bal-gold); }
 .real-home .feat-clutch { background: #000000; border-top: 4px solid #B88F46; }
-.real-home .feat-wrath { background: var(--wr-black); border-top: 4px solid var(--wr-brnz); }
+.real-home .feat-wrath { background: #2A1F38; border-top: 4px solid var(--wr-brnz); } /* 2026-07-30: whole card purple per Matt — was only the .feat-body info panel below, cover slot and button row still showed the card's old black background. Same purple as .feat-body (#2A1F38, sampled from Matt's real Achilles marketing card) so it now reads as one consistent field top to bottom. */
 .real-home .feat-ft { background: #3A3835; border-top: 4px solid #B88F46; }
 
 .real-home .feat-cover-lg { width: 100%; aspect-ratio: 2/3; overflow: hidden; background: rgba(0,0,0,.3); position: relative; }
@@ -322,7 +322,7 @@
 .real-home .featured-book-btn-ghost { border:1px solid var(--feat-accent, var(--sage)); color: var(--feat-title-color,#fff); }
 .real-home .featured-book-btn-ghost:hover { background: rgba(255,255,255,.06); }
 /* Per-book accent presets — pick one by adding the matching class to .featured-book-inner */
-.real-home .featured-book-inner.feat-wrath   { --feat-bg:#33201A; --feat-border:rgba(139,107,61,.35); --feat-accent:#8B6B3D; --feat-title-color:#F2F0EC; }
+.real-home .featured-book-inner.feat-wrath   { --feat-bg:#38181B; --feat-border:rgba(139,107,61,.35); --feat-accent:#8B6B3D; --feat-title-color:#F2F0EC; }
 .real-home .featured-book-inner.feat-balance { --feat-bg:#0D1B2A; --feat-border:rgba(201,168,92,.35); --feat-accent:#C9A85C; --feat-title-color:#EDE9E2; }
 .real-home .featured-book-inner.feat-seven   { --feat-bg:#241A45; --feat-border:rgba(255,47,143,.3); --feat-accent:#FF2F8F; --feat-title-color:#F6EFE0; }
 .real-home .featured-book-inner.feat-clutch  { --feat-bg:#000000; --feat-border:rgba(184,143,70,.35); --feat-accent:#B88F46; --feat-title-color:#EDE5D6; }
@@ -493,7 +493,9 @@
         </div>
         <div class="feat-ctas">
           <a href="mkirk-clutch-waitlist.html" class="feat-btn feat-btn-primary">Join Pre-Sale Waitlist</a>
-          <a href="mkirk-clutch-review.html" class="feat-btn feat-btn-ghost">Leave a review</a>
+          <!-- 2026-07-30: "Leave a review" styled black/inactive per Matt, same treatment as
+               Wrath's equivalent card — nothing to review yet since Clutch hasn't published. -->
+          <a href="mkirk-clutch-review.html" class="feat-btn feat-btn-ghost btn-coming-soon">Leave a review</a>
           <a href="mkirk-clutch.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
@@ -511,7 +513,10 @@
         </div>
         <div class="feat-ctas">
           <a href="mkirk-coming-soon.html" class="feat-btn feat-btn-primary btn-coming-soon">Buy on Amazon</a>
-          <a href="mkirk-wrath-review.html" class="feat-btn feat-btn-ghost">Leave a review</a>
+          <!-- 2026-07-30: "Leave a review" styled black/inactive per Matt, same .btn-coming-soon
+               treatment as "Buy on Amazon" above — still routes to the real review page, this is
+               purely visual (nothing to review yet since Wrath hasn't published). -->
+          <a href="mkirk-wrath-review.html" class="feat-btn feat-btn-ghost btn-coming-soon">Leave a review</a>
           <a href="mkirk-wrath.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
