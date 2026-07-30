@@ -428,10 +428,12 @@
      ============================================================ -->
 <section class="featured-book">
   <div class="featured-book-inner feat-wrath">
-    <div class="cover-placeholder" style="aspect-ratio:2/3;border-color:#8B6B3D;margin:0;">
-      <span class="cp-flag" style="font-size:9px;">Placeholder cover</span>
-      <span class="cp-title" style="font-family:'GFS Didot',serif;font-weight:700;text-transform:uppercase;">Wrath</span>
-    </div>
+    <!-- 2026-07-30: this hero module was still showing the static text-only .cover-placeholder box
+         (WRATH / "Placeholder cover") even though cover_wrath.png has been wired in everywhere else
+         on the site for a while — this one spot was just never swapped over. Now uses the real cover
+         with the same graceful img-missing fallback as everywhere else, so if the file 404s it shows
+         a dashed placeholder box instead of a broken image icon. -->
+    <img class="real-cover" style="margin:0;" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.outerHTML='&lt;div class=&quot;cover-placeholder&quot; style=&quot;aspect-ratio:2/3;border-color:#8B6B3D;margin:0;&quot;&gt;&lt;span class=&quot;cp-flag&quot; style=&quot;font-size:9px;&quot;&gt;Placeholder cover&lt;/span&gt;&lt;span class=&quot;cp-title&quot; style=&quot;font-family:\'GFS Didot\',serif;font-weight:700;text-transform:uppercase;&quot;&gt;Wrath&lt;/span&gt;&lt;/div&gt;'">
     <div>
       <div class="featured-book-eyebrow">Featured — releasing October 1</div>
       <h2 class="featured-book-title" style="font-family:'GFS Didot',serif;font-weight:700;font-size:clamp(15px,3.6vw,34px);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap;">The Wrath of Archie Ellis</h2>
