@@ -310,7 +310,9 @@
   box-shadow: 0 14px 40px rgba(0,0,0,.35);
 }
 .real-home .featured-book-eyebrow { font-family:'Source Serif 4',Georgia,serif; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color: var(--feat-accent, var(--sage)); margin-bottom:10px; }
-.real-home .featured-book-cover { width:100%; box-shadow: 8px 12px 30px rgba(0,0,0,.5); }
+.real-home .featured-book-cover { width:100%; box-shadow: 8px 12px 30px rgba(0,0,0,.5); transform:rotate(-5deg); animation:featCoverFloat 5s ease-in-out infinite; }
+@keyframes featCoverFloat { 0%,100%{ transform:rotate(-5deg) translateY(0); } 50%{ transform:rotate(-5deg) translateY(-8px); } }
+@media (prefers-reduced-motion: reduce){ .real-home .featured-book-cover{ animation:none; } }
 .real-home .featured-book-title { line-height:1; margin-bottom:8px; color: var(--feat-title-color, #fff); }
 .real-home .featured-book-tagline { font-size:14px; line-height:1.6; color: rgba(255,255,255,.72); max-width:52ch; }
 .real-home .featured-book-status { display:inline-block; font-family:'Source Serif 4',Georgia,serif; font-size:10px; letter-spacing:.14em; text-transform:uppercase; padding:4px 11px; border-radius:2px; margin-top:12px; background: var(--feat-accent, var(--sage)); color:#14181C; }
@@ -320,7 +322,7 @@
 .real-home .featured-book-btn-ghost { border:1px solid var(--feat-accent, var(--sage)); color: var(--feat-title-color,#fff); }
 .real-home .featured-book-btn-ghost:hover { background: rgba(255,255,255,.06); }
 /* Per-book accent presets — pick one by adding the matching class to .featured-book-inner */
-.real-home .featured-book-inner.feat-wrath   { --feat-bg:#1A1714; --feat-border:rgba(139,107,61,.35); --feat-accent:#8B6B3D; --feat-title-color:#F2F0EC; }
+.real-home .featured-book-inner.feat-wrath   { --feat-bg:#33201A; --feat-border:rgba(139,107,61,.35); --feat-accent:#8B6B3D; --feat-title-color:#F2F0EC; }
 .real-home .featured-book-inner.feat-balance { --feat-bg:#0D1B2A; --feat-border:rgba(201,168,92,.35); --feat-accent:#C9A85C; --feat-title-color:#EDE9E2; }
 .real-home .featured-book-inner.feat-seven   { --feat-bg:#241A45; --feat-border:rgba(255,47,143,.3); --feat-accent:#FF2F8F; --feat-title-color:#F6EFE0; }
 .real-home .featured-book-inner.feat-clutch  { --feat-bg:#000000; --feat-border:rgba(184,143,70,.35); --feat-accent:#B88F46; --feat-title-color:#EDE5D6; }
@@ -433,7 +435,7 @@
          on the site for a while — this one spot was just never swapped over. Now uses the real cover
          with the same graceful img-missing fallback as everywhere else, so if the file 404s it shows
          a dashed placeholder box instead of a broken image icon. -->
-    <img class="real-cover" style="margin:0;" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.outerHTML='&lt;div class=&quot;cover-placeholder&quot; style=&quot;aspect-ratio:2/3;border-color:#8B6B3D;margin:0;&quot;&gt;&lt;span class=&quot;cp-flag&quot; style=&quot;font-size:9px;&quot;&gt;Placeholder cover&lt;/span&gt;&lt;span class=&quot;cp-title&quot; style=&quot;font-family:\'GFS Didot\',serif;font-weight:700;text-transform:uppercase;&quot;&gt;Wrath&lt;/span&gt;&lt;/div&gt;'">
+    <img class="real-cover featured-book-cover" style="margin:0;aspect-ratio:2/3;" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.outerHTML='&lt;div class=&quot;cover-placeholder&quot; style=&quot;aspect-ratio:2/3;border-color:#8B6B3D;margin:0;&quot;&gt;&lt;span class=&quot;cp-flag&quot; style=&quot;font-size:9px;&quot;&gt;Placeholder cover&lt;/span&gt;&lt;span class=&quot;cp-title&quot; style=&quot;font-family:\'GFS Didot\',serif;font-weight:700;text-transform:uppercase;&quot;&gt;Wrath&lt;/span&gt;&lt;/div&gt;'">
     <div>
       <div class="featured-book-eyebrow">Featured — releasing October 1</div>
       <h2 class="featured-book-title" style="font-family:'GFS Didot',serif;font-weight:700;font-size:clamp(15px,3.6vw,34px);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap;">The Wrath of Archie Ellis</h2>
