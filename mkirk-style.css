@@ -1,241 +1,388 @@
+/* =====================================================================
+   mkirk2.0 — SINGLE-DOCUMENT PROTOTYPE
+   Every site page lives here as its own <section class="page">, in the
+   order listed in the jump-nav panel at right. This is a REVIEW DOCUMENT,
+   not final production markup — once approved page by page, each
+   .page section gets split into its own standalone HTML file per the
+   existing one-file-per-page deploy pattern.
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   COVER ART / ASSET FILENAMES: every image falls back to a visible
+   placeholder box (see .cover-placeholder below, and the matching
+   .wr-pov-photo-ph / .wr-slide pattern on the Wrath page) per the agreed
+   Cover Art Policy whenever its real file 404s. 2026-07-30: Matt did a
+   full rename pass across every image asset to a consistent scheme
+   (cover_x.png, char_book_name.jpg/png, card_wrath_x.png, author_x.jpg)
+   and every <img src="assets/..."> sitewide was repointed to match —
+   superseding two earlier passes this same day that used older filenames
+   (some of which were themselves mid-rename at the time). Current mapping,
+   for reference: Balance→cover_balance2.png (the original blue cover —
+   Matt confirmed this after a follow-up; cover_balance.png is the red
+   redesign, intentionally kept in assets/ but not wired into any page —
+   see the comment by Balance's .bal-cover img), Clutch→clutch_cover.png,
+   Wrath→cover_warth.png (note: "warth," Matt's own spelling, used for both
+   the main cover and the ARC-page cover — the site previously had a
+   separate cover-wrath-arc.png but only one Wrath cover file exists under
+   the new scheme, so both now point at the same file), Seven→cover_seven.png,
+   Field Tested→cover_field.png, No Average Brain→cover_noAverage.png,
+   Noble Island→cover_noble.png, "Couldn't Have Been an Email"→cover_email.png,
+   the CLUTCH framework guides→create_cover.png/cover_voices.png/
+   cover_6c.png/cover_delegate.png, Balance's Four Voices→char_balance_
+   alex/ellie/jane/mark.jpg, Wrath's Ellis/Eck→char_wrath_ellis.png/
+   char_wrath_eck.png, the "m kirk" author photos→author_goode.jpg/
+   author_goode2.jpg, and Wrath's 10-image review carousel→card_wrath_*.png
+   (iliadOpening, andromache, achilles, shawstewart, sorley, dulce, gas,
+   leaves, owen) plus card_warth_eastWinds.png (was card_warth_owen.png —
+   Matt renamed it in a spelling-cleanup pass; note the "warth" spelling on
+   that one specifically is intentional, a different file from
+   card_wrath_owen.png, both real and distinct).
 
-:root {
-  --ink:      #14181C;
-  --ink2:     #0E1216;
-  --sage:     #5BA67C;
-  --sage-d:   #3D8A62;
-  --warm:     #EDE9E2;
-  --parch:    #EAE0D0;
-  --taupe:    #8A7060;
-  --bal-navy: #5C1928;
-  --bal-gold: #C9A85C;
-  --wr-black: #1A1714;
-  --wr-brnz:  #8B6B3D;
-  --wr-ivory: #F2F0EC;
+   COPY: Balance's Q&A content is real, taken from Matt's reference
+   screenshot. Every other book's Q&A / descriptive copy is placeholder
+   text in [brackets] — per the no-fabrication rule, nothing here should
+   be mistaken for approved marketing copy.
+
+   PALETTES: Balance, Clutch, Wrath, and Seven use their existing
+   documented palettes. Field Tested, No Average Brain, and Noble Island
+   have NO approved style guide yet — the colors used for them below are
+   placeholder assignments within their brand family (GDC for the two
+   Matt Goode titles, muted m kirk-adjacent for Noble Island), flagged
+   inline and awaiting Matt's real style guide.
+   ===================================================================== */
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Source Serif 4', serif; line-height:1.5; }
+img { max-width:100%; display:block; }
+a { color:inherit; }
+button { font:inherit; cursor:pointer; }
+
+:root{
+  /* ---- m kirk core palette ---- */
+  --ink:#14181C; --ink2:#0E1216; --warm:#EDE9E2; --parch:#EAE0D0;
+  --sage:#5BA67C; --sage-d:#3D8A62; --terra:#B85638; --terra-h:#D4704A; --taupe:#8A7060;
+  --gold:#C9A85C; --denim:#3D6E8A; --denim-d:#2E5570; --cream:#F2EDE3;
+
+  /* ---- GDC / Matt Goode palette ---- */
+  --gdc-charcoal:#3A3835; --gdc-cream:#EDE5D6; --gdc-gold:#B88F46;
+  --gdc-blue:#3766A2; --gdc-burgundy:#8D3E40; --gdc-teal:#3E9B75;
+
+  /* ---- per-book card palettes ---- */
+  --balance-bg:#0D1B2A;   --balance-accent:#C9A85C;
+  --wrath-bg:#1A1714;     --wrath-accent:#8B6B3D;  --wrath-title:#F2F0EC;
+  /* Seven — REAL, from Matt's uploaded cover style guide: "SEVEN: A Biography" (nonfiction — the secret
+     life of the number 7, not a person). Midnight Violet gradient ground, Hot Pink is a single-use accent
+     (never repeated on a composition), Nebula Purple for supporting marks, Signature Gold for the m kirk
+     byline set in Cormorant Garamond Italic. Title face is Lora Bold; subtitle/labels are Poppins Light. */
+  /* 2026-07-30: bg flipped to light lavender per Matt's note (many book pages are already dark) —
+     was --seven-bg:#241A45 / --seven-bg2:#0B0C1F (Midnight Violet gradient). Kept here for reference
+     in case Matt wants the dark version back. Hot Pink / Nebula Purple / Signature Gold accents kept
+     as-is — they read fine on the new light ground too. */
+  --seven-bg:#EDE4F8;     --seven-bg2:#F6F1FB;    --seven-accent:#FF2F8F;
+  --seven-label:#9637C3;  --seven-gold:#B8863E;   --seven-ink:#2E2340;
+  --clutch-bg:#000000;    --clutch-accent:#B88F46;
+
+  /* Field Tested — REAL, from Matt's uploaded Field Tested style guide. Design system is GDC's own base
+     palette (cream/charcoal/gold — matches --gdc-cream/--gdc-charcoal/--gdc-gold exactly), plus a 7-colour
+     category system for the method cards. Display type Montserrat 800, body Mulish, data/labels JetBrains Mono. */
+  --ft-bg:#3A3835;   --ft-accent:#B88F46;   --ft-cream:#EDE5D6;
+  --ft-cat-goal:#3E9B75; --ft-cat-idea:#B88F46; --ft-cat-problem:#8B2C3A; --ft-cat-strategy:#3766A2;
+  --ft-cat-decision:#3A3835; --ft-cat-reflect:#7A9E9F; --ft-cat-perspective:#C2AED1;
+
+  /* No Average Brain — REAL, from Matt's uploaded NAB style guide (working draft, sampled from one
+     confirmed carousel slide + author brief). Purple is the identity colour (same family as CLUTCH's 6C
+     purple); cream ground; the four-band "Spectrum Bar" (green/cyan/magenta/coral) is the book's signature
+     device. Headline face still open between Baloo 2 and Poppins ExtraBold — Baloo 2 used here as the lead
+     candidate per the guide's own recommendation (rounder, more consistent with the sampled slide, and
+     more on-thesis for a book about neuroinclusive design). */
+  /* 2026-07-30: bg flipped light per Matt's note ("many of my book pages already are dark") — was
+     --nab-bg:#28271F (dark) with cream text; now a light cream ground with dark ink text. Kept the
+     old dark value in a comment in case Matt wants it back: dark #28271F / text #F3EDE2. */
+  --nab-bg:#F6F0E4;  --nab-accent:#7B2D74;  --nab-ink:#2A241F;
+  --nab-spec-green:#00FF86; --nab-spec-cyan:#00DAF9; --nab-spec-magenta:#FF46C7; --nab-spec-coral:#FF6358;
+
+  /* Noble Island — placeholder, muted sage-adjacent. Still no style guide uploaded. 2026-07-30:
+     bg flipped to sand per Matt's note — was --ni-bg:#121915 (near-black). Kept for reference. */
+  --ni-bg:#E4D4B0;   --ni-accent:#5C7A66;   --ni-ink:#2B2318;
 }
 
-html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-body { background: var(--ink); color: var(--warm); font-family: 'Source Serif 4', Georgia, serif; }
-
-/* NAV */
-.nav { background: var(--ink); border-bottom: 1px solid rgba(220,220,230,0.25); position: sticky; top: 0; z-index: 100; }
-.nav-inner { max-width: 1200px; margin: 0 auto; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; }
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-text { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-style: italic; font-size: 48px; color: #C9A85C; letter-spacing: 0.04em; word-spacing: -0.1em; }
-.nav-links { display: flex; gap: 28px; }
-.nav-link { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; color: #B85638; letter-spacing: 0.04em; text-transform: none; text-decoration: none; transition: color 0.2s; }
-.nav-link:hover { color: #D4704A; }
-
-/* HERO — side by side, always */
-/* HERO — dual feature */
-.hero { background: var(--ink); padding: 56px 40px 64px; border-bottom: 1px solid rgba(91,166,124,0.12); }
-.hero-inner { max-width: 1200px; margin: 0 auto; }
-.hero-topline { max-width: 760px; margin-bottom: 44px; }
-.hero-quote { font-family: 'Lora', Georgia, serif; font-weight: 400; font-style: italic; font-size: clamp(28px,3.4vw,40px); line-height: 1.25; color: var(--warm); margin-bottom: 16px; }
-.qmark { color: var(--sage); font-size: 1.05em; line-height: 0; vertical-align: -0.18em; font-style: normal; }
-.qmark-close { margin-left: 2px; }
-.hero-context { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; color: rgba(237,233,226,0.62); line-height: 1.7; margin: 0; }
-.hero-cred { color: rgba(91,166,124,0.9); letter-spacing: 0.04em; }
-
-.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.feature-card { display: flex; flex-direction: column; padding: 26px 26px 24px; box-shadow: 0 10px 34px rgba(0,0,0,0.4); }
-.feat-balance { background: var(--bal-navy); border-top: 4px solid var(--bal-gold); }
-.feat-clutch { background: #000000; border-top: 4px solid #B88F46; }
-.feat-top { display: flex; gap: 22px; }
-.feat-cover { flex-shrink: 0; }
-.feat-cover img { display: block; width: 104px; height: auto; box-shadow: 8px 12px 30px rgba(0,0,0,0.5); }
-.feat-body { min-width: 0; }
-.feat-pill { display: inline-block; font-family: 'Source Serif 4', Georgia, serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 11px; border-radius: 2px; margin-bottom: 14px; }
-.feat-title { line-height: 1; margin-bottom: 10px; }
-.feat-desc { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; line-height: 1.6; margin: 0; }
-.feat-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; padding-top: 22px; }
-.feat-btn { display: block; width: 100%; box-sizing: border-box; font-family: 'Source Serif 4', Georgia, serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 11px 16px; text-align: center; white-space: nowrap; transition: background 0.2s, color 0.2s, border-color 0.2s; }
-
-.feat-balance .feat-pill { background: var(--bal-gold); color: var(--ink); }
-.feat-balance .feat-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: italic; font-size: 38px; color: var(--bal-gold); }
-.feat-balance .feat-desc { color: rgba(237,233,226,0.7); }
-.feat-balance .feat-btn-primary { background: var(--bal-gold); color: var(--ink); }
-.feat-balance .feat-btn-primary:hover { background: #d8b96a; }
-.feat-balance .feat-btn-ghost { border: 1px solid rgba(201,168,92,0.45); color: var(--bal-gold); }
-.feat-balance .feat-btn-ghost:hover { border-color: var(--bal-gold); background: rgba(201,168,92,0.08); }
-
-.feat-clutch .feat-pill { background: #B88F46; color: #1a1505; }
-.feat-clutch .feat-title { font-family: 'Exo 2', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.06em; color: #B88F46; }
-.feat-clutch .feat-desc { color: rgba(240,235,224,0.7); }
-.feat-clutch .feat-btn-primary { background: #B88F46; color: #1a1505; }
-.feat-clutch .feat-btn-primary:hover { background: #cda25a; }
-.feat-clutch .feat-btn-ghost { border: 1px solid rgba(184,143,70,0.45); color: #B88F46; }
-.feat-clutch .feat-btn-ghost:hover { border-color: #B88F46; background: rgba(184,143,70,0.08); }
-
-/* EMAIL */
-.email-section { background: var(--parch); padding: 68px 40px; }
-.email-inner { max-width: 520px; margin: 0 auto; text-align: center; }
-.email-h { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: 36px; color: var(--ink); line-height: 1.15; margin-bottom: 14px; }
-.email-sub { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; color: var(--taupe); line-height: 1.75; margin-bottom: 30px; }
-.email-note { margin-top: 12px; font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; color: rgba(20,24,28,0.45); font-style: italic; }
-
-/* Kit form overrides */
-.seva-form.formkit-form { max-width: 400px; margin: 0 auto; }
-.seva-form .seva-fields.formkit-fields { flex-wrap: nowrap !important; margin: 0 !important; gap: 0; }
-.seva-form .formkit-field { flex: 1 1 auto !important; margin: 0 !important; }
-.seva-form .formkit-field .formkit-input {
-  width: 100%; height: 46px; padding: 13px 15px;
-  font-family: 'Source Serif 4', Georgia, serif; font-size: 13px;
-  border: 1px solid rgba(20,24,28,0.2) !important; border-right: none !important;
-  border-radius: 0 !important; background: #F0EBE2 !important;
-  color: var(--ink) !important; outline: none; box-sizing: border-box;
+/* ---------- Internal review chrome (not part of production output) ---------- */
+.jump-nav{
+  position:fixed; top:0; right:0; width:240px; height:100vh; overflow-y:auto;
+  background:#fff; border-left:1px solid #ddd; z-index:1000;
+  font-family:Arial,sans-serif; font-size:12px; padding:18px 16px;
 }
-.seva-form .formkit-submit {
-  flex: 0 0 auto !important; width: auto !important; height: 46px;
-  margin: 0 !important; padding: 0 22px !important;
-  font-family: 'Source Serif 4', Georgia, serif !important; font-size: 12px !important;
-  letter-spacing: 0.1em !important; text-transform: uppercase !important;
-  background: var(--sage) !important; color: var(--ink) !important;
-  border: none !important; border-radius: 0 !important; cursor: pointer;
-  transition: background 0.2s; white-space: nowrap;
+.jump-nav h3{ font-size:13px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; color:#111; }
+.jump-nav h4{ font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#999; margin:16px 0 6px; }
+.jump-nav a{ display:block; padding:5px 0; color:#333; text-decoration:none; border-bottom:1px solid #f2f2f2; }
+.jump-nav a:hover{ color:#B85638; }
+body{ margin-right:240px; }
+@media (max-width:900px){ .jump-nav{position:static; width:auto; height:auto; margin-right:0; border-left:none; border-bottom:1px solid #ddd;} body{margin-right:0;} }
+
+.page{ position:relative; }
+.page-tag{
+  background:#1d1d1d; color:#9aa; font-family:'Courier New',monospace; font-size:11px;
+  padding:7px 20px; letter-spacing:.03em;
 }
-.seva-form .formkit-submit:hover { background: var(--sage-d) !important; }
-.formkit-form[data-uid="32f9f4ea8f"] .formkit-powered-by-convertkit-container { display: none !important; }
+.page-tag b{ color:#fff; }
 
-/* BOOKS */
-.books-section { 
-  background-color: #3D6E8A;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
-  padding: 76px 40px;
-  border-top: none;
+/* ---------- Shared: nav ---------- */
+.site-nav{ background:var(--ink2); border-bottom:1px solid rgba(220,220,230,.25); position:sticky; top:0; z-index:100; }
+.nav-inner{ max-width:1200px; margin:0 auto; padding:12px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.logo{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:40px; color:var(--gold); text-decoration:none; }
+.nav-links{ display:flex; gap:26px; list-style:none; flex-wrap:wrap; }
+.nav-links a{ font-family:'Source Serif 4',serif; font-size:16px; color:var(--terra); text-decoration:none; }
+.nav-links a:hover{ color:var(--terra-h); }
+
+/* ---------- Shared: footer ---------- */
+.site-footer{ background:var(--ink2); border-top:1px solid rgba(91,166,124,.12); padding:40px; }
+.footer-inner{ max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; gap:20px; }
+.footer-social{ color:#fff; font-family:'Source Serif 4'; font-size:15px; display:flex; align-items:center; gap:8px; text-decoration:none; }
+.footer-copy{ font-family:'Source Serif 4'; font-size:16px; color:var(--terra); }
+
+/* ---------- Shared: email/newsletter section ---------- */
+.email-section{ background:var(--parch); padding:64px 40px; text-align:center; }
+.email-heading{ font-family:'Fraunces',serif; font-weight:300; font-size:32px; color:var(--ink); margin-bottom:14px; }
+.email-sub{ max-width:600px; margin:0 auto 28px; color:var(--taupe); font-family:'Source Serif 4'; font-size:15px; line-height:1.65; }
+.email-form{ max-width:400px; margin:0 auto; display:flex; gap:0; }
+.email-form input{ flex:1; padding:13px 16px; border:1px solid rgba(0,0,0,.15); font-family:'Source Serif 4'; font-size:14px; }
+.btn-follow{ background:var(--sage); color:var(--ink); font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.08em; padding:14px 26px; border:none; white-space:nowrap; }
+.kit-note{ font-size:11px; color:var(--taupe); margin-top:10px; font-family:'Source Serif 4'; }
+
+/* ---------- Buttons (general) ---------- */
+.btn{ display:inline-block; padding:12px 26px; font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.08em; text-decoration:none; border:1px solid transparent; }
+.btn-gold{ background:var(--gold); color:var(--ink); }
+.btn-denim{ background:var(--denim); color:#fff; }
+.btn-sage{ background:var(--sage); color:var(--ink); }
+.btn-outline{ background:transparent; border-color:currentColor; color:var(--warm); }
+.btn-gdc-gold{ background:var(--gdc-gold); color:#1a1a1a; }
+.btn-gdc-blue{ background:var(--gdc-blue); color:#fff; }
+.btn-gdc-burgundy{ background:var(--gdc-burgundy); color:#fff; }
+.btn-terra{ background:var(--terra); color:#fff; }
+
+/* ---------- Cover placeholder ---------- */
+.cover-placeholder{
+  aspect-ratio:2/3; border:2px dashed rgba(255,255,255,.35); border-radius:2px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:20px; position:relative; background:rgba(255,255,255,.02);
 }
-.books-inner { max-width: 1200px; margin: 0 auto; }
-.section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 40px; }
-.section-title { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-style: italic; font-size: 30px; color: rgba(237,233,226,0.9); white-space: nowrap; }
-.section-rule { flex: 1; height: 1px; background: rgba(237,233,226,0.2); }
-.books-grid { display: grid; grid-template-columns: repeat(2, minmax(0,340px)); gap: 16px; justify-content: center; }
-.book-card { padding: 22px 18px; display: flex; flex-direction: column; text-decoration: none; transition: opacity 0.2s, box-shadow 0.2s; aspect-ratio: 1/1; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
-.book-card:hover { opacity: 0.95; box-shadow: 0 14px 40px rgba(0,0,0,0.5); transform: translateY(-2px); transition: opacity 0.2s, box-shadow 0.2s, transform 0.2s; }
-.card-tag { font-family: 'Source Serif 4', Georgia, serif; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; display: block; }
-.card-title { display: block; margin-bottom: 10px; line-height: 1.15; }
-.card-desc { font-family: 'Source Serif 4', Georgia, serif; font-size: 12px; line-height: 1.75; margin-bottom: 18px; display: block; flex: 1; }
-.card-link-arrow { display: inline-block; vertical-align: middle; margin-left: 6px; }
-.card-link { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; display: block; }
-
-.card-balance { background: var(--bal-navy); border-top: 4px solid var(--bal-gold); }
-.card-balance .card-tag { color: #C9A85C; letter-spacing: 0.14em; }
-.card-balance .card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 28px; letter-spacing: 0.2em; color: #C9A85C; text-transform: uppercase; }
-.card-balance .card-desc { color: rgba(237,233,226,0.82); }
-.card-balance .card-link-arrow { display: inline-block; vertical-align: middle; margin-left: 6px; }
-.card-link { color: var(--bal-gold); }
-
-.card-wrath { background: var(--wr-black); border-top: 4px solid var(--wr-brnz); }
-.card-wrath .card-tag { color: #A07840; letter-spacing: 0.14em; }
-.card-wrath .wrath-label { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C49A52; margin-bottom: 5px; display: block; }
-.card-wrath .card-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 22px; color: var(--wr-ivory); }
-.card-wrath .card-desc { color: rgba(242,240,236,0.82); }
-.card-wrath .card-link-arrow { display: inline-block; vertical-align: middle; margin-left: 6px; }
-.card-link { color: var(--wr-brnz); }
-
-.card-seven { background: #0f123f; border-top: 4px solid #8a2116; }
-.card-seven .card-tag { color: #C8960A; letter-spacing: 0.14em; }
-.card-seven .seven-label { font-family: 'Source Serif 4', Georgia, serif; font-size: 10px; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: #C8960A; display: block; margin-bottom: 4px; line-height: 1; }
-.card-seven .card-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 26px; letter-spacing: 0.18em; color: #ffffff; display: block; line-height: 1.15; text-transform: uppercase; }
-.card-seven .card-desc { color: rgba(237,233,226,0.82); }
-.card-seven .card-link-arrow { display: inline-block; vertical-align: middle; margin-left: 6px; }
-.card-link { color: #E8789A; }
-
-.card-clutch { background: #000000; border-top: 4px solid #B88F46; }
-.card-clutch .card-tag { color: #B88F46; letter-spacing: 0.14em; }
-.card-clutch .card-title { font-family: 'Exo 2', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.1em; color: #B88F46; }
-.card-clutch .card-desc { color: rgba(240,235,224,0.85); }
-.card-clutch .card-link-arrow { display: inline-block; vertical-align: middle; margin-left: 6px; }
-.card-link { color: #B88F46; }
-
-/* FOOTER */
-.footer { background: var(--ink2); border-top: 1px solid rgba(91,166,124,0.12); padding: 40px 40px; }
-.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-style: italic; font-size: 48px; color: #C9A85C; letter-spacing: 0.04em; word-spacing: -0.1em; margin-bottom: 8px; }
-.footer-social { font-family: 'Source Serif 4', Georgia, serif; font-size: 16px; color: #FFFFFF; display: flex; align-items: center; gap: 8px; }
-.footer-nav { display: flex; gap: 20px; flex-wrap: wrap; }
-.footer-nav a { font-family: 'Source Serif 4', Georgia, serif; font-size: 11px; color: #B85638; text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
-.footer-nav a:hover { color: #D4704A; }
-.footer-copy { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; color: #B85638; letter-spacing: 0.04em; }
-
-/* MOBILE — only stacks below 600px */
-@media (max-width: 1100px) {
-  .books-grid { grid-template-columns: repeat(2, 1fr); }
-  .book-card { min-height: 220px; }
+.cover-placeholder .cp-flag{
+  position:absolute; top:8px; left:8px; right:8px; font-family:Arial,sans-serif; font-size:9px;
+  text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.4);
 }
-@media (max-width: 600px) {
-  .hero { flex-direction: column; }
-  .hero { padding: 48px 24px 56px; }
-  .hero-right { width: 100%; padding: 48px 24px; }
-  .hero-quote { font-family: 'Lora', Georgia, serif; font-size: 36px; }
-  .feature-grid { grid-template-columns: 1fr; } .feat-cover img { width: 92px; }
-  .fern-neg { display: none; }
-  .nav-links { display: none; }
-  .strip-inner { flex-wrap: wrap; gap: 8px; }
-  .strip-link { margin-left: 0; }
-  .strip-text + .strip-link { margin-left: 0; }
-  .strip-text { font-size: 16px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-  .nav-inner, .strip, .strip-inner, .email-section, .books-section, .footer { padding-left: 24px; padding-right: 24px; }
-}
-@media (max-width: 540px) {
-  .books-grid { grid-template-columns: 1fr; }
-  .book-card { min-height: 0; }
-}
-#hero-carousel { transition: opacity 0.5s ease; }
-#hero-carousel.fading { opacity: 0; }
-.carousel-dots { display: flex; gap: 8px; margin-bottom: 4px; }
-.cdot { width: 6px; height: 6px; border-radius: 50%; background: rgba(91,166,124,0.3); cursor: pointer; transition: background 0.3s; border: none; padding: 0; }
-.cdot.active { background: rgba(91,166,124,0.85); }
+.cover-placeholder .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:rgba(255,255,255,.85); }
+.cover-placeholder .cp-sub{ font-family:'Source Serif 4'; font-size:11px; color:rgba(255,255,255,.4); margin-top:6px; }
 
-/* PROJECT FORMS SECTION */
-.email-projects { max-width: 960px; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid rgba(20,24,28,0.14); }
-.email-projects-divider { text-align: center; margin-bottom: 14px; }
-.email-projects-divider-text { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-style: italic; font-size: 24px; color: var(--ink); }
-.email-projects-note { text-align: center; font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; color: var(--taupe); line-height: 1.7; max-width: 480px; margin: 0 auto 36px; font-style: italic; }
-.email-projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.proj-card { padding: 22px 20px; border-top: 3px solid; }
-.proj-card.proj-balance { border-top-color: #C9A85C; background: rgba(201,168,92,0.05); }
-.proj-card.proj-wrath   { border-top-color: #8B6B3D; background: rgba(139,107,61,0.05); }
-.proj-card.proj-seven   { border-top-color: #C8960A; background: rgba(200,150,10,0.05); }
-.proj-card.proj-clutch  { border-top-color: #B88F46; background: rgba(184,143,70,0.05); }
-.proj-card-eyebrow { font-family: 'Source Serif 4', Georgia, serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); margin-bottom: 5px; }
-.proj-card-name { display: block; margin-bottom: 10px; line-height: 1.15; }
-/* Balance title */
-.proj-balance .proj-card-name { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 26px; letter-spacing: 0.2em; color: #C9A85C; text-transform: uppercase; }
-/* Wrath titles */
-.proj-wrath .proj-card-name-label { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C49A52; display: block; margin-bottom: 4px; }
-.proj-wrath .proj-card-name-main { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 22px; color: var(--ink); display: block; }
-/* Seven titles */
-.proj-seven .proj-card-name-label { font-family: 'Source Serif 4', Georgia, serif; font-size: 10px; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: #C8960A; display: block; margin-bottom: 4px; line-height: 1; }
-.proj-seven .proj-card-name-main { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 24px; letter-spacing: 0.18em; color: var(--ink); display: block; text-transform: uppercase; }
-/* CLUTCH title */
-.proj-clutch .proj-card-name { font-family: 'Exo 2', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.1em; color: #B88F46; }
-.proj-card-desc { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; color: var(--taupe); line-height: 1.65; margin-bottom: 16px; }
-/* Override max-width for project grid forms */
-.email-projects-grid .seva-form.formkit-form { max-width: 100%; }
-/* Book button colors */
-.proj-balance .seva-form .formkit-submit { background-color: #C9A85C !important; color: #14181C !important; }
-.proj-balance .seva-form .formkit-submit:hover { background-color: #b8943f !important; }
-.proj-wrath   .seva-form .formkit-submit { background-color: #8B6B3D !important; color: #F2F0EC !important; }
-.proj-wrath   .seva-form .formkit-submit:hover { background-color: #7a5c32 !important; }
-.proj-seven   .seva-form .formkit-submit { background-color: #C8960A !important; color: #14181C !important; }
-.proj-seven   .seva-form .formkit-submit:hover { background-color: #b08508 !important; }
-.proj-clutch  .seva-form .formkit-submit { background-color: #B88F46 !important; color: #14181C !important; }
-.proj-clutch  .seva-form .formkit-submit:hover { background-color: #a37d39 !important; }
-/* Attribution suppression for book forms */
-.formkit-form[data-uid="a3bad13994"] .formkit-powered-by-convertkit-container { display: none !important; }
-.formkit-form[data-uid="458c528d15"] .formkit-powered-by-convertkit-container { display: none !important; }
-.formkit-form[data-uid="66a2f1bb53"] .formkit-powered-by-convertkit-container { display: none !important; }
-.formkit-form[data-uid="a6fcc213e9"] .formkit-powered-by-convertkit-container { display: none !important; }
-@media (max-width: 700px) {
-  .email-projects-grid { grid-template-columns: 1fr; }
+/* Real cover art — shared treatment for any book-detail cover slot, added 2026-07-29 once Matt
+   started sending real cover files. Falls back visibly if a path 404s, same pattern as the
+   front-page feat-cover-lg fallback. */
+img.real-cover{ width:100%; aspect-ratio:2/3; object-fit:cover; display:block; border-radius:2px; box-shadow:0 20px 50px rgba(0,0,0,.5); background:rgba(0,0,0,.06); }
+/* opacity, not display:none — the latter pulls the <img> out of grid/flex flow entirely and can shift
+   sibling columns (found this the hard way on the Books catalog cards: a 404'd cover collapsed the
+   200px/1fr grid down to one column). Same fix pattern as .feat-cover-lg img.img-missing elsewhere. */
+img.real-cover.img-missing{ opacity:0; }
+
+/* ---------- Book detail page: sticky cover col + Q&A ---------- */
+.book-hero-status{ max-width:1200px; margin:0 auto; padding:36px 40px 0; }
+.status-tag{ font-family:'Source Serif 4'; font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--sage); }
+.book-detail{ display:grid; grid-template-columns:260px 1fr; gap:60px; max-width:1200px; margin:0 auto; padding:16px 40px 60px; }
+.book-cover-col{ position:sticky; top:88px; align-self:start; }
+.book-cover-col .btn{ display:block; text-align:center; margin-top:16px; }
+.book-cover-col .pub-line{ font-family:'Source Serif 4'; font-size:12px; color:rgba(255,255,255,.45); margin-top:10px; text-align:center; }
+.book-title{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:44px; letter-spacing:.02em; margin:6px 0 6px; }
+.book-kicker{ font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:rgba(255,255,255,.5); margin-bottom:24px; }
+/* Catalog-only genre label — added so the "m kirk" section on the Books page doesn't imply every
+   m kirk title is fiction (Seven isn't). Sits under the title, above the Q&A excerpt. */
+.catalog-card .book-genre{ font-family:'Source Serif 4'; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:rgba(0,0,0,.45); margin:-2px 0 14px; display:block; }
+.qa-list{ list-style:none; }
+.qa-item{ display:grid; grid-template-columns:24px 1fr; gap:16px; padding:22px 0; border-bottom:1px solid rgba(255,255,255,.08); }
+.qa-num{ font-family:'Source Serif 4'; font-size:12px; color:rgba(255,255,255,.35); }
+.qa-q{ font-family:'Source Serif 4'; font-style:italic; font-size:14px; margin-bottom:8px; }
+.qa-a{ font-family:'Source Serif 4'; font-weight:300; font-size:16px; line-height:1.7; color:var(--warm); }
+.qa-a em.ph{ font-style:normal; color:#b98; }
+@media(max-width:640px){ .book-detail{ grid-template-columns:1fr; } .book-cover-col{ position:static; max-width:220px; } }
+
+/* ---------- SHARED BOOK-PAGE STRUCTURE: About/POV/Author-note/Companion-callout ----------
+   Added 2026-07-30. Used by Field Tested, No Average Brain, Seven, Noble Island so all four
+   share one real structure/style per Matt's "general rule" note, instead of each page repeating
+   its own bespoke CSS block (Wrath got a bespoke wr- version earlier and is left as-is — this
+   is the shared system for the four that come after it). Each page sets --book-accent /
+   --book-panel / --book-border via a tiny scoped rule so the same classes adapt to that book's
+   palette (dark charcoal for Field Tested, light backgrounds for NAB/Seven/Noble Island). */
+.book-about{ max-width:1200px; margin:0 auto; padding:8px 40px 40px; }
+.book-about-label{ font-family:'Source Serif 4',serif; font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.6; margin-bottom:14px; }
+.book-about-inner{ display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start; }
+.book-prose p{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.8; margin-bottom:20px; opacity:.85; }
+.book-prose p:last-of-type{ margin-bottom:0; }
+.book-prose em{ font-style:italic; opacity:1; }
+.book-pullquote{ margin:26px 0; padding:20px 26px; background:var(--book-panel, rgba(255,255,255,.05)); border-left:2px solid var(--book-accent, currentColor); }
+.book-pullquote p{ font-style:italic; font-size:19px !important; line-height:1.6 !important; margin:0 !important; opacity:1 !important; }
+.book-comp-line{ font-style:italic; font-size:13px; opacity:.6; margin-top:18px; }
+.book-aside{ background:var(--book-panel, rgba(255,255,255,.04)); border:1px solid var(--book-border, rgba(255,255,255,.14)); padding:24px 22px; }
+.book-aside-head{ font-family:'Source Serif 4',serif; font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:14px; }
+.book-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.book-tag{ font-family:'Source Serif 4',serif; font-size:11px; opacity:.75; border:1px solid var(--book-border, rgba(255,255,255,.18)); padding:4px 10px; border-radius:1px; }
+.book-aside-rule{ height:1px; background:var(--book-border, rgba(255,255,255,.14)); margin:14px 0; }
+.book-aside-stat{ margin-bottom:10px; }
+.book-aside-stat-label{ font-family:'Source Serif 4',serif; font-size:9px; letter-spacing:.14em; text-transform:uppercase; opacity:.45; margin-bottom:2px; }
+.book-aside-stat-val{ font-family:'Source Serif 4',serif; font-size:13px; opacity:.9; }
+.book-aside-btn{ display:block; text-align:center; font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--book-accent, currentColor); padding:11px 16px; text-decoration:none; margin-top:10px; color:inherit; transition:opacity .2s; }
+.book-aside-btn:hover{ opacity:.7; }
+@media (max-width:900px){ .book-about-inner{ grid-template-columns:1fr; } }
+
+.book-pov{ max-width:1200px; margin:0 auto; padding:0 40px 48px; }
+.book-pov-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+.book-pov-card{ background:var(--book-panel, rgba(255,255,255,.04)); border:1px solid var(--book-border, rgba(255,255,255,.14)); border-top:3px solid var(--book-accent, currentColor); padding:24px 22px; position:relative; }
+.book-pov-role{ font-family:'Source Serif 4',serif; font-style:italic; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:8px; }
+.book-pov-name{ font-family:'Source Serif 4',serif; font-weight:700; font-size:20px; margin-bottom:10px; }
+.book-pov-desc{ font-family:'Source Serif 4',serif; font-size:13px; line-height:1.7; opacity:.75; }
+.book-pov-tag{ display:inline-block; margin-top:14px; font-family:'Source Serif 4',serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; opacity:.45; border:1px solid var(--book-border, rgba(255,255,255,.14)); padding:3px 8px; }
+
+.book-note{ padding:56px 40px; border-top:1px solid var(--book-border, rgba(255,255,255,.1)); border-bottom:1px solid var(--book-border, rgba(255,255,255,.1)); background:var(--book-panel, rgba(255,255,255,.02)); }
+.book-note-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:110px 1fr; gap:48px; align-items:start; }
+.book-note-avatar{ width:88px; height:88px; border-radius:50%; background:var(--book-panel2, rgba(255,255,255,.06)); border:1px solid var(--book-border, rgba(255,255,255,.18)); display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-style:italic; font-size:22px; color:var(--book-accent, currentColor); }
+.book-note-body p{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.8; opacity:.82; margin-bottom:18px; }
+.book-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:16px; opacity:.5; margin-top:16px; }
+@media (max-width:700px){ .book-note-inner{ grid-template-columns:1fr; } .book-note-avatar{ margin:0 auto; } }
+
+/* Companion/teacher-guide callout — raised-profile card, replaces the plain .daughter-banner
+   line when Matt asked to raise a companion product's visual profile (e.g. Field Tested's
+   Teacher Companion, "Couldn't Have Been an Email"). */
+.book-companion-wrap{ max-width:1200px; margin:0 auto 40px; padding:0 40px; }
+.book-companion-card{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:var(--book-panel, rgba(255,255,255,.05)); border:1px solid var(--book-border, rgba(255,255,255,.16)); border-left:4px solid var(--book-accent, currentColor); padding:26px 30px; text-decoration:none; color:inherit; transition:transform .2s; }
+.book-companion-card:hover{ transform:translateY(-2px); }
+.book-companion-card h3{ font-family:'Source Serif 4',serif; font-weight:700; font-size:18px; margin-bottom:6px; }
+.book-companion-card p{ font-family:'Source Serif 4',serif; font-size:13px; opacity:.7; max-width:44ch; margin:0; }
+.book-companion-link{ font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--book-accent, currentColor); white-space:nowrap; }
+
+/* Ebook "how to read" sidebar primer — added 2026-07-30 per Matt's note to include this on every
+   page that sells an ebook (native app / Kindle-import guidance). Small collapsible-feeling card,
+   reused verbatim across ebook purchase pages. */
+.ebook-howto{ background:var(--book-panel, rgba(255,255,255,.04)); border:1px solid var(--book-border, rgba(255,255,255,.16)); padding:20px 22px; max-width:340px; }
+.ebook-howto-head{ font-family:'Source Serif 4',serif; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:12px; }
+.ebook-howto ul{ list-style:none; margin:0; padding:0; }
+.ebook-howto li{ font-family:'Source Serif 4',serif; font-size:13px; line-height:1.6; opacity:.8; margin-bottom:12px; padding-left:16px; position:relative; }
+.ebook-howto li::before{ content:'—'; position:absolute; left:0; opacity:.5; }
+.ebook-howto li:last-child{ margin-bottom:0; }
+.ebook-howto strong{ opacity:1; }
+
+/* ---------- Daughter page banner ---------- */
+.daughter-flag{ max-width:1200px; margin:0 auto; padding:0 40px; }
+.daughter-banner{
+  display:flex; align-items:center; gap:14px; padding:16px 22px; margin:20px 0 0;
+  border:1px solid rgba(255,255,255,.15); border-left:4px solid var(--accent, var(--gold));
+  font-family:'Source Serif 4'; font-size:14px; color:var(--warm);
 }
+.daughter-banner a{ color:var(--gold); text-decoration:underline; }
 
-.strip-balance { font-family: 'Cormorant Garamond', Georgia, serif !important; font-weight: 700 !important; font-style: normal !important; text-transform: uppercase; color: #C9A85C !important; letter-spacing: 0.2em; font-size: 21px; }
+/* ---------- Cover gallery (Home) ---------- */
+.gallery-wrap{ max-width:1200px; margin:0 auto; padding:56px 40px 70px; }
+.gallery-group-label{ font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:24px; color:var(--gold); margin:36px 0 18px; padding-top:28px; border-top:1px solid rgba(255,255,255,.08); }
+.gallery-group-label:first-child{ border-top:none; margin-top:0; padding-top:0; }
+.gallery-group-sub{ font-family:'Source Serif 4'; font-size:13px; color:rgba(255,255,255,.4); margin-top:-12px; margin-bottom:20px; }
+.cover-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+@media(max-width:1100px){ .cover-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:540px){ .cover-grid{ grid-template-columns:1fr; } }
+.cover-gateway{ text-decoration:none; display:block; }
+.cover-gateway .cover-placeholder{ transition:transform .25s ease, border-color .25s ease; }
+.cover-gateway:hover .cover-placeholder{ transform:translateY(-4px); border-color:rgba(255,255,255,.6); }
+.cover-gateway .cg-title{ font-family:'Source Serif 4'; font-size:14px; color:var(--warm); margin-top:10px; text-align:center; }
+.cover-gateway .cg-status{ font-family:'Source Serif 4'; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--sage); text-align:center; margin-top:2px; }
 
-/* Kit project forms — side-by-side input+button fix */
-.formkit-form .formkit-fields{display:flex!important;flex-wrap:nowrap!important;gap:0!important;align-items:stretch!important;}
-.formkit-form .formkit-field{flex:1 1 auto!important;margin:0!important;}
-.formkit-form .formkit-submit{flex:0 0 auto!important;margin:0!important;}
+/* ---------- Q&A preview cards (Books catalog page) ---------- */
+.catalog-wrap{ max-width:1200px; margin:0 auto; padding:56px 40px 70px; background:var(--denim); }
+.catalog-card{ background:var(--cream); color:#222; display:grid; grid-template-columns:200px 1fr; gap:36px; padding:32px; margin-bottom:24px; border-radius:2px; }
+.catalog-card .book-title{ color:#1a1a1a; }
+.catalog-card .qa-a{ color:#333; }
+.catalog-card .qa-item{ border-bottom-color:rgba(0,0,0,.08); }
+@media(max-width:640px){ .catalog-card{ grid-template-columns:1fr; } }
+
+/* ---------- Dynamic content: carousel ---------- */
+.carousel-section{ padding:56px 40px; max-width:1200px; margin:0 auto; }
+.carousel-heading{ font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:26px; margin-bottom:22px; }
+.carousel-track{ display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; }
+.carousel-card{ min-width:300px; scroll-snap-align:start; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); padding:26px; border-radius:3px; }
+.carousel-card .quote{ font-family:'Lora',serif; font-style:italic; font-size:17px; line-height:1.6; margin-bottom:12px; }
+.carousel-card .attribution{ font-family:'Source Serif 4'; font-size:12px; color:rgba(255,255,255,.5); }
+.carousel-empty{ font-family:'Source Serif 4'; font-size:14px; color:rgba(255,255,255,.45); font-style:italic; border:1px dashed rgba(255,255,255,.2); padding:26px; }
+
+/* ---------- Generic section helpers ---------- */
+.section{ padding:60px 40px; max-width:1200px; margin:0 auto; }
+.section-narrow{ max-width:760px; }
+.h1{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:42px; margin-bottom:14px; }
+.h2{ font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:28px; margin-bottom:14px; }
+.lede{ font-family:'Source Serif 4'; font-weight:300; font-size:17px; line-height:1.7; color:var(--warm); margin-bottom:20px; }
+.card-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:26px; }
+@media(max-width:800px){ .card-row{ grid-template-columns:1fr; } }
+.follow-card{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); padding:24px; text-decoration:none; color:var(--warm); }
+.follow-card .fc-label{ font-family:'Source Serif 4'; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.5); }
+.follow-card .fc-name{ font-family:'Fraunces',serif; font-size:20px; margin-top:6px; }
+
+/* ---------- Reveal-on-scroll ---------- */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ---------- Palette utility classes ---------- */
+.pal-balance{ background:var(--balance-bg); color:var(--warm); }
+.pal-balance .status-tag,.pal-balance .book-title,.pal-balance .qa-q{ color:var(--balance-accent); }
+.pal-balance .book-title{ text-transform:uppercase; letter-spacing:.06em; }
+
+.pal-wrath{ background:var(--wrath-bg); color:var(--wrath-title); }
+.pal-wrath .status-tag,.pal-wrath .qa-q{ color:var(--wrath-accent); }
+.pal-wrath .book-title{ font-family:'GFS Didot',serif; font-weight:700; color:var(--wrath-title); text-transform:uppercase; letter-spacing:.02em; }
+.pal-wrath .book-kicker{ font-family:'GFS Didot',serif; font-weight:400; color:#C49A52; }
+
+.pal-seven{ background:linear-gradient(180deg,var(--seven-bg),var(--seven-bg2)); color:var(--seven-ink); }
+.pal-seven .status-tag,.pal-seven .qa-q{ color:var(--seven-label); }
+.pal-seven .book-title{ font-family:'Lora',serif; font-weight:700; letter-spacing:.03em; color:var(--seven-ink); }
+.pal-seven .book-kicker{ font-family:'Poppins',sans-serif; font-weight:300; letter-spacing:.14em; text-transform:uppercase; color:var(--seven-label); }
+.pal-seven .book-tagline{ font-family:'Lora',serif; font-style:italic; color:rgba(46,35,64,.75); }
+.pal-seven .byline-signature{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:700; color:var(--seven-gold); }
+.pal-seven .accent-rule{ background:var(--seven-accent); height:3px; width:56px; }
+/* Light-bg overrides for globally-dark-assuming classes reused on this page — added with the
+   2026-07-30 background flip above (same pattern as .pal-nab). */
+.pal-seven .lede,.pal-seven .h1,.pal-seven .qa-a{ color:var(--seven-ink); }
+.pal-seven .pub-line{ color:rgba(46,35,64,.5) !important; }
+.pal-seven .carousel-empty{ color:rgba(46,35,64,.45); border-color:rgba(46,35,64,.2); }
+.pal-seven .carousel-card{ background:rgba(0,0,0,.03); border-color:rgba(0,0,0,.1); }
+.pal-seven .carousel-card .attribution{ color:rgba(46,35,64,.5); }
+.pal-seven .daughter-banner{ color:var(--seven-ink); border-color:rgba(0,0,0,.15); }
+
+.pal-clutch{ background:var(--clutch-bg); color:var(--gdc-cream); }
+.pal-clutch .status-tag,.pal-clutch .qa-q{ color:var(--clutch-accent); }
+.pal-clutch .book-title{ font-family:'Exo 2',sans-serif; font-weight:800; letter-spacing:.06em; color:var(--clutch-accent); }
+
+.pal-ft{ background:var(--ft-bg); color:var(--ft-cream); }
+.pal-ft .status-tag,.pal-ft .qa-q{ color:var(--ft-accent); }
+.pal-ft .book-title{ font-family:'Montserrat',sans-serif; font-weight:800; color:#fff; }
+.pal-ft .book-kicker{ font-family:'Mulish',sans-serif; font-weight:600; color:var(--ft-accent); }
+
+.pal-nab{ background:var(--nab-bg); color:var(--nab-ink); }
+.pal-nab .status-tag,.pal-nab .qa-q{ color:var(--nab-accent); }
+.pal-nab .book-title{ font-family:'Baloo 2',sans-serif; font-weight:800; color:var(--nab-ink); }
+.pal-nab .book-title em,.pal-nab .book-title .emph{ font-style:normal; color:var(--nab-accent); }
+/* Light-bg overrides for globally-dark-assuming classes reused on this page — added with the
+   2026-07-30 background flip above. */
+.pal-nab .lede,.pal-nab .h1,.pal-nab .qa-a{ color:var(--nab-ink); }
+.pal-nab .pub-line{ color:rgba(42,36,31,.5) !important; }
+.pal-nab .carousel-empty{ color:rgba(42,36,31,.45); border-color:rgba(42,36,31,.2); }
+.pal-nab .carousel-card{ background:rgba(0,0,0,.03); border-color:rgba(0,0,0,.1); }
+.pal-nab .carousel-card .attribution{ color:rgba(42,36,31,.5); }
+.pal-nab .daughter-banner{ color:var(--nab-ink); border-color:rgba(0,0,0,.15); }
+.pal-nab .book-kicker{ font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--nab-accent); }
+.pal-nab .spectrum-bar{ height:5px; background:linear-gradient(90deg,var(--nab-spec-green),var(--nab-spec-cyan),var(--nab-spec-magenta),var(--nab-spec-coral)); }
+
+.pal-ni{ background:var(--ni-bg); color:var(--ni-ink); }
+.pal-ni .status-tag,.pal-ni .qa-q{ color:var(--ni-accent); }
+.pal-ni .book-title{ font-family:'Cormorant Garamond',serif; font-weight:700; font-style:italic; color:var(--ni-ink); }
+.pal-ni .book-kicker{ color:var(--ni-accent); }
+/* Light-bg overrides for globally-dark-assuming classes reused on this page — added with the
+   2026-07-30 background flip above (same pattern as .pal-nab / .pal-seven). */
+.pal-ni .lede,.pal-ni .h1,.pal-ni .qa-a{ color:var(--ni-ink); }
+.pal-ni .pub-line{ color:rgba(43,35,24,.5) !important; }
+.pal-ni .carousel-empty{ color:rgba(43,35,24,.45); border-color:rgba(43,35,24,.2); }
+.pal-ni .carousel-card{ background:rgba(0,0,0,.03); border-color:rgba(0,0,0,.1); }
+.pal-ni .carousel-card .attribution{ color:rgba(43,35,24,.5); }
+.pal-ni .daughter-banner{ color:var(--ni-ink); border-color:rgba(0,0,0,.15); }
+
+.placeholder-flag{ display:inline-block; font-family:Arial,sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#e0a; background:rgba(224,0,170,.12); border:1px solid rgba(224,0,170,.3); padding:3px 8px; border-radius:2px; margin-bottom:14px; }

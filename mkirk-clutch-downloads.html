@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resources & Downloads — CLUTCH — Matt Goode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
+</head>
+<body>
+<section class="page" id="page-clutch-downloads">
+<style>
+
+  .real-clutch-downloads {
+    --charcoal: #2D2C2E;
+    --charcoal-deep: #232224;
+    --charcoal-card: #28272A;
+    --cream: #EDE5D6;
+    --gold: #B88F46;
+    --gold-bright: #CBA45E;
+    --clr-create: #3E9B75;
+    --clr-voices: #3766A2;
+    --clr-6c: #7E4FA6;
+    --clr-delegate: #8D3E40;
+    --parchment: #C4B492;
+  }
+
+.real-clutch-downloads * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+  .real-clutch-downloads {
+    background: var(--charcoal);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+.real-clutch-downloads a { color: inherit; }
+.real-clutch-downloads img { display: block; max-width: 100%; }
+
+  /* ---------- Header ---------- */
+
+  .real-clutch-downloads .page-header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 88px 24px 56px;
+    text-align: center;
+  }
+
+  .real-clutch-downloads .eyebrow {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .real-clutch-downloads .page-header h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 5vw, 50px);
+    color: var(--cream);
+    margin-bottom: 18px;
+  }
+
+  .real-clutch-downloads .page-header p {
+    font-size: 16px;
+    color: rgba(237, 229, 214, 0.72);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Filters ---------- */
+
+  .real-clutch-downloads .filters {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+
+  .real-clutch-downloads .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .real-clutch-downloads .filter-row-label {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(237, 229, 214, 0.4);
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .real-clutch-downloads .filter-pill {
+    appearance: none;
+    background: transparent;
+    border: 1px solid rgba(237, 229, 214, 0.25);
+    color: rgba(237, 229, 214, 0.75);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+
+.real-clutch-downloads .filter-pill:hover { border-color: rgba(237, 229, 214, 0.5); color: var(--cream); }
+
+  .real-clutch-downloads .filter-pill.active {
+    background: var(--pill-color, var(--parchment));
+    border-color: var(--pill-color, var(--parchment));
+    color: var(--charcoal-deep);
+  }
+
+.real-clutch-downloads .filter-pill[data-framework="create"] { --pill-color: var(--clr-create); }
+.real-clutch-downloads .filter-pill[data-framework="voices"] { --pill-color: var(--clr-voices); }
+.real-clutch-downloads .filter-pill[data-framework="6c"] { --pill-color: var(--clr-6c); }
+.real-clutch-downloads .filter-pill[data-framework="delegate"] { --pill-color: var(--clr-delegate); }
+
+  /* ---------- Resource grid ---------- */
+
+.real-clutch-downloads .grid-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 32px; }
+
+  .real-clutch-downloads .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .real-clutch-downloads .resource-card {
+    background: var(--charcoal-card);
+    border-top: 3px solid var(--card-color);
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.2s ease;
+  }
+
+.real-clutch-downloads .resource-card[data-framework="create"] { --card-color: var(--clr-create); }
+.real-clutch-downloads .resource-card[data-framework="voices"] { --card-color: var(--clr-voices); }
+.real-clutch-downloads .resource-card[data-framework="6c"] { --card-color: var(--clr-6c); }
+.real-clutch-downloads .resource-card[data-framework="delegate"] { --card-color: var(--clr-delegate); }
+.real-clutch-downloads .resource-card[data-framework="general"] { --card-color: var(--parchment); }
+
+.real-clutch-downloads .resource-card.hidden { display: none; }
+
+  .real-clutch-downloads .tag-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .real-clutch-downloads .tag-chip {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+  }
+
+  .real-clutch-downloads .tag-chip.tag-framework {
+    border: 1px solid var(--card-color);
+    color: var(--card-color);
+  }
+
+  .real-clutch-downloads .tag-chip.tag-type {
+    border: 1px solid rgba(237, 229, 214, 0.35);
+    color: rgba(237, 229, 214, 0.65);
+  }
+
+  .real-clutch-downloads .resource-title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+
+  .real-clutch-downloads .resource-desc {
+    font-size: 13px;
+    color: rgba(237, 229, 214, 0.62);
+    margin-bottom: 22px;
+    flex-grow: 1;
+  }
+
+  .real-clutch-downloads .resource-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .real-clutch-downloads .resource-price {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(237, 229, 214, 0.45);
+  }
+
+  .real-clutch-downloads .resource-status {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(237, 229, 214, 0.4);
+    border: 1px solid rgba(237, 229, 214, 0.25);
+    padding: 9px 14px;
+  }
+
+  .real-clutch-downloads .resource-buy-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--charcoal-deep);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 16px;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+.real-clutch-downloads .resource-buy-btn:hover { background: var(--gold-bright); transform: translateY(-1px); }
+
+  .real-clutch-downloads .no-results {
+    text-align: center;
+    padding: 48px 24px;
+    color: rgba(237, 229, 214, 0.45);
+    font-size: 14px;
+    display: none;
+  }
+
+.real-clutch-downloads .no-results.visible { display: block; }
+
+  /* ---------- Notify section ---------- */
+
+  .real-clutch-downloads .notify-section {
+    max-width: 640px;
+    margin: 24px auto 0;
+    padding: 40px 32px;
+    background: var(--charcoal-deep);
+    border: 1px solid rgba(184, 143, 70, 0.3);
+    text-align: center;
+  }
+
+  .real-clutch-downloads .notify-section h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+
+  .real-clutch-downloads .notify-section p {
+    font-size: 14px;
+    color: rgba(237, 229, 214, 0.65);
+    margin-bottom: 22px;
+  }
+
+  .real-clutch-downloads .notify-form {
+    display: flex;
+    gap: 10px;
+    max-width: 380px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .real-clutch-downloads .notify-form input {
+    flex: 1;
+    min-width: 180px;
+    background: var(--charcoal);
+    border: 1px solid rgba(237, 229, 214, 0.25);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 13px 16px;
+  }
+
+.real-clutch-downloads .notify-form input::placeholder { color: rgba(237, 229, 214, 0.4); }
+
+  .real-clutch-downloads .notify-btn {
+    background: var(--gold);
+    color: var(--charcoal-deep);
+    border: none;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 13px 22px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+.real-clutch-downloads .notify-btn:hover { background: var(--gold-bright); }
+
+  /* ---------- Footer ---------- */
+
+  .real-clutch-downloads .page-footer {
+    max-width: 1080px;
+    margin: 64px auto 0;
+    padding: 32px 24px 56px;
+    border-top: 1px solid rgba(237, 229, 214, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .real-clutch-downloads .footer-mark {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+  }
+
+  .real-clutch-downloads .footer-copy {
+    font-size: 13px;
+    color: rgba(237, 229, 214, 0.55);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 860px) {
+.real-clutch-downloads .resource-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+.real-clutch-downloads .page-header { padding: 64px 20px 44px; }
+.real-clutch-downloads .resource-grid { grid-template-columns: 1fr; }
+.real-clutch-downloads .notify-form { flex-direction: column; }
+.real-clutch-downloads .notify-btn { width: 100%; }
+  }
+
+  </style>
+  <div class="real-clutch-downloads">
+
+
+<header class="page-header">
+  <div class="eyebrow">From the back of the book</div>
+  <h1>Put it to work.</h1>
+  <p>Coaching questions, facilitation guides, and discussion tools — one for each system in CLUTCH. Built to use with your team, not just read alone.</p>
+</header>
+
+<div class="filters">
+  <div class="filter-row" id="framework-filters">
+    <span class="filter-row-label">Framework</span>
+    <button class="filter-pill active" data-framework="all">All</button>
+    <button class="filter-pill" data-framework="create">CREATE</button>
+    <button class="filter-pill" data-framework="voices">VOICES</button>
+    <button class="filter-pill" data-framework="6c">6C Compass</button>
+    <button class="filter-pill" data-framework="delegate">DELEGATE</button>
+    <button class="filter-pill" data-framework="general">General</button>
+  </div>
+  <div class="filter-row" id="type-filters">
+    <span class="filter-row-label">Type</span>
+    <button class="filter-pill active" data-type="all">All</button>
+    <button class="filter-pill" data-type="coaching-questions">Coaching Questions</button>
+    <button class="filter-pill" data-type="facilitation-guide">Facilitation Guide</button>
+    <button class="filter-pill" data-type="discussion-guide">Discussion Guide</button>
+    <button class="filter-pill" data-type="worksheet">Worksheet</button>
+  </div>
+</div>
+
+<div class="grid-wrap">
+  <div class="resource-grid" id="resource-grid">
+
+    <div class="resource-card" data-framework="create" data-type="coaching-questions">
+      <div class="tag-row"><span class="tag-chip tag-framework">CREATE</span><span class="tag-chip tag-type">Coaching Questions</span></div>
+      <div class="resource-title">CREATE Coaching Questions</div>
+      <p class="resource-desc">Prompts for surfacing where each of the six cylinders is misfiring on your team.</p>
+      <div class="resource-footer">
+        <span class="resource-price">$1.99</span>
+        <!-- TODO: replace # with the live Kit product URL once this resource exists -->
+        <a class="resource-buy-btn" href="mkirk-coming-soon.html">Purchase &amp; Download</a>
+      </div>
+    </div>
+
+    <div class="resource-card" data-framework="voices" data-type="discussion-guide">
+      <div class="tag-row"><span class="tag-chip tag-framework">VOICES</span><span class="tag-chip tag-type">Discussion Guide</span></div>
+      <div class="resource-title">VOICES Discussion Guide</div>
+      <p class="resource-desc">A group discussion tool for identifying which of the six stances your team defaults to under pressure. Details coming soon.</p>
+      <div class="resource-footer">
+        <span class="resource-price">—</span>
+        <span class="resource-status">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="resource-card" data-framework="6c" data-type="facilitation-guide">
+      <div class="tag-row"><span class="tag-chip tag-framework">6C Compass</span><span class="tag-chip tag-type">Facilitation Guide</span></div>
+      <div class="resource-title">6C Compass Facilitation Guide</div>
+      <p class="resource-desc">A step-by-step guide for running a team session on who decides, how, and when. Details coming soon.</p>
+      <div class="resource-footer">
+        <span class="resource-price">—</span>
+        <span class="resource-status">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="resource-card" data-framework="delegate" data-type="worksheet">
+      <div class="tag-row"><span class="tag-chip tag-framework">DELEGATE</span><span class="tag-chip tag-type">Worksheet</span></div>
+      <div class="resource-title">DELEGATE Handoff Worksheet</div>
+      <p class="resource-desc">A working template for running the eight elements of a real handoff, start to finish. Details coming soon.</p>
+      <div class="resource-footer">
+        <span class="resource-price">—</span>
+        <span class="resource-status">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="resource-card" data-framework="general" data-type="coaching-questions">
+      <div class="tag-row"><span class="tag-chip tag-framework">General</span><span class="tag-chip tag-type">Coaching Questions</span></div>
+      <div class="resource-title">EQ Check-In Questions</div>
+      <p class="resource-desc">Cross-framework prompts for the pause between stimulus and response. Details coming soon.</p>
+      <div class="resource-footer">
+        <span class="resource-price">—</span>
+        <span class="resource-status">Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="no-results" id="no-results">Nothing matches that combination yet — try a different filter.</p>
+</div>
+
+<div class="grid-wrap">
+  <div class="notify-section">
+    <h3>Resources are still in progress</h3>
+    <p>Leave your email and we'll let you know the moment new coaching questions, guides, and worksheets go live.</p>
+    <!-- TODO: replace this placeholder form with the real Kit HTML embed (ck.5.js + form element), per established pattern. Consider reusing the existing clutch_waitlist tag/form. -->
+    <form class="notify-form" onsubmit="return false;">
+      <input type="email" placeholder="you@email.com" required>
+      <button class="notify-btn" type="submit">Notify Me</button>
+    </form>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <div class="footer-mark">CLUTCH</div>
+  <div class="footer-copy">© Goode Design &amp; Consulting · All rights reserved</div>
+</footer>
+
+<script>
+  const frameworkButtons__real_clutch_downloads = document.querySelectorAll('#framework-filters .filter-pill');
+  const typeButtons__real_clutch_downloads = document.querySelectorAll('#type-filters .filter-pill');
+  const cards__real_clutch_downloads = document.querySelectorAll('.resource-card');
+  const noResults__real_clutch_downloads = document.getElementById('no-results');
+
+  let activeFramework__real_clutch_downloads = 'all';
+  let activeType__real_clutch_downloads = 'all';
+
+  function applyFilters__real_clutch_downloads() {
+    let visibleCount__real_clutch_downloads = 0;
+    cards__real_clutch_downloads.forEach(card => {
+      const matchesFramework__real_clutch_downloads = activeFramework__real_clutch_downloads === 'all' || card.dataset.framework === activeFramework__real_clutch_downloads;
+      const matchesType__real_clutch_downloads = activeType__real_clutch_downloads === 'all' || card.dataset.type === activeType__real_clutch_downloads;
+      const show__real_clutch_downloads = matchesFramework__real_clutch_downloads && matchesType__real_clutch_downloads;
+      card.classList.toggle('hidden', !show__real_clutch_downloads);
+      if (show__real_clutch_downloads) visibleCount__real_clutch_downloads++;
+    });
+    noResults__real_clutch_downloads.classList.toggle('visible', visibleCount__real_clutch_downloads === 0);
+  }
+
+  frameworkButtons__real_clutch_downloads.forEach(btn => {
+    btn.addEventListener('click', () => {
+      frameworkButtons__real_clutch_downloads.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFramework__real_clutch_downloads = btn.dataset.framework;
+      applyFilters__real_clutch_downloads();
+    });
+  });
+
+  typeButtons__real_clutch_downloads.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeButtons__real_clutch_downloads.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeType__real_clutch_downloads = btn.dataset.type;
+      applyFilters__real_clutch_downloads();
+    });
+  });
+</script>
+
+
+  </div>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+</body>
+</html>

@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Request an advance reader copy of The Wrath of Archie Ellis by m kirk — a novel of Ypres, 1917, releasing October 1.">
-<meta property="og:title" content="Advance Reader Copies — The Wrath of Archie Ellis · m kirk">
-<meta property="og:description" content="A structural retelling of the Iliad at Ypres, 1917. Releasing October 1. Request an ARC and read it early.">
-<meta property="og:type" content="website">
-<title>Advance Reader Copies — The Wrath of Archie Ellis · m kirk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request an ARC — The Wrath of Archie Ellis — m kirk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
+</head>
+<body>
+<section class="page" id="page-wrath-arc">
 <style>
-:root {
+
+.real-wrath-arc {
   --bronze:    #8B6B3D;
   --bronze-lt: #C49A52;
   --ink:       #1A1714;
@@ -23,9 +23,8 @@
   --border:    rgba(139,107,61,0.28);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
+.real-wrath-arc *, .real-wrath-arc *::before, .real-wrath-arc *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.real-wrath-arc {
   background: var(--ink);
   color: var(--ivory);
   font-family: 'Source Serif 4', serif;
@@ -35,24 +34,24 @@ body {
 }
 
 /* ─── NAV (mkirkwrites brand standard) ─── */
-.nav { background: #0E1216; border-bottom: 1px solid rgba(220,220,230,0.25); position: sticky; top: 0; z-index: 100; }
-.nav-inner { max-width: 1200px; margin: 0 auto; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; }
-.logo { display: flex; align-items: center; text-decoration: none; }
-.logo-text { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-style: italic; font-size: 48px; color: #C9A85C; letter-spacing: 0.04em; word-spacing: -0.1em; }
-.nav-links { display: flex; gap: 28px; }
-.nav-link { font-family: "Source Serif 4", Georgia, serif; font-size: 18px; color: #B85638; text-decoration: none; transition: color 0.2s; }
-.nav-link:hover { color: #D4704A; }
+.real-wrath-arc .nav { background: #0E1216; border-bottom: 1px solid rgba(220,220,230,0.25); position: sticky; top: 0; z-index: 100; }
+.real-wrath-arc .nav-inner { max-width: 1200px; margin: 0 auto; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; }
+.real-wrath-arc .logo { display: flex; align-items: center; text-decoration: none; }
+.real-wrath-arc .logo-text { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-style: italic; font-size: 48px; color: #C9A85C; letter-spacing: 0.04em; word-spacing: -0.1em; }
+.real-wrath-arc .nav-links { display: flex; gap: 28px; }
+.real-wrath-arc .nav-link { font-family: "Source Serif 4", Georgia, serif; font-size: 18px; color: #B85638; text-decoration: none; transition: color 0.2s; }
+.real-wrath-arc .nav-link:hover { color: #D4704A; }
 
 /* ─── HERO / OFFER ─── */
-.offer { max-width: 1080px; margin: 0 auto; padding: 72px 40px 64px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
-.offer-text { max-width: 540px; }
-.eyebrow { font-family: 'Source Serif 4', serif; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bronze-lt); margin-bottom: 18px; }
-.offer h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 38px; line-height: 1.2; color: var(--ivory-lt); letter-spacing: 0.005em; margin-bottom: 12px; }
-.subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 18px; color: var(--dim); letter-spacing: 0.01em; margin-bottom: 28px; }
-.offer p { font-size: 16px; color: var(--ivory); margin-bottom: 18px; }
-.offer p.lead { font-size: 17px; }
-.offer p strong { color: var(--bronze-lt); font-weight: 600; }
-.date-badge {
+.real-wrath-arc .offer { max-width: 1080px; margin: 0 auto; padding: 72px 40px 64px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.real-wrath-arc .offer-text { max-width: 540px; }
+.real-wrath-arc .eyebrow { font-family: 'Source Serif 4', serif; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bronze-lt); margin-bottom: 18px; }
+.real-wrath-arc .offer h1 { font-family: 'GFS Didot', serif; font-weight: 700; font-size: clamp(19px,6.5vw,34px); line-height: 1.2; color: var(--ivory-lt); letter-spacing: 0.005em; margin-bottom: 12px; text-transform: uppercase; white-space: nowrap; }
+.real-wrath-arc .subtitle { font-family: 'GFS Didot', serif; font-style: italic; font-weight: 400; font-size: 18px; color: var(--dim); letter-spacing: 0.01em; margin-bottom: 28px; }
+.real-wrath-arc .offer p { font-size: 16px; color: var(--ivory); margin-bottom: 18px; }
+.real-wrath-arc .offer p.lead { font-size: 17px; }
+.real-wrath-arc .offer p strong { color: var(--bronze-lt); font-weight: 600; }
+.real-wrath-arc .date-badge {
   display: inline-block;
   font-family: 'Source Serif 4', serif;
   font-size: 12px;
@@ -66,19 +65,19 @@ body {
 }
 
 /* ─── SIGNUP (Kit form 97f49e9459) ─── */
-.signup { margin-top: 30px; max-width: 460px; }
-.reassure { font-size: 12px; color: var(--dim); letter-spacing: 0.03em; margin-top: 14px; }
+.real-wrath-arc .signup { margin-top: 30px; max-width: 460px; }
+.real-wrath-arc .reassure { font-size: 12px; color: var(--dim); letter-spacing: 0.03em; margin-top: 14px; }
 
 /* Kit HTML-embed overrides — scoped to this form's UID.
    The embed ships its own <style> + inline styles, so !important is required. */
-.formkit-form[data-uid="97f49e9459"] { max-width: 100% !important; margin: 0 !important; background: transparent !important; }
-.formkit-form[data-uid="97f49e9459"] [data-style="clean"] { padding: 0 !important; width: 100% !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-powered-by-convertkit-container { display: none !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] { max-width: 100% !important; margin: 0 !important; background: transparent !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] [data-style="clean"] { padding: 0 !important; width: 100% !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-powered-by-convertkit-container { display: none !important; }
 
 /* Stacked layout: full-width field, auto-width button below */
-.formkit-form[data-uid="97f49e9459"] .formkit-fields { display: block !important; margin: 0 !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-field { flex: none !important; margin: 0 0 10px 0 !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-input {
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-fields { display: block !important; margin: 0 !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-field { flex: none !important; margin: 0 0 10px 0 !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-input {
   width: 100% !important;
   background-color: var(--ivory-lt) !important;
   color: var(--ink) !important;
@@ -88,7 +87,7 @@ body {
   font-size: 15px !important;
   padding: 13px 14px !important;
 }
-.formkit-form[data-uid="97f49e9459"] .formkit-submit {
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-submit {
   display: inline-block !important;
   width: auto !important;
   margin: 0 !important;
@@ -101,9 +100,9 @@ body {
   text-transform: uppercase !important;
   transition: background 0.2s, transform 0.15s !important;
 }
-.formkit-form[data-uid="97f49e9459"] .formkit-submit:hover { background-color: var(--bronze-lt) !important; transform: translateY(-1px) !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-submit > span { display: block !important; color: var(--ivory-lt) !important; padding: 14px 28px !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-alert {
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-submit:hover { background-color: var(--bronze-lt) !important; transform: translateY(-1px) !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-submit > span { display: block !important; color: var(--ivory-lt) !important; padding: 14px 28px !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-alert {
   font-family: 'Source Serif 4', serif !important;
   font-size: 13px !important;
   padding: 12px 14px !important;
@@ -112,48 +111,49 @@ body {
   list-style: none !important;
   width: 100% !important;
 }
-.formkit-form[data-uid="97f49e9459"] .formkit-alert:empty { display: none !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-alert-error { background: #fde8e2 !important; color: #8D3E40 !important; border: 1px solid #8D3E40 !important; }
-.formkit-form[data-uid="97f49e9459"] .formkit-alert-success { background: rgba(139,107,61,0.18) !important; color: var(--ivory-lt) !important; border: 1px solid var(--bronze-lt) !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-alert:empty { display: none !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-alert-error { background: #fde8e2 !important; color: #8D3E40 !important; border: 1px solid #8D3E40 !important; }
+.real-wrath-arc .formkit-form[data-uid="97f49e9459"] .formkit-alert-success { background: rgba(139,107,61,0.18) !important; color: var(--ivory-lt) !important; border: 1px solid var(--bronze-lt) !important; }
 
 /* ─── COVER ─── */
-.offer-cover { display: flex; justify-content: center; }
-.cover-img { width: 100%; max-width: 320px; height: auto; box-shadow: 0 24px 60px rgba(0,0,0,0.6); border-radius: 2px; }
+.real-wrath-arc .offer-cover { display: flex; justify-content: center; }
+.real-wrath-arc .cover-img { width: 100%; max-width: 320px; height: auto; box-shadow: 0 24px 60px rgba(0,0,0,0.6); border-radius: 2px; }
 
 /* ─── WHAT TO EXPECT BAND ─── */
-.inside { background: var(--ink-lt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 40px; text-align: center; }
-.inside p { font-size: 13px; letter-spacing: 0.03em; color: var(--dim); }
-.inside .comps { color: var(--bronze-lt); font-weight: 600; letter-spacing: 0.04em; }
+.real-wrath-arc .inside { background: var(--ink-lt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 40px; text-align: center; }
+.real-wrath-arc .inside p { font-size: 13px; letter-spacing: 0.03em; color: var(--dim); }
+.real-wrath-arc .inside .comps { color: var(--bronze-lt); font-weight: 600; letter-spacing: 0.04em; }
 
 /* ─── FOOTER (mkirkwrites brand standard) ─── */
-.footer { background: #0E1216; border-top: 1px solid rgba(91,166,124,0.12); padding: 40px; }
-.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.footer-logo { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-style: italic; font-size: 48px; color: #C9A85C; letter-spacing: 0.04em; word-spacing: -0.1em; text-decoration: none; display: inline-block; }
-.footer-social { font-family: "Source Serif 4", Georgia, serif; font-size: 16px; color: #FFFFFF; display: flex; align-items: center; gap: 8px; margin-top: 6px; }
-.footer-social a { color: #FFFFFF; text-decoration: none; }
-.footer-copy { font-family: "Source Serif 4", Georgia, serif; font-size: 18px; color: #B85638; }
+.real-wrath-arc .footer { background: #0E1216; border-top: 1px solid rgba(91,166,124,0.12); padding: 40px; }
+.real-wrath-arc .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.real-wrath-arc .footer-logo { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-style: italic; font-size: 48px; color: #C9A85C; letter-spacing: 0.04em; word-spacing: -0.1em; text-decoration: none; display: inline-block; }
+.real-wrath-arc .footer-social { font-family: "Source Serif 4", Georgia, serif; font-size: 16px; color: #FFFFFF; display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.real-wrath-arc .footer-social a { color: #FFFFFF; text-decoration: none; }
+.real-wrath-arc .footer-copy { font-family: "Source Serif 4", Georgia, serif; font-size: 18px; color: #B85638; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 880px) {
-  .offer { grid-template-columns: 1fr; gap: 40px; padding: 48px 28px 52px; }
-  .offer-cover { order: -1; }
-  .cover-img { max-width: 260px; }
-  .offer h1 { font-size: 30px; }
+.real-wrath-arc .offer { grid-template-columns: 1fr; gap: 40px; padding: 48px 28px 52px; }
+.real-wrath-arc .offer-cover { order: -1; }
+.real-wrath-arc .cover-img { max-width: 260px; }
+.real-wrath-arc .offer h1 { font-size: 30px; }
 }
 @media (max-width: 560px) {
-  .nav-inner { padding: 12px 24px; }
-  .logo-text, .footer-logo { font-size: 40px; }
+.real-wrath-arc .nav-inner { padding: 12px 24px; }
+.real-wrath-arc .logo-text, .real-wrath-arc .footer-logo { font-size: 40px; }
 }
-</style>
-</head>
-<body>
+
+  </style>
+  <div class="real-wrath-arc">
+
 
 <!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-    <a href="/" class="logo"><span class="logo-text">m kirk</span></a>
+    <a href="index.html" class="logo"><span class="logo-text">m kirk</span></a>
     <nav class="nav-links">
-      <a href="mkirk-books.html" class="nav-link">Books</a>
+      <a href="books.html" class="nav-link">Books</a>
       <a href="mkirk-about.html" class="nav-link">About</a>
       <a href="mailto:matt@thatsgoodedesign.com" class="nav-link">Contact</a>
     </nav>
@@ -198,7 +198,7 @@ body {
     </div>
 
     <div class="offer-cover">
-      <img src="assets/cover-wrath-arc.png" fetchpriority="high" loading="eager" alt="The Wrath of Archie Ellis — book cover" class="cover-img">
+      <img src="assets/cover_warth.png" fetchpriority="high" loading="eager" alt="The Wrath of Archie Ellis — book cover" class="cover-img" onerror="this.classList.add('img-missing')">
     </div>
   </section>
 
@@ -215,7 +215,7 @@ body {
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="/" class="footer-logo">m kirk</a>
+      <a href="index.html" class="footer-logo">m kirk</a>
       <p class="footer-social">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
@@ -229,5 +229,19 @@ body {
   </div>
 </footer>
 
+
+  </div>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
 </body>
 </html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eBooks — CLUTCH — Matt Goode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
+</head>
+<body>
+<section class="page" id="page-clutch-ebooks">
+<style>
+
+  .real-clutch-ebooks {
+    --charcoal: #2D2C2E;
+    --charcoal-deep: #232224;
+    --cream: #EDE5D6;
+    --gold: #B88F46;
+    --gold-bright: #CBA45E;
+
+    /* Per-framework theme colors */
+    --clr-create: #3E9B75;
+    --clr-voices: #3766A2;
+    --clr-6c: #7E4FA6;
+    --clr-delegate: #A8453F;
+  }
+
+.real-clutch-ebooks * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+  .real-clutch-ebooks {
+    background: var(--charcoal);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+.real-clutch-ebooks a { color: inherit; text-decoration: none; }
+
+.real-clutch-ebooks img { display: block; max-width: 100%; }
+
+  /* ---------- Header ---------- */
+
+  .real-clutch-ebooks .page-header {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 96px 24px 64px;
+    text-align: center;
+  }
+
+  .real-clutch-ebooks .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .real-clutch-ebooks .page-header h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: 0.01em;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+
+  .real-clutch-ebooks .page-header p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(237, 229, 214, 0.72);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Sections ---------- */
+
+  .real-clutch-ebooks .section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  .real-clutch-ebooks .section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .real-clutch-ebooks .section-label span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    white-space: nowrap;
+  }
+
+  .real-clutch-ebooks .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(184, 143, 70, 0.35);
+  }
+
+  /* ---------- Chapter grid ---------- */
+
+  .real-clutch-ebooks .chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .real-clutch-ebooks .chapter-card {
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 32px;
+  }
+
+  .real-clutch-ebooks .cover-accent {
+    height: 4px;
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
+.real-clutch-ebooks .accent-create { background: var(--clr-create); }
+.real-clutch-ebooks .accent-voices { background: var(--clr-voices); }
+.real-clutch-ebooks .accent-6c { background: var(--clr-6c); }
+.real-clutch-ebooks .accent-delegate { background: var(--clr-delegate); }
+
+  .real-clutch-ebooks .cover-link {
+    display: block;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .real-clutch-ebooks .cover-link img {
+    width: 100%;
+    aspect-ratio: 700 / 1088;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .real-clutch-ebooks .chapter-card:hover .cover-link {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 52px rgba(0, 0, 0, 0.55);
+  }
+
+  .real-clutch-ebooks .chapter-card:hover .cover-link img {
+    transform: scale(1.03);
+  }
+
+  .real-clutch-ebooks .chapter-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 16px;
+  }
+
+  .real-clutch-ebooks .chapter-price {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--cream);
+  }
+
+  .real-clutch-ebooks .buy-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--charcoal-deep);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 26px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .real-clutch-ebooks .buy-btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-1px);
+  }
+
+  .buy-btn:focus-visible,
+  .real-clutch-ebooks .cover-link:focus-visible {
+    outline: 2px solid var(--gold-bright);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Coming soon state ---------- */
+
+  .real-clutch-ebooks .cover-link.is-locked img {
+    opacity: 0.5;
+  }
+
+  .real-clutch-ebooks .chapter-card.is-coming-soon:hover .cover-link {
+    transform: none;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .real-clutch-ebooks .chapter-card.is-coming-soon:hover .cover-link img {
+    transform: none;
+  }
+
+  .real-clutch-ebooks .coming-soon-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(237, 229, 214, 0.55);
+    border: 1px solid rgba(237, 229, 214, 0.3);
+    padding: 13px 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .real-clutch-ebooks .format-note {
+    margin-top: 32px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(237, 229, 214, 0.55);
+    text-align: center;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .real-clutch-ebooks .format-note a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+.real-clutch-ebooks .format-note a:hover { color: var(--gold-bright); }
+
+  /* ---------- Full book CTA ---------- */
+
+  .real-clutch-ebooks .book-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    background: var(--charcoal-deep);
+    border: 1px solid rgba(184, 143, 70, 0.3);
+    padding: 40px 44px;
+  }
+
+  .real-clutch-ebooks .book-banner-text h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+
+  .real-clutch-ebooks .book-banner-text p {
+    font-size: 15px;
+    color: rgba(237, 229, 214, 0.68);
+    max-width: 480px;
+  }
+
+  .real-clutch-ebooks .book-banner-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .real-clutch-ebooks .book-available {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---------- Footer ---------- */
+
+  .real-clutch-ebooks .page-footer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 24px 56px;
+    border-top: 1px solid rgba(237, 229, 214, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .real-clutch-ebooks .footer-mark {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+  }
+
+  .real-clutch-ebooks .footer-copy {
+    font-size: 13px;
+    color: rgba(237, 229, 214, 0.55);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 980px) {
+    .real-clutch-ebooks .chapter-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 560px) {
+.real-clutch-ebooks .page-header { padding: 64px 20px 48px; }
+.real-clutch-ebooks .chapter-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+.real-clutch-ebooks .section { padding: 0 20px 72px; }
+  }
+
+  </style>
+  <div class="real-clutch-ebooks">
+
+
+<header class="page-header">
+  <div class="eyebrow">From CLUTCH</div>
+  <h1>Read a chapter first.</h1>
+  <p>Four standalone frameworks from CLUTCH — CREATE, VOICES, 6C Compass, and DELEGATE. Full chapters, real substance, delivered straight to your inbox.</p>
+</header>
+
+<section class="section" id="chapters">
+  <div class="section-label"><span>Chapters</span></div>
+
+  <div class="chapter-grid">
+
+    <div class="chapter-card" id="chapter-create">
+      <div class="cover-accent accent-create"></div>
+      <a class="cover-link" href="https://goode-design-consulting.kit.com/products/create_chapter" aria-label="Get the CREATE Framework chapter">
+        <img src="assets/create_cover.png" alt="CREATE — The Engine: Six Cylinders of Organizational Momentum, a CLUTCH framework guide by Matt Goode" onerror="this.classList.add('img-missing')">
+      </a>
+      <div class="chapter-meta">
+        <span class="chapter-price">$3.99</span>
+        <a class="buy-btn" href="https://goode-design-consulting.kit.com/products/create_chapter">Get It Now</a>
+      </div>
+    </div>
+
+    <div class="chapter-card" id="chapter-voices">
+      <div class="cover-accent accent-voices"></div>
+      <a class="cover-link" href="https://goode-design-consulting.kit.com/products/voices_chapter" aria-label="Get the VOICES Framework chapter">
+        <img src="assets/cover_voices.png" alt="VOICES — The Gearbox: Six Gears for Purposeful Presence, a CLUTCH framework guide by Matt Goode" onerror="this.classList.add('img-missing')">
+      </a>
+      <div class="chapter-meta">
+        <span class="chapter-price">$3.99</span>
+        <a class="buy-btn" href="https://goode-design-consulting.kit.com/products/voices_chapter">Get It Now</a>
+      </div>
+    </div>
+
+    <div class="chapter-card" id="chapter-6c">
+      <div class="cover-accent accent-6c"></div>
+      <a class="cover-link" href="https://goode-design-consulting.kit.com/products/6c_chapter" aria-label="Get the 6C Compass Framework chapter">
+        <img src="assets/cover_6c.png" alt="6C Compass — The Navigation System: Who Decides, How, and When, a CLUTCH framework guide by Matt Goode" onerror="this.classList.add('img-missing')">
+      </a>
+      <div class="chapter-meta">
+        <span class="chapter-price">$3.99</span>
+        <a class="buy-btn" href="https://goode-design-consulting.kit.com/products/6c_chapter">Get It Now</a>
+      </div>
+    </div>
+
+    <div class="chapter-card" id="chapter-delegate">
+      <div class="cover-accent accent-delegate"></div>
+      <a class="cover-link" href="https://goode-design-consulting.kit.com/products/delegate_chapter" aria-label="Get the DELEGATE Framework chapter">
+        <img src="assets/cover_delegate.png" alt="DELEGATE — The Handoff System: Eight Elements of Real Ownership, a CLUTCH framework guide by Matt Goode" onerror="this.classList.add('img-missing')">
+      </a>
+      <div class="chapter-meta">
+        <span class="chapter-price">$3.99</span>
+        <a class="buy-btn" href="https://goode-design-consulting.kit.com/products/delegate_chapter">Get It Now</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="format-note">Delivered as EPUB — opens directly in Apple Books, Kobo, Google Play Books, and most e-reader apps. Kindle doesn't open EPUB natively; use Amazon's free <a href="https://www.amazon.com/sendtokindle" target="_blank" rel="noopener">Send to Kindle</a> tool to add it to your Kindle library in one step.</p>
+</section>
+
+<section class="section" id="full-book">
+  <div class="section-label"><span>The Full Book</span></div>
+
+  <div class="book-banner">
+    <div class="book-banner-text">
+      <h3>CLUTCH: How Leaders Build Systems That Run Without Them</h3>
+      <p>All four frameworks plus EQ, the 6C Decision Compass, and the full DELEGATE handoff system — the complete leadership operating system, not just the sample chapters.</p>
+    </div>
+    <div class="book-banner-action">
+      <span class="book-available">Available September 1</span>
+      <!-- TODO: replace # with the live Amazon link once available -->
+      <a class="buy-btn" href="mkirk-coming-soon.html">Get the Book</a>
+    </div>
+  </div>
+</section>
+
+<!-- Future section: Workbooks -->
+<!-- <section class="section" id="workbooks">
+  <div class="section-label"><span>Workbooks</span></div>
+  <div class="chapter-grid"> ... </div>
+</section> -->
+
+<!-- Future section: Facilitator Resources -->
+<!-- <section class="section" id="facilitator-resources">
+  <div class="section-label"><span>Facilitator Resources</span></div>
+  <div class="chapter-grid"> ... </div>
+</section> -->
+
+<footer class="page-footer">
+  <div class="footer-mark">CLUTCH</div>
+  <div class="footer-copy">© Goode Design &amp; Consulting · All rights reserved</div>
+</footer>
+
+
+  </div>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+</body>
+</html>

@@ -2,26 +2,373 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — m kirk</title>
-<meta name="description" content="m kirk — author of Balance, The Wrath of Archie Ellis, The Magnificent Seven, and CLUTCH. Sociologist, educator, executive coach.">
-<meta property="og:title" content="About — m kirk">
-<meta property="og:description" content="m kirk writes about the gap between the life people build and the life they actually meant to live.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mkirkwrites.com/about">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Lora:ital,wght@1,400&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="mkirk-about.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
 </head>
 <body>
+<section class="page" id="page-about">
+<style>
+.real-about * {box-sizing:border-box;margin:0;padding:0;}
+
+.real-about {
+  /* Global backgrounds */
+  --ink:      #14181C;
+  --ink2:     #0E1216;
+  /* Text */
+  --warm:     #EDE9E2;
+  --parch:    #EAE0D0;
+  --taupe:    #8A7060;
+  /* Accent */
+  --sage:     #5BA67C;
+  --sage-d:   #3D8A62;
+  --denim:    #3D6E8A;
+  --terra:    #B85638;
+  /* Balance card */
+  --bal-navy: #0D1B2A;
+  --bal-gold: #C9A85C;
+  /* Wrath card */
+  --wr-black: #1A1714;
+  --wr-brnz:  #8B6B3D;
+  --wr-ivory: #F2F0EC;
+  /* Seven card */
+  --sv-navy:  #0f123f;
+  --sv-red:   #8a2116;
+  --sv-gold:  #C8960A;
+  --sv-pink:  #E8789A;
+  /* CLUTCH card */
+  --cl-black: #000000;
+  --cl-gold:  #B88F46;
+  /* Page-local */
+  --dim:      rgba(255,255,255,.38);
+  --rule:     rgba(255,255,255,.07);
+}
+
+.real-about {
+  background:var(--ink);
+  color:var(--warm);
+  font-family:'Source Serif 4',serif;
+  font-size:17px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+.real-about .nav {
+  background:#0E1216;
+  border-bottom:1px solid rgba(220,220,230,0.25);
+  position:sticky;top:0;z-index:100;
+}
+.real-about .nav-inner {
+  max-width:1200px;margin:0 auto;padding:12px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.real-about .logo {display:flex;align-items:center;gap:10px;text-decoration:none;}
+.real-about .logo-text {
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:400;font-style:italic;font-size:48px;
+  color:#C9A85C;letter-spacing:0.04em;word-spacing:-0.1em;
+}
+.real-about .nav-links {display:flex;gap:28px;}
+.real-about .nav-link {
+  font-family:'Source Serif 4',Georgia,serif;font-size:18px;
+  color:#B85638;text-decoration:none;transition:color .2s;
+}
+.real-about .nav-link:hover {color:#D4704A;}
+.real-about .nav-link.active {color:#D4704A;}
+
+/* ── HERO ── */
+.real-about .hero {
+  padding:100px 72px 80px;
+  border-bottom:1px solid var(--rule);
+  position:relative;overflow:hidden;
+}
+.real-about .hero::before {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 60% at 95% 10%,rgba(91,166,124,.07) 0,transparent 65%);
+  pointer-events:none;
+}
+.real-about .hero-eye {
+  font-family:'Source Serif 4',serif;font-style:italic;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sage);opacity:.7;margin-bottom:28px;
+}
+.real-about .hero-title {
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(52px,7vw,96px);line-height:.95;
+  color:var(--parch);letter-spacing:-.02em;
+  margin-bottom:40px;
+}
+.real-about .hero-rule {
+  width:48px;height:1px;
+  background:var(--sage);
+  margin-bottom:28px;
+}
+.real-about .hero-oneliner {
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);line-height:1.45;
+  color:rgba(237,233,226,.7);
+  max-width:660px;
+}
+
+/* ── MAIN BODY LAYOUT ── */
+.real-about .body-section {
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:72px;
+  padding:80px 72px;
+  border-bottom:1px solid var(--rule);
+}
+.real-about .body-left {}
+.real-about .photo-placeholder {
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(165deg,#2A3038 0%,#1C2228 50%,#14181C 100%);
+  border:1px solid rgba(91,166,124,.15);
+  border-radius:3px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;position:relative;overflow:hidden;
+}
+.real-about .photo-placeholder::before {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 60% at 50% 30%,rgba(91,166,124,.06) 0,transparent 70%);
+}
+.real-about .photo-icon {
+  width:56px;height:56px;border-radius:50%;
+  border:1px solid rgba(91,166,124,.25);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(91,166,124,.4);font-size:22px;
+}
+.real-about .photo-label {
+  font-family:'Source Serif 4',serif;font-style:italic;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.2);text-align:center;line-height:1.8;
+}
+.real-about .photo-note {
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(91,166,124,.3);margin-top:4px;
+  font-family:'Source Serif 4',serif;
+}
+
+.real-about .body-right {}
+.real-about .bio-label {
+  font-family:'Source Serif 4',serif;font-style:italic;font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:32px;display:flex;align-items:center;gap:16px;
+}
+.real-about .bio-label::after {content:'';flex:1;height:1px;background:rgba(91,166,124,.2);}
+
+.real-about .bio-long p {
+  font-size:17px;line-height:1.8;
+  color:rgba(237,233,226,.8);
+  margin-bottom:22px;
+}
+.real-about .bio-long p:last-child {margin-bottom:0;}
+.real-about .bio-long em {
+  font-family:'Fraunces',serif;font-style:italic;
+  color:rgba(237,233,226,.95);
+}
+
+/* ── PRESS KIT ── */
+.real-about .press-section {
+  background:var(--parch);
+  padding:80px 72px;
+  border-bottom:1px solid rgba(20,24,28,.12);
+}
+.real-about .press-inner {max-width:900px;}
+.real-about .press-heading {
+  font-family:'Fraunces',serif;font-weight:600;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:#5A7060;margin-bottom:40px;
+  display:flex;align-items:center;gap:16px;
+}
+.real-about .press-heading::after {content:'';flex:1;height:1px;background:rgba(20,24,28,.12);}
+
+.real-about .bio-card {
+  background:#fff;
+  border:1px solid rgba(20,24,28,.08);
+  border-radius:4px;
+  margin-bottom:24px;
+  overflow:hidden;
+}
+.real-about .bio-card-head {
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px 14px;
+  border-bottom:1px solid rgba(20,24,28,.06);
+  background:rgba(20,24,28,.02);
+}
+.real-about .bio-card-label {
+  font-family:'Source Serif 4',serif;font-style:italic;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:#5A7060;
+}
+.real-about .bio-card-meta {
+  font-family:'Source Serif 4',serif;font-size:12px;
+  color:rgba(20,24,28,.35);letter-spacing:.04em;
+}
+.real-about .copy-btn {
+  font-family:'Source Serif 4',serif;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:#5BA67C;background:none;border:1px solid rgba(91,166,124,.3);
+  border-radius:3px;padding:5px 14px;cursor:pointer;
+  transition:all .2s;
+}
+.real-about .copy-btn:hover {background:rgba(91,166,124,.08);border-color:var(--sage);}
+.real-about .copy-btn.copied {color:#3D8A62;border-color:rgba(61,138,98,.4);background:rgba(91,166,124,.06);}
+.real-about .bio-card-body {
+  padding:22px 24px;
+  font-family:'Source Serif 4',serif;font-size:15px;
+  line-height:1.8;color:rgba(20,24,28,.75);
+}
+.real-about .bio-card-body em {font-style:italic;}
+
+/* ── CURRENT WORK ── */
+.real-about .work-section {
+  padding:80px 72px;
+  border-bottom:1px solid var(--rule);
+}
+.real-about .work-heading {
+  font-family:'Source Serif 4',serif;font-style:italic;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:48px;
+  display:flex;align-items:center;gap:16px;
+}
+.real-about .work-heading::after {content:'';flex:1;height:1px;background:rgba(91,166,124,.2);}
+
+.real-about .work-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.real-about .work-card {
+  border:1px solid var(--rule);border-radius:3px;
+  padding:28px 28px 24px;
+  position:relative;overflow:hidden;
+  transition:border-color .2s;
+}
+.real-about .work-card:hover {border-color:rgba(91,166,124,.25);}
+.real-about .wc-status {
+  font-family:'Source Serif 4',serif;font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.real-about .status-out {color:var(--sage);}
+.real-about .status-progress {color:var(--denim);}
+.real-about .wc-title {
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:22px;line-height:1.2;
+  color:var(--parch);margin-bottom:12px;
+}
+.real-about .wc-desc {
+  font-family:'Source Serif 4',serif;font-size:13px;
+  line-height:1.7;color:rgba(237,233,226,.45);
+  margin-bottom:20px;
+}
+.real-about .wc-link {
+  font-family:'Source Serif 4',serif;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sage);text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:gap .2s;
+}
+.real-about .wc-link:hover {gap:12px;}
+.real-about .wc-link::after {content:'→';}
+
+/* ── EMAIL STRIP ── */
+.real-about .email-strip {
+  background:var(--parch);
+  padding:72px;
+  border-bottom:1px solid rgba(20,24,28,.12);
+  display:flex;
+  gap:80px;
+  align-items:center;
+}
+.real-about .email-left {flex:1;}
+.real-about .email-heading {
+  font-family:'Fraunces',serif;font-style:normal;font-weight:300;
+  font-size:36px;line-height:1.2;
+  color:var(--ink);margin-bottom:12px;
+}
+.real-about .email-sub {
+  font-size:14px;color:var(--taupe);
+  line-height:1.75;max-width:420px;
+}
+.real-about .email-form {
+  display:flex;gap:12px;flex-shrink:0;
+}
+.real-about .email-input {
+  font-family:'Source Serif 4',serif;font-size:14px;
+  background:rgba(255,255,255,.7);
+  border:1px solid rgba(20,24,28,.2);
+  border-radius:3px;
+  padding:13px 18px;color:var(--ink);
+  width:260px;outline:none;
+  transition:border-color .2s;
+}
+.real-about .email-input::placeholder {color:rgba(20,24,28,.35);}
+.real-about .email-input:focus {border-color:var(--sage);}
+.real-about .email-btn {
+  font-family:'Source Serif 4',serif;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  background:var(--sage);color:var(--ink);
+  border:none;border-radius:3px;
+  padding:13px 24px;cursor:pointer;
+  transition:background .2s;white-space:nowrap;
+}
+.real-about .email-btn:hover {background:var(--sage-d);}
+
+/* ── FOOTER ── */
+.real-about .footer {background:#0E1216;border-top:1px solid rgba(91,166,124,0.12);padding:40px 40px;}
+.footer-inner{max-width:1200px;margin:0 auto;
+              display:flex;justify-content:space-between;
+              align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:'Cormorant Garamond',Georgia,serif;
+             font-weight:400;font-style:italic;font-size:48px;
+             color:#C9A85C;letter-spacing:0.04em;word-spacing:-0.1em;margin-bottom:8px;}
+.footer-social{font-family:'Source Serif 4',Georgia,serif;
+               font-size:16px;color:#FFFFFF;
+               display:flex;align-items:center;gap:8px;}
+.real-about .footer-copy {font-family:'Source Serif 4',Georgia,serif;font-size:18px;color:#B85638;}
+
+/* ── FADE IN ── */
+@keyframes fadeUp__real-about{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.real-about .hero-eye {animation:fadeUp__real-about .5s ease both;}
+.real-about .hero-title {animation:fadeUp__real-about .6s .08s ease both;}
+.real-about .hero-rule {animation:fadeUp__real-about .5s .16s ease both;}
+.real-about .hero-oneliner {animation:fadeUp__real-about .6s .22s ease both;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+.real-about .nav-inner {padding:12px 24px;}
+.real-about .hero {padding:64px 24px 56px;}
+.real-about .body-section {grid-template-columns:1fr;gap:40px;padding:56px 24px;}
+.real-about .photo-placeholder {aspect-ratio:1/1;max-width:220px;}
+.real-about .press-section {padding:56px 24px;}
+.real-about .work-section {padding:56px 24px;}
+.real-about .work-grid {grid-template-columns:1fr;}
+.real-about .email-strip {flex-direction:column;gap:32px;padding:56px 24px;}
+.real-about .email-form {flex-direction:column;width:100%;}
+.real-about .email-input {width:100%;}
+.real-about .footer {padding:40px 24px;}
+.real-about .footer-inner {flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:600px){
+.real-about .nav-links {display:none;}
+}
+
+  </style>
+  <div class="real-about">
+
 
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="logo">
+    <a href="index.html" class="logo">
       <span class="logo-text">m kirk</span>
     </a>
     <nav class="nav-links">
-      <a href="mkirk-books.html" class="nav-link">Books</a>
+      <a href="books.html" class="nav-link">Books</a>
       <a href="mkirk-about.html" class="nav-link active">About</a>
       <a href="mailto:matt@thatsgoodedesign.com" class="nav-link">Contact</a>
     </nav>
@@ -42,7 +389,7 @@
 <section class="body-section">
   <div class="body-left">
     <div style="width:180px;height:180px;border-radius:50%;overflow:hidden;border:1px solid rgba(91,166,124,.15);">
-    <img src="assets/author-goode2.jpg" alt="m kirk" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;">
+    <img src="assets/author_goode2.jpg" alt="m kirk" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;" onerror="this.classList.add('img-missing')">
     </div>
   </div>
   <div class="body-right">
@@ -74,7 +421,7 @@
         <span class="bio-card-label">One-Liner</span>
         <div style="display:flex;align-items:center;gap:16px;">
           <span class="bio-card-meta">15–20 words · Press kits · Instagram bio · Query letters</span>
-          <button class="copy-btn" onclick="copyBio(this,'oneliner')">Copy</button>
+          <button class="copy-btn" onclick="copyBio__real_about(this,'oneliner')">Copy</button>
         </div>
       </div>
       <div class="bio-card-body" id="oneliner">
@@ -88,15 +435,16 @@
         <span class="bio-card-label">Short Bio</span>
         <div style="display:flex;align-items:center;gap:16px;">
           <span class="bio-card-meta">~175 words · Goodreads · Back-of-book · Media queries</span>
-          <button class="copy-btn" onclick="copyBio(this,'shortbio')">Copy</button>
+          <button class="copy-btn" onclick="copyBio__real_about(this,'shortbio')">Copy</button>
         </div>
       </div>
       <div class="bio-card-body" id="shortbio">
         m kirk writes about the gap between the life people build and the life they actually meant to live — not the dramatic gap, the gradual one.<br><br>
         His debut novel, <em>Balance</em> (2026), began as a promise to his wife. She asked for a romance novel. What arrived was more novel than romance: four voices, a CRISPR researcher in Boston, and a question about what love grows into. For readers of Taylor Jenkins Reid and Sally Rooney, with the emotional precision of Esther Perel.<br><br>
-        His second novel, <em>The Wrath of Archie Ellis</em>, retells the Iliad at Ypres, 1917, and is currently in progress and querying. A third project — <em>The Magnificent Seven</em>, a narrative nonfiction biography of the number seven in the tradition of Simon Winchester and Bill Bryson — is also underway.<br><br>
-        He studied sociology at the LSE, spent twenty years teaching, and worked in leadership at USAID. He leads Goode Design &amp; Consulting and is the author of <em>CLUTCH</em> (2026). He lives outside Baltimore with his family.
+        His second novel, <em>The Wrath of Archie Ellis</em>, retells the Iliad at Ypres, 1917, and is currently in progress and querying. A third project — <em>The Magnificent Seven</em>, a narrative nonfiction biography of the number seven in the tradition of Simon Winchester and Bill Bryson — is also underway. A fourth, <em>Noble Island</em> — magical realism — is in its earliest stages.<br><br>
+        He studied sociology at the LSE, spent twenty years teaching, and worked in leadership at USAID. He leads Goode Design &amp; Consulting and is the author of <em>CLUTCH</em> (2026), <em>Field Tested</em>, and <em>No Average Brain</em>. He lives outside Baltimore with his family.
       </div>
+      <span class="placeholder-flag" style="display:block;margin-top:10px;">[Draft addition — I added the Noble Island / Field Tested / No Average Brain mentions above so the bio doesn't fall out of date, but didn't invent any new descriptive copy for them. Use the bio content-generation prompt (in the separate prompts doc) to have this rewritten properly once you're ready, especially the Matt Goode sentence — three book titles stacked at the end reads a little listy.]</span>
     </div>
 
   </div>
@@ -126,7 +474,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="/" class="logo"><span class="footer-logo">m kirk</span></a>
+      <a href="index.html" class="logo"><span class="footer-logo">m kirk</span></a>
       <a href="https://instagram.com/mkirkwrites" class="footer-social" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
              xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
@@ -144,13 +492,13 @@
 </footer>
 
 <script>
-function copyBio(btn, id){
-  const el = document.getElementById(id);
-  // Get plain text, stripping HTML
-  const tmp = document.createElement('div');
-  tmp.innerHTML = el.innerHTML;
-  const text = tmp.innerText.replace(/\n\s*\n/g,'\n\n').trim();
-  navigator.clipboard.writeText(text).then(()=>{
+function copyBio__real_about(btn, id){
+  const el__real_about = document.getElementById(id);
+  // Get plain text__real_about, stripping HTML
+  const tmp__real_about = document.createElement('div');
+  tmp__real_about.innerHTML = el__real_about.innerHTML;
+  const text__real_about = tmp__real_about.innerText.replace(/\n\s*\n/g,'\n\n').trim();
+  navigator.clipboard.writeText(text__real_about).then(()=>{
     btn.textContent='Copied';
     btn.classList.add('copied');
     setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);
@@ -159,5 +507,19 @@ function copyBio(btn, id){
 </script>
 
 </main>
+
+  </div>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
 </body>
 </html>

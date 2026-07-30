@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — m kirk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
+</head>
+<body>
+<section class="page" id="page-contact" style="background:var(--ink);color:var(--warm);">
+<nav class="site-nav"><div class="nav-inner">
+    <a href="index.html" class="logo">m kirk</a>
+    <ul class="nav-links">
+      <li><a href="books.html">Books</a></li>
+      <li><a href="mkirk-about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div></nav>
+
+  <div class="section section-narrow reveal" style="padding-top:64px;padding-bottom:80px;">
+    <h1 class="h1" style="font-style:italic;font-weight:400;">Contact</h1>
+    <p class="lede">For press, rights, speaking, or anything else — reach out below.</p>
+    <form onsubmit="return false;" style="display:grid;gap:16px;max-width:480px;margin-top:24px;">
+      <input type="text" placeholder="Name" style="padding:14px 16px;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--warm);font-family:'Source Serif 4';">
+      <input type="email" placeholder="Email" style="padding:14px 16px;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--warm);font-family:'Source Serif 4';">
+      <textarea placeholder="Message" rows="5" style="padding:14px 16px;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--warm);font-family:'Source Serif 4';"></textarea>
+      <button class="btn btn-sage" style="justify-self:start;">Send</button>
+    </form>
+    <p class="kit-note" style="margin-top:20px;">mailto: matt@thatsgoodedesign.com</p>
+  </div>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <a href="index.html" class="logo" style="font-size:30px;">m kirk</a>
+    <a href="https://instagram.com/mkirkwrites" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram: @mkirkwrites">@mkirkwrites</a>
+    <span class="footer-copy">© m kirk · All rights reserved</span>
+  </div></footer>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+</body>
+</html>
