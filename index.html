@@ -167,7 +167,7 @@
 .real-home .section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 40px; }
 .real-home .section-title { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-style: italic; font-size: 30px; color: rgba(237,233,226,0.9); white-space: nowrap; }
 .real-home .section-rule { flex: 1; height: 1px; background: rgba(237,233,226,0.2); }
-.real-home .books-grid { display: grid; grid-template-columns: repeat(2, minmax(0,340px)); gap: 16px; justify-content: center; }
+.real-home .books-grid { display: grid; grid-template-columns: repeat(3, minmax(0,340px)); gap: 16px; justify-content: center; } /* 2026-07-30: 3-across per Matt (was fixed at 2, leaving Noble Island to wrap awkwardly onto its own row) */
 .real-home .book-card { position: relative; padding: 22px 18px; display: flex; flex-direction: column; text-decoration: none; transition: opacity 0.2s, box-shadow 0.2s; aspect-ratio: 1/1; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
 .real-home .book-card:hover { opacity: 0.95; box-shadow: 0 14px 40px rgba(0,0,0,0.5); transform: translateY(-2px); transition: opacity 0.2s, box-shadow 0.2s, transform 0.2s; }
 .real-home .card-tag { font-family: 'Source Serif 4', Georgia, serif; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; display: block; }
@@ -408,12 +408,12 @@
 <main>
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#page-home" class="logo">
+    <a href="index.html" class="logo">
 <span class="logo-text">m kirk</span>
     </a>
     <div class="nav-links">
-      <a href="#page-books" class="nav-link">Books</a>
-      <a href="#page-about" class="nav-link">About</a>
+      <a href="books.html" class="nav-link">Books</a>
+      <a href="mkirk-about.html" class="nav-link">About</a>
       <a href="mailto:matt@thatsgoodedesign.com" class="nav-link">Contact</a>
     </div>
   </div>
@@ -442,9 +442,9 @@
            Wrath review page. -->
     </div>
     <div class="featured-book-ctas">
-      <a href="#page-wrath-launch" class="featured-book-btn featured-book-btn-primary">Join Pre-Sale Waitlist</a>
-      <a href="#page-wrath-review" class="featured-book-btn featured-book-btn-ghost">Leave a review</a>
-      <a href="#page-wrath" class="featured-book-btn featured-book-btn-ghost">Learn more</a>
+      <a href="mkirk-wrath-launch.html" class="featured-book-btn featured-book-btn-primary">Join Pre-Sale Waitlist</a>
+      <a href="mkirk-wrath-review.html" class="featured-book-btn featured-book-btn-ghost">Leave a review</a>
+      <a href="mkirk-wrath.html" class="featured-book-btn featured-book-btn-ghost">Learn more</a>
     </div>
   </div>
 </section>
@@ -475,22 +475,22 @@
         </div>
         <div class="feat-ctas">
           <a href="https://www.amazon.com/dp/B0GS75LMNX" target="_blank" rel="noopener" class="feat-btn feat-btn-primary">Buy on Amazon</a>
-          <a href="#page-balance-review" class="feat-btn feat-btn-ghost">Leave a review</a>
-          <a href="#page-balance" class="feat-btn feat-btn-ghost">Learn more</a>
+          <a href="review-balance.html" class="feat-btn feat-btn-ghost">Leave a review</a>
+          <a href="mkirk-balance.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
 
       <div class="feature-card feat-clutch">
-        <div class="feat-cover-lg"><img src="assets/clutch-cover.png" alt="CLUTCH — by Matt Goode" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-cover-lg"><img src="assets/clutch_cover.png" alt="CLUTCH — by Matt Goode" onerror="this.classList.add('img-missing')"></div>
         <div class="feat-body">
           <span class="feat-pill">Pre-sale</span>
           <h2 class="feat-title">CLUTCH</h2>
           <p class="feat-desc">Leadership built to run without you in the room.</p>
         </div>
         <div class="feat-ctas">
-          <a href="#page-clutch-waitlist" class="feat-btn feat-btn-primary">Join Pre-Sale Waitlist</a>
-          <a href="#page-clutch-review" class="feat-btn feat-btn-ghost">Leave a review</a>
-          <a href="#page-clutch" class="feat-btn feat-btn-ghost">Learn more</a>
+          <a href="mkirk-clutch-waitlist.html" class="feat-btn feat-btn-primary">Join Pre-Sale Waitlist</a>
+          <a href="mkirk-clutch-review.html" class="feat-btn feat-btn-ghost">Leave a review</a>
+          <a href="mkirk-clutch.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
 
@@ -499,31 +499,31 @@
            placeholder-cover treatment as elsewhere on the site (clearly flagged), just scaled to fill
            the new larger cover slot. Buy button is still a placeholder link — no ASIN yet. -->
       <div class="feature-card feat-wrath">
-        <div class="feat-cover-lg"><img src="assets/cover-wrath.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-cover-lg"><img src="assets/cover_warth.png" alt="The Wrath of Archie Ellis — book cover" onerror="this.classList.add('img-missing')"></div>
         <div class="feat-body">
           <span class="feat-pill">Pre-sale · Oct 1</span>
           <h2 class="feat-title">The Wrath of Archie Ellis</h2>
           <p class="feat-desc">A structural retelling of the Iliad. Ypres, 1917.</p>
         </div>
         <div class="feat-ctas">
-          <a href="#page-comingsoon" class="feat-btn feat-btn-primary btn-coming-soon">Buy on Amazon</a>
-          <a href="#page-wrath-review" class="feat-btn feat-btn-ghost">Leave a review</a>
-          <a href="#page-wrath" class="feat-btn feat-btn-ghost">Learn more</a>
+          <a href="mkirk-coming-soon.html" class="feat-btn feat-btn-primary btn-coming-soon">Buy on Amazon</a>
+          <a href="mkirk-wrath-review.html" class="feat-btn feat-btn-ghost">Leave a review</a>
+          <a href="mkirk-wrath.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
 
       <!-- Moved up from "Also in progress" per Matt's 2026-07-29 direction, same as Wrath. No real
            cover art yet either — placeholder cover, clearly flagged. -->
       <div class="feature-card feat-ft">
-        <div class="feat-cover-lg"><img src="assets/cover-fieldtested.png" alt="Field Tested — book cover" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-cover-lg"><img src="assets/cover_field.png" alt="Field Tested — book cover" onerror="this.classList.add('img-missing')"></div>
         <div class="feat-body">
           <span class="feat-pill">Available now</span>
           <h2 class="feat-title">Field Tested</h2>
           <p class="feat-desc">The design system behind the Instructional Methods Resource Guide. Matt Goode.</p>
         </div>
         <div class="feat-ctas">
-          <a href="#page-fieldtested-storefront" class="feat-btn feat-btn-primary">Purchase ebook</a>
-          <a href="#page-fieldtested" class="feat-btn feat-btn-ghost">Learn more</a>
+          <a href="mkirk-fieldtested-purchase.html" class="feat-btn feat-btn-primary">Purchase ebook</a>
+          <a href="mkirk-fieldtested.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
 
@@ -545,28 +545,28 @@
            (close enough to published to sit with Balance/Clutch) — removed from here to avoid
            duplicating them. -->
 
-      <a href="#page-comingsoon" class="book-card card-seven">
+      <a href="mkirk-coming-soon.html" class="book-card card-seven">
         <span class="card-tag">In progress</span>
         <span class="seven-label">The Magnificent</span>
         <span class="card-title">Seven</span>
         <span class="card-desc">Narrative nonfiction. The biography of a number.</span>
-        <img class="book-card-mini-cover" src="assets/cover-seven.png" alt="" onerror="this.classList.add('img-missing')">
+        <img class="book-card-mini-cover" src="assets/cover_seven.png" alt="" onerror="this.classList.add('img-missing')">
         <span class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></span>
       </a>
 
-      <a href="#page-noaveragebrain" class="book-card card-nab">
+      <a href="mkirk-noaveragebrain.html" class="book-card card-nab">
         <span class="card-tag">Coming December 1</span>
         <span class="card-title">No Average Brain</span>
         <span class="card-desc">Neuroinclusive leadership — a sibling to CLUTCH. Matt Goode.</span>
-        <img class="book-card-mini-cover" src="assets/cover-noaveragebrain.png" alt="" onerror="this.classList.add('img-missing')">
+        <img class="book-card-mini-cover" src="assets/cover_noAverage.png" alt="" onerror="this.classList.add('img-missing')">
         <span class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></span>
       </a>
 
-      <a href="#page-nobelisland" class="book-card card-ni">
+      <a href="mkirk-nobelisland.html" class="book-card card-ni">
         <span class="card-tag">Currently writing</span>
         <span class="card-title">Noble Island</span>
         <span class="card-desc">Magical realism, m kirk. Early-stage — cover in progress, no style guide yet.</span>
-        <img class="book-card-mini-cover" src="assets/cover-nobleisland.png" alt="" onerror="this.classList.add('img-missing')">
+        <img class="book-card-mini-cover" src="assets/cover_noble.png" alt="" onerror="this.classList.add('img-missing')">
         <span class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></span>
       </a>
 
@@ -593,7 +593,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="#page-home" class="footer-logo-link"><p class="footer-logo">m kirk</p></a>
+      <a href="index.html" class="footer-logo-link"><p class="footer-logo">m kirk</p></a>
       <a href="https://instagram.com/mkirkwrites" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram: @mkirkwrites">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
