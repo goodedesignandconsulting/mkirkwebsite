@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Wrath of Archie Ellis – m kirk</title>
+<meta name="description" content="Ypres, 1917. The Wrath of Archie Ellis maps twenty-four chapters onto the twenty-four books of Homer's Iliad, and asks what the old story assumed about war, and what an industrial one did to every one of those assumptions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
+</head>
+<body>
+<section class="page pal-wrath" id="page-wrath">
+  <div class="page-tag">PAGE: <b>mkirk-wrath.html</b> – <b style="color:#8f8;">2026-07-31: REBUILT end-to-end per Matt's formal 14-section Build Prompt ("The Wrath of Archie Ellis" – ARC Landing Page). Replaces the earlier iterative version. Changes: added the required "A Note on Content" advisory directly under the meta bar (verbatim, unedited, per the guardrail that it must not be softened); rewrote the About-the-Book prose/pull-quote/sidebar to the prompt's exact copy and added the new "The Architecture, If You Want It" mênis/kleos/thumos/nostos module; expanded the "Shelve Under" sidebar with Companion/Format Note/Content/Length rows; rewrote the Two Officers cards with the fuller Ellis/Eck copy (Nelson/Trafalgar detail folded into Ellis's card, Clara/Dresden detail folded into Eck's – both now inline instead of only living in the author's note); added a new "The Ground" section (Third Ypres campaign geography – map image is a placeholder, no real map file has been supplied yet); added an optional new "The Company" supporting-cast strip (six names/ranks the prompt supplied – no portrait photos supplied yet, so these are placeholder avatars, not invented images); replaced the long-form author's note built 2026-07-30 with the prompt's condensed ~260-word version (the long version is intentionally NOT run on this page per the prompt's own instruction – it belongs in the book's front matter / its own page if Matt wants one built later); added a new "More to Explore" two-card module (Teacher Supplement + a not-yet-built "Reader's Companion," which per the prompt's own fallback currently routes to "Request an ARC" instead of a dead link); retired the standalone "daughter banner" Teacher Supplement teaser since "More to Explore" now covers that same job. Per the prompt's content guardrails: no cast-to-Homer key, no chapter-by-chapter Homer map, and no Lexile/reading-level figure appear anywhere on this page.</b> <b style="color:#8f8;">2026-07-31, later: wired real photos into 5 of 6 "The Company" thumbnails per Matt's filename confirmation – char_wrath_cross/mannon/sayers/friemer/norris.png (Clarence Kalch still has no matching photo and stays initials-only). Matt's screenshot also listed several other "C - " files (Apollern/Doyle/Jacks/Jove/Paris/Sarp/Call) – he confirmed these are bio cards for the book's Homeric counterparts (Apollo, Diomedes, Ajax, Zeus, Paris, Sarpedon, and Calchas respectively), not Company photos, and per the content guardrails a full character-to-Homer key is exactly what's NOT allowed on this page – so none of those are used here. Skipped the "Ellis 2" alternate photo per Matt's note. Decided (per Matt): Doyle will replace Kalch in the Company row rather than sit alongside him – awaiting Doyle's full name/rank/filename before that swap is made; Kalch's entry is untouched for now.</b> <b style="color:#8f8;">2026-07-31, later still: wired the real campaign map (assets/map_ypres.png) into "The Ground" – swapped the plain placeholder div for an img with the same has-photo/onerror-fallback pattern used on The Company avatars.</b> <b style="color:#8f8;">2026-07-31, later still: Matt sent the full cast roster (~22 named characters, British and German) so Doyle's and Sarp's rank/name details could be pulled from it – Doyle (Lieutenant Baldwin Doyle) now replaces Kalch's slot, and Sarp (Hauptmann Stefan Sarp) was added as a 7th entry, both with real photos (char_wrath_doyle.png / char_wrath_sarp.png – filenames assumed to match the established convention, confirm/rename if different). Deliberately did NOT publish the rest of that roster on this page: several entries include plot-adjacent detail ("wounded in an earlier engagement," "sector was overrun earlier in the war," etc.) and the full list runs well past "a handful of named supporting cast," which is what the Build Prompt's own guardrails call safe here – the complete cast belongs in the spoiler-gated back matter, not this landing page. "Paris" (the remaining name from Matt's original Homer-counterpart screenshot) wasn't in the roster he sent, so he hasn't been added – need his name/rank before he can be.</b> <b style="color:#8f8;">2026-07-31, later still: Matt clarified "Paris" is Leutnant Alexander Parr (the "C - Paris.png" file was named for the Homeric counterpart, not the character's actual surname) – added him, plus Company Sergeant Major Stanley Jacks (already in the roster, Matt asked for him by his "Jacks/Ajax" filename shorthand), both with real photos (char_wrath_parr.png / char_wrath_jacks.png – filenames assumed, confirm/rename if different). The Company row is now 9 entries: Cross, Mannon, Sayers, Friemer, Norris, Doyle, Sarp, Parr, Jacks.</b> <b style="color:#e0a;">2026-07-31, later still: Matt gave the FULL 47-entry cast-to-Homer key (saved to the project as claude/wrath-cast-to-homer-key.md for future use, e.g. the Reader's Companion) and then explicitly asked to reveal the Cast row's own analogs on this live page – confirmed via direct question before doing it, since this reverses the earlier statement just above that no cast-to-Homer key appears on this page. That statement is no longer accurate for the 9 Cast entries specifically: each now shows its analog (Cross/Patroclus, Mannon/Agamemnon, Sayers/Odysseus, Friemer/Priam, Norris/Nestor, Doyle/Diomedes, Sarp/Sarpedon, Parr/Paris, Jacks/Telamonian Ajax) – treat this as the same category of "safe" reveal as Ellis/Eck's Achilles/Hector labels already on the page, not a full spoiler-gated back-matter dump. The other ~38 names from the full roster Matt sent are still NOT on this page.</b> <b style="color:#8f8;">2026-07-31, later still: swapped in Matt's freshly-drafted "Page Copy: Wrath" doc – new canonical tagline ("A novel of Ypres, 1917," replacing the earlier "A retelling of the Iliad" line; his longer draft "a retelling of the Iliad, fought in the mud of Ypres, 1917" was explicitly flagged as undecided, so it was NOT used); replaced the About-the-Book prose and pull-quote with his new Standard-version copy (Achilles/Hector framing, "the Trojan side gets the same dignity Homer gave it" as the new pull-quote); added a new "About This Novel" subsection using his Longer-version copy (51 days vs. 103 days, Homeric structure as argument not decoration). Also fixed two punctuation spots per his house-style note (colons/commas in place of non-numeric-range en dashes) in the Teaching Wrath callout card.</b></div>
+
+  <style>
+  /* Teacher Supplement callout – top-of-page raised-profile card. 2026-07-31: added the two stat
+     lines the Build Prompt specifies (chapter-mapping fact + comp-title framing) beneath the body
+     copy, styled small/muted so they read as supporting detail, not a second heading. */
+  #page-wrath .wr-teacher-companion{ --book-accent:var(--wrath-accent); --book-panel:#38181B; --book-border:rgba(139,107,61,.4); margin:40px auto; }
+  #page-wrath .wr-teacher-companion .book-companion-card{ padding:38px 36px; }
+  #page-wrath .wr-teacher-companion .book-companion-cover{ width:92px; height:138px; }
+  /* .wr-teacher-cover-tint (grayscale/sepia/hue-rotate filter) retired 2026-07-31 – was a stand-in
+     treatment for the placeholder cover_wrath.png reuse; no longer applied now that Matt supplied
+     the real Teacher Supplement cover (assets/cover_wrath_teacher.png). Rule left here unused in
+     case a future placeholder cover needs the same tint trick. */
+  #page-wrath .wr-teacher-cover-tint{ filter:grayscale(1) sepia(1) hue-rotate(240deg) saturate(3) brightness(.75) contrast(1.1); }
+  #page-wrath .wr-teacher-stats{ list-style:none; margin:10px 0 0; padding:0; }
+  #page-wrath .wr-teacher-stats li{ font-family:'Source Serif 4',serif; font-size:14px; line-height:1.6; color:rgba(242,240,236,.55); margin-top:4px; max-width:56ch; }
+  #page-wrath .wr-teacher-stats em{ font-style:italic; color:rgba(242,240,236,.7); }
+
+  #page-wrath .wr-carousel-track{ position:relative; max-width:420px; margin:0 auto; aspect-ratio:4/5; }
+  #page-wrath .wr-slide{ position:absolute; inset:0; display:none; background:var(--ink2); border:1px dashed rgba(196,154,82,.35); }
+  #page-wrath .wr-slide.active{ display:flex; align-items:center; justify-content:center; }
+  #page-wrath .wr-slide-img{ width:100%; height:100%; object-fit:contain; display:block; }
+  #page-wrath .wr-slide-img.img-missing{ display:none; }
+  #page-wrath .wr-slide:has(.wr-slide-img.img-missing)::after{ content:'Image not found – check assets/ path'; font-family:'Source Serif 4',serif; font-size:15px; color:rgba(242,240,236,.5); text-align:center; padding:20px; }
+  #page-wrath .wr-carousel-nav{ display:flex; justify-content:center; gap:16px; margin-top:24px; }
+  #page-wrath .wr-carousel-nav button{ background:transparent; border:1px solid var(--wrath-accent); color:var(--wrath-title); font-family:'Source Serif 4',serif; font-size:14px; letter-spacing:.08em; text-transform:uppercase; padding:8px 18px; cursor:pointer; }
+  #page-wrath .wr-carousel-nav button:hover{ background:var(--wrath-accent); color:#1A1714; }
+
+  /* ── HERO / META BAR / ABOUT SECTION ── */
+  #page-wrath .wr-hero{ padding:56px 40px 0; max-width:1200px; margin:0 auto; }
+  #page-wrath .wr-hero-inner{ display:flex; gap:56px; align-items:flex-start; }
+  #page-wrath .wr-hero-text{ flex:1; min-width:0; }
+  #page-wrath .wr-hero-eyebrow{ font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:14px; }
+  /* 2026-07-31: split into two lines per Matt — "THE WRATH OF ARCHIE ELLIS" as one nowrap line
+     was colliding with the cover art at in-between desktop widths once the sitewide font bump
+     landed. Each line is short enough now to never need nowrap at all, and the two-tier treatment
+     (small italic lead-in + large bold name) gives Archie Ellis's name the visual weight instead
+     of the title reading as one flat block. */
+  #page-wrath .wr-hero-title{ margin-bottom:14px; }
+  #page-wrath .wr-hero-title-sub{ display:block; font-family:'Source Serif 4',serif; font-style:italic; font-weight:400; font-size:clamp(15px,3vw,26px); letter-spacing:.03em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:2px; }
+  #page-wrath .wr-hero-title-main{ display:block; font-family:'GFS Didot',serif; font-weight:700; font-size:clamp(28px,7vw,64px); line-height:1.05; text-transform:uppercase; letter-spacing:.01em; color:var(--wrath-title); }
+  /* 2026-07-31: Build Prompt reserves the warm gold (--gold, #C9A85C) specifically and only for
+     this subtitle/tagline line – was a muted ivory before. */
+  #page-wrath .wr-hero-subtitle{ font-family:'Source Serif 4',serif; font-style:italic; font-size:19.5px; color:var(--gold); margin-bottom:6px; }
+  #page-wrath .wr-hero-byline{ font-family:'Source Serif 4',serif; font-size:15px; color:rgba(242,240,236,.45); margin-bottom:18px; }
+  #page-wrath .wr-hero-accent{ display:flex; gap:6px; margin-bottom:20px; }
+  #page-wrath .wr-hero-accent span{ width:22px; height:3px; border-radius:2px; background:var(--wrath-accent); }
+  #page-wrath .wr-hero-accent span:nth-child(2){ opacity:.65; }
+  #page-wrath .wr-hero-accent span:nth-child(3){ opacity:.35; }
+  #page-wrath .wr-hero-status{ display:flex; align-items:center; gap:8px; font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:22px; }
+  #page-wrath .wr-status-dot{ width:8px; height:8px; border-radius:50%; background:var(--wrath-accent); display:inline-block; }
+  #page-wrath .wr-hero-hook{ border-left:2px solid var(--wrath-accent); padding-left:18px; margin-bottom:28px; max-width:46em; }
+  #page-wrath .wr-hero-hook p{ font-family:'Source Serif 4',serif; font-style:italic; font-size:22px; line-height:1.5; color:var(--wrath-title); }
+  #page-wrath .wr-hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+  #page-wrath .wr-hero-cover{ flex-shrink:0; width:260px; }
+  #page-wrath .wr-hero-cover .cover-placeholder{ margin:0; }
+  #page-wrath .wr-pub-line{ font-family:'Source Serif 4',serif; font-size:14px; color:rgba(242,240,236,.45); margin-top:14px; text-align:center; }
+  @media (max-width:900px){ #page-wrath .wr-hero-inner{ flex-direction:column-reverse; } #page-wrath .wr-hero-cover{ width:200px; margin:0 auto; } }
+
+  #page-wrath .wr-meta-bar{ background:var(--ink2); border-top:1px solid rgba(196,154,82,.2); border-bottom:1px solid rgba(196,154,82,.2); padding:18px 32px; margin-top:40px; }
+  #page-wrath .wr-meta-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); }
+  #page-wrath .wr-meta-item{ padding:0 24px; border-right:1px solid rgba(196,154,82,.2); text-align:center; }
+  #page-wrath .wr-meta-item:first-child{ padding-left:0; }
+  #page-wrath .wr-meta-item:last-child{ border-right:none; padding-right:0; }
+  #page-wrath .wr-meta-label{ font-family:'Source Serif 4',serif; font-size:10.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:4px; }
+  #page-wrath .wr-meta-value{ font-family:'Source Serif 4',serif; font-size:15px; color:var(--wrath-title); letter-spacing:.02em; }
+
+  /* CONTENT NOTE – new section 5 from the Build Prompt, required/unskippable per the content
+     guardrails ("do not soften, remove, or rephrase into a euphemism"). Left accent bar + small
+     label + one sentence. 2026-07-31: Matt flagged it as sitting flush against the meta bar's
+     bottom border with no breathing room – added margin-top plus its own top border so it reads
+     as a distinct block instead of an extension of the meta bar above it. */
+  #page-wrath .wr-content-note{ max-width:1100px; margin:28px auto 0; padding:22px 32px; background:var(--ink2); border-top:1px solid rgba(196,154,82,.2); border-bottom:1px solid rgba(196,154,82,.2); }
+  #page-wrath .wr-content-note-inner{ border-left:3px solid var(--wrath-accent); padding-left:18px; }
+  #page-wrath .wr-content-note-label{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:6px; }
+  #page-wrath .wr-content-note-text{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.7; color:rgba(242,240,236,.75); max-width:64ch; }
+
+  #page-wrath .wr-about{ max-width:1100px; margin:0 auto; padding:64px 32px 40px; }
+  #page-wrath .wr-section-label{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.25em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:10px; }
+  #page-wrath .wr-section-title{ font-family:'GFS Didot',serif; font-size:30px; text-transform:uppercase; letter-spacing:.01em; color:var(--wrath-title); margin-bottom:32px; max-width:22em; }
+
+  #page-wrath .wr-blurb-inner{ display:grid; grid-template-columns:1fr 320px; gap:56px; align-items:start; }
+  #page-wrath .wr-prose p{ font-family:'Source Serif 4',serif; font-size:18.5px; line-height:1.8; color:rgba(242,240,236,.82); margin-bottom:20px; }
+  #page-wrath .wr-prose p:last-of-type{ margin-bottom:0; }
+  #page-wrath .wr-prose em{ font-style:italic; color:var(--wrath-title); }
+  #page-wrath .wr-pullquote{ margin:30px 0; padding:22px 28px; background:rgba(139,107,61,.08); border-left:2px solid var(--wrath-accent); }
+  #page-wrath .wr-pullquote p{ font-family:'GFS Didot',serif; font-style:italic; font-size:23px; line-height:1.6; color:var(--wrath-title) !important; margin:0 !important; }
+  #page-wrath .wr-comp-line{ font-family:'Source Serif 4',serif; font-style:italic; font-size:16px; color:rgba(242,240,236,.5); margin-top:22px; }
+  /* 2026-07-31: Shelve Under card recolored cream/gold per Matt (was the same dark panel as the
+     rest of the page, and he wanted it to stand apart). Background swapped to var(--cream); every
+     text color inside it flipped from light-on-dark to dark-on-cream for contrast. */
+  #page-wrath .wr-aside{ background:var(--cream); border:1px solid var(--wrath-accent); padding:26px 24px; }
+  #page-wrath .wr-aside-head{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:14px; }
+  #page-wrath .wr-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  #page-wrath .wr-tag{ font-family:'Source Serif 4',serif; font-size:12.5px; color:#4A4136; border:1px solid rgba(139,107,61,.4); padding:4px 10px; border-radius:1px; }
+  #page-wrath .wr-aside-rule{ height:1px; background:rgba(139,107,61,.25); margin:16px 0; }
+  #page-wrath .wr-aside-stat{ margin-bottom:10px; }
+  #page-wrath .wr-aside-stat-label{ font-family:'Source Serif 4',serif; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,23,20,.55); margin-bottom:2px; }
+  #page-wrath .wr-aside-stat-val{ font-family:'Source Serif 4',serif; font-size:15px; color:#1A1714; }
+  #page-wrath .wr-aside-btn{ display:block; text-align:center; font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#1A1714; border:1px solid var(--wrath-accent); padding:11px 16px; text-decoration:none; margin-top:10px; transition:background .2s,color .2s; }
+  #page-wrath .wr-aside-btn:hover{ background:var(--wrath-accent); color:var(--cream); }
+  @media (max-width:900px){ #page-wrath .wr-blurb-inner{ grid-template-columns:1fr; } }
+
+  /* "THE ARCHITECTURE, IF YOU WANT IT" – new boxed module inside About the Book, item 6 of the
+     Build Prompt's section 6. Bordered box, background distinct from the surrounding prose per spec.
+     2026-07-31: Matt asked for a more visually appealing layout than the plain stacked definition
+     list – rebuilt as a 2x2 grid of individually bordered tiles (wr-arch-grid/wr-arch-item), each
+     with the Greek term as a small heading and its gloss below, instead of italic-term + dash-dd
+     lines running one after another. Old .wr-arch-list dt/dd rules left in place below in case any
+     other page-scoped module reuses the pattern; unused here now. */
+  #page-wrath .wr-architecture{ margin:34px 0; padding:26px 28px; background:var(--ink2); border:1px solid rgba(196,154,82,.25); }
+  #page-wrath .wr-architecture-head{ font-family:'GFS Didot',serif; font-size:17px; text-transform:uppercase; letter-spacing:.04em; color:var(--wrath-accent); margin-bottom:16px; }
+  #page-wrath .wr-arch-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 20px; }
+  #page-wrath .wr-arch-item{ background:rgba(139,107,61,.08); border:1px solid rgba(196,154,82,.22); border-top:2px solid var(--wrath-accent); padding:16px 18px; }
+  #page-wrath .wr-arch-term{ font-family:'GFS Didot',serif; font-style:italic; font-size:19px; color:var(--wrath-title); margin-bottom:6px; }
+  #page-wrath .wr-arch-def{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.6; color:rgba(242,240,236,.7); }
+  @media (max-width:640px){ #page-wrath .wr-arch-grid{ grid-template-columns:1fr; } }
+  #page-wrath .wr-arch-list{ margin:0 0 16px; }
+  #page-wrath .wr-arch-list dt{ font-family:'GFS Didot',serif; font-style:italic; font-size:18.5px; color:var(--wrath-title); display:inline; }
+  #page-wrath .wr-arch-list dd{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.6; color:rgba(242,240,236,.7); margin:2px 0 12px; }
+  #page-wrath .wr-architecture-close{ font-family:'Source Serif 4',serif; font-style:italic; font-size:15px; line-height:1.6; color:rgba(242,240,236,.5); margin:0; border-top:1px solid rgba(196,154,82,.2); padding-top:14px; }
+
+  #page-wrath .wr-pov{ max-width:1100px; margin:0 auto; padding:16px 32px 56px; }
+  #page-wrath .wr-pov-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  #page-wrath .wr-pov-card{ background:var(--ink2); border:1px solid rgba(196,154,82,.22); border-top:3px solid var(--wrath-accent); padding:26px 24px; position:relative; }
+  #page-wrath .wr-pov-photo{ width:calc(100% + 48px); margin:-26px -24px 20px; aspect-ratio:3/4; object-fit:cover; object-position:top center; display:block; filter:grayscale(25%); }
+  #page-wrath .wr-pov-photo.img-missing{ display:none; }
+  #page-wrath .wr-pov-photo-ph{ display:none; width:calc(100% + 48px); margin:-26px -24px 20px; aspect-ratio:3/4; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; position:relative; border:2px dashed rgba(196,154,82,.35); background:rgba(255,255,255,.02); }
+  #page-wrath .wr-pov-card.photo-missing .wr-pov-photo-ph{ display:flex; }
+  #page-wrath .wr-pov-photo-ph .cp-flag{ position:absolute; top:10px; left:10px; right:10px; font-family:Arial,sans-serif; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:rgba(242,240,236,.4); }
+  #page-wrath .wr-pov-photo-ph .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:23px; color:rgba(242,240,236,.8); }
+  #page-wrath .wr-pov-num{ font-family:'GFS Didot',serif; font-size:47.5px; line-height:1; color:rgba(196,154,82,.18); position:absolute; top:16px; right:18px; }
+  #page-wrath .wr-pov-role{ font-family:'Source Serif 4',serif; font-style:italic; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:8px; }
+  #page-wrath .wr-pov-name{ font-family:'GFS Didot',serif; font-size:25.5px; color:var(--wrath-title); margin-bottom:12px; text-transform:uppercase; letter-spacing:.01em; }
+  #page-wrath .wr-pov-desc{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.7; color:rgba(242,240,236,.65); }
+  #page-wrath .wr-pov-tag{ display:inline-block; margin-top:14px; font-family:'Source Serif 4',serif; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(242,240,236,.4); border:1px solid rgba(242,240,236,.15); padding:3px 8px; }
+  @media (max-width:700px){ #page-wrath .wr-pov-grid{ grid-template-columns:1fr; } }
+
+  /* "THE GROUND" – new section 8 from the Build Prompt: short text + campaign-map image, two
+     columns, stacks on mobile. No real map file has been supplied yet (Matt's prompt notes the
+     map is mid-"author's map audit"), so the image slot is a visible dashed placeholder, not a
+     guessed filename – swap in a real <img src="assets/..."> once Matt has the corrected file. */
+  #page-wrath .wr-ground{ max-width:1100px; margin:0 auto; padding:16px 32px 56px; }
+  #page-wrath .wr-ground-inner{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+  #page-wrath .wr-ground-text p{ font-family:'Source Serif 4',serif; font-size:17px; line-height:1.8; color:rgba(242,240,236,.75); }
+  #page-wrath .wr-ground-map{ height:480px; border:2px dashed rgba(196,154,82,.35); background:rgba(255,255,255,.02); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; position:relative; }
+  @media (max-width:800px){ #page-wrath .wr-ground-map{ height:400px; } }
+  #page-wrath .wr-ground-map .cp-flag{ position:absolute; top:10px; left:10px; right:10px; font-family:Arial,sans-serif; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:rgba(242,240,236,.4); }
+  #page-wrath .wr-ground-map .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:rgba(242,240,236,.75); }
+  #page-wrath .wr-ground-map .cp-sub{ font-family:'Source Serif 4',serif; font-size:12.5px; color:rgba(242,240,236,.4); margin-top:8px; max-width:26ch; }
+  /* 2026-07-31: real map file supplied (assets/map_ypres.png) – .wr-ground-map now holds a real
+     <img>, border switches from dashed to a plain hairline once it has a photo (same has-photo
+     pattern as The Company avatars). Falls back to the dashed placeholder text if the file 404s. */
+  #page-wrath .wr-ground-map.has-photo{ border-style:solid; border-color:rgba(196,154,82,.25); padding:12px; }
+  /* 2026-07-31: switched cover→contain – Matt reported the map's key/legend was being cropped off
+     by object-fit:cover center-cropping the real image to fit a fixed 4:3 box. contain guarantees
+     the whole map (including the legend) is always visible, letterboxed within the taller box below
+     rather than cropped. */
+  #page-wrath .wr-ground-map img{ width:100%; height:100%; object-fit:contain; display:block; }
+  @media (max-width:800px){ #page-wrath .wr-ground-inner{ grid-template-columns:1fr; } }
+
+  /* 2026-07-31: campaign timeline added below the map, per Matt's request to echo the numbered
+     legend style on the map image itself (the map's own "FRONT LINE, 1917" key uses numbered
+     circle markers). Dates/phase names are real history (Third Battle of Ypres, 31 Jul–10 Nov
+     1917), verified against longlongtrail.co.uk and thehistorypress.co.uk – not novel content, so
+     the no-fabrication guardrail doesn't apply the way it does to book-specific details. */
+  #page-wrath .wr-ground-timeline{ margin-top:36px; border:1px solid rgba(196,154,82,.3); background:rgba(255,255,255,.02); padding:26px 28px; }
+  #page-wrath .wr-ground-timeline-head{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:18px; }
+  #page-wrath .wr-timeline-list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:14px 32px; }
+  #page-wrath .wr-timeline-list li{ display:flex; align-items:baseline; gap:12px; }
+  #page-wrath .wr-timeline-num{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; border:1px solid var(--wrath-accent); color:var(--wrath-accent); font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; transform:translateY(2px); }
+  #page-wrath .wr-timeline-date{ flex:0 0 auto; font-family:'Source Serif 4',serif; font-size:13px; font-weight:700; letter-spacing:.03em; color:rgba(242,240,236,.55); white-space:nowrap; }
+  #page-wrath .wr-timeline-name{ font-family:'Source Serif 4',serif; font-size:15px; color:var(--wrath-title); }
+  @media (max-width:700px){ #page-wrath .wr-timeline-list{ grid-template-columns:1fr; } }
+
+  /* "THE COMPANY" – optional section 9. Horizontal strip of small circular thumbnails, name + rank
+     only, no cards/description (the Two Officers cards above do the real introduction work). No
+     portrait photos have been supplied for this supporting cast yet, so every thumbnail renders as
+     a plain initialed placeholder circle rather than a guessed filename. */
+  #page-wrath .wr-company{ max-width:1100px; margin:0 auto; padding:0 32px 56px; }
+  #page-wrath .wr-company-row{ display:flex; flex-wrap:wrap; gap:32px; justify-content:center; }
+  #page-wrath .wr-company-person{ display:flex; flex-direction:column; align-items:center; text-align:center; width:170px; }
+  /* 2026-07-31: enlarged twice per Matt – first 64px→96px (too small to make out the actual
+     photos), then 96px→150px (still wanted bigger once real photos were live). */
+  #page-wrath .wr-company-avatar{ width:150px; height:150px; border-radius:50%; background:rgba(139,107,61,.14); border:1px dashed rgba(196,154,82,.4); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:39px; color:var(--wrath-accent); margin-bottom:14px; overflow:hidden; }
+  /* 2026-07-31: five of the six Company photos were confirmed and matched by Matt (Cross, Mannon,
+     Sayers, Friemer, Norris) – solid border marks these as real, vs. Kalch's still-dashed/
+     initials-only circle since no photo for him has been supplied. Falls back to the initials if
+     the file 404s, same onerror-outerHTML pattern as the author's-note avatar above. */
+  #page-wrath .wr-company-avatar.has-photo{ border-style:solid; border-color:rgba(196,154,82,.35); }
+  #page-wrath .wr-company-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
+  #page-wrath .wr-company-name{ font-family:'Source Serif 4',serif; font-size:14px; color:var(--wrath-title); line-height:1.4; }
+  #page-wrath .wr-company-rank{ font-family:'Source Serif 4',serif; font-style:italic; font-size:12.5px; color:rgba(242,240,236,.45); }
+  /* 2026-07-31: Matt asked to reveal each Cast member's Homeric analog on this page after all –
+     a deliberate, confirmed exception to the Build Prompt's spoiler-gate guardrail for this one
+     section (the two POV leads already did this via "Achilles"/"Hector" role labels; this extends
+     the same treatment to the wider cast). Styled as a small bronze tag so it reads as a label,
+     distinct from the plain rank line above it. */
+  #page-wrath .wr-company-analog{ font-family:'GFS Didot',serif; font-style:italic; font-size:12.5px; color:var(--wrath-accent); margin-top:3px; }
+
+  #page-wrath .wr-note{ background:var(--ink2); padding:64px 32px; border-top:1px solid rgba(196,154,82,.2); border-bottom:1px solid rgba(196,154,82,.2); }
+  #page-wrath .wr-note-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:120px 1fr; gap:56px; align-items:start; }
+  #page-wrath .wr-note-avatar{ width:96px; height:96px; border-radius:50%; background:rgba(139,107,61,.14); border:1px solid rgba(196,154,82,.3); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:27.5px; color:var(--wrath-accent); overflow:hidden; }
+  #page-wrath .wr-note-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
+  #page-wrath .wr-note-body p{ font-family:'Source Serif 4',serif; font-size:18.5px; line-height:1.85; color:rgba(242,240,236,.8); margin-bottom:20px; }
+  #page-wrath .wr-note-pq{ margin:30px 0; padding:22px 28px; background:rgba(196,154,82,.08); border-left:2px solid rgba(196,154,82,.4); }
+  #page-wrath .wr-note-pq p{ font-family:'GFS Didot',serif; font-style:italic; font-size:clamp(20.5px,1.79vw,24px); line-height:1.65; color:rgba(242,240,236,.9); margin-bottom:0; }
+  #page-wrath .wr-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:19.5px; color:rgba(242,240,236,.45); margin-top:18px; }
+  @media (max-width:700px){ #page-wrath .wr-note-inner{ grid-template-columns:1fr; } #page-wrath .wr-note-avatar{ margin:0 auto; } }
+
+  /* "MORE TO EXPLORE" – new section 12. Two-card grid, stacks on mobile. Card 2 ("The Reader's
+     Companion") isn't built yet – per the Build Prompt's own fallback guidance its link currently
+     routes to "Request an ARC" rather than a dead page, with body copy already framed as the
+     incentive for doing so. Swap the href to a real companion page once one exists. */
+  #page-wrath .wr-more{ max-width:1100px; margin:0 auto; padding:16px 32px 64px; }
+  #page-wrath .wr-more-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  #page-wrath .wr-more-card{ display:block; background:var(--ink2); border:1px solid rgba(196,154,82,.22); border-top:3px solid var(--wrath-accent); padding:28px 26px; text-decoration:none; color:inherit; transition:transform .2s; }
+  #page-wrath .wr-more-card:hover{ transform:translateY(-2px); }
+  #page-wrath .wr-more-card h3{ font-family:'GFS Didot',serif; font-size:22px; text-transform:uppercase; letter-spacing:.01em; color:var(--wrath-title); margin-bottom:10px; }
+  #page-wrath .wr-more-card p{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.7; color:rgba(242,240,236,.65); margin-bottom:16px; }
+  #page-wrath .wr-more-card .wr-more-link{ font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--wrath-accent); }
+  @media (max-width:700px){ #page-wrath .wr-more-grid{ grid-template-columns:1fr; } }
+  </style>
+
+  <nav class="site-nav" style="background:var(--ink2);"><div class="nav-inner">
+    <a href="index.html" class="logo">m kirk</a>
+    <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </div></nav>
+
+  <!-- 2. HERO -->
+  <section class="wr-hero reveal">
+    <div class="wr-hero-inner">
+      <div class="wr-hero-text">
+        <p class="wr-hero-eyebrow">Literary Fiction · Historical</p>
+        <h1 class="wr-hero-title"><span class="wr-hero-title-sub">The Wrath of</span><span class="wr-hero-title-main">Archie Ellis</span></h1>
+        <p class="wr-hero-subtitle">A novel of Ypres, 1917</p>
+        <p class="wr-hero-byline">A novel by m kirk</p>
+        <div class="wr-hero-accent"><span></span><span></span><span></span></div>
+        <div class="wr-hero-status"><span class="wr-status-dot"></span>Pre-sale · Releasing October 1</div>
+        <div class="wr-hero-hook">
+          <p>The book is built, chapter for chapter, on the structure of the Iliad: Ellis is Achilles, Eck is Hector.</p>
+        </div>
+        <div class="wr-hero-ctas">
+          <a href="mkirk-coming-soon.html" class="btn btn-outline btn-coming-soon" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Buy on Amazon</a>
+          <a href="mkirk-wrath-arc.html" class="btn btn-outline" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Request an ARC</a>
+        </div>
+      </div>
+      <div class="wr-hero-cover">
+        <img class="real-cover" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.classList.add('img-missing')">
+        <p class="wr-pub-line">Publishes 1 October 2026 · ISBN 979-8-9961025-0-1</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TEACHER SUPPLEMENT CALLOUT -->
+  <div class="book-companion-wrap wr-teacher-companion reveal">
+    <a href="mkirk-wrath-supplement.html" class="book-companion-card">
+      <img class="book-companion-cover" src="assets/cover_wrath_teacher.png" alt="Teaching Wrath – A Companion for the Classroom, book cover" onerror="this.classList.add('img-missing')">
+      <div class="book-companion-card-body">
+        <span class="book-companion-eyebrow">Teaching Wrath</span>
+        <h3>Teaching Wrath: A Companion for the Classroom</h3>
+        <p>A full teaching companion for <em>The Wrath of Archie Ellis</em>: chapter-by-chapter notes, tiered discussion questions, content advisories, and a standards-aligned unit framework for grades 7–12.</p>
+        <ul class="wr-teacher-stats">
+          <li>88 pages, plus a standalone handout packet: glossary, Iliad primer, WWI timeline, teaching map, and more.</li>
+          <li>Three pacing options and a three-band system, from a 7th-grade elective to an AP seminar.</li>
+        </ul>
+      </div>
+      <span class="book-companion-link">View Companion →</span>
+    </a>
+  </div>
+
+  <!-- 4. META BAR -->
+  <div class="wr-meta-bar">
+    <div class="wr-meta-inner">
+      <div class="wr-meta-item"><div class="wr-meta-label">Status</div><div class="wr-meta-value">Pre-sale · Oct 1, 2026</div></div>
+      <div class="wr-meta-item"><div class="wr-meta-label">Format</div><div class="wr-meta-value">Paperback / Kindle</div></div>
+      <div class="wr-meta-item"><div class="wr-meta-label">Genre</div><div class="wr-meta-value">Literary Fiction · Historical</div></div>
+    </div>
+  </div>
+
+  <!-- 5. CONTENT NOTE – required, verbatim, per the Build Prompt's guardrails. -->
+  <div class="wr-content-note">
+    <div class="wr-content-note-inner">
+      <div class="wr-content-note-label">A Note on Content</div>
+      <p class="wr-content-note-text">The novel does not shy away from the violence of the First World War, including combat deaths, but nothing is rendered graphically. There is no profanity and no sexual content.</p>
+    </div>
+  </div>
+
+  <!-- 6. ABOUT THE BOOK -->
+  <div class="wr-about reveal">
+    <p class="wr-section-label">About the Book</p>
+    <h2 class="wr-section-title">Two officers.<br>Opposite sides of the wire.</h2>
+    <div class="wr-blurb-inner">
+      <div class="wr-prose">
+        <p>The Wrath of Archie Ellis is a novel of the Third Battle of Ypres, built as a structural parallel to Homer's Iliad: twenty-four chapters against twenty-four books, in four parts that track the poem's own arc from wrath through breach and death to ransom.</p>
+        <p>Captain Ellis is the Achilles of the Salient: the best officer in it, defined by fury and by a half-conscious certainty that he has chosen the short, glorious life. Across the wire, Hauptmann Eck is Hector: a Cologne engineer who builds bridges in peacetime and holds a regiment together in this one, and the moral centre the novel is built around. The book's argument depends on Eck being as fully alive on the page as Ellis.</p>
+        <div class="wr-pullquote">
+          <p>The Trojan side gets the same dignity Homer gave it. That is not a gesture. It is the spine of the book.</p>
+        </div>
+        <p>The novel does not editorialise. It watches. Efficiency and bodies sit in the same sentence, told the same way, and that plainness is the most serious thing the book does. Where Homer's gods intervened, this war runs without them, on paper and on timetables, and what nobility survives has to be found by the men themselves, inside conditions built to strip it out of them.</p>
+        <p>It ends the way it has to: at 2 a.m., before dawn, in a dugout at B7, in a scene that is almost entirely silence and what two men do with their hands.</p>
+
+        <div class="wr-architecture">
+          <div class="wr-architecture-head">The Architecture, If You Want It</div>
+          <div class="wr-arch-grid">
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">mênis</div>
+              <div class="wr-arch-def">the wrath of a hero whose honour has been violated</div>
+            </div>
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">kleos</div>
+              <div class="wr-arch-def">the fame that outlives the man who earned it</div>
+            </div>
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">thumos</div>
+              <div class="wr-arch-def">the will to act, more force than feeling</div>
+            </div>
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">nostos</div>
+              <div class="wr-arch-def">the homecoming, or its refusal</div>
+            </div>
+          </div>
+          <p class="wr-architecture-close">The novel runs on these four terms. It never names them. The prose itself leans on Greek-rooted vocabulary throughout, deliberately, word by word.</p>
+        </div>
+
+        <p class="wr-section-label" style="margin-top:34px;">About This Novel</p>
+        <p>Homer's Iliad is fifty-one days near the end of a ten-year siege. The Wrath of Archie Ellis is a hundred and three days, the length of the real Third Battle of Ypres, inside the fourth year of a war that by then no one alive could remember the start of. The compression is the same, even where the proportions aren't: both books are asking what a long war does to the men who are still, somehow, fighting it as though it were a short one.</p>
+        <p>The Homeric structure here is not a decoration laid over a war novel. It is the argument. Each chapter has a counterpart in the Iliad, and each one measures the gap between what that counterpart assumed, an audience for courage, a code both sides observed, a death that meant something to the men who caused it, and what this war actually delivered instead. Some chapters keep Homer's shape. Some invert it. Some empty it out entirely and replace it with a mundane, uncounterparted failure: a supply delay, a training accident, the kind of death that has no Homeric original because Homer's war didn't produce that kind of death.</p>
+        <p>The novel was written for a reader who has never opened the Iliad as much as for one who has. It should read, first, as a war novel: Ellis and Eck, the men around them, the hundred and three days of Passchendaele. The classical bones are there to be felt underneath that story, not admired instead of it.</p>
+
+        <p class="wr-comp-line">For readers of Pat Barker's <em>Regeneration</em>, Sebastian Faulks's <em>Birdsong</em>, and Madeline Miller's <em>The Song of Achilles</em>.</p>
+      </div>
+      <div>
+        <div class="wr-aside">
+          <div class="wr-aside-head">Shelve Under</div>
+          <div class="wr-tags">
+            <span class="wr-tag">Literary Fiction</span>
+            <span class="wr-tag">War Fiction</span>
+            <span class="wr-tag">Historical Fiction</span>
+            <span class="wr-tag">WWI · Ypres 1917</span>
+            <span class="wr-tag">Iliad Retelling</span>
+            <span class="wr-tag">Dual POV</span>
+          </div>
+          <div class="wr-aside-rule"></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Publication Date</div><div class="wr-aside-stat-val">October 1, 2026</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Format</div><div class="wr-aside-stat-val">Paperback · Kindle</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Structure</div><div class="wr-aside-stat-val">Dual close POV – Iliad structure</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Companion</div><div class="wr-aside-stat-val">24 chapters mapped to Homer + the war poets</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Format Note</div><div class="wr-aside-stat-val">A blank page for notes follows every chapter</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Content</div><div class="wr-aside-stat-val">No graphic violence · no profanity · no sexual content</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Length</div><div class="wr-aside-stat-val">~70,000 words</div></div>
+          <div class="wr-aside-rule"></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">ISBN-13</div><div class="wr-aside-stat-val">979-8-9961025-0-1</div></div>
+          <div class="wr-aside-rule"></div>
+          <a href="mkirk-coming-soon.html" class="wr-aside-btn btn-coming-soon">Buy on Amazon</a>
+          <a href="mkirk-wrath-arc.html" class="wr-aside-btn">Request an ARC</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. TWO OFFICERS -->
+  <div class="wr-pov reveal">
+    <div class="wr-pov-grid">
+      <div class="wr-pov-card">
+        <div class="wr-pov-num">I</div>
+        <img class="wr-pov-photo" src="assets/char_wrath_ellis.png" alt="Archie Ellis" onerror="this.classList.add('img-missing'); this.closest('.wr-pov-card').classList.add('photo-missing')">
+        <div class="wr-pov-photo-ph"><span class="cp-flag">Placeholder photo</span><span class="cp-title">Archie Ellis</span></div>
+        <div class="wr-pov-role">Achilles</div>
+        <h3 class="wr-pov-name">Archie Ellis</h3>
+        <p class="wr-pov-desc">Captain, B Company. Victoria Cross recipient. 1912 Olympic gold medalist. Built from two real men: Admiral Nelson supplies the wrath – at Trafalgar he went into battle with four orders of chivalry sewn to his coat, which is how a French marksman picked him out and killed him. Ellis wears his ribbons into action the same way. The finest officer in the Salient – until an order he refuses to follow costs two hundred and forty-seven men their lives.</p>
+        <span class="wr-pov-tag">POV Character</span>
+      </div>
+      <div class="wr-pov-card">
+        <div class="wr-pov-num">II</div>
+        <img class="wr-pov-photo" src="assets/char_wrath_eck.png" alt="Harald Eck" onerror="this.classList.add('img-missing'); this.closest('.wr-pov-card').classList.add('photo-missing')">
+        <div class="wr-pov-photo-ph"><span class="cp-flag">Placeholder photo</span><span class="cp-title">Harald Eck</span></div>
+        <div class="wr-pov-role">Hector</div>
+        <h3 class="wr-pov-name">Harald Eck</h3>
+        <p class="wr-pov-desc">Hauptmann. Forty-one, a civil engineer from Dresden, fifteen years into building bridges and lock gates when the mobilization orders came. He left his plans on the drafting table, told his wife Clara he'd be back before anything needed deciding, and went. He has known for weeks what's coming. He is holding his regiment together anyway.</p>
+        <span class="wr-pov-tag">POV Character</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. THE GROUND – real campaign map wired in 2026-07-31 (assets/map_ypres.png). -->
+  <div class="wr-ground reveal">
+    <p class="wr-section-label">The Ground</p>
+    <h2 class="wr-section-title">Third Ypres, Autumn 1917</h2>
+    <div class="wr-ground-inner">
+      <div class="wr-ground-text">
+        <p>The novel follows the real campaign, phase by phase: Pilckem Ridge on 31 July, the Menin Road and Broodseinde through September and October, Passchendaele itself in early November. The battalion's farmhouse headquarters at Vlamertinghe, the forward dugout at B7, the ridge at Zonnebeke – every position in the book sits on ground you can still find on a map today.</p>
+      </div>
+      <div class="wr-ground-map has-photo" id="wrGroundMap">
+        <img src="assets/map_ypres.png" alt="Campaign map – Third Ypres, 1917" loading="lazy" onerror="this.parentElement.classList.remove('has-photo'); this.outerHTML='&lt;span class=&quot;cp-flag&quot;&gt;Placeholder – campaign map&lt;/span&gt;&lt;span class=&quot;cp-title&quot;&gt;Third Ypres, 1917&lt;/span&gt;&lt;span class=&quot;cp-sub&quot;&gt;Image not found – check assets/ path&lt;/span&gt;'">
+      </div>
+    </div>
+    <div class="wr-ground-timeline">
+      <div class="wr-ground-timeline-head">Timeline · Third Ypres, 1917</div>
+      <ol class="wr-timeline-list">
+        <li><span class="wr-timeline-num">1</span><span class="wr-timeline-date">31 Jul–2 Aug</span><span class="wr-timeline-name">Battle of Pilckem Ridge</span></li>
+        <li><span class="wr-timeline-num">2</span><span class="wr-timeline-date">16–18 Aug</span><span class="wr-timeline-name">Battle of Langemarck</span></li>
+        <li><span class="wr-timeline-num">3</span><span class="wr-timeline-date">20–25 Sep</span><span class="wr-timeline-name">Battle of the Menin Road Ridge</span></li>
+        <li><span class="wr-timeline-num">4</span><span class="wr-timeline-date">26 Sep–3 Oct</span><span class="wr-timeline-name">Battle of Polygon Wood</span></li>
+        <li><span class="wr-timeline-num">5</span><span class="wr-timeline-date">4 Oct</span><span class="wr-timeline-name">Battle of Broodseinde</span></li>
+        <li><span class="wr-timeline-num">6</span><span class="wr-timeline-date">9 Oct</span><span class="wr-timeline-name">Battle of Poelcappelle</span></li>
+        <li><span class="wr-timeline-num">7</span><span class="wr-timeline-date">12 Oct</span><span class="wr-timeline-name">First Battle of Passchendaele</span></li>
+        <li><span class="wr-timeline-num">8</span><span class="wr-timeline-date">26 Oct–10 Nov</span><span class="wr-timeline-name">Second Battle of Passchendaele – village taken, campaign ends</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 9. THE CAST (optional) – named "The Company" in the original Build Prompt; Matt asked for the
+       visible label changed to "The Cast" since "Company" reads as a military unit, not a character
+       list. Left the wr-company-* class names alone (internal only, not user-facing) to avoid
+       re-touching every line in this block for a pure rename. -->
+  <div class="wr-company reveal">
+    <p class="wr-section-label" style="text-align:center;">The Cast</p>
+    <div class="wr-company-row">
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_cross.png" alt="Clement Cross" loading="lazy" onerror="this.outerHTML='CC'"></div><div class="wr-company-name">Clement Cross</div><div class="wr-company-rank">Lieutenant</div><div class="wr-company-analog">Patroclus</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_mannon.png" alt="Arthur Mannon" loading="lazy" onerror="this.outerHTML='AM'"></div><div class="wr-company-name">Arthur Mannon</div><div class="wr-company-rank">Colonel</div><div class="wr-company-analog">Agamemnon</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_sayers.png" alt="Alden Sayers" loading="lazy" onerror="this.outerHTML='AS'"></div><div class="wr-company-name">Alden Sayers</div><div class="wr-company-rank">Major</div><div class="wr-company-analog">Odysseus</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_friemer.png" alt="Aldous Friemer" loading="lazy" onerror="this.outerHTML='AF'"></div><div class="wr-company-name">Aldous Friemer</div><div class="wr-company-rank">Oberst</div><div class="wr-company-analog">Priam</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_norris.png" alt="Conrad Norris" loading="lazy" onerror="this.outerHTML='CN'"></div><div class="wr-company-name">Conrad Norris</div><div class="wr-company-rank">Colonel</div><div class="wr-company-analog">Nestor</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_doyle.png" alt="Baldwin Doyle" loading="lazy" onerror="this.outerHTML='BD'"></div><div class="wr-company-name">Baldwin Doyle</div><div class="wr-company-rank">Lieutenant</div><div class="wr-company-analog">Diomedes</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_sarp.png" alt="Stefan Sarp" loading="lazy" onerror="this.outerHTML='SS'"></div><div class="wr-company-name">Stefan Sarp</div><div class="wr-company-rank">Hauptmann</div><div class="wr-company-analog">Sarpedon</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_parr.png" alt="Alexander Parr" loading="lazy" onerror="this.outerHTML='AP'"></div><div class="wr-company-name">Alexander Parr</div><div class="wr-company-rank">Leutnant</div><div class="wr-company-analog">Paris</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_jacks.png" alt="Stanley Jacks" loading="lazy" onerror="this.outerHTML='SJ'"></div><div class="wr-company-name">Stanley Jacks</div><div class="wr-company-rank">Company Sergeant Major</div><div class="wr-company-analog">Telamonian Ajax</div></div>
+    </div>
+  </div>
+
+  <!-- 10. EARLY READS CAROUSEL -->
+  <div class="carousel-section reveal" id="wrCarouselWrap">
+    <h2 class="carousel-heading" style="color:var(--wrath-accent);">Early reads</h2>
+    <div class="wr-carousel-track" id="wrCarouselTrack">
+      <div class="wr-slide active"><img class="wr-slide-img" src="assets/card_wrath_iliadOpening.png" alt="Homer – Opening Lines" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_andromache.png" alt="Homer – Andromache and Hector" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_achilles.png" alt="Homer – Achilles rebuilt" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_warth_eastWinds.png" alt="Our Brains Ache – East Winds" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_shawstewart.png" alt="Wrath poem excerpt – Shaw Stewart" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_owen.png" alt="Wrath war-poet excerpt – Owen" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_sorley.png" alt="Wrath war-poet excerpt – Sorley" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_dulce.png" alt="Wrath war-poet excerpt – Owen, Dulce et Decorum Est" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_gas.png" alt="Wrath – Pass C, green-tint gas scene" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_leaves.png" alt="Wrath – plate 2" onerror="this.classList.add('img-missing')"></div>
+    </div>
+    <div class="wr-carousel-nav">
+      <button type="button" onclick="wrCarouselMove(-1)">← Prev</button>
+      <button type="button" onclick="wrCarouselMove(1)">Next →</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var track = document.getElementById('wrCarouselTrack');
+      if (!track) return;
+      var slides = track.querySelectorAll('.wr-slide');
+      if (!slides.length) return;
+      var idx = 0, autoTimer = null;
+      function update(){
+        slides.forEach(function(s, i){ s.classList.toggle('active', i === idx); });
+      }
+      function goTo(i){ idx = (i + slides.length) % slides.length; update(); }
+      window.wrCarouselMove = function(dir){ goTo(idx + dir); restartAuto(); };
+      function startAuto(){ autoTimer = setInterval(function(){ goTo(idx + 1); }, 6000); }
+      function restartAuto(){ if (autoTimer) clearInterval(autoTimer); startAuto(); }
+      var wrap = document.getElementById('wrCarouselWrap');
+      if (wrap) {
+        wrap.addEventListener('mouseenter', function(){ if (autoTimer) clearInterval(autoTimer); });
+        wrap.addEventListener('mouseleave', startAuto);
+      }
+      update();
+      startAuto();
+    })();
+  </script>
+
+  <!-- 11. A NOTE FROM THE AUTHOR – 2026-07-31: replaced with the Build Prompt's condensed ~260-word
+       version. The longer 2026-07-30 note is intentionally NOT run on this page per the prompt's
+       own instruction ("don't run the long version on this page") – it belongs in the book's front
+       matter / its own page if Matt wants that built later. -->
+  <section class="wr-note reveal">
+    <div class="wr-note-inner">
+      <div class="wr-note-avatar"><img src="assets/author_goode.jpg" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
+      <div class="wr-note-body">
+        <p class="wr-section-label" style="margin-bottom:20px;">A Note from the Author</p>
+        <p>A note on what follows: I wrote this novel, and the guide that accompanies it, with a classroom in mind – a way to meet a young reader encountering Homer and the First World War for the first time. But the story doesn't belong only to that reader, any more than the <em>Iliad</em> it's built from does. Homer has outlasted every audience he was ever written for. Pride and what it costs the people around it. Grief with nowhere to go. What's owed to an enemy once he can no longer harm you. What a war is said to have accomplished, against what it actually cost. These aren't young readers' questions. They're everyone's.</p>
+        <p>I've taught thirteen-year-olds about ancient civilizations and the First World War for twenty years. The longer I taught both, the more convinced I became they were the same story: what happens when a world becomes very connected, and then, under pressure, cracks all at once. About the kind of men those worlds produce, and what those men are and aren't prepared for. About honor, and what it costs, and who pays.</p>
+        <p>One small design choice comes straight from the classroom: every chapter ends with a blank page. It's the kind of space I always wished the books I taught from had – room to write down the thought you had while it was still yours.</p>
+        <p>You have lived through a pandemic. You've watched wars start in places you'd never heard of a year before, and supply chains break for reasons that seemed to come from nowhere. None of that felt like ancient history while it was happening. It felt like Tuesday.</p>
+        <div class="wr-note-pq"><p>This novel is about two men on opposite sides of a strand of barbed wire, in a small piece of Belgium, in 1917 – carrying, into an industrial war neither of them was built for, values that belong to a much older one. It is the oldest story there is, and it keeps not staying in the past.</p></div>
+        <p>The prose is deliberately plain. No elevated language, no narrator telling you how to feel about a death. That flatness isn't coldness – it's the form the material demands. As Wilfred Owen, one of the war's own poets, put it: the poetry is in the pity, and the pity is in the accuracy.</p>
+        <div class="wr-note-sig">– m kirk</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. MORE TO EXPLORE – new section. Card 2 ("The Reader's Companion") isn't built yet; its
+       link routes to "Request an ARC" per the Build Prompt's own fallback instruction. -->
+  <div class="wr-more reveal">
+    <p class="wr-section-label" style="text-align:center;">More to Explore</p>
+    <div class="wr-more-grid">
+      <a href="mkirk-wrath-supplement.html" class="wr-more-card">
+        <h3>Teaching Wrath</h3>
+        <p>A full classroom companion: chapter-by-chapter notes, tiered discussion questions, and a standards-aligned unit framework for grades 7–12.</p>
+        <span class="wr-more-link">View Companion →</span>
+      </a>
+      <a href="mkirk-wrath-arc.html" class="wr-more-card">
+        <h3>The Reader's Companion</h3>
+        <p>The full chapter-by-chapter map to Homer, held back until after you finish, so nothing is spoiled going in. Included when you request an ARC.</p>
+        <span class="wr-more-link">Request an ARC →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 13. FOLLOW WRATH -->
+  <div class="email-section" style="background:var(--parch);">
+    <h2 class="email-heading">Follow Wrath</h2>
+    <form action="https://app.kit.com/forms/9251861/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9251861" data-uid="458c528d15" data-format="inline" data-version="5" style="max-width:420px;margin:0 auto;"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields" style="display:flex;gap:0;"><div class="formkit-field" style="flex:1 1 auto;"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="width:100%;height:46px;padding:13px 15px;border:1px solid rgba(242,240,236,.25);border-right:none;background:#F0EBE2;color:#1A1714;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="height:46px;padding:0 22px;background:var(--wrath-accent);color:#F2F0EC;border:none;font-family:'GFS Didot',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;"><span>FOLLOW WRATH</span></button></div></div></form>
+  </div>
+
+  <!-- 14. FOOTER -->
+  <footer class="site-footer"><div class="footer-inner">
+    <a href="index.html" class="logo" style="font-size:32.5px;">m kirk</a>
+    <a href="https://instagram.com/mkirkwrites" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram: @mkirkwrites">@mkirkwrites</a>
+    <span class="footer-copy">© m kirk · All rights reserved</span>
+  </div></footer>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // 2026-07-30: safety-net -- a couple of .reveal sections on the Wrath page were reported as never
+  // appearing on a real phone (opacity:0 stuck), not reproducible in this environment's Chromium-only
+  // testing. Whatever the exact cause, this timeout guarantees every .reveal element becomes visible
+  // within 2.5s even if the IntersectionObserver never fires for it for any reason.
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
+  }, 2500);
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+</body>
+</html>
