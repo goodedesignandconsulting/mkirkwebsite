@@ -50,6 +50,25 @@
    placeholder assignments within their brand family (GDC for the two
    Matt Goode titles, muted m kirk-adjacent for Noble Island), flagged
    inline and awaiting Matt's real style guide.
+
+   TYPE SCALE: 2026-07-31, sitewide — Matt said fonts read small/hard to
+   read even on desktop. Every font-size declaration across the whole
+   document (head styles + every page's own scoped <style> block, ~531
+   declarations including clamp()/calc() responsive titles) was scaled up
+   programmatically: values ≤24px scaled ×1.15 (bigger relative boost for
+   small/label/body text, the actual complaint), values >24px scaled
+   ×1.08 (milder boost so large display titles don't blow out). clamp()
+   min/max px values and their vw/cqw coefficients were scaled together so
+   the responsive curve between breakpoints stays consistent — this keeps
+   mobile sizing appropriately smaller than desktop, per Matt's own "adjust
+   for mobile" instruction, it's just proportionally bigger throughout.
+   One regression this surfaced and fixed: Wrath's hero title
+   (.wr-hero-title) used white-space:nowrap and started overflowing at
+   375px once its mobile-breakpoint font-size grew — added
+   white-space:normal inside its existing max-width:900px media query so
+   it wraps instead of overflowing. Full site re-verified after: html5lib
+   baseline unchanged, zero JS errors, zero mobile overflow across all 28
+   pages.
    ===================================================================== */
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -109,7 +128,7 @@ button { font:inherit; cursor:pointer; }
 }
 
 .page-tag{
-  background:#1d1d1d; color:#9aa; font-family:'Courier New',monospace; font-size:11px;
+  background:#1d1d1d; color:#9aa; font-family:'Courier New',monospace; font-size:12.5px;
   padding:7px 20px; letter-spacing:.03em;
   display:none; /* 2026-07-30: internal build/filename note, hidden sitewide per Matt ("remove notes like this") — was rendering as a visible bar at the top of every page. */
 }
@@ -123,25 +142,25 @@ em.ph, .ph{ display:none !important; }
 /* ---------- Shared: nav ---------- */
 .site-nav{ background:var(--ink2); border-bottom:1px solid rgba(220,220,230,.25); position:sticky; top:0; z-index:100; }
 .nav-inner{ max-width:1200px; margin:0 auto; padding:12px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
-.logo{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:40px; color:var(--gold); text-decoration:none; }
+.logo{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:43px; color:var(--gold); text-decoration:none; }
 .nav-links{ display:flex; gap:26px; list-style:none; flex-wrap:wrap; }
-.nav-links a{ font-family:'Source Serif 4',serif; font-size:16px; color:var(--terra); text-decoration:none; }
+.nav-links a{ font-family:'Source Serif 4',serif; font-size:18.5px; color:var(--terra); text-decoration:none; }
 .nav-links a:hover{ color:var(--terra-h); }
 
 /* ---------- Shared: footer ---------- */
 .site-footer{ background:var(--ink2); border-top:1px solid rgba(91,166,124,.12); padding:40px; }
 .footer-inner{ max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; gap:20px; }
-.footer-social{ color:#fff; font-family:'Source Serif 4'; font-size:15px; display:flex; align-items:center; gap:8px; text-decoration:none; }
-.footer-copy{ font-family:'Source Serif 4'; font-size:16px; color:var(--terra); }
+.footer-social{ color:#fff; font-family:'Source Serif 4'; font-size:17px; display:flex; align-items:center; gap:8px; text-decoration:none; }
+.footer-copy{ font-family:'Source Serif 4'; font-size:18.5px; color:var(--terra); }
 
 /* ---------- Shared: email/newsletter section ---------- */
 .email-section{ background:var(--parch); padding:64px 40px; text-align:center; }
-.email-heading{ font-family:'Fraunces',serif; font-weight:300; font-size:32px; color:var(--ink); margin-bottom:14px; }
-.email-sub{ max-width:600px; margin:0 auto 28px; color:var(--taupe); font-family:'Source Serif 4'; font-size:15px; line-height:1.65; }
+.email-heading{ font-family:'Fraunces',serif; font-weight:300; font-size:34.5px; color:var(--ink); margin-bottom:14px; }
+.email-sub{ max-width:600px; margin:0 auto 28px; color:var(--taupe); font-family:'Source Serif 4'; font-size:17px; line-height:1.65; }
 .email-form{ max-width:400px; margin:0 auto; display:flex; gap:0; }
-.email-form input{ flex:1; padding:13px 16px; border:1px solid rgba(0,0,0,.15); font-family:'Source Serif 4'; font-size:14px; }
-.btn-follow{ background:var(--sage); color:var(--ink); font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.08em; padding:14px 26px; border:none; white-space:nowrap; }
-.kit-note{ font-size:11px; color:var(--taupe); margin-top:10px; font-family:'Source Serif 4'; }
+.email-form input{ flex:1; padding:13px 16px; border:1px solid rgba(0,0,0,.15); font-family:'Source Serif 4'; font-size:16px; }
+.btn-follow{ background:var(--sage); color:var(--ink); font-family:'Source Serif 4'; font-size:14px; text-transform:uppercase; letter-spacing:.08em; padding:14px 26px; border:none; white-space:nowrap; }
+.kit-note{ font-size:12.5px; color:var(--taupe); margin-top:10px; font-family:'Source Serif 4'; }
 /* 2026-07-30: added per Matt's mobile audit — this shared email-signup form (used on Field Tested,
    No Average Brain, Seven, Noble Island, Coming Soon) had no responsive handling at all; the
    nowrap button (e.g. "Send me the chapter") forced the row wider than the screen on phones. */
@@ -152,7 +171,7 @@ em.ph, .ph{ display:none !important; }
 }
 
 /* ---------- Buttons (general) ---------- */
-.btn{ display:inline-block; padding:12px 26px; font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.08em; text-decoration:none; border:1px solid transparent; }
+.btn{ display:inline-block; padding:12px 26px; font-family:'Source Serif 4'; font-size:14px; text-transform:uppercase; letter-spacing:.08em; text-decoration:none; border:1px solid transparent; }
 .btn-gold{ background:var(--gold); color:var(--ink); }
 .btn-denim{ background:var(--denim); color:#fff; }
 .btn-sage{ background:var(--sage); color:var(--ink); }
@@ -169,11 +188,11 @@ em.ph, .ph{ display:none !important; }
   text-align:center; padding:20px; position:relative; background:rgba(255,255,255,.02);
 }
 .cover-placeholder .cp-flag{
-  position:absolute; top:8px; left:8px; right:8px; font-family:Arial,sans-serif; font-size:9px;
+  position:absolute; top:8px; left:8px; right:8px; font-family:Arial,sans-serif; font-size:10.5px;
   text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.4);
 }
-.cover-placeholder .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:rgba(255,255,255,.85); }
-.cover-placeholder .cp-sub{ font-family:'Source Serif 4'; font-size:11px; color:rgba(255,255,255,.4); margin-top:6px; }
+.cover-placeholder .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:25.5px; color:rgba(255,255,255,.85); }
+.cover-placeholder .cp-sub{ font-family:'Source Serif 4'; font-size:12.5px; color:rgba(255,255,255,.4); margin-top:6px; }
 
 /* Real cover art — shared treatment for any book-detail cover slot, added 2026-07-29 once Matt
    started sending real cover files. Falls back visibly if a path 404s, same pattern as the
@@ -186,21 +205,21 @@ img.real-cover.img-missing{ opacity:0; }
 
 /* ---------- Book detail page: sticky cover col + Q&A ---------- */
 .book-hero-status{ max-width:1200px; margin:0 auto; padding:36px 40px 0; }
-.status-tag{ font-family:'Source Serif 4'; font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--sage); }
+.status-tag{ font-family:'Source Serif 4'; font-size:12.5px; text-transform:uppercase; letter-spacing:.14em; color:var(--sage); }
 .book-detail{ display:grid; grid-template-columns:260px 1fr; gap:60px; max-width:1200px; margin:0 auto; padding:16px 40px 60px; }
 .book-cover-col{ position:sticky; top:88px; align-self:start; }
 .book-cover-col .btn{ display:block; text-align:center; margin-top:16px; }
-.book-cover-col .pub-line{ font-family:'Source Serif 4'; font-size:12px; color:rgba(255,255,255,.45); margin-top:10px; text-align:center; }
-.book-title{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:44px; letter-spacing:.02em; margin:6px 0 6px; }
-.book-kicker{ font-family:'Source Serif 4'; font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:rgba(255,255,255,.5); margin-bottom:24px; }
+.book-cover-col .pub-line{ font-family:'Source Serif 4'; font-size:14px; color:rgba(255,255,255,.45); margin-top:10px; text-align:center; }
+.book-title{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:47.5px; letter-spacing:.02em; margin:6px 0 6px; }
+.book-kicker{ font-family:'Source Serif 4'; font-size:14px; text-transform:uppercase; letter-spacing:.14em; color:rgba(255,255,255,.5); margin-bottom:24px; }
 /* Catalog-only genre label — added so the "m kirk" section on the Books page doesn't imply every
    m kirk title is fiction (Seven isn't). Sits under the title, above the Q&A excerpt. */
-.catalog-card .book-genre{ font-family:'Source Serif 4'; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:rgba(0,0,0,.45); margin:-2px 0 14px; display:block; }
+.catalog-card .book-genre{ font-family:'Source Serif 4'; font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:rgba(0,0,0,.45); margin:-2px 0 14px; display:block; }
 .qa-list{ list-style:none; }
 .qa-item{ display:grid; grid-template-columns:24px 1fr; gap:16px; padding:22px 0; border-bottom:1px solid rgba(255,255,255,.08); }
-.qa-num{ font-family:'Source Serif 4'; font-size:12px; color:rgba(255,255,255,.35); }
-.qa-q{ font-family:'Source Serif 4'; font-style:italic; font-size:14px; margin-bottom:8px; }
-.qa-a{ font-family:'Source Serif 4'; font-weight:300; font-size:16px; line-height:1.7; color:var(--warm); }
+.qa-num{ font-family:'Source Serif 4'; font-size:14px; color:rgba(255,255,255,.35); }
+.qa-q{ font-family:'Source Serif 4'; font-style:italic; font-size:16px; margin-bottom:8px; }
+.qa-a{ font-family:'Source Serif 4'; font-weight:300; font-size:18.5px; line-height:1.7; color:var(--warm); }
 .qa-a em.ph{ font-style:normal; color:#b98; }
 @media(max-width:640px){ .book-detail{ grid-template-columns:1fr; } .book-cover-col{ position:static; max-width:220px; } }
 
@@ -212,45 +231,45 @@ img.real-cover.img-missing{ opacity:0; }
    --book-panel / --book-border via a tiny scoped rule so the same classes adapt to that book's
    palette (dark charcoal for Field Tested, light backgrounds for NAB/Seven/Noble Island). */
 .book-about{ max-width:1200px; margin:0 auto; padding:8px 40px 40px; }
-.book-about-label{ font-family:'Source Serif 4',serif; font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.6; margin-bottom:14px; }
+.book-about-label{ font-family:'Source Serif 4',serif; font-size:12.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.6; margin-bottom:14px; }
 .book-about-inner{ display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start; }
-.book-prose p{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.8; margin-bottom:20px; opacity:.85; }
+.book-prose p{ font-family:'Source Serif 4',serif; font-size:18.5px; line-height:1.8; margin-bottom:20px; opacity:.85; }
 .book-prose p:last-of-type{ margin-bottom:0; }
 .book-prose em{ font-style:italic; opacity:1; }
 .book-pullquote{ margin:26px 0; padding:20px 26px; background:var(--book-panel, rgba(255,255,255,.05)); border-left:2px solid var(--book-accent, currentColor); }
-.book-pullquote p{ font-style:italic; font-size:19px !important; line-height:1.6 !important; margin:0 !important; opacity:1 !important; }
-.book-comp-line{ font-style:italic; font-size:13px; opacity:.6; margin-top:18px; }
+.book-pullquote p{ font-style:italic; font-size:22px !important; line-height:1.6 !important; margin:0 !important; opacity:1 !important; }
+.book-comp-line{ font-style:italic; font-size:15px; opacity:.6; margin-top:18px; }
 .book-aside{ background:var(--book-panel, rgba(255,255,255,.04)); border:1px solid var(--book-border, rgba(255,255,255,.14)); padding:24px 22px; }
-.book-aside-head{ font-family:'Source Serif 4',serif; font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:14px; }
+.book-aside-head{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:14px; }
 .book-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
-.book-tag{ font-family:'Source Serif 4',serif; font-size:11px; opacity:.75; border:1px solid var(--book-border, rgba(255,255,255,.18)); padding:4px 10px; border-radius:1px; }
+.book-tag{ font-family:'Source Serif 4',serif; font-size:12.5px; opacity:.75; border:1px solid var(--book-border, rgba(255,255,255,.18)); padding:4px 10px; border-radius:1px; }
 .book-aside-rule{ height:1px; background:var(--book-border, rgba(255,255,255,.14)); margin:14px 0; }
 .book-aside-stat{ margin-bottom:10px; }
-.book-aside-stat-label{ font-family:'Source Serif 4',serif; font-size:9px; letter-spacing:.14em; text-transform:uppercase; opacity:.45; margin-bottom:2px; }
-.book-aside-stat-val{ font-family:'Source Serif 4',serif; font-size:13px; opacity:.9; }
-.book-aside-btn{ display:block; text-align:center; font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--book-accent, currentColor); padding:11px 16px; text-decoration:none; margin-top:10px; color:inherit; transition:opacity .2s; }
+.book-aside-stat-label{ font-family:'Source Serif 4',serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; opacity:.45; margin-bottom:2px; }
+.book-aside-stat-val{ font-family:'Source Serif 4',serif; font-size:15px; opacity:.9; }
+.book-aside-btn{ display:block; text-align:center; font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--book-accent, currentColor); padding:11px 16px; text-decoration:none; margin-top:10px; color:inherit; transition:opacity .2s; }
 .book-aside-btn:hover{ opacity:.7; }
 @media (max-width:900px){ .book-about-inner{ grid-template-columns:1fr; } }
 
 .book-pov{ max-width:1200px; margin:0 auto; padding:0 40px 48px; }
 .book-pov-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
 .book-pov-card{ background:var(--book-panel, rgba(255,255,255,.04)); border:1px solid var(--book-border, rgba(255,255,255,.14)); border-top:3px solid var(--book-accent, currentColor); padding:24px 22px; position:relative; }
-.book-pov-role{ font-family:'Source Serif 4',serif; font-style:italic; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:8px; }
-.book-pov-name{ font-family:'Source Serif 4',serif; font-weight:700; font-size:20px; margin-bottom:10px; }
-.book-pov-desc{ font-family:'Source Serif 4',serif; font-size:13px; line-height:1.7; opacity:.75; }
-.book-pov-tag{ display:inline-block; margin-top:14px; font-family:'Source Serif 4',serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; opacity:.45; border:1px solid var(--book-border, rgba(255,255,255,.14)); padding:3px 8px; }
+.book-pov-role{ font-family:'Source Serif 4',serif; font-style:italic; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:8px; }
+.book-pov-name{ font-family:'Source Serif 4',serif; font-weight:700; font-size:23px; margin-bottom:10px; }
+.book-pov-desc{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.7; opacity:.75; }
+.book-pov-tag{ display:inline-block; margin-top:14px; font-family:'Source Serif 4',serif; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; opacity:.45; border:1px solid var(--book-border, rgba(255,255,255,.14)); padding:3px 8px; }
 
 .book-note{ padding:56px 40px; border-top:1px solid var(--book-border, rgba(255,255,255,.1)); border-bottom:1px solid var(--book-border, rgba(255,255,255,.1)); background:var(--book-panel, rgba(255,255,255,.02)); }
 .book-note-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:110px 1fr; gap:48px; align-items:start; }
-.book-note-avatar{ width:88px; height:88px; border-radius:50%; background:var(--book-panel2, rgba(255,255,255,.06)); border:1px solid var(--book-border, rgba(255,255,255,.18)); display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-style:italic; font-size:22px; color:var(--book-accent, currentColor); overflow:hidden; }
+.book-note-avatar{ width:88px; height:88px; border-radius:50%; background:var(--book-panel2, rgba(255,255,255,.06)); border:1px solid var(--book-border, rgba(255,255,255,.18)); display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-style:italic; font-size:25.5px; color:var(--book-accent, currentColor); overflow:hidden; }
 /* Real author photo, added 2026-07-30 per Matt: m-kirk-branded books use his beach photo,
    Matt-Goode-branded books use the same professional portrait already wired on CLUTCH's real
    author note (assets/author_goode.jpg). Falls back to the original "mk" mark if the file 404s. */
 .book-note-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
-.book-note-body p{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.8; opacity:.82; margin-bottom:18px; }
-.book-note-body ul{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.7; opacity:.82; margin:-6px 0 18px 20px; padding:0; }
+.book-note-body p{ font-family:'Source Serif 4',serif; font-size:17px; line-height:1.8; opacity:.82; margin-bottom:18px; }
+.book-note-body ul{ font-family:'Source Serif 4',serif; font-size:17px; line-height:1.7; opacity:.82; margin:-6px 0 18px 20px; padding:0; }
 .book-note-body li{ margin-bottom:7px; }
-.book-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:16px; opacity:.5; margin-top:16px; }
+.book-note-sig{ font-family:'Source Serif 4',serif; font-style:italic; font-size:18.5px; opacity:.5; margin-top:16px; }
 @media (max-width:700px){ .book-note-inner{ grid-template-columns:1fr; } .book-note-avatar{ margin:0 auto; } }
 
 /* Companion/teacher-guide callout — raised-profile card, replaces the plain .daughter-banner
@@ -259,23 +278,23 @@ img.real-cover.img-missing{ opacity:0; }
 .book-companion-wrap{ max-width:1200px; margin:0 auto 40px; padding:0 40px; }
 .book-companion-card{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:var(--book-panel, rgba(255,255,255,.05)); border:1px solid var(--book-border, rgba(255,255,255,.16)); border-left:4px solid var(--book-accent, currentColor); padding:26px 30px; text-decoration:none; color:inherit; transition:transform .2s; }
 .book-companion-card:hover{ transform:translateY(-2px); }
-.book-companion-card h3{ font-family:'Source Serif 4',serif; font-weight:700; font-size:18px; margin-bottom:6px; }
-.book-companion-card p{ font-family:'Source Serif 4',serif; font-size:13px; opacity:.7; max-width:44ch; margin:0; }
-.book-companion-link{ font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--book-accent, currentColor); white-space:nowrap; }
+.book-companion-card h3{ font-family:'Source Serif 4',serif; font-weight:700; font-size:20.5px; margin-bottom:6px; }
+.book-companion-card p{ font-family:'Source Serif 4',serif; font-size:15px; opacity:.7; max-width:44ch; margin:0; }
+.book-companion-link{ font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--book-accent, currentColor); white-space:nowrap; }
 /* Optional cover thumbnail + eyebrow, for companion cards that should read as their own product
    rather than a plain text banner (e.g. Field Tested's "Couldn't Have Been an Email"). */
 .book-companion-cover{ width:64px; height:96px; object-fit:cover; border-radius:3px; flex-shrink:0; box-shadow:0 10px 24px rgba(0,0,0,.4); }
 .book-companion-cover.img-missing{ background:rgba(255,255,255,.08); border:1px dashed rgba(255,255,255,.3); }
 .book-companion-card-body{ flex:1; min-width:180px; }
-.book-companion-eyebrow{ display:block; font-family:'Source Serif 4',serif; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--book-accent, currentColor); opacity:.9; margin-bottom:6px; }
+.book-companion-eyebrow{ display:block; font-family:'Source Serif 4',serif; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--book-accent, currentColor); opacity:.9; margin-bottom:6px; }
 
 /* Ebook "how to read" sidebar primer — added 2026-07-30 per Matt's note to include this on every
    page that sells an ebook (native app / Kindle-import guidance). Small collapsible-feeling card,
    reused verbatim across ebook purchase pages. */
 .ebook-howto{ background:var(--book-panel, rgba(255,255,255,.04)); border:1px solid var(--book-border, rgba(255,255,255,.16)); padding:20px 22px; max-width:340px; }
-.ebook-howto-head{ font-family:'Source Serif 4',serif; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:12px; }
+.ebook-howto-head{ font-family:'Source Serif 4',serif; font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--book-accent, currentColor); margin-bottom:12px; }
 .ebook-howto ul{ list-style:none; margin:0; padding:0; }
-.ebook-howto li{ font-family:'Source Serif 4',serif; font-size:13px; line-height:1.6; opacity:.8; margin-bottom:12px; padding-left:16px; position:relative; }
+.ebook-howto li{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.6; opacity:.8; margin-bottom:12px; padding-left:16px; position:relative; }
 .ebook-howto li::before{ content:'—'; position:absolute; left:0; opacity:.5; }
 .ebook-howto li:last-child{ margin-bottom:0; }
 .ebook-howto strong{ opacity:1; }
@@ -285,23 +304,23 @@ img.real-cover.img-missing{ opacity:0; }
 .daughter-banner{
   display:flex; align-items:center; gap:14px; padding:16px 22px; margin:20px 0 0;
   border:1px solid rgba(255,255,255,.15); border-left:4px solid var(--accent, var(--gold));
-  font-family:'Source Serif 4'; font-size:14px; color:var(--warm);
+  font-family:'Source Serif 4'; font-size:16px; color:var(--warm);
 }
 .daughter-banner a{ color:var(--gold); text-decoration:underline; }
 
 /* ---------- Cover gallery (Home) ---------- */
 .gallery-wrap{ max-width:1200px; margin:0 auto; padding:56px 40px 70px; }
-.gallery-group-label{ font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:24px; color:var(--gold); margin:36px 0 18px; padding-top:28px; border-top:1px solid rgba(255,255,255,.08); }
+.gallery-group-label{ font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:27.5px; color:var(--gold); margin:36px 0 18px; padding-top:28px; border-top:1px solid rgba(255,255,255,.08); }
 .gallery-group-label:first-child{ border-top:none; margin-top:0; padding-top:0; }
-.gallery-group-sub{ font-family:'Source Serif 4'; font-size:13px; color:rgba(255,255,255,.4); margin-top:-12px; margin-bottom:20px; }
+.gallery-group-sub{ font-family:'Source Serif 4'; font-size:15px; color:rgba(255,255,255,.4); margin-top:-12px; margin-bottom:20px; }
 .cover-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
 @media(max-width:1100px){ .cover-grid{ grid-template-columns:repeat(2,1fr); } }
 @media(max-width:540px){ .cover-grid{ grid-template-columns:1fr; } }
 .cover-gateway{ text-decoration:none; display:block; }
 .cover-gateway .cover-placeholder{ transition:transform .25s ease, border-color .25s ease; }
 .cover-gateway:hover .cover-placeholder{ transform:translateY(-4px); border-color:rgba(255,255,255,.6); }
-.cover-gateway .cg-title{ font-family:'Source Serif 4'; font-size:14px; color:var(--warm); margin-top:10px; text-align:center; }
-.cover-gateway .cg-status{ font-family:'Source Serif 4'; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--sage); text-align:center; margin-top:2px; }
+.cover-gateway .cg-title{ font-family:'Source Serif 4'; font-size:16px; color:var(--warm); margin-top:10px; text-align:center; }
+.cover-gateway .cg-status{ font-family:'Source Serif 4'; font-size:12.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--sage); text-align:center; margin-top:2px; }
 
 /* ---------- Q&A preview cards (Books catalog page) ---------- */
 .catalog-wrap{ max-width:1200px; margin:0 auto; padding:56px 40px 70px; background:var(--denim); }
@@ -313,24 +332,24 @@ img.real-cover.img-missing{ opacity:0; }
 
 /* ---------- Dynamic content: carousel ---------- */
 .carousel-section{ padding:56px 40px; max-width:1200px; margin:0 auto; }
-.carousel-heading{ font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:26px; margin-bottom:22px; }
+.carousel-heading{ font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:28px; margin-bottom:22px; }
 .carousel-track{ display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; }
 .carousel-card{ min-width:300px; scroll-snap-align:start; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); padding:26px; border-radius:3px; }
-.carousel-card .quote{ font-family:'Lora',serif; font-style:italic; font-size:17px; line-height:1.6; margin-bottom:12px; }
-.carousel-card .attribution{ font-family:'Source Serif 4'; font-size:12px; color:rgba(255,255,255,.5); }
-.carousel-empty{ font-family:'Source Serif 4'; font-size:14px; color:rgba(255,255,255,.45); font-style:italic; border:1px dashed rgba(255,255,255,.2); padding:26px; }
+.carousel-card .quote{ font-family:'Lora',serif; font-style:italic; font-size:19.5px; line-height:1.6; margin-bottom:12px; }
+.carousel-card .attribution{ font-family:'Source Serif 4'; font-size:14px; color:rgba(255,255,255,.5); }
+.carousel-empty{ font-family:'Source Serif 4'; font-size:16px; color:rgba(255,255,255,.45); font-style:italic; border:1px dashed rgba(255,255,255,.2); padding:26px; }
 
 /* ---------- Generic section helpers ---------- */
 .section{ padding:60px 40px; max-width:1200px; margin:0 auto; }
 .section-narrow{ max-width:760px; }
-.h1{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:42px; margin-bottom:14px; }
-.h2{ font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:28px; margin-bottom:14px; }
-.lede{ font-family:'Source Serif 4'; font-weight:300; font-size:17px; line-height:1.7; color:var(--warm); margin-bottom:20px; }
+.h1{ font-family:'Cormorant Garamond',serif; font-weight:700; font-size:45.5px; margin-bottom:14px; }
+.h2{ font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:30px; margin-bottom:14px; }
+.lede{ font-family:'Source Serif 4'; font-weight:300; font-size:19.5px; line-height:1.7; color:var(--warm); margin-bottom:20px; }
 .card-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:26px; }
 @media(max-width:800px){ .card-row{ grid-template-columns:1fr; } }
 .follow-card{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); padding:24px; text-decoration:none; color:var(--warm); }
-.follow-card .fc-label{ font-family:'Source Serif 4'; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.5); }
-.follow-card .fc-name{ font-family:'Fraunces',serif; font-size:20px; margin-top:6px; }
+.follow-card .fc-label{ font-family:'Source Serif 4'; font-size:12.5px; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.5); }
+.follow-card .fc-name{ font-family:'Fraunces',serif; font-size:23px; margin-top:6px; }
 
 /* ---------- Reveal-on-scroll ---------- */
 .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
@@ -400,7 +419,7 @@ img.real-cover.img-missing{ opacity:0; }
 .pal-ni .carousel-card .attribution{ color:rgba(43,35,24,.5); }
 .pal-ni .daughter-banner{ color:var(--ni-ink); border-color:rgba(0,0,0,.15); }
 
-.placeholder-flag{ display:inline-block; font-family:Arial,sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#e0a; background:rgba(224,0,170,.12); border:1px solid rgba(224,0,170,.3); padding:3px 8px; border-radius:2px; margin-bottom:14px; }
+.placeholder-flag{ display:inline-block; font-family:Arial,sans-serif; font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:#e0a; background:rgba(224,0,170,.12); border:1px solid rgba(224,0,170,.3); padding:3px 8px; border-radius:2px; margin-bottom:14px; }
 
 /* "Under construction" button treatment — added 2026-07-30 per Matt: every button that currently
    routes to #page-comingsoon (because the real destination — Amazon ASIN, Kit product, etc. —
@@ -411,3 +430,4 @@ img.real-cover.img-missing{ opacity:0; }
    book-specific color that would otherwise win. */
 .btn-coming-soon{ background:#000 !important; border-color:#000 !important; color:#fff !important; }
 .btn-coming-soon:hover{ background:#000 !important; border-color:#000 !important; color:#fff !important; opacity:.82; }
+</style>
