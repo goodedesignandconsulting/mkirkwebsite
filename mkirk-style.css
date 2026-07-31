@@ -108,7 +108,6 @@ button { font:inherit; cursor:pointer; }
   --ni-bg:#E4D4B0;   --ni-accent:#5C7A66;   --ni-ink:#2B2318;
 }
 
-.page{ position:relative; }
 .page-tag{
   background:#1d1d1d; color:#9aa; font-family:'Courier New',monospace; font-size:11px;
   padding:7px 20px; letter-spacing:.03em;
