@@ -67,10 +67,11 @@
   #page-wrath .wr-meta-value{ font-family:'Source Serif 4',serif; font-size:13px; color:var(--wrath-title); letter-spacing:.02em; }
 
   /* CONTENT NOTE — new section 5 from the Build Prompt, required/unskippable per the content
-     guardrails ("do not soften, remove, or rephrase into a euphemism"). Sits directly under the
-     meta bar, visually distinct: left accent bar + small label + one sentence, same ink2 field as
-     the meta bar so it reads as part of the same "quick facts" strip rather than a new section. */
-  #page-wrath .wr-content-note{ max-width:1100px; margin:0 auto; padding:22px 32px; background:var(--ink2); border-bottom:1px solid rgba(196,154,82,.2); }
+     guardrails ("do not soften, remove, or rephrase into a euphemism"). Left accent bar + small
+     label + one sentence. 2026-07-31: Matt flagged it as sitting flush against the meta bar's
+     bottom border with no breathing room — added margin-top plus its own top border so it reads
+     as a distinct block instead of an extension of the meta bar above it. */
+  #page-wrath .wr-content-note{ max-width:1100px; margin:28px auto 0; padding:22px 32px; background:var(--ink2); border-top:1px solid rgba(196,154,82,.2); border-bottom:1px solid rgba(196,154,82,.2); }
   #page-wrath .wr-content-note-inner{ border-left:3px solid var(--wrath-accent); padding-left:18px; }
   #page-wrath .wr-content-note-label{ font-family:'Source Serif 4',serif; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:6px; }
   #page-wrath .wr-content-note-text{ font-family:'Source Serif 4',serif; font-size:14px; line-height:1.7; color:rgba(242,240,236,.75); max-width:64ch; }
@@ -131,15 +132,20 @@
   #page-wrath .wr-ground{ max-width:1100px; margin:0 auto; padding:16px 32px 56px; }
   #page-wrath .wr-ground-inner{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
   #page-wrath .wr-ground-text p{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.8; color:rgba(242,240,236,.75); }
-  #page-wrath .wr-ground-map{ aspect-ratio:4/3; border:2px dashed rgba(196,154,82,.35); background:rgba(255,255,255,.02); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; position:relative; }
+  #page-wrath .wr-ground-map{ height:480px; border:2px dashed rgba(196,154,82,.35); background:rgba(255,255,255,.02); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; position:relative; }
+  @media (max-width:800px){ #page-wrath .wr-ground-map{ height:400px; } }
   #page-wrath .wr-ground-map .cp-flag{ position:absolute; top:10px; left:10px; right:10px; font-family:Arial,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.08em; color:rgba(242,240,236,.4); }
   #page-wrath .wr-ground-map .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; color:rgba(242,240,236,.75); }
   #page-wrath .wr-ground-map .cp-sub{ font-family:'Source Serif 4',serif; font-size:11px; color:rgba(242,240,236,.4); margin-top:8px; max-width:26ch; }
   /* 2026-07-31: real map file supplied (assets/map_ypres.png) — .wr-ground-map now holds a real
      <img>, border switches from dashed to a plain hairline once it has a photo (same has-photo
      pattern as The Company avatars). Falls back to the dashed placeholder text if the file 404s. */
-  #page-wrath .wr-ground-map.has-photo{ border-style:solid; border-color:rgba(196,154,82,.25); padding:0; overflow:hidden; }
-  #page-wrath .wr-ground-map img{ width:100%; height:100%; object-fit:cover; display:block; }
+  #page-wrath .wr-ground-map.has-photo{ border-style:solid; border-color:rgba(196,154,82,.25); padding:12px; }
+  /* 2026-07-31: switched cover→contain — Matt reported the map's key/legend was being cropped off
+     by object-fit:cover center-cropping the real image to fit a fixed 4:3 box. contain guarantees
+     the whole map (including the legend) is always visible, letterboxed within the taller box below
+     rather than cropped. */
+  #page-wrath .wr-ground-map img{ width:100%; height:100%; object-fit:contain; display:block; }
   @media (max-width:800px){ #page-wrath .wr-ground-inner{ grid-template-columns:1fr; } }
 
   /* "THE COMPANY" — optional section 9. Horizontal strip of small circular thumbnails, name + rank
@@ -148,8 +154,9 @@
      a plain initialed placeholder circle rather than a guessed filename. */
   #page-wrath .wr-company{ max-width:1100px; margin:0 auto; padding:0 32px 56px; }
   #page-wrath .wr-company-row{ display:flex; flex-wrap:wrap; gap:32px; justify-content:center; }
-  #page-wrath .wr-company-person{ display:flex; flex-direction:column; align-items:center; text-align:center; width:110px; }
-  #page-wrath .wr-company-avatar{ width:64px; height:64px; border-radius:50%; background:rgba(139,107,61,.14); border:1px dashed rgba(196,154,82,.4); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:18px; color:var(--wrath-accent); margin-bottom:10px; overflow:hidden; }
+  #page-wrath .wr-company-person{ display:flex; flex-direction:column; align-items:center; text-align:center; width:140px; }
+  /* 2026-07-31: enlarged per Matt (64px read too small to make out the actual photos) */
+  #page-wrath .wr-company-avatar{ width:96px; height:96px; border-radius:50%; background:rgba(139,107,61,.14); border:1px dashed rgba(196,154,82,.4); display:flex; align-items:center; justify-content:center; font-family:'GFS Didot',serif; font-style:italic; font-size:26px; color:var(--wrath-accent); margin-bottom:12px; overflow:hidden; }
   /* 2026-07-31: five of the six Company photos were confirmed and matched by Matt (Cross, Mannon,
      Sayers, Friemer, Norris) — solid border marks these as real, vs. Kalch's still-dashed/
      initials-only circle since no photo for him has been supplied. Falls back to the initials if
@@ -345,9 +352,12 @@
     </div>
   </div>
 
-  <!-- 9. THE COMPANY (optional) — names/ranks per the Build Prompt; no portrait photos supplied yet. -->
+  <!-- 9. THE CAST (optional) — named "The Company" in the original Build Prompt; Matt asked for the
+       visible label changed to "The Cast" since "Company" reads as a military unit, not a character
+       list. Left the wr-company-* class names alone (internal only, not user-facing) to avoid
+       re-touching every line in this block for a pure rename. -->
   <div class="wr-company reveal">
-    <p class="wr-section-label" style="text-align:center;">The Company</p>
+    <p class="wr-section-label" style="text-align:center;">The Cast</p>
     <div class="wr-company-row">
       <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_cross.png" alt="Clement Cross" loading="lazy" onerror="this.outerHTML='CC'"></div><div class="wr-company-name">Clement Cross</div><div class="wr-company-rank">Lieutenant</div></div>
       <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_mannon.png" alt="Arthur Mannon" loading="lazy" onerror="this.outerHTML='AM'"></div><div class="wr-company-name">Arthur Mannon</div><div class="wr-company-rank">Colonel</div></div>
