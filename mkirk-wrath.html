@@ -19,6 +19,10 @@
   #page-wrath .wr-teacher-companion{ --book-accent:var(--wrath-accent); --book-panel:#38181B; --book-border:rgba(139,107,61,.4); margin:40px auto; }
   #page-wrath .wr-teacher-companion .book-companion-card{ padding:38px 36px; }
   #page-wrath .wr-teacher-companion .book-companion-cover{ width:92px; height:138px; }
+  /* .wr-teacher-cover-tint (grayscale/sepia/hue-rotate filter) retired 2026-07-31 – was a stand-in
+     treatment for the placeholder cover_wrath.png reuse; no longer applied now that Matt supplied
+     the real Teacher Supplement cover (assets/cover_wrath_teacher.png). Rule left here unused in
+     case a future placeholder cover needs the same tint trick. */
   #page-wrath .wr-teacher-cover-tint{ filter:grayscale(1) sepia(1) hue-rotate(240deg) saturate(3) brightness(.75) contrast(1.1); }
   #page-wrath .wr-teacher-stats{ list-style:none; margin:10px 0 0; padding:0; }
   #page-wrath .wr-teacher-stats li{ font-family:'Source Serif 4',serif; font-size:14px; line-height:1.6; color:rgba(242,240,236,.55); margin-top:4px; max-width:56ch; }
@@ -94,23 +98,35 @@
   #page-wrath .wr-pullquote{ margin:30px 0; padding:22px 28px; background:rgba(139,107,61,.08); border-left:2px solid var(--wrath-accent); }
   #page-wrath .wr-pullquote p{ font-family:'GFS Didot',serif; font-style:italic; font-size:23px; line-height:1.6; color:var(--wrath-title) !important; margin:0 !important; }
   #page-wrath .wr-comp-line{ font-family:'Source Serif 4',serif; font-style:italic; font-size:16px; color:rgba(242,240,236,.5); margin-top:22px; }
-  #page-wrath .wr-aside{ background:var(--ink2); border:1px solid rgba(196,154,82,.22); padding:26px 24px; }
+  /* 2026-07-31: Shelve Under card recolored cream/gold per Matt (was the same dark panel as the
+     rest of the page, and he wanted it to stand apart). Background swapped to var(--cream); every
+     text color inside it flipped from light-on-dark to dark-on-cream for contrast. */
+  #page-wrath .wr-aside{ background:var(--cream); border:1px solid var(--wrath-accent); padding:26px 24px; }
   #page-wrath .wr-aside-head{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:14px; }
   #page-wrath .wr-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
-  #page-wrath .wr-tag{ font-family:'Source Serif 4',serif; font-size:12.5px; color:rgba(242,240,236,.65); border:1px solid rgba(196,154,82,.3); padding:4px 10px; border-radius:1px; }
-  #page-wrath .wr-aside-rule{ height:1px; background:rgba(196,154,82,.2); margin:16px 0; }
+  #page-wrath .wr-tag{ font-family:'Source Serif 4',serif; font-size:12.5px; color:#4A4136; border:1px solid rgba(139,107,61,.4); padding:4px 10px; border-radius:1px; }
+  #page-wrath .wr-aside-rule{ height:1px; background:rgba(139,107,61,.25); margin:16px 0; }
   #page-wrath .wr-aside-stat{ margin-bottom:10px; }
-  #page-wrath .wr-aside-stat-label{ font-family:'Source Serif 4',serif; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(242,240,236,.4); margin-bottom:2px; }
-  #page-wrath .wr-aside-stat-val{ font-family:'Source Serif 4',serif; font-size:15px; color:var(--wrath-title); }
-  #page-wrath .wr-aside-btn{ display:block; text-align:center; font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--wrath-title); border:1px solid var(--wrath-accent); padding:11px 16px; text-decoration:none; margin-top:10px; transition:background .2s,color .2s; }
-  #page-wrath .wr-aside-btn:hover{ background:var(--wrath-accent); color:#1A1714; }
+  #page-wrath .wr-aside-stat-label{ font-family:'Source Serif 4',serif; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(26,23,20,.55); margin-bottom:2px; }
+  #page-wrath .wr-aside-stat-val{ font-family:'Source Serif 4',serif; font-size:15px; color:#1A1714; }
+  #page-wrath .wr-aside-btn{ display:block; text-align:center; font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#1A1714; border:1px solid var(--wrath-accent); padding:11px 16px; text-decoration:none; margin-top:10px; transition:background .2s,color .2s; }
+  #page-wrath .wr-aside-btn:hover{ background:var(--wrath-accent); color:var(--cream); }
   @media (max-width:900px){ #page-wrath .wr-blurb-inner{ grid-template-columns:1fr; } }
 
   /* "THE ARCHITECTURE, IF YOU WANT IT" – new boxed module inside About the Book, item 6 of the
-     Build Prompt's section 6. Definition list of the four Greek structural terms. Bordered box,
-     background distinct from the surrounding prose per spec. */
+     Build Prompt's section 6. Bordered box, background distinct from the surrounding prose per spec.
+     2026-07-31: Matt asked for a more visually appealing layout than the plain stacked definition
+     list – rebuilt as a 2x2 grid of individually bordered tiles (wr-arch-grid/wr-arch-item), each
+     with the Greek term as a small heading and its gloss below, instead of italic-term + dash-dd
+     lines running one after another. Old .wr-arch-list dt/dd rules left in place below in case any
+     other page-scoped module reuses the pattern; unused here now. */
   #page-wrath .wr-architecture{ margin:34px 0; padding:26px 28px; background:var(--ink2); border:1px solid rgba(196,154,82,.25); }
   #page-wrath .wr-architecture-head{ font-family:'GFS Didot',serif; font-size:17px; text-transform:uppercase; letter-spacing:.04em; color:var(--wrath-accent); margin-bottom:16px; }
+  #page-wrath .wr-arch-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 20px; }
+  #page-wrath .wr-arch-item{ background:rgba(139,107,61,.08); border:1px solid rgba(196,154,82,.22); border-top:2px solid var(--wrath-accent); padding:16px 18px; }
+  #page-wrath .wr-arch-term{ font-family:'GFS Didot',serif; font-style:italic; font-size:19px; color:var(--wrath-title); margin-bottom:6px; }
+  #page-wrath .wr-arch-def{ font-family:'Source Serif 4',serif; font-size:15px; line-height:1.6; color:rgba(242,240,236,.7); }
+  @media (max-width:640px){ #page-wrath .wr-arch-grid{ grid-template-columns:1fr; } }
   #page-wrath .wr-arch-list{ margin:0 0 16px; }
   #page-wrath .wr-arch-list dt{ font-family:'GFS Didot',serif; font-style:italic; font-size:18.5px; color:var(--wrath-title); display:inline; }
   #page-wrath .wr-arch-list dd{ font-family:'Source Serif 4',serif; font-size:16px; line-height:1.6; color:rgba(242,240,236,.7); margin:2px 0 12px; }
@@ -154,6 +170,20 @@
      rather than cropped. */
   #page-wrath .wr-ground-map img{ width:100%; height:100%; object-fit:contain; display:block; }
   @media (max-width:800px){ #page-wrath .wr-ground-inner{ grid-template-columns:1fr; } }
+
+  /* 2026-07-31: campaign timeline added below the map, per Matt's request to echo the numbered
+     legend style on the map image itself (the map's own "FRONT LINE, 1917" key uses numbered
+     circle markers). Dates/phase names are real history (Third Battle of Ypres, 31 Jul–10 Nov
+     1917), verified against longlongtrail.co.uk and thehistorypress.co.uk – not novel content, so
+     the no-fabrication guardrail doesn't apply the way it does to book-specific details. */
+  #page-wrath .wr-ground-timeline{ margin-top:36px; border:1px solid rgba(196,154,82,.3); background:rgba(255,255,255,.02); padding:26px 28px; }
+  #page-wrath .wr-ground-timeline-head{ font-family:'Source Serif 4',serif; font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:18px; }
+  #page-wrath .wr-timeline-list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:14px 32px; }
+  #page-wrath .wr-timeline-list li{ display:flex; align-items:baseline; gap:12px; }
+  #page-wrath .wr-timeline-num{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; border:1px solid var(--wrath-accent); color:var(--wrath-accent); font-family:'Source Serif 4',serif; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; transform:translateY(2px); }
+  #page-wrath .wr-timeline-date{ flex:0 0 auto; font-family:'Source Serif 4',serif; font-size:13px; font-weight:700; letter-spacing:.03em; color:rgba(242,240,236,.55); white-space:nowrap; }
+  #page-wrath .wr-timeline-name{ font-family:'Source Serif 4',serif; font-size:15px; color:var(--wrath-title); }
+  @media (max-width:700px){ #page-wrath .wr-timeline-list{ grid-template-columns:1fr; } }
 
   /* "THE COMPANY" – optional section 9. Horizontal strip of small circular thumbnails, name + rank
      only, no cards/description (the Two Officers cards above do the real introduction work). No
@@ -237,7 +267,7 @@
   <!-- 3. TEACHER SUPPLEMENT CALLOUT -->
   <div class="book-companion-wrap wr-teacher-companion reveal">
     <a href="mkirk-wrath-supplement.html" class="book-companion-card">
-      <img class="book-companion-cover wr-teacher-cover-tint" src="assets/cover_wrath.png" alt="Teacher Supplement – placeholder cover, tinted from the novel's cover" onerror="this.classList.add('img-missing')">
+      <img class="book-companion-cover" src="assets/cover_wrath_teacher.png" alt="Wrath Teacher Supplement – book cover" onerror="this.classList.add('img-missing')">
       <div class="book-companion-card-body">
         <span class="book-companion-eyebrow">Teacher Supplement</span>
         <h3>Teacher Supplement</h3>
@@ -255,7 +285,7 @@
   <div class="wr-meta-bar">
     <div class="wr-meta-inner">
       <div class="wr-meta-item"><div class="wr-meta-label">Status</div><div class="wr-meta-value">Pre-sale · Oct 1, 2026</div></div>
-      <div class="wr-meta-item"><div class="wr-meta-label">Format</div><div class="wr-meta-value">Hardcover / Paperback / Kindle</div></div>
+      <div class="wr-meta-item"><div class="wr-meta-label">Format</div><div class="wr-meta-value">Paperback / Kindle</div></div>
       <div class="wr-meta-item"><div class="wr-meta-label">Genre</div><div class="wr-meta-value">Literary Fiction · Historical</div></div>
     </div>
   </div>
@@ -284,16 +314,24 @@
 
         <div class="wr-architecture">
           <div class="wr-architecture-head">The Architecture, If You Want It</div>
-          <dl class="wr-arch-list">
-            <dt>mênis</dt>
-            <dd>– the wrath of a hero whose honour has been violated</dd>
-            <dt>kleos</dt>
-            <dd>– the fame that outlives the man who earned it</dd>
-            <dt>thumos</dt>
-            <dd>– the will to act, more force than feeling</dd>
-            <dt>nostos</dt>
-            <dd>– the homecoming, or its refusal</dd>
-          </dl>
+          <div class="wr-arch-grid">
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">mênis</div>
+              <div class="wr-arch-def">the wrath of a hero whose honour has been violated</div>
+            </div>
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">kleos</div>
+              <div class="wr-arch-def">the fame that outlives the man who earned it</div>
+            </div>
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">thumos</div>
+              <div class="wr-arch-def">the will to act, more force than feeling</div>
+            </div>
+            <div class="wr-arch-item">
+              <div class="wr-arch-term">nostos</div>
+              <div class="wr-arch-def">the homecoming, or its refusal</div>
+            </div>
+          </div>
           <p class="wr-architecture-close">The novel runs on these four terms. It never names them. The prose itself leans on Greek-rooted vocabulary throughout – deliberately, word by word.</p>
         </div>
 
@@ -312,7 +350,7 @@
           </div>
           <div class="wr-aside-rule"></div>
           <div class="wr-aside-stat"><div class="wr-aside-stat-label">Publication Date</div><div class="wr-aside-stat-val">October 1, 2026</div></div>
-          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Format</div><div class="wr-aside-stat-val">Hardcover · Paperback · Kindle</div></div>
+          <div class="wr-aside-stat"><div class="wr-aside-stat-label">Format</div><div class="wr-aside-stat-val">Paperback · Kindle</div></div>
           <div class="wr-aside-stat"><div class="wr-aside-stat-label">Structure</div><div class="wr-aside-stat-val">Dual close POV – Iliad structure</div></div>
           <div class="wr-aside-stat"><div class="wr-aside-stat-label">Companion</div><div class="wr-aside-stat-val">24 chapters mapped to Homer + the war poets</div></div>
           <div class="wr-aside-stat"><div class="wr-aside-stat-label">Format Note</div><div class="wr-aside-stat-val">A blank page for notes follows every chapter</div></div>
@@ -363,6 +401,19 @@
       <div class="wr-ground-map has-photo" id="wrGroundMap">
         <img src="assets/map_ypres.png" alt="Campaign map – Third Ypres, 1917" loading="lazy" onerror="this.parentElement.classList.remove('has-photo'); this.outerHTML='&lt;span class=&quot;cp-flag&quot;&gt;Placeholder – campaign map&lt;/span&gt;&lt;span class=&quot;cp-title&quot;&gt;Third Ypres, 1917&lt;/span&gt;&lt;span class=&quot;cp-sub&quot;&gt;Image not found – check assets/ path&lt;/span&gt;'">
       </div>
+    </div>
+    <div class="wr-ground-timeline">
+      <div class="wr-ground-timeline-head">Timeline · Third Ypres, 1917</div>
+      <ol class="wr-timeline-list">
+        <li><span class="wr-timeline-num">1</span><span class="wr-timeline-date">31 Jul–2 Aug</span><span class="wr-timeline-name">Battle of Pilckem Ridge</span></li>
+        <li><span class="wr-timeline-num">2</span><span class="wr-timeline-date">16–18 Aug</span><span class="wr-timeline-name">Battle of Langemarck</span></li>
+        <li><span class="wr-timeline-num">3</span><span class="wr-timeline-date">20–25 Sep</span><span class="wr-timeline-name">Battle of the Menin Road Ridge</span></li>
+        <li><span class="wr-timeline-num">4</span><span class="wr-timeline-date">26 Sep–3 Oct</span><span class="wr-timeline-name">Battle of Polygon Wood</span></li>
+        <li><span class="wr-timeline-num">5</span><span class="wr-timeline-date">4 Oct</span><span class="wr-timeline-name">Battle of Broodseinde</span></li>
+        <li><span class="wr-timeline-num">6</span><span class="wr-timeline-date">9 Oct</span><span class="wr-timeline-name">Battle of Poelcappelle</span></li>
+        <li><span class="wr-timeline-num">7</span><span class="wr-timeline-date">12 Oct</span><span class="wr-timeline-name">First Battle of Passchendaele</span></li>
+        <li><span class="wr-timeline-num">8</span><span class="wr-timeline-date">26 Oct–10 Nov</span><span class="wr-timeline-name">Second Battle of Passchendaele – village taken, campaign ends</span></li>
+      </ol>
     </div>
   </div>
 
