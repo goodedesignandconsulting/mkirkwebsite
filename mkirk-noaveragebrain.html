@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>No Average Brain — Matt Goode</title>
+<title>No Average Brain – Matt Goode</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mkirk-style.css">
 </head>
 <body>
 <section class="page pal-nab" id="page-noaveragebrain">
-  <div class="page-tag">PAGE: <b>mkirk-noaveragebrain.html</b> — palette/type below REAL, from Matt's uploaded <b>NAB style guide</b> (working draft, sampled from one confirmed social carousel slide + author brief). Purple is the identity colour, the four-band "Spectrum Bar" is this book's signature device. Per the guide: <b>NAB is a sibling to CLUTCH, not a follow-up/sequel to it</b>. Headline face still open (Baloo 2 vs. Poppins ExtraBold) — Baloo 2 used here as the guide's lead candidate. <b style="color:#8f8;">2026-07-30: background flipped to light cream per Matt's note (many book pages are already dark) — see the comment on --nab-bg near the top of the stylesheet. Hero's Q&amp;A rebuilt as prose + aside, matching Balance/Clutch/Wrath/Field Tested; author's-note section added (placeholder). Carousel kept (Matt's "no carousel" instruction was Field-Tested-specific).</b></div>
+  <div class="page-tag">PAGE: <b>mkirk-noaveragebrain.html</b> – palette/type below REAL, from Matt's uploaded <b>NAB style guide</b> (working draft, sampled from one confirmed social carousel slide + author brief). Purple is the identity colour, the four-band "Spectrum Bar" is this book's signature device. Per the guide: <b>NAB is a sibling to CLUTCH, not a follow-up/sequel to it</b>. Headline face still open (Baloo 2 vs. Poppins ExtraBold) – Baloo 2 used here as the guide's lead candidate. <b style="color:#8f8;">2026-07-30: background flipped to light cream per Matt's note (many book pages are already dark) – see the comment on --nab-bg near the top of the stylesheet. Hero's Q&amp;A rebuilt as prose + aside, matching Balance/Clutch/Wrath/Field Tested; author's-note section added (placeholder). Carousel kept (Matt's "no carousel" instruction was Field-Tested-specific).</b></div>
   <style>
   #page-noaveragebrain{ --book-accent:var(--nab-accent); --book-panel:rgba(0,0,0,.035); --book-panel2:rgba(0,0,0,.06); --book-border:rgba(0,0,0,.14); }
-  /* "Early reads" carousel — added 2026-07-30, mirrors Wrath's #page-wrath .wr-carousel-track
+  /* "Early reads" carousel – added 2026-07-30, mirrors Wrath's #page-wrath .wr-carousel-track
      pattern exactly (same box treatment, active-slide toggle, missing-image fallback). Matt sent
      one real photo for now (card_brain_superheros.jpg); structure supports adding more slides
      later the same way Wrath's did. */
@@ -22,7 +22,7 @@
   #page-noaveragebrain .nab-slide.active{ display:flex; align-items:center; justify-content:center; }
   #page-noaveragebrain .nab-slide-img{ width:100%; height:100%; object-fit:cover; display:block; }
   #page-noaveragebrain .nab-slide-img.img-missing{ display:none; }
-  #page-noaveragebrain .nab-slide:has(.nab-slide-img.img-missing)::after{ content:'Image not found — check assets/ path'; font-family:'Source Serif 4',serif; font-size:15px; color:rgba(0,0,0,.45); text-align:center; padding:20px; }
+  #page-noaveragebrain .nab-slide:has(.nab-slide-img.img-missing)::after{ content:'Image not found – check assets/ path'; font-family:'Source Serif 4',serif; font-size:15px; color:rgba(0,0,0,.45); text-align:center; padding:20px; }
   #page-noaveragebrain .nab-carousel-nav{ display:flex; justify-content:center; gap:16px; margin-top:24px; }
   #page-noaveragebrain .nab-carousel-nav button{ background:transparent; border:1px solid var(--nab-accent); color:var(--nab-accent); font-family:'Source Serif 4',serif; font-size:14px; letter-spacing:.08em; text-transform:uppercase; padding:8px 18px; cursor:pointer; }
   #page-noaveragebrain .nab-carousel-nav button:hover{ background:var(--nab-accent); color:#fff; }
@@ -37,33 +37,33 @@
   <div class="book-hero-status reveal"><span class="status-tag">Coming Dec 1</span></div>
   <div class="book-detail reveal">
     <div class="book-cover-col">
-      <img class="real-cover" src="assets/cover_noAverage.png" alt="No Average Brain — book cover" onerror="this.classList.add('img-missing')">
+      <img class="real-cover" src="assets/cover_noAverage.png" alt="No Average Brain – book cover" onerror="this.classList.add('img-missing')">
       <a href="mkirk-coming-soon.html" class="btn btn-gdc-burgundy btn-coming-soon" style="background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Buy on Amazon</a>
       <a href="mkirk-noaveragebrain-arc.html" class="btn btn-outline" style="margin-top:10px;background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Request an ARC</a>
       <a href="mkirk-noaveragebrain-chapter.html" class="btn btn-outline" style="margin-top:10px;background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Read a free chapter</a>
-      <!-- INTERNAL NOTE (was visible pub-line span, hidden 2026-07-30 per Matt): Amazon link assumed, not yet confirmed — see brief §7 -->
+      <!-- INTERNAL NOTE (was visible pub-line span, hidden 2026-07-30 per Matt): Amazon link assumed, not yet confirmed – see brief §7 -->
     </div>
     <div>
       <h1 class="book-title" style="font-family:'Baloo 2',sans-serif;">No Average <span class="emph">Brain</span></h1>
       <p style="font-family:'Poppins',sans-serif;color:rgba(42,36,31,.75);margin:2px 0 14px;max-width:44em;">Leadership for every kind of mind.</p>
       <div class="book-kicker" style="font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em;color:var(--nab-accent);">Neuroinclusive Leadership · Sibling to CLUTCH · Matt Goode</div>
-      <p style="font-family:'Source Serif 4';font-style:italic;font-size:20.5px;line-height:1.6;color:rgba(42,36,31,.85);max-width:42em;border-left:2px solid var(--nab-accent);padding-left:18px;margin-top:8px;">The case that dyslexic, autistic, ADHD, and anxious-brained thinkers are exactly the minds a volatile, AI-shaped world now needs — and the system for leading them without asking them to translate themselves first.</p>
+      <p style="font-family:'Source Serif 4';font-style:italic;font-size:20.5px;line-height:1.6;color:rgba(42,36,31,.85);max-width:42em;border-left:2px solid var(--nab-accent);padding-left:18px;margin-top:8px;">The case that dyslexic, autistic, ADHD, and anxious-brained thinkers are exactly the minds a volatile, AI-shaped world now needs – and the system for leading them without asking them to translate themselves first.</p>
     </div>
   </div>
 
-  <!-- ABOUT THE BOOK — prose + aside, replaces the numbered Q&A list (same real answers,
+  <!-- ABOUT THE BOOK – prose + aside, replaces the numbered Q&A list (same real answers,
        re-cut into flowing paragraphs, per Matt's general rule). -->
   <div class="book-about reveal">
     <p class="book-about-label">About the Book</p>
     <div class="book-about-inner">
       <div class="book-prose">
-        <p>The book builds one argument in two moves: first the case that dyslexic, autistic, ADHD, and anxious-brained thinkers are exactly the minds a volatile, AI-shaped world now needs, then the system for leading them without asking them to translate themselves first. It's carried by Matt Goode's own record — the leadership meetings he sat through in silence, the son he pulled out of a school that couldn't see him, the founders and executives he's since coached through the redesign. Two decades of teaching sit underneath it: watching, year after year, which kids got flagged as deficient and which ones the flag turned out to be wrong about.</p>
+        <p>The book builds one argument in two moves: first the case that dyslexic, autistic, ADHD, and anxious-brained thinkers are exactly the minds a volatile, AI-shaped world now needs, then the system for leading them without asking them to translate themselves first. It's carried by Matt Goode's own record – the leadership meetings he sat through in silence, the son he pulled out of a school that couldn't see him, the founders and executives he's since coached through the redesign. Two decades of teaching sit underneath it: watching, year after year, which kids got flagged as deficient and which ones the flag turned out to be wrong about.</p>
         <div class="book-pullquote">
-          <p>It replaces "make room for difference" with an operating system built for cognitive range specifically — CREATE, VOICES, the 6C Compass, DELEGATE.</p>
+          <p>It replaces "make room for difference" with an operating system built for cognitive range specifically – CREATE, VOICES, the 6C Compass, DELEGATE.</p>
         </div>
         <p>Most books in this category make either the moral case for accommodation or the business case for hiring differently, rarely both, and rarely from someone who's run the consulting himself. This one also does something the category mostly skips: it names AI's arrival as the moment the old barrier actually falls, and spells out what that means for who gets to lead next.</p>
-        <p>Direct and personal rather than academic — closer to a leader thinking out loud with you than a management manual. Goode moves between hard data — attrition numbers, masking research, WEF skills forecasts — and what those numbers cost specific people, including his own family.</p>
-        <p class="book-comp-line">For readers of <em>Quiet</em> and <em>The Dyslexic Advantage</em> — and sits closest to Goode's own CLUTCH: the same operating system, now pointed at the specific minds it was quietly built to include all along.</p>
+        <p>Direct and personal rather than academic – closer to a leader thinking out loud with you than a management manual. Goode moves between hard data – attrition numbers, masking research, WEF skills forecasts – and what those numbers cost specific people, including his own family.</p>
+        <p class="book-comp-line">For readers of <em>Quiet</em> and <em>The Dyslexic Advantage</em> – and sits closest to Goode's own CLUTCH: the same operating system, now pointed at the specific minds it was quietly built to include all along.</p>
       </div>
       <div>
         <div class="book-aside">
@@ -76,7 +76,7 @@
           </div>
           <div class="book-aside-rule"></div>
           <div class="book-aside-stat"><div class="book-aside-stat-label">Publication Date</div><div class="book-aside-stat-val">December 1, 2026</div></div>
-          <div class="book-aside-stat"><div class="book-aside-stat-label">Format</div><div class="book-aside-stat-val"><em class="ph">TBD — see brief §7</em></div></div>
+          <div class="book-aside-stat"><div class="book-aside-stat-label">Format</div><div class="book-aside-stat-val"><em class="ph">TBD – see brief §7</em></div></div>
           <div class="book-aside-rule"></div>
           <a href="mkirk-coming-soon.html" class="book-aside-btn btn-coming-soon">Buy on Amazon</a>
           <a href="mkirk-noaveragebrain-arc.html" class="book-aside-btn" style="background:var(--nab-accent);border-color:var(--nab-accent);color:#fff;">Request an ARC</a>
@@ -87,8 +87,8 @@
 
   <div class="carousel-section reveal">
     <h2 class="carousel-heading" style="color:var(--nab-accent);">Early reads</h2>
-    <!-- 2026-07-30: Matt sent one real photo to start ("card_brain_superheros.jpg" — family shot,
-         "dyslexic" shirts) — wired as the first slide of a real carousel, matching Wrath's pattern.
+    <!-- 2026-07-30: Matt sent one real photo to start ("card_brain_superheros.jpg" – family shot,
+         "dyslexic" shirts) – wired as the first slide of a real carousel, matching Wrath's pattern.
          Not review quotes yet, just the one image; add more slides here the same way as they land. -->
     <div class="nab-carousel-track" id="nabCarouselTrack">
       <div class="nab-slide active"><img class="nab-slide-img" src="assets/card_brain_superheros.jpg" alt="Matt Goode and family, wearing 'dyslexic' shirts" onerror="this.classList.add('img-missing')"></div>
@@ -99,15 +99,15 @@
     </div>
   </div>
 
-  <!-- A NOTE FROM THE AUTHOR — placeholder; no NAB author's note exists yet.
-       2026-07-30: avatar switched to card_brain_superheros.jpg per Matt — this photo belongs on
+  <!-- A NOTE FROM THE AUTHOR – placeholder; no NAB author's note exists yet.
+       2026-07-30: avatar switched to card_brain_superheros.jpg per Matt – this photo belongs on
        No Average Brain only (was also leaking onto Seven and Noble Island; fixed there too). -->
   <section class="book-note reveal">
     <div class="book-note-inner">
       <div class="book-note-avatar"><img src="assets/card_brain_superheros.jpg" alt="Matt Goode" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="book-note-body">
         <p class="book-about-label" style="margin-bottom:18px;">A Note from the Author</p>
-        <p><em class="ph">[Placeholder — Matt's note on No Average Brain goes here: the son he pulled from school, the leadership meetings, why now/why AI changes the calculus.]</em></p>
+        <p><em class="ph">[Placeholder – Matt's note on No Average Brain goes here: the son he pulled from school, the leadership meetings, why now/why AI changes the calculus.]</em></p>
       </div>
     </div>
   </section>
@@ -115,7 +115,7 @@
   <div class="email-section" style="background:var(--gdc-cream);">
     <h2 class="email-heading">Follow No Average Brain</h2>
     <form class="email-form" onsubmit="return false;"><input type="email" placeholder="you@example.com"><button class="btn-follow" style="background:var(--nab-accent);color:#fff;">Join the list</button></form>
-    <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): Kit form UID needed — new form -->
+    <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): Kit form UID needed – new form -->
   </div>
 
   <footer class="site-footer" style="background:var(--gdc-charcoal);"><div class="footer-inner">
