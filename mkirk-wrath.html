@@ -39,7 +39,14 @@
   #page-wrath .wr-hero-inner{ display:flex; gap:56px; align-items:flex-start; }
   #page-wrath .wr-hero-text{ flex:1; min-width:0; }
   #page-wrath .wr-hero-eyebrow{ font-family:'Source Serif 4',serif; font-size:14px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:14px; }
-  #page-wrath .wr-hero-title{ font-family:'GFS Didot',serif; font-weight:700; font-size:clamp(17px,calc(7.06vw - 44.5px),54px); line-height:1.05; text-transform:uppercase; letter-spacing:.01em; color:var(--wrath-title); margin-bottom:14px; white-space:nowrap; }
+  /* 2026-07-31: split into two lines per Matt — "THE WRATH OF ARCHIE ELLIS" as one nowrap line
+     was colliding with the cover art at in-between desktop widths once the sitewide font bump
+     landed. Each line is short enough now to never need nowrap at all, and the two-tier treatment
+     (small italic lead-in + large bold name) gives Archie Ellis's name the visual weight instead
+     of the title reading as one flat block. */
+  #page-wrath .wr-hero-title{ margin-bottom:14px; }
+  #page-wrath .wr-hero-title-sub{ display:block; font-family:'Source Serif 4',serif; font-style:italic; font-weight:400; font-size:clamp(15px,3vw,26px); letter-spacing:.03em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:2px; }
+  #page-wrath .wr-hero-title-main{ display:block; font-family:'GFS Didot',serif; font-weight:700; font-size:clamp(28px,7vw,64px); line-height:1.05; text-transform:uppercase; letter-spacing:.01em; color:var(--wrath-title); }
   /* 2026-07-31: Build Prompt reserves the warm gold (--gold, #C9A85C) specifically and only for
      this subtitle/tagline line – was a muted ivory before. */
   #page-wrath .wr-hero-subtitle{ font-family:'Source Serif 4',serif; font-style:italic; font-size:19.5px; color:var(--gold); margin-bottom:6px; }
@@ -56,7 +63,7 @@
   #page-wrath .wr-hero-cover{ flex-shrink:0; width:260px; }
   #page-wrath .wr-hero-cover .cover-placeholder{ margin:0; }
   #page-wrath .wr-pub-line{ font-family:'Source Serif 4',serif; font-size:14px; color:rgba(242,240,236,.45); margin-top:14px; text-align:center; }
-  @media (max-width:900px){ #page-wrath .wr-hero-inner{ flex-direction:column-reverse; } #page-wrath .wr-hero-cover{ width:200px; margin:0 auto; } #page-wrath .wr-hero-title{ font-size:clamp(16px,calc(5.82vw + 2.5px),55px); white-space:normal; } }
+  @media (max-width:900px){ #page-wrath .wr-hero-inner{ flex-direction:column-reverse; } #page-wrath .wr-hero-cover{ width:200px; margin:0 auto; } }
 
   #page-wrath .wr-meta-bar{ background:var(--ink2); border-top:1px solid rgba(196,154,82,.2); border-bottom:1px solid rgba(196,154,82,.2); padding:18px 32px; margin-top:40px; }
   #page-wrath .wr-meta-inner{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); }
@@ -207,7 +214,7 @@
     <div class="wr-hero-inner">
       <div class="wr-hero-text">
         <p class="wr-hero-eyebrow">Literary Fiction · Historical</p>
-        <h1 class="wr-hero-title">The Wrath of Archie Ellis</h1>
+        <h1 class="wr-hero-title"><span class="wr-hero-title-sub">The Wrath of</span><span class="wr-hero-title-main">Archie Ellis</span></h1>
         <p class="wr-hero-subtitle">A retelling of the Iliad – Ypres, 1917</p>
         <p class="wr-hero-byline">A novel by m kirk</p>
         <div class="wr-hero-accent"><span></span><span></span><span></span></div>
