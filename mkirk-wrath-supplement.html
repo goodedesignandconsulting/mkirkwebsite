@@ -10,22 +10,131 @@
 </head>
 <body>
 <section class="page pal-wrath" id="page-wrath-supplement">
-  <div class="page-tag">PAGE: <b>mkirk-wrath-supplement.html</b> – daughter page; digital via Kit, hardcopy Amazon link (tentative per Matt)</div>
+  <div class="page-tag">PAGE: <b>mkirk-wrath-supplement.html</b> – digital via this site (PDF/ebook); hardcopy status undecided per Matt. <b style="color:#8f8;">2026-07-31: renamed "Teacher Supplement" to "Teaching Wrath: A Companion for the Classroom" sitewide (callout card, More to Explore card, this page, internal jump-nav) per Matt's copy doc, which uses that name consistently as the resource's actual title. Filled in the real Short/Standard/Longer copy Matt provided (replacing the earlier placeholder paragraph) and added a new "What's Inside" section built directly from that copy's own enumerated facts – chapter apparatus, framework (pacing/grade-banding/seminar plans/rubric/standards), and handout-packet contents – nothing invented beyond what his copy states. One discrepancy left as-is rather than silently fixed: his copy calls the chapter apparatus "eight-part" but only enumerates five parts; reproduced verbatim since guessing at the other three would be fabrication. Also embedded the "Teaching Wrath — Unit-Launch Deck Preview" interactive slide viewer Matt uploaded (assets/teaching-wrath-deck-preview.html, ~1MB self-contained file with 13 base64-embedded slide images) via iframe in a new "Look Inside" section – kept as a separate asset file rather than inlined into this page/the master doc to avoid bloating every export pass with a megabyte of base64. Aside stats expanded with Grade Band and Standards rows pulled from the same copy.</b></div>
+  <style>
+  #page-wrath-supplement{ --book-accent:var(--wrath-accent); --book-panel:var(--ink2); --book-panel2:rgba(255,255,255,.05); --book-border:rgba(196,154,82,.28); }
+  #page-wrath-supplement .tw-inside{ max-width:1200px; margin:0 auto; padding:8px 40px 48px; }
+  #page-wrath-supplement .tw-inside-label{ font-family:'Source Serif 4',serif; font-size:12.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:22px; }
+  #page-wrath-supplement .tw-inside-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  #page-wrath-supplement .tw-inside-col{ background:var(--ink2); border:1px solid rgba(196,154,82,.22); border-top:2px solid var(--wrath-accent); padding:24px 22px; }
+  #page-wrath-supplement .tw-inside-col h3{ font-family:'GFS Didot',serif; font-size:17px; text-transform:uppercase; letter-spacing:.02em; color:var(--wrath-title); margin-bottom:14px; }
+  #page-wrath-supplement .tw-inside-col ul{ list-style:none; margin:0; padding:0; }
+  #page-wrath-supplement .tw-inside-col li{ font-family:'Source Serif 4',serif; font-size:14.5px; line-height:1.6; color:rgba(242,240,236,.72); padding-left:16px; position:relative; margin-bottom:10px; }
+  #page-wrath-supplement .tw-inside-col li::before{ content:'–'; position:absolute; left:0; color:var(--wrath-accent); }
+  @media (max-width:900px){ #page-wrath-supplement .tw-inside-grid{ grid-template-columns:1fr; } }
+
+  #page-wrath-supplement .tw-deck{ max-width:1200px; margin:0 auto; padding:8px 40px 56px; }
+  #page-wrath-supplement .tw-deck-label{ font-family:'Source Serif 4',serif; font-size:12.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--wrath-accent); margin-bottom:18px; }
+  #page-wrath-supplement .tw-deck-frame-wrap{ max-width:760px; margin:0 auto; }
+  #page-wrath-supplement .tw-deck-frame{ width:100%; aspect-ratio:16/9; border:1px solid rgba(196,154,82,.28); display:block; background:#12100d; }
+  #page-wrath-supplement .tw-deck-caption{ text-align:center; font-family:'Source Serif 4',serif; font-style:italic; font-size:13.5px; color:rgba(242,240,236,.45); margin-top:12px; }
+  </style>
   <nav class="site-nav" style="background:var(--ink2);"><div class="nav-inner">
     <a href="index.html" class="logo">m kirk</a>
     <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
   </div></nav>
-  <div class="section section-narrow reveal" style="padding-top:70px;padding-bottom:90px;">
-    <div class="status-tag">Companion to <a href="mkirk-wrath.html" style="color:var(--wrath-accent);">Wrath</a></div>
-    <h1 class="h1">Teacher Supplement</h1>
-    <p class="lede"><em class="ph">[Placeholder – description of the supplement's contents pending.]</em></p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;">
+
+  <div class="book-hero-status reveal"><span class="status-tag" style="color:var(--wrath-accent);">Companion to <a href="mkirk-wrath.html" style="color:var(--wrath-accent);">Wrath</a></span></div>
+  <div class="book-detail reveal">
+    <div class="book-cover-col">
+      <img class="real-cover" src="assets/cover_wrath_teacher.png" alt="Teaching Wrath – A Companion for the Classroom, book cover" onerror="this.classList.add('img-missing')">
       <a href="mkirk-coming-soon.html" class="btn btn-outline btn-coming-soon" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Buy PDF (website)</a>
-      <a href="mkirk-coming-soon.html" class="btn btn-outline btn-coming-soon" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Buy ebook (website)</a>
-      <a href="mkirk-coming-soon.html" class="btn btn-outline btn-coming-soon" style="border-color:var(--wrath-accent);color:var(--wrath-title);">Buy hardcopy (Amazon)</a>
+      <p class="pub-line">Digital via this site · hardcopy TBD</p>
     </div>
-    <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): Amazon hardcopy is tentative – Matt said "might be sold on Amazon," confirm before wiring link. Pricing TBD. -->
+    <div>
+      <h1 class="book-title" style="font-family:'GFS Didot',serif;text-transform:uppercase;">Teaching Wrath</h1>
+      <p style="font-family:'Source Serif 4',serif;color:rgba(242,240,236,.72);margin:2px 0 14px;max-width:44em;">A Companion for the Classroom, for <em>The Wrath of Archie Ellis</em>.</p>
+      <div class="book-kicker" style="color:var(--wrath-accent);">Companion to the novel · Grades 7–12</div>
+      <p style="font-family:'Source Serif 4';font-style:italic;font-size:20.5px;line-height:1.6;color:rgba(242,240,236,.85);max-width:42em;border-left:2px solid var(--wrath-accent);padding-left:18px;margin-top:8px;">Teaching Wrath: A Companion for the Classroom is a complete teaching guide for <em>The Wrath of Archie Ellis</em>, built for grades 7–12 in independent schools.</p>
+    </div>
   </div>
+
+  <div class="book-about reveal">
+    <p class="book-about-label">About the Companion</p>
+    <div class="book-about-inner">
+      <div class="book-prose">
+        <p style="font-family:'Source Serif 4',serif;font-size:18.5px;line-height:1.8;color:rgba(242,240,236,.82);">Every chapter runs the same eight-part apparatus: a five-minute "Quick Teach," context and craft notes, a reading of the chapter against Homer, discussion questions tiered by level, and a content advisory where one applies. Around that sits a full teaching framework: three pacing options, grade-banding, Harkness and Socratic seminar plans, a whole-book essay rubric, and alignment to Common Core, the NCSS C3 Framework, and ACTFL's World-Readiness Standards.</p>
+        <p style="font-family:'Source Serif 4',serif;font-size:18.5px;line-height:1.8;color:rgba(242,240,236,.82);">The 88-page companion ships with a standalone handout packet: a glossary, a roles-only cast list, a one-page Iliad primer, a WWI and Passchendaele timeline, a teaching map of the Ypres Salient, graphic organizers, a discussion-and-assessment toolkit, and a slide deck for launching the unit with a department.</p>
+        <p class="book-about-label" style="margin:26px 0 12px;">About This Resource</p>
+        <p style="font-family:'Source Serif 4',serif;font-size:18.5px;line-height:1.8;color:rgba(242,240,236,.82);"><em>The Wrath of Archie Ellis</em> is a novel about the Third Battle of Ypres built as a structural parallel to Homer's Iliad – twenty-four chapters against twenty-four books, with the same argument running underneath both: what the old understanding of war assumed, and what the industrial war did to each of those assumptions. Teaching Wrath is the classroom companion built for that novel, not adapted from someone else's template. It was built chapter by chapter from the book's own scaffolding, then extended with everything a standalone teaching resource needs that a novel's own back matter never had to provide: pacing for a full term, a quarter, or a four-week unit; a three-band system so one guide serves a 7th-grade elective and an AP seminar; content advisories applied chapter by chapter; and a genuine cross-curricular reach, with alignment to English, history, and world-language standards built in rather than bolted on.</p>
+      </div>
+      <div>
+        <div class="book-aside">
+          <div class="book-aside-head">Shelve Under</div>
+          <div class="book-tags">
+            <span class="book-tag">Teacher Resource</span>
+            <span class="book-tag">Discussion Guide</span>
+            <span class="book-tag">Unit Plan</span>
+            <span class="book-tag">Grades 7–12</span>
+          </div>
+          <div class="book-aside-rule"></div>
+          <div class="book-aside-stat"><div class="book-aside-stat-label">Companion To</div><div class="book-aside-stat-val">The Wrath of Archie Ellis</div></div>
+          <div class="book-aside-stat"><div class="book-aside-stat-label">Format</div><div class="book-aside-stat-val">PDF &amp; ebook (website) · hardcopy TBD</div></div>
+          <div class="book-aside-stat"><div class="book-aside-stat-label">Contents</div><div class="book-aside-stat-val">88 pages + standalone handout packet</div></div>
+          <div class="book-aside-stat"><div class="book-aside-stat-label">Grade Band</div><div class="book-aside-stat-val">Grades 7–12 · three-band system</div></div>
+          <div class="book-aside-stat"><div class="book-aside-stat-label">Standards</div><div class="book-aside-stat-val">Common Core · NCSS C3 · ACTFL World-Readiness</div></div>
+          <div class="book-aside-rule"></div>
+          <a href="mkirk-coming-soon.html" class="book-aside-btn btn-coming-soon">Buy PDF</a>
+          <a href="mkirk-coming-soon.html" class="book-aside-btn btn-coming-soon">Buy ebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT'S INSIDE – new, built from the enumerated facts in Matt's copy doc (chapter apparatus /
+       framework / handout packet), not from the two prose paragraphs above, so the same information
+       reads as scannable bullets for anyone skimming rather than reading the full paragraphs. -->
+  <div class="tw-inside reveal">
+    <p class="tw-inside-label">What's Inside</p>
+    <div class="tw-inside-grid">
+      <div class="tw-inside-col">
+        <h3>Every Chapter</h3>
+        <ul>
+          <li>A five-minute "Quick Teach"</li>
+          <li>Context and craft notes</li>
+          <li>A reading of the chapter against Homer</li>
+          <li>Discussion questions tiered by level</li>
+          <li>A content advisory where one applies</li>
+        </ul>
+      </div>
+      <div class="tw-inside-col">
+        <h3>The Framework</h3>
+        <ul>
+          <li>Three pacing options – full term, a quarter, or a four-week unit</li>
+          <li>Grade-banding – one guide for a 7th-grade elective through an AP seminar</li>
+          <li>Harkness and Socratic seminar plans</li>
+          <li>A whole-book essay rubric</li>
+          <li>Aligned to Common Core, the NCSS C3 Framework, and ACTFL's World-Readiness Standards</li>
+        </ul>
+      </div>
+      <div class="tw-inside-col">
+        <h3>The Handout Packet</h3>
+        <ul>
+          <li>Glossary</li>
+          <li>Roles-only cast list</li>
+          <li>One-page Iliad primer</li>
+          <li>WWI and Passchendaele timeline</li>
+          <li>Teaching map of the Ypres Salient</li>
+          <li>Graphic organizers</li>
+          <li>Discussion-and-assessment toolkit</li>
+          <li>Slide deck for launching the unit with a department</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOOK INSIDE – embeds Matt's uploaded interactive slide viewer (assets/teaching-wrath-deck-preview.html),
+       a self-contained 13-slide carousel with its own nav/dots/counter. Loaded via iframe rather than inlined
+       so this page's own markup stays lean; the widget already carries its own "preview only, full deck
+       available on request" caption internally. -->
+  <div class="tw-deck reveal">
+    <p class="tw-deck-label">Look Inside: The Unit-Launch Deck</p>
+    <div class="tw-deck-frame-wrap">
+      <iframe class="tw-deck-frame" src="assets/teaching-wrath-deck-preview.html" loading="lazy" title="Teaching Wrath – unit-launch deck preview"></iframe>
+      <p class="tw-deck-caption">A preview of the slide deck included in the handout packet, for launching the unit with a department.</p>
+    </div>
+  </div>
+
   <footer class="site-footer"><div class="footer-inner">
     <a href="index.html" class="logo" style="font-size:32.5px;">m kirk</a>
     <span class="footer-copy">© m kirk · All rights reserved</span>
