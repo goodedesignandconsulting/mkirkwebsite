@@ -905,6 +905,58 @@
 }
 .real-clutch .btn-dark:hover { background: var(--ink); }
 
+/* ─── LEAVE A REVIEW CTA (2026-08-09) ───────────────────────────────────────
+   Added per Matt: mkirk-clutch-review.html was previously orphaned – linked only
+   from a deactivated button on the front page and nowhere on this page.
+   2026-08-09 revision: moved up from below the carousel to directly above it, inside
+   the reviews section, so it clears the marketing-card carousel that was burying it
+   while keeping the "What Readers Are Saying" context that makes the ask legible.
+   Restyled from a full-bleed band to a contained charcoal card, since it now sits
+   inside the .section container rather than between sections. */
+.real-clutch .review-cta-wrap {
+  background: var(--charcoal);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  margin-bottom: 40px;
+}
+.real-clutch .review-cta-inner {
+  padding: 38px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.real-clutch .review-cta-text { max-width: 62ch; }
+.real-clutch .review-cta-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.real-clutch .review-cta-text h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.real-clutch .review-cta-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--dim);
+}
+.real-clutch .review-cta-action { flex-shrink: 0; }
+@media (max-width: 860px) {
+  .real-clutch .review-cta-inner { padding: 40px 24px; flex-direction: column; align-items: flex-start; gap: 24px; }
+  .real-clutch .review-cta-text h3 { font-size: 25px; }
+}
+
 /* Review cards grid (post-launch) – hidden initially */
 .real-clutch .reviews-grid {
   display: grid;
@@ -1280,12 +1332,15 @@
   border-top: 3px solid var(--blue);
 }
 .real-clutch .follow-card-top { margin-bottom: 24px; }
-/* platform icons */
+/* platform icons – 2026-08-09: were <img> tags with no src, so browsers fell back to
+   rendering alt text clipped inside the 28px box ("SUB", "LINI"). Replaced with inline
+   SVG that inherits the badge color via currentColor. Sized down to 14px to sit properly
+   against the 10.5px badge label. */
 .real-clutch .platform-icon {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
+  display: block;
 }
 .real-clutch .follow-platform-badge {
   display: inline-flex;
@@ -1307,6 +1362,13 @@
   background: rgba(55,102,162,0.15);
   color: #6BA3D8;
   border: 1px solid rgba(55,102,162,0.35);
+}
+/* 2026-08-09: email badge previously had no color class at all – plain white text, no box,
+   while the other two were boxed. Given gold treatment to match the Substack badge. */
+.real-clutch .email-badge {
+  background: rgba(184,143,70,0.15);
+  color: var(--gold);
+  border: 1px solid var(--border);
 }
 .real-clutch .follow-card h3 {
   font-family: 'Exo 2', sans-serif;
@@ -1686,6 +1748,27 @@
   <p class="section-label" style="color:var(--gold);">What Readers Are Saying</p>
   <h2 class="section-title" style="color:var(--charcoal);">Reviews land here.</h2>
   <p style="max-width:60ch;color:var(--charcoal);opacity:.75;margin-bottom:24px;">Structure is ready for the review carousel – showing marketing material until real reviews come in.</p>
+
+  <!-- LEAVE A REVIEW CTA -->
+  <!-- 2026-08-09: mkirk-clutch-review.html was an orphan – its only inbound link was the
+       deactivated "Leave a review" ghost button on index.html. Sits above the carousel so it
+       isn't buried by the marketing cards, but stays inside "What Readers Are Saying" so the
+       ask has context. NOTE: the destination page's Amazon button still points at
+       mkirk-coming-soon.html because CLUTCH has no ASIN yet – wire the real
+       "...#customerReviews" deep link on that page at launch. -->
+  <div class="review-cta-wrap">
+    <div class="review-cta-inner">
+      <div class="review-cta-text">
+        <p class="review-cta-eyebrow">Already Read It?</p>
+        <h3>Reviews are how this book finds the next reader.</h3>
+        <p>If CLUTCH gave you language for something you'd been struggling to name, a few sentences on Amazon does more for it than any ad I could buy. It takes two minutes.</p>
+      </div>
+      <div class="review-cta-action">
+        <a href="mkirk-clutch-review.html" class="btn-primary">Leave a Review &rarr;</a>
+      </div>
+    </div>
+  </div>
+
   <div class="mm-carousel-track" id="mmCarouselTrack">
     <div class="mm-slide active"><img class="mm-slide-img" src="assets/card_clutch1.png" alt="CLUTCH marketing card 1" onerror="this.classList.add('img-missing')"></div>
     <div class="mm-slide"><img class="mm-slide-img" src="assets/card_clutch2.png" alt="CLUTCH marketing card 2" onerror="this.classList.add('img-missing')"></div>
@@ -1711,19 +1794,22 @@
 
     <div class="follow-card substack-card">
       <div class="follow-card-top">
-        <div class="follow-platform-badge substack-badge"><img data-stripped-base64="1" class="platform-icon" alt="Substack"> The Leadership Lab</div>
+        <div class="follow-platform-badge substack-badge"><svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="2.6"/><rect x="3" y="8.4" width="18" height="2.6"/><path d="M3 13.8h18V22l-9-4.6L3 22z"/></svg> Substack</div>
         <h3>The Leadership Lab</h3>
         <p class="follow-desc">Your organization is growing faster than your leadership can. CLUTCH is the system that closes that gap. Every Tuesday: the frameworks, diagnostics, and hard questions behind the book – applied to what's actually breaking. Free.</p>
       </div>
       <div class="follow-card-bottom">
         <p class="follow-meta">Free · Weekly · For Founders & Operators</p>
-        <a href="https://thatsgoodedesign.substack.com/" target="_blank" rel="noopener" class="btn-primary follow-btn" style="background:#C2AED1; color:#2D2C2E;">Subscribe on Substack →</a>
+        <!-- 2026-08-09: dropped inline style="background:#C2AED1" – that lavender was off-palette
+             and the only button on the site not using the standard gold. Label shortened from
+             "Subscribe on Substack" so it stays on one line in the third-width column. -->
+        <a href="https://thatsgoodedesign.substack.com/" target="_blank" rel="noopener" class="btn-primary follow-btn">Subscribe &rarr;</a>
       </div>
     </div>
 
     <div class="follow-card linkedin-card">
       <div class="follow-card-top">
-        <div class="follow-platform-badge linkedin-badge"><img data-stripped-base64="1" class="platform-icon" alt="LinkedIn"> LinkedIn</div>
+        <div class="follow-platform-badge linkedin-badge"><svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9.5h4v11H3v-11zM9.5 9.5h3.8v1.5h.06c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76v6.19h-4v-5.49c0-1.31-.02-3-1.9-3-1.9 0-2.19 1.42-2.19 2.9v5.59h-4v-11z"/></svg> LinkedIn</div>
         <h3>Matt Goode</h3>
         <p class="follow-desc">Where the professional work lives. If you're interested in leadership development, executive coaching, the GDC frameworks in practice – or you want to know when CLUTCH drops – LinkedIn is the place to follow. I publish a weekly newsletter.</p>
       </div>
@@ -1736,7 +1822,7 @@
     <!-- EMAIL LIST – moved here from the front page's per-project signup grid -->
     <div class="follow-card email-list-card">
       <div class="follow-card-top">
-        <div class="follow-platform-badge">✉ Email</div>
+        <div class="follow-platform-badge email-badge"><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="4.5" width="20" height="15" rx="1.5"/><path d="M2.5 5.5L12 13l9.5-7.5"/></svg> Email</div>
         <h3>Just CLUTCH Updates</h3>
         <p class="follow-desc">Launch updates, leadership framework content, and news for CLUTCH only – nothing from the fiction projects.</p>
       </div>
