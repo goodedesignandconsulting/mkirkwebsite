@@ -246,6 +246,75 @@
 
 .real-clutch-ebooks .format-note a:hover { color: var(--gold-bright); }
 
+/* --- EPUB FORMAT NOTICE + HOW-TO-READ PANEL --- added 2026-08-28. Tells buyers the files are
+   EPUB (not PDF) and shows how to open one on PC, Mac, iOS, Android and Kindle. Class names are
+   page-neutral so the same block can be dropped on any ebook-selling page; .mm-epub--dark flips
+   it for charcoal backgrounds. Built on the native disclosure element, no JS. */
+.mm-epub {
+  --epub-gold:#B88F46;
+  --epub-strong:#2D2C2E;
+  --epub-text:rgba(45,44,46,.78);
+  --epub-line:rgba(45,44,46,.16);
+  --epub-bg:rgba(45,44,46,.035);
+  max-width:820px; margin:0 0 26px;
+  background:var(--epub-bg);
+  border:1px solid var(--epub-line); border-left:3px solid var(--epub-gold);
+}
+.mm-epub--dark {
+  --epub-strong:#EDE5D6;
+  --epub-text:rgba(237,229,214,.66);
+  --epub-line:rgba(237,229,214,.18);
+  --epub-bg:rgba(237,229,214,.04);
+  margin:36px auto 0;
+}
+.mm-epub-head { display:flex; align-items:flex-start; gap:14px; padding:18px 20px; }
+.mm-epub-badge {
+  flex-shrink:0; font-family:'Exo 2',sans-serif; font-weight:800; font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--epub-gold);
+  border:1px solid var(--epub-gold); padding:6px 9px; line-height:1;
+}
+.mm-epub-head p { margin:0; font-size:14.5px; line-height:1.62; color:var(--epub-text); }
+.mm-epub-head strong { color:var(--epub-strong); font-weight:700; }
+.mm-epub details { border-top:1px solid var(--epub-line); }
+.mm-epub summary {
+  list-style:none; cursor:pointer; padding:14px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  font-family:'Exo 2',sans-serif; font-weight:700; font-size:12.5px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--epub-gold);
+}
+.mm-epub summary::-webkit-details-marker { display:none; }
+.mm-epub summary::after { content:"+"; font-size:19px; line-height:1; font-weight:400; }
+.mm-epub details[open] summary::after { content:"\2013"; }
+.mm-epub summary:focus-visible { outline:2px solid var(--epub-gold); outline-offset:-2px; }
+.mm-epub-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px 26px; padding:2px 20px 22px; }
+.mm-epub-step h4 {
+  font-family:'Exo 2',sans-serif; font-weight:800; font-size:13px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--epub-strong);
+  margin:0 0 7px; padding-top:10px; border-top:2px solid var(--epub-gold);
+}
+.mm-epub-step p { margin:0; font-size:13.5px; line-height:1.6; color:var(--epub-text); }
+.mm-epub a { color:var(--epub-gold); text-decoration:underline; text-underline-offset:2px; }
+.mm-epub-foot { padding:0 20px 20px; margin:0; font-size:12.5px; line-height:1.6; color:var(--epub-text); }
+@media (max-width:860px) { .mm-epub-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px) {
+  .mm-epub-grid { grid-template-columns:1fr; }
+  .mm-epub-head { flex-direction:column; gap:10px; }
+}
+
+  /* EPUB panel overrides - this page's `.real-clutch-ebooks *` reset zeroes all padding/margin and
+     its `a { color:inherit; text-decoration:none }` strips the links, both declared after the
+     shared .mm-epub rules. Re-stated here at higher specificity. */
+  .real-clutch-ebooks .mm-epub--dark { margin: 36px auto 0; }
+  .real-clutch-ebooks .mm-epub .mm-epub-head { padding: 18px 20px; }
+  .real-clutch-ebooks .mm-epub .mm-epub-badge { padding: 6px 9px; }
+  .real-clutch-ebooks .mm-epub summary { padding: 14px 20px; }
+  .real-clutch-ebooks .mm-epub .mm-epub-grid { padding: 2px 20px 22px; }
+  .real-clutch-ebooks .mm-epub .mm-epub-step h4 { padding-top: 10px; margin: 0 0 7px; }
+  .real-clutch-ebooks .mm-epub .mm-epub-foot { padding: 0 20px 20px; }
+  .real-clutch-ebooks .mm-epub a { color: var(--epub-gold); text-decoration: underline; text-underline-offset: 2px; }
+  .real-clutch-ebooks .mm-epub a:hover { color: var(--gold-bright); }
+
+
   /* ---------- Full book CTA ---------- */
 
   .real-clutch-ebooks .book-banner {
@@ -394,7 +463,42 @@
 
   </div>
 
-  <p class="format-note">Delivered as EPUB – opens directly in Apple Books, Kobo, Google Play Books, and most e-reader apps. Kindle doesn't open EPUB natively; use Amazon's free <a href="https://www.amazon.com/sendtokindle" target="_blank" rel="noopener">Send to Kindle</a> tool to add it to your Kindle library in one step.</p>
+  <!-- 2026-08-28: replaced the single-line .format-note with the shared EPUB panel. The old line
+       said Kindle "doesn't open EPUB natively", which reads as a dead end - Send to Kindle does
+       accept EPUB and converts it, so the copy now says so and gives the actual steps. -->
+  <div class="mm-epub mm-epub--dark">
+    <div class="mm-epub-head">
+      <span class="mm-epub-badge">EPUB</span>
+      <p><strong>These are EPUB files, not PDFs.</strong> An EPUB reflows to fit whatever you are reading on, so the type stays comfortable on a phone, a tablet, a laptop or a Kindle. Every device below opens one, most of them without installing anything.</p>
+    </div>
+    <details>
+      <summary>How to read it on your device</summary>
+      <div class="mm-epub-grid">
+        <div class="mm-epub-step">
+          <h4>Windows PC</h4>
+          <p>Open the file with a free reader like <a href="https://thorium.edrlab.org/" target="_blank" rel="noopener">Thorium</a> or <a href="https://calibre-ebook.com/" target="_blank" rel="noopener">Calibre</a>. Or upload it to <a href="https://play.google.com/books" target="_blank" rel="noopener">Google Play Books</a> in your browser and read it there with nothing installed.</p>
+        </div>
+        <div class="mm-epub-step">
+          <h4>Mac</h4>
+          <p>Double-click the file. It opens in Apple Books, which is already on your Mac, and syncs to your iPhone and iPad on its own.</p>
+        </div>
+        <div class="mm-epub-step">
+          <h4>iPhone &amp; iPad</h4>
+          <p>Tap the download link, then tap the share icon and choose Books. The file lands in your Apple Books library and stays there.</p>
+        </div>
+        <div class="mm-epub-step">
+          <h4>Android</h4>
+          <p>Open the Google Play Books app, go to Library, tap Upload files and pick the EPUB. Free readers such as Moon+ Reader or Lithium work just as well.</p>
+        </div>
+        <div class="mm-epub-step">
+          <h4>Send to Kindle</h4>
+          <p>Go to <a href="https://www.amazon.com/sendtokindle" target="_blank" rel="noopener">amazon.com/sendtokindle</a>, sign in, and drag the file in. It appears on your Kindle and in the Kindle app within a few minutes. You can also email it to your @kindle.com address from an approved sender address. Copying it across by USB will not work, it has to go through Send to Kindle.</p>
+        </div>
+      </div>
+      <p class="mm-epub-foot">Stuck on any of this? <a href="contact.html">Get in touch</a> and I will make sure you can open your file.</p>
+    </details>
+  </div>
+
 </section>
 
 <section class="section" id="full-book">
@@ -406,9 +510,10 @@
       <p>All four frameworks plus EQ, the 6C Decision Compass, and the full DELEGATE handoff system – the complete leadership operating system, not just the sample chapters.</p>
     </div>
     <div class="book-banner-action">
-      <span class="book-available">Available September 1</span>
-      <!-- TODO: replace # with the live Amazon link once available -->
-      <a class="buy-btn btn-coming-soon" href="mkirk-coming-soon.html">Get the Book</a>
+      <span class="book-available">Available now</span>
+      <!-- 2026-08-28: routed to the waitlist for launch week instead of the dead Coming Soon
+           page, and un-greyed. TODO at launch: swap href for the live Amazon link. -->
+      <a class="buy-btn" href="mkirk-clutch-waitlist.html">Get the Book</a>
     </div>
   </div>
 </section>
