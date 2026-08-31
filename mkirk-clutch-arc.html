@@ -3,14 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CLUTCH ARC (discontinued) – Matt Goode</title>
+<title>This page is retired &ndash; CLUTCH &ndash; Matt Goode</title>
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mkirk-style.css">
+<!-- 2026-08-28: short page, so match the body ground to the footer strip and stop a white
+     band showing under the footer on tall screens. -->
+<style>body{background:var(--gdc-charcoal);}</style>
 </head>
 <body>
 <section class="page pal-clutch" id="page-clutch-arc">
-  <div class="page-tag">PAGE: <b>mkirk-clutch-arc.html</b> – <b style="color:#c33;">⚠ DROPPED per Matt's direction – Clutch is now treated as published/pre-sale, not pre-launch ARC recruitment.</b> Left in place (not deleted) so the anchor doesn't break if linked elsewhere; content below is now just a deprecation notice. Delete this page outright once confirmed nothing points here anymore.</div>
+  <div class="page-tag">PAGE: <b>mkirk-clutch-arc.html</b> &ndash; <b style="color:#c33;">&#9888; RETIRED &ndash; ARC recruitment dropped; CLUTCH is published, not pre-launch.</b> Kept (not deleted) per Matt's call so any existing link lands on a notice rather than a 404. 2026-08-28: notice copy updated for launch week and the stale pre-sale waitlist link removed.</div>
   <nav class="site-nav" style="background:var(--gdc-charcoal);"><div class="nav-inner">
     <a href="index.html" class="logo" style="color:var(--clutch-accent);">m kirk</a>
     <ul class="nav-links"><li><a href="books.html">Books</a></li><li><a href="mkirk-about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
@@ -18,11 +22,11 @@
   <div class="section section-narrow reveal" style="padding-top:70px;padding-bottom:90px;">
     <div class="status-tag">CLUTCH</div>
     <h1 class="h1" style="font-family:'Exo 2',sans-serif;font-weight:800;color:var(--clutch-accent);">This page is retired</h1>
-    <p class="lede">ARC recruitment for CLUTCH has been dropped. Head to the <a href="mkirk-clutch-waitlist.html" style="color:var(--clutch-accent);">pre-sale waitlist</a> or the <a href="mkirk-clutch.html" style="color:var(--clutch-accent);">main CLUTCH page</a> instead – reviews and storefront content now live there.</p>
+    <p class="lede">ARC recruitment for CLUTCH has been dropped. CLUTCH is out now &ndash; head to the <a href="mkirk-clutch.html" style="color:var(--clutch-accent);">main CLUTCH page</a> for the book, the framework eBooks and the resources.</p>
   </div>
   <footer class="site-footer" style="background:var(--gdc-charcoal);"><div class="footer-inner">
     <a href="index.html" class="logo" style="font-size:32.5px;color:var(--clutch-accent);">m kirk</a>
-    <span class="footer-copy">© m kirk · All rights reserved</span>
+    <span class="footer-copy">&copy; m kirk &middot; All rights reserved</span>
   </div></footer>
 </section>
 <script>
@@ -32,10 +36,6 @@ if ('IntersectionObserver' in window) {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  // 2026-07-30: safety-net -- a couple of .reveal sections on the Wrath page were reported as never
-  // appearing on a real phone (opacity:0 stuck), not reproducible in this environment's Chromium-only
-  // testing. Whatever the exact cause, this timeout guarantees every .reveal element becomes visible
-  // within 2.5s even if the IntersectionObserver never fires for it for any reason.
   setTimeout(() => {
     document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
   }, 2500);
