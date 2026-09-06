@@ -422,33 +422,26 @@
 </nav>
 
 <!-- ============================================================
-     FEATURED BOOK MODULE – currently featuring: WRATH.
+     FEATURED BOOK MODULE – currently featuring: CLUTCH (swapped from
+     WRATH 2026-09-06 per Matt, to lead with the CLUTCH launch).
      TO ROTATE: swap the modifier class on .featured-book-inner
      (feat-wrath / feat-balance / feat-seven / feat-clutch / feat-nab
      / feat-ft – presets defined above), then swap the eyebrow/cover/
      title/tagline/status/CTAs below to match. One book at a time.
      ============================================================ -->
 <section class="featured-book">
-  <div class="featured-book-inner feat-wrath">
-    <!-- 2026-07-30: this hero module was still showing the static text-only .cover-placeholder box
-         (WRATH / "Placeholder cover") even though cover_wrath.png has been wired in everywhere else
-         on the site for a while – this one spot was just never swapped over. Now uses the real cover
-         with the same graceful img-missing fallback as everywhere else, so if the file 404s it shows
-         a dashed placeholder box instead of a broken image icon. -->
-    <img class="real-cover featured-book-cover" style="margin:0;aspect-ratio:2/3;" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.outerHTML='&lt;div class=&quot;cover-placeholder&quot; style=&quot;aspect-ratio:2/3;border-color:#8B6B3D;margin:0;&quot;&gt;&lt;span class=&quot;cp-flag&quot; style=&quot;font-size:10.5px;&quot;&gt;Placeholder cover&lt;/span&gt;&lt;span class=&quot;cp-title&quot; style=&quot;font-family:\'GFS Didot\',serif;font-weight:700;text-transform:uppercase;&quot;&gt;Wrath&lt;/span&gt;&lt;/div&gt;'">
+  <div class="featured-book-inner feat-clutch">
+    <img class="real-cover featured-book-cover" style="margin:0;aspect-ratio:2/3;" src="assets/clutch_cover.png" alt="CLUTCH – by Matt Goode" onerror="this.outerHTML='&lt;div class=&quot;cover-placeholder&quot; style=&quot;aspect-ratio:2/3;border-color:#B88F46;margin:0;&quot;&gt;&lt;span class=&quot;cp-flag&quot; style=&quot;font-size:10.5px;&quot;&gt;Placeholder cover&lt;/span&gt;&lt;span class=&quot;cp-title&quot; style=&quot;font-family:\'Exo 2\',sans-serif;font-weight:800;text-transform:uppercase;&quot;&gt;Clutch&lt;/span&gt;&lt;/div&gt;'">
     <div>
-      <div class="featured-book-eyebrow">Featured – releasing October 1</div>
-      <h2 class="featured-book-title" style="font-family:'GFS Didot',serif;font-weight:700;font-size:clamp(17px,4.03vw,36.5px);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap;">The Wrath of Archie Ellis</h2>
-      <p class="featured-book-tagline">A structural retelling of the <em>Iliad</em>, set at Ypres, 1917 – Achilles's wrath mapped onto the Western Front. Spare, precise, quietly devastating.</p>
-      <!-- Removed the stale "Looking for advanced readers" status + duplicate "Request an ARC" button
-           per Matt's 2026-07-29 note – redundant now that Wrath is framed as pre-sale everywhere else
-           on the front page. Swapped the primary CTA to match Clutch's featured card and the new
-           Wrath review page. -->
+      <div class="featured-book-eyebrow">New Release</div>
+      <h2 class="featured-book-title" style="font-family:'Exo 2',sans-serif;font-weight:800;font-size:clamp(20px,4.8vw,40px);letter-spacing:.04em;">CLUTCH</h2>
+      <p class="featured-book-tagline">How leaders build systems that run without them. Leadership built to run without you in the room &ndash; out now, in paperback and Kindle.</p>
+      <div class="featured-book-status">Out Now</div>
     </div>
     <div class="featured-book-ctas">
-      <a href="mkirk-wrath-launch.html" class="featured-book-btn featured-book-btn-primary">Join Pre-Sale Waitlist</a>
-      <a href="mkirk-wrath-review.html" class="featured-book-btn featured-book-btn-ghost">Leave a review</a>
-      <a href="mkirk-wrath.html" class="featured-book-btn featured-book-btn-ghost">Learn more</a>
+      <a href="https://www.amazon.com/dp/B0HHFGV2MT" target="_blank" rel="noopener" class="featured-book-btn featured-book-btn-primary">Buy on Amazon</a>
+      <a href="mkirk-clutch-review.html" class="featured-book-btn featured-book-btn-ghost">Leave a review</a>
+      <a href="mkirk-clutch.html" class="featured-book-btn featured-book-btn-ghost">Learn more</a>
     </div>
   </div>
 </section>
