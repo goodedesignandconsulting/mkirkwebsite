@@ -109,7 +109,12 @@
 
 .real-home .feat-wrath .feat-body { background: #2A1F38; } /* 2026-07-30: purple per Matt, sampled directly from his real "Homer 9 – Achilles rebuilt" carousel card (card_wrath_achilles.png) so it matches Wrath's actual marketing material instead of a guessed shade. Bottom info panel only – cover slot above stays as-is. */
 .real-home .feat-wrath .feat-pill { background: var(--wr-brnz); color: var(--wr-black); }
-.real-home .feat-wrath .feat-title { font-family: 'GFS Didot', serif; font-weight: 700; font-size:clamp(10.5px,7.06cqw,25.5px); text-transform: uppercase; letter-spacing: .01em; color: var(--wr-ivory); white-space: nowrap; }
+.real-home .feat-wrath .feat-title { font-family: 'GFS Didot', serif; font-weight: 700; font-size:clamp(10.5px,7.06cqw,25.5px); text-transform: uppercase; letter-spacing: .01em; color: var(--wr-ivory); }
+/* 2026-09-06: dropped white-space:nowrap per Matt's screenshot – "THE WRATH OF ARCHIE ELLIS" was
+   spilling past the card edge and getting clipped by .feature-card's overflow:hidden at this card's
+   actual rendered width (~285px in a 4-up grid). The nowrap+cqw combo assumed a wider card than the
+   grid actually gives it. Letting the title wrap to two lines is the robust fix – no other feat-title
+   on this page uses nowrap, and this card has vertical room to spare below it. */
 .real-home .feat-wrath .feat-desc { color: rgba(242,240,236,0.75); }
 .real-home .feat-wrath .feat-btn-primary { background: var(--wr-brnz); color: var(--wr-black); }
 .real-home .feat-wrath .feat-btn-primary:hover { background: #a9835a; }
@@ -501,7 +506,7 @@
       <div class="feature-card feat-wrath">
         <div class="feat-cover-lg"><img src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.classList.add('img-missing')"></div>
         <div class="feat-body">
-          <span class="feat-pill">Pre-sale · Oct 1</span>
+          <span class="feat-pill">Pre-sale · Nov 11</span>
           <h2 class="feat-title">The Wrath of Archie Ellis</h2>
           <p class="feat-desc">A structural retelling of the Iliad. Ypres, 1917.</p>
         </div>
