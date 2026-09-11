@@ -10,7 +10,6 @@
 </head>
 <body>
 <section class="page pal-ft" id="page-fieldtested-storefront">
-  <div class="page-tag">PAGE: <b>mkirk-fieldtested-purchase.html</b> – <b style="color:#8f8;">2026-07-30: real Kit commerce embed dropped in – Matt sent the actual <code>commerce.js</code> script + checkout button (product: <code>goode-design-consulting.kit.com/products/field-tested</code>). Price still not visible on this page – Kit renders it inside the hosted checkout button once the script loads, which needs live network access to kit.com (this sandboxed prototype can't load it, so the button may render unstyled/inert here – same caveat as every other Kit embed already on the site). Also added the ebook "how to read" sidebar primer per Matt's sitewide request.</b></div>
   <style>
   #page-fieldtested-storefront{ --book-accent:var(--ft-accent); --book-panel:rgba(255,255,255,.045); --book-border:rgba(184,143,70,.22); }
   #page-fieldtested-storefront .ft-buy-grid{ display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start; margin-top:28px; }
@@ -67,5 +66,6 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
 }
 </script>
+<script src="mkirk-analytics.js?v=1" defer></script>
 </body>
 </html>

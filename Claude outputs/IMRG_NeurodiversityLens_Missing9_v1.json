@@ -1,0 +1,218 @@
+[
+  {
+    "method": "Peer Reviews",
+    "category": "GS+RF",
+    "file": "m-peer-reviews.xhtml",
+    "lens_paragraph": "Peer Reviews carries social risk in both directions: the reviewer weighing whether honesty is worth the friction, the author absorbing critique in real time while the room watches. Published criteria and a defined turn for the author convert that exposure into something predictable, which is what makes the method usable for participants who find live evaluation costly.",
+    "lens_bullets": [
+      {
+        "lead": "Publish the criteria before any work is shared",
+        "body": "Reviewers who know what they are looking for produce specific, actionable notes. An open “what did you think” rewards the quickest talker and drifts toward personality rather than the work."
+      },
+      {
+        "lead": "Have reviewers write before anyone speaks",
+        "body": "A few minutes of silent note-taking against the criteria gives processing time and stops the first spoken opinion from anchoring everyone who follows."
+      },
+      {
+        "lead": "Decide anonymity deliberately, not by default",
+        "body": "Identified reviews build accountability where the group is genuinely safe; anonymous reviews surface the honest note where it is not. Choosing without thinking usually means choosing identified."
+      },
+      {
+        "lead": "Give the author one defined turn",
+        "body": "Clarifying questions only, no defending. Receiving critique is harder than giving it, and a scripted role removes the need to improvise a response under pressure."
+      }
+    ]
+  },
+  {
+    "method": "Hypothetical Scenario Analysis",
+    "category": "PS",
+    "file": "m-hypothetical-scenario-analysis.xhtml",
+    "lens_paragraph": "This method asks participants to hold several imagined futures in mind at once and evaluate every option against each of them, which is among the heaviest working-memory loads in the guide. It also asks people to sit with uncertainty, comfortable for some and genuinely aversive for others. Structure carries most of that weight, provided the grid is visible.",
+    "lens_bullets": [
+      {
+        "lead": "Build the options-by-scenarios grid where everyone can see it",
+        "body": "Nobody should be holding a matrix in their head while also judging outcomes. A drawn grid, filled cell by cell, turns open speculation into a tractable task."
+      },
+      {
+        "lead": "Cap the scenarios at three or four",
+        "body": "Each additional future multiplies the evaluation load rather than adding to it. Three scenarios explored properly beat six sketched thinly."
+      },
+      {
+        "lead": "Work one scenario to completion before opening the next",
+        "body": "Jumping between futures loses the thread and forces participants to rebuild context repeatedly. Finish the column, then move."
+      },
+      {
+        "lead": "Name the exercise as rehearsal, not prediction",
+        "body": "Participants who find open-ended uncertainty distressing engage far more freely once it is clear that nobody is being asked to forecast, only to prepare."
+      }
+    ]
+  },
+  {
+    "method": "Barrier Analysis",
+    "category": "PS",
+    "file": "m-barrier-analysis.xhtml",
+    "lens_paragraph": "Barrier Analysis only works if people name the real obstacle, and the real obstacle is often a manager, a workload, or something a participant would rather not say aloud in a group. The method’s own instruction to encourage honest communication is doing a great deal of quiet work, and it needs channels behind it to mean anything.",
+    "lens_bullets": [
+      {
+        "lead": "Offer more than one way to name a barrier",
+        "body": "Written submission, a one-to-one conversation and open group discussion surface different obstacles. The honest one usually arrives in writing."
+      },
+      {
+        "lead": "Separate naming from analyzing",
+        "body": "Asking why a barrier exists while people are still identifying barriers invites justification and shuts down disclosure. Collect first, categorize second."
+      },
+      {
+        "lead": "Frame barriers as conditions rather than deficits",
+        "body": "“What makes this hard” gets a different answer than “what is stopping you.” The first names the system, the second names the person."
+      },
+      {
+        "lead": "Include the people who actually face the barrier",
+        "body": "Managers describe the barriers they can see. The participants doing the work describe the ones that decide the outcome, provided the format makes that safe."
+      }
+    ]
+  },
+  {
+    "method": "Cost-Benefit Analysis",
+    "category": "DM",
+    "file": "m-cost-benefit-analysis.xhtml",
+    "lens_paragraph": "Two demands sit inside this method: arithmetic held under time pressure, and the step where non-monetary benefits are converted into money. The second is where groups stall, because putting a figure on something people value on other grounds reads as a category error to some participants and an obvious simplification to others.",
+    "lens_bullets": [
+      {
+        "lead": "Do the arithmetic in a prepared template or on screen",
+        "body": "Costs, benefits and net figures should be visible and recalculating. Holding running totals in working memory while also evaluating options is a needless double load."
+      },
+      {
+        "lead": "State the monetization assumptions aloud and keep them editable",
+        "body": "Every converted figure is a judgment. Recording the assumption beside the number lets a participant argue with the assumption instead of rejecting the whole exercise."
+      },
+      {
+        "lead": "Split identifying costs from valuing them",
+        "body": "Groups that price items as they list them anchor on the first few figures. Get the full list down, then value it."
+      },
+      {
+        "lead": "Keep a visible “not monetized” column",
+        "body": "Some benefits should not be priced, and participants who feel that strongly will disengage if forced. Naming them separately keeps them in the decision without faking a number."
+      }
+    ]
+  },
+  {
+    "method": "Delphi Method",
+    "category": "DM",
+    "file": "m-delphi-method.xhtml",
+    "lens_paragraph": "The Delphi Method is among the most accessible in the guide almost by accident. Anonymity, asynchronous response and iteration between rounds strip out the pressures that make live group decisions hard: status, speaking order, and the need to think at conversational speed. Its risks are procedural rather than social, and they are all about stamina.",
+    "lens_bullets": [
+      {
+        "lead": "Declare the number of rounds and the consensus threshold at the start",
+        "body": "Open-ended iteration is the main reason experts drop out. People commit to three rounds far more readily than to “until we converge.”"
+      },
+      {
+        "lead": "Keep each round short enough to finish in one sitting",
+        "body": "A long questionnaire completed in fragments produces inconsistent answers. Fewer questions per round, and more rounds, is the better trade."
+      },
+      {
+        "lead": "Summarize the previous round in the same format every time",
+        "body": "A predictable summary lets participants locate their own position quickly and see the movement, rather than re-reading the whole picture from scratch each round."
+      },
+      {
+        "lead": "Check that anonymity survives the summary",
+        "body": "In small expert pools a distinctive phrasing or a narrow specialty identifies its author. Paraphrase wherever the source could be inferred, and tell participants you are doing it."
+      }
+    ]
+  },
+  {
+    "method": "Decision Auction",
+    "category": "DM",
+    "file": "m-decision-auction.xhtml",
+    "lens_paragraph": "The auction frame is both the point and the problem. Competitive bidding under time pressure energizes some participants and leaves others watching, and the mechanic quietly requires budget arithmetic on the fly. Slowing the bidding and putting the numbers in writing preserves the method’s insight without making speed a qualification for taking part.",
+    "lens_bullets": [
+      {
+        "lead": "Show each participant’s remaining budget in writing",
+        "body": "Tracking what you have left to spend while judging what to spend it on is two tasks running at once. Written balances make it one."
+      },
+      {
+        "lead": "Run a practice round on an option that does not count",
+        "body": "One throwaway round teaches the mechanic to everyone simultaneously, rather than handing an advantage to whoever grasped it first."
+      },
+      {
+        "lead": "Take bids simultaneously and in writing",
+        "body": "Open outcry rewards confidence and anchors later bids on earlier ones. Written simultaneous bids measure what people value rather than who holds their nerve."
+      },
+      {
+        "lead": "Debrief the result before treating it as a decision",
+        "body": "The tally shows where collective value went, not why. Asking the group to explain the top bids turns a game outcome into reasoning they can defend afterwards."
+      }
+    ]
+  },
+  {
+    "method": "Rank Order Voting",
+    "category": "DM",
+    "file": "m-rank-order-voting.xhtml",
+    "lens_paragraph": "Producing a full preference order is a harder task than choosing a favorite, and that is where this method’s difficulty hides. Participants have to hold the entire option set in mind at once, and the scale direction, with 1 as most preferred, inverts the intuition that a higher number means better. Both are fixable on the ballot.",
+    "lens_bullets": [
+      {
+        "lead": "Put the scale direction on the ballot, not just in the briefing",
+        "body": "“1 = most preferred” printed beside the boxes prevents the most common error in this method, which is a sincere ranking recorded backwards."
+      },
+      {
+        "lead": "Give the options in writing, in a fixed order",
+        "body": "A verbal list forces participants to reconstruct the full set from memory before they can order it, and reading order shifts the result if it varies between ballots."
+      },
+      {
+        "lead": "Allow ties and partial rankings",
+        "body": "Forcing a strict order onto options a participant genuinely rates equally manufactures preference data that is not real. Permit equal ranks and count them."
+      },
+      {
+        "lead": "Announce the tie-break rule before voting opens",
+        "body": "Deciding how to resolve a tie after seeing the tally reads as choosing the winner. Name the rule while the outcome is still unknown."
+      }
+    ]
+  },
+  {
+    "method": "360-Degree Feedback",
+    "category": "RF",
+    "file": "m-360-degree-feedback.xhtml",
+    "lens_paragraph": "This carries the heaviest emotional load of any method in the guide. Critique arrives from every direction at once, aggregated, and usually lands in a single sitting. The predictable failure is not that people reject the feedback but that they fix on one wounding line and never reach the themes the exercise exists to surface.",
+    "lens_bullets": [
+      {
+        "lead": "Send the report before the conversation",
+        "body": "Reading aggregated criticism for the first time in front of the person delivering it leaves nowhere to have a first reaction privately. A day is usually enough."
+      },
+      {
+        "lead": "Ask the person to name the themes rather than respond line by line",
+        "body": "Working through comments individually guarantees that the sharpest one dominates. Starting from what repeats across sources puts the weight where the method intends it."
+      },
+      {
+        "lead": "Protect anonymity in small samples",
+        "body": "With one supervisor and three peers, a verbatim quote identifies its author. Report themes rather than exact wording wherever the source could be inferred."
+      },
+      {
+        "lead": "Close on exactly one commitment",
+        "body": "A report with nine development areas produces no change at all. One concrete action, named by the person receiving the feedback, is what makes the next round worth running."
+      }
+    ]
+  },
+  {
+    "method": "Feedback Loops",
+    "category": "RF",
+    "file": "m-feedback-loops.xhtml",
+    "lens_paragraph": "A feedback loop asks for sustained participation against a delayed and often invisible payoff, which is precisely how loops die. People stop contributing not because the mechanism is difficult but because nothing they said ever visibly changed anything. Closing the loop is not a courtesy in this method, it is the load-bearing step.",
+    "lens_bullets": [
+      {
+        "lead": "Publish what changed each cycle, including what did not",
+        "body": "A short note naming the decisions the last round altered, and the requests being declined and why, does more for response rates than any redesign of the survey."
+      },
+      {
+        "lead": "Fix the cadence and hold it",
+        "body": "An unpredictable loop trains people to ignore it. A known rhythm lets participants plan for it and makes a missed round conspicuous rather than normal."
+      },
+      {
+        "lead": "Offer more than one input channel",
+        "body": "A single mandatory format selects for the people that format happens to suit. A form, a conversation and an open channel between rounds reach different contributors."
+      },
+      {
+        "lead": "Keep each round’s ask small",
+        "body": "Three questions answered honestly every month beat twenty answered once. The value is in the repetition, and repetition survives only if the cost per round stays low."
+      }
+    ]
+  }
+]

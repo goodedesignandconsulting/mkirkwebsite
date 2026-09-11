@@ -1,0 +1,43 @@
+/* mkirk-analytics.js
+ *
+ * Shared analytics loader for mkirkwrites.com.
+ *
+ * Why this file exists: the site has no shared templates, so every page carries
+ * its own <head> and its own footer. Without this file, adding or changing
+ * analytics means editing all 30 pages by hand, and any new page is silently
+ * untracked. Every page now loads this one file instead, so switching provider,
+ * changing the token, or turning tracking off is a single edit here.
+ *
+ * Currently wired for: Cloudflare Web Analytics (free, cookieless, no consent
+ * banner required, no DNS change needed).
+ *
+ * TO ACTIVATE: paste the site token from the Cloudflare dashboard into TOKEN
+ * below. Until TOKEN is filled in, this file does nothing at all, which is the
+ * intended resting state.
+ */
+(function () {
+  "use strict";
+
+  /* Cloudflare Web Analytics site token. Cloudflare dashboard:
+     Analytics & Logs > Web Analytics > Manage site > the token in the JS snippet.
+     Empty string means tracking is off. */
+  var TOKEN = "";
+
+  if (!TOKEN) return;
+
+  /* Don't record local previews or the file:// opens used while editing. */
+  var host = location.hostname;
+  if (!host || host === "localhost" || host === "127.0.0.1" || location.protocol === "file:") return;
+
+  /* Respect an explicit Do Not Track signal. Cloudflare is cookieless and
+     collects no personal data, but honouring this costs nothing. */
+  if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+  var s = document.createElement("script");
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.defer = true;
+  /* The beacon reads its config off its own script tag, so this attribute has
+     to be set before the element is appended. */
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  (document.head || document.documentElement).appendChild(s);
+})();
