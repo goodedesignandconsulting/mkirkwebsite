@@ -1,2 +1,5 @@
 .DS_Store
 **/.DS_Store
+
+# Claude/Cowork deliverables downloaded into the repo folder; not site content
+Claude outputs/
