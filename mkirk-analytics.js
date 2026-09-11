@@ -21,7 +21,7 @@
   /* Cloudflare Web Analytics site token. Cloudflare dashboard:
      Analytics & Logs > Web Analytics > Manage site > the token in the JS snippet.
      Empty string means tracking is off. */
-  var TOKEN = "";
+  var TOKEN = "2ce687113c214ddb98c29f1f9f57fd02";
 
   if (!TOKEN) return;
 
@@ -35,7 +35,10 @@
 
   var s = document.createElement("script");
   s.src = "https://static.cloudflareinsights.com/beacon.min.js";
-  s.defer = true;
+  /* Cloudflare serves the beacon as an ES module. Loading it as a classic
+     script fails, so this must stay type="module". Modules are deferred by
+     default, so no defer is needed. */
+  s.type = "module";
   /* The beacon reads its config off its own script tag, so this attribute has
      to be set before the element is appended. */
   s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
