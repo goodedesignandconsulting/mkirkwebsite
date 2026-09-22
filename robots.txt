@@ -7,7 +7,7 @@
 #
 # Posture: readers and reader-discovery are welcome. Ingestion of
 # fiction into training corpora is not. Text and data mining rights
-# are expressly reserved. See https://mkirkwrites.com/terms/
+# are expressly reserved. See https://mkirkwrites.com/terms.html
 
 # ---------------------------------------------------------------
 # TIER 1 - Conventional search. Full access.
