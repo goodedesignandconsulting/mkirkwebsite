@@ -109,5 +109,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-# This site has no sitemap.xml yet. Generate one and uncomment:
-# Sitemap: https://mkirkwrites.com/sitemap.xml
+Sitemap: https://mkirkwrites.com/sitemap.xml
