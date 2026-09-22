@@ -112,6 +112,9 @@ footer{background:#0E1216;border-top:1px solid rgba(91,166,124,.1);padding:40px;
 <!-- Page-specific styles go here -->
 <!-- TemplateEndEditable -->
 
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://mkirkwrites.com/terms.html">
+<meta name="robots" content="noai, noimageai">
 </head>
 <body>
 
