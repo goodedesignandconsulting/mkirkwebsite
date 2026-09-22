@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy – m kirk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=GFS+Didot&family=Exo+2:ital,wght@0,300;0,700;0,800;0,900;1,300&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,700&family=Baloo+2:wght@700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mkirk-style.css">
+<meta name="description" content="What this site collects, what it does not, and where your data goes if you join the list or request an ARC. No cookies, no ad networks.">
+<link rel="canonical" href="https://mkirkwrites.com/privacy.html">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://mkirkwrites.com/terms.html">
+<meta name="robots" content="noai, noimageai">
+<style>
+  .terms-body h2{margin:44px 0 10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.6rem;}
+  .terms-body p,.terms-body li{line-height:1.72;}
+  .terms-body ol{margin:14px 0 0;padding-left:1.15em;}
+  .terms-body li{margin-bottom:11px;}
+  .terms-body a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+  .terms-updated{margin-top:34px;font-size:.88rem;opacity:.65;}
+</style>
+</head>
+<body>
+<section class="page" id="page-privacy" style="background:var(--ink);color:var(--warm);">
+
+  <nav class="site-nav"><div class="nav-inner">
+    <a href="index.html" class="logo">m kirk</a>
+    <ul class="nav-links">
+      <li><a href="books.html">Books</a></li>
+      <li><a href="mkirk-about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div></nav>
+
+  <div class="section section-narrow reveal terms-body" style="padding-top:64px;padding-bottom:80px;">
+    <h1 class="h1" style="font-style:italic;font-weight:400;">Privacy</h1>
+    <p class="lede">This site sets no cookies and runs no ad networks. If you
+      never type anything into it, it never learns who you are.</p>
+
+    <h2>How visits are counted</h2>
+    <p>Visits are measured with Cloudflare Web Analytics. It is cookieless, it
+      stores nothing on your device, and it reports aggregate figures such as
+      page views and referrers rather than anything identifying you. If your
+      browser sends a Do Not Track signal, the script does not load at all.</p>
+
+    <h2>Where the site lives</h2>
+    <p>The site is hosted on GitHub Pages. Its servers process the ordinary
+      request information needed to deliver a page, including your IP address,
+      under GitHub&rsquo;s own privacy terms. Those logs are not received or
+      retained here. Typefaces are served by Google Fonts, which means your
+      browser requests them from Google and Google receives your IP address.</p>
+
+    <h2>The mailing list</h2>
+    <p>The newsletter, chapter downloads and waitlists are handled by Kit
+      (formerly ConvertKit), which stores your email address and sends the
+      mail. You can unsubscribe from any message and unsubscribing removes you.
+      Your address is not sold, rented or traded, and it is not used to build a
+      profile of you anywhere else.</p>
+
+    <h2>Advance review copies</h2>
+    <p>If you request an ARC, the name and email you give are used to send you
+      the book, to keep track of who has a copy, and to follow up about a
+      review. Advance copies are individually watermarked, which means the copy
+      you receive is associated with you for as long as that copy exists. That
+      is the point of watermarking and it is worth knowing before you ask for
+      one. See the <a href="terms.html">terms and rights</a> page for what an
+      ARC may and may not be used for.</p>
+
+    <h2>Links out</h2>
+    <p>Buy links go to Amazon and other retailers, and social links go to
+      Instagram. Once you follow one of those you are on their site under their
+      privacy terms, not this one.</p>
+
+    <h2>Asking what is held</h2>
+    <p>Write to <a href="mailto:matt@thatsgoodedesign.com">matt@thatsgoodedesign.com</a>
+      and ask what is held about you, ask for a copy, ask for a correction, or
+      ask for it to be deleted. This is one writer and a mailing list, not a
+      bureaucracy.</p>
+    <p>This site is not directed at children under 13 and no information is
+      knowingly collected from them.</p>
+
+    <p class="terms-updated">Last updated 22 September 2026.</p>
+  </div>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <a href="index.html" class="logo" style="font-size:32.5px;">m kirk</a>
+    <a href="https://instagram.com/mkirkwrites" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram: @mkirkwrites">@mkirkwrites</a>
+    <a href="terms.html" class="footer-social">Terms &amp; rights</a>
+    <a href="privacy.html" class="footer-social">Privacy</a>
+    <span class="footer-copy">© m kirk · All rights reserved</span>
+  </div></footer>
+</section>
+<script>
+// Subtle scroll-reveal, respects prefers-reduced-motion via CSS above.
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // 2026-07-30: safety-net -- a couple of .reveal sections on the Wrath page were reported as never
+  // appearing on a real phone (opacity:0 stuck), not reproducible in this environment's Chromium-only
+  // testing. Whatever the exact cause, this timeout guarantees every .reveal element becomes visible
+  // within 2.5s even if the IntersectionObserver never fires for it for any reason.
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
+  }, 2500);
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+<script src="mkirk-analytics.js?v=1" defer></script>
+</body>
+</html>
