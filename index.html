@@ -229,7 +229,10 @@
 .real-home .card-seven .card-link { color: #FF2F8F; }
 .real-home .card-seven .card-buy-btn { color: #FF2F8F; }
 .real-home .card-seven .card-buy-btn:hover { background: #FF2F8F; color: #0B0C1F; }
-.real-home .card-seven .book-card-mini-cover { bottom: 112px; }
+.real-home .card-seven .book-card-mini-cover { bottom: 168px; }
+.real-home .card-seven .card-buy-btn.card-buy-primary { background: #FF2F8F; color: #0B0C1F; border-color: #FF2F8F; }
+.real-home .card-seven .card-buy-btn.card-buy-primary:hover { background: #ff5aa6; }
+.real-home .card-seven .card-buy-btn + .card-buy-btn { margin-top: 0; }
 .real-home .card-seven .card-desc { padding-right: 34%; }
 .real-home .card-seven .card-buy-btn { position: relative; z-index: 1; background: rgba(11,12,31,0.85); }
 
@@ -518,11 +521,10 @@
           <p class="feat-desc">A structural retelling of the Iliad. Ypres, 1917.</p>
         </div>
         <div class="feat-ctas">
-          <a href="mkirk-coming-soon.html" class="feat-btn feat-btn-primary btn-coming-soon">Buy on Amazon</a>
-          <!-- 2026-07-30: "Leave a review" styled black/inactive per Matt, same .btn-coming-soon
-               treatment as "Buy on Amazon" above – still routes to the real review page, this is
-               purely visual (nothing to review yet since Wrath hasn't published). -->
-          <a href="mkirk-wrath-review.html" class="feat-btn feat-btn-ghost btn-coming-soon">Leave a review</a>
+          <!-- 2026-09-24: pre-launch CTAs per Matt – ARC call + free chapter replace the inactive
+               Buy on Amazon / Leave a review buttons. Swap back at launch. -->
+          <a href="mkirk-wrath-arc.html" class="feat-btn feat-btn-primary">Request an ARC</a>
+          <a href="mkirk-wrath-chapter.html" class="feat-btn feat-btn-ghost">Read a free chapter</a>
           <a href="mkirk-wrath.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
@@ -570,7 +572,8 @@
           <span class="card-desc">Narrative nonfiction. The biography of a number.</span>
           <img class="book-card-mini-cover" src="assets/cover_seven.png" alt="" onerror="this.classList.add('img-missing')">
         </a>
-        <a href="mkirk-seven-chapter.html" class="card-buy-btn">Read the introduction</a>
+        <a href="mkirk-seven-arc.html" class="card-buy-btn card-buy-primary">Request an ARC</a>
+        <a href="mkirk-seven-chapter.html" class="card-buy-btn">Read a free chapter</a>
         <a href="mkirk-seven.html" class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></a>
       </div>
 
