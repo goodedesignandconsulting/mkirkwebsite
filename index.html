@@ -175,6 +175,34 @@
 .real-home .feat-nab .feat-btn-primary:hover { background:#93418b; }
 .real-home .feat-nab .feat-btn-ghost { border:1px solid rgba(160,80,150,.55); color:#C58BBE; }
 .real-home .feat-nab .feat-btn-ghost:hover { border-color:#C58BBE; background:rgba(160,80,150,.1); }
+
+/* 2026-09-24: hero quote rotation */
+.visually-hidden { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.real-home .hero-quotes { margin:0 0 18px; --q:#5BA67C; }
+.real-home .hq-stage { display:grid; }
+.real-home .hq-slide { grid-area:1/1; margin:0; opacity:0; visibility:hidden; transition:opacity .7s ease, visibility 0s linear .7s; }
+.real-home .hq-slide.is-active { opacity:1; visibility:visible; transition:opacity .7s ease; }
+.real-home .hq-text { margin:0 0 14px; line-height:1.25; color:var(--warm); font-size:clamp(28px,3.6vw,42px); }
+.real-home .voice-mk .hq-text { font-family:'Lora',Georgia,serif; font-style:italic; font-weight:400; }
+.real-home .voice-mg .hq-text { font-family:'Source Serif 4',Georgia,serif; font-style:normal; font-weight:600; letter-spacing:-.005em; }
+.real-home .hq-slide .qmark { color:var(--qc); font-size:1.05em; line-height:0; vertical-align:-0.18em; font-style:normal; }
+.real-home .hq-cite { display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-family:'Source Serif 4',Georgia,serif; font-size:14px; letter-spacing:.06em; color:rgba(237,233,226,.6); }
+.real-home .hq-rule { width:28px; height:2px; background:var(--qc); }
+.real-home .hq-book { color:var(--qc); }
+.real-home .hq-sep { opacity:.5; }
+.real-home .q-mk      { --qc:#5BA67C; }
+.real-home .q-balance { --qc:#D4685A; }
+.real-home .q-balance .hq-book { font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-size:19px; letter-spacing:.01em; }
+.real-home .q-clutch  { --qc:#C49A52; }
+.real-home .q-clutch .hq-book { font-family:'Exo 2',sans-serif; font-weight:800; letter-spacing:.08em; }
+.real-home .q-wrath   { --qc:#A493C4; }
+.real-home .q-wrath .hq-book { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:15.5px; letter-spacing:.01em; }
+.real-home .q-seven   { --qc:#FF2F8F; }
+.real-home .q-seven .hq-book { font-family:'Lora',Georgia,serif; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+.real-home .hero-quotes .carousel-dots { margin-top:16px; }
+.real-home .hq-long .hq-text { font-size:clamp(23px,2.7vw,32px); }
+.real-home .hero-quotes .cdot.active { background:var(--q); }
+@media (prefers-reduced-motion: reduce) { .real-home .hq-slide, .real-home .hq-slide.is-active { transition:none; } }
 @media (max-width: 1100px) { .real-home .feature-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* EMAIL */
@@ -508,16 +536,49 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-topline">
-      <h1 class="hero-quote" id="hero-carousel">
-        <span class="qmark">"</span><span id="quote-text">Most people are carrying something they haven't found words for yet.</span><span class="qmark qmark-close">"</span>
-      </h1>
-      <div class="carousel-dots" id="carousel-dots">
-        <span class="cdot active" onclick="goToQuote(0)"></span>
-        <span class="cdot" onclick="goToQuote(1)"></span>
-        <span class="cdot" onclick="goToQuote(2)"></span>
-        <span class="cdot" onclick="goToQuote(3)"></span>
-      </div>
-      <p class="hero-context">m kirk writes about the gap between the life people build and the life they actually meant to live. <span class="hero-cred">Sociologist &middot; Educator &middot; Executive coach</span></p>
+      <!-- 2026-09-24: 8-quote rotation per Matt, alternating the two voices; each slide carries its
+           book's colour cue (quote marks, rule, credit, active dot). Quote 1's book credit TBC. -->
+      <h1 class="visually-hidden">m kirk and Matt Goode &ndash; books</h1>
+      <figure class="hero-quotes" id="hero-quotes" aria-roledescription="carousel" aria-label="Lines from the books">
+        <div class="hq-stage" aria-live="polite">
+          <blockquote class="hq-slide q-mk voice-mk is-active">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>Most people are carrying something they haven&rsquo;t found words for yet.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-author">m kirk</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-balance voice-mk" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>What if the trick wasn&rsquo;t holding steady, but learning to hold more?<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">Balance</span><span class="hq-sep">&middot;</span><span class="hq-author">m kirk</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-clutch voice-mg" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>Every heroic save is a system failure in disguise.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">CLUTCH</span><span class="hq-sep">&middot;</span><span class="hq-author">Matt Goode</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-wrath voice-mk" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>You will want a reason. So did the men standing beside him.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">The Wrath of Archie Ellis</span><span class="hq-sep">&middot;</span><span class="hq-author">m kirk</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-clutch voice-mg" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>Questions build capability; answers build dependency.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">CLUTCH</span><span class="hq-sep">&middot;</span><span class="hq-author">Matt Goode</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-seven voice-mk" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>Seven just shrugs and goes its own way.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">Seven</span><span class="hq-sep">&middot;</span><span class="hq-author">m kirk</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-clutch voice-mg hq-long" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>A mind that struggles inside a system designed for someone else isn&rsquo;t a broken mind. It&rsquo;s a mind waiting for better architecture.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">CLUTCH</span><span class="hq-sep">&middot;</span><span class="hq-author">Matt Goode</span></footer>
+          </blockquote>
+          <blockquote class="hq-slide q-wrath voice-mk" aria-hidden="true">
+            <p class="hq-text"><span class="qmark">&ldquo;</span>The strength was the fragility.<span class="qmark">&rdquo;</span></p>
+            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">The Wrath of Archie Ellis &middot; <em>The Grammar of Collapse</em></span><span class="hq-sep">&middot;</span><span class="hq-author">m kirk</span></footer>
+          </blockquote>
+        </div>
+        <div class="carousel-dots" id="carousel-dots">
+          <button type="button" class="cdot active" data-i="0" aria-label="Quote 1 of 8: m kirk"></button><button type="button" class="cdot" data-i="1" aria-label="Quote 2 of 8: Balance"></button><button type="button" class="cdot" data-i="2" aria-label="Quote 3 of 8: CLUTCH"></button><button type="button" class="cdot" data-i="3" aria-label="Quote 4 of 8: The Wrath of Archie Ellis"></button><button type="button" class="cdot" data-i="4" aria-label="Quote 5 of 8: CLUTCH"></button><button type="button" class="cdot" data-i="5" aria-label="Quote 6 of 8: Seven"></button><button type="button" class="cdot" data-i="6" aria-label="Quote 7 of 8: CLUTCH"></button><button type="button" class="cdot" data-i="7" aria-label="Quote 8 of 8: The Wrath of Archie Ellis"></button>
+        </div>
+      </figure>
+      <p class="hero-context"><span class="hero-cred">Sociologist &middot; Educator &middot; Executive coach</span></p>
     </div>
 
     <!-- 2026-09-24: explains the two names before the two author bars. -->
@@ -719,6 +780,28 @@ if ('IntersectionObserver' in window) {
 } else {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
 }
+</script>
+<script>
+// 2026-09-24: hero quote rotation. Auto-advances every 7s, pauses on hover/focus and when the tab is
+// hidden, and never auto-advances for prefers-reduced-motion (dots still work).
+(function(){
+  var root=document.getElementById('hero-quotes'); if(!root) return;
+  var slides=root.querySelectorAll('.hq-slide'), dots=root.querySelectorAll('.cdot'), i=0, timer=null;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){ s.classList.toggle('is-active',k===i); s.setAttribute('aria-hidden',k===i?'false':'true'); });
+    dots.forEach(function(d,k){ d.classList.toggle('active',k===i); });
+    root.style.setProperty('--q', getComputedStyle(slides[i]).getPropertyValue('--qc'));
+  }
+  function start(){ if(reduce||timer) return; timer=setInterval(function(){ show(i+1); },7000); }
+  function stop(){ clearInterval(timer); timer=null; }
+  dots.forEach(function(d){ d.addEventListener('click',function(){ show(+d.dataset.i); stop(); start(); }); });
+  root.addEventListener('mouseenter',stop); root.addEventListener('mouseleave',start);
+  root.addEventListener('focusin',stop); root.addEventListener('focusout',start);
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+  show(0); start();
+})();
 </script>
 <script src="mkirk-analytics.js?v=1" defer></script>
 </body>
