@@ -105,7 +105,8 @@
   <!-- A NOTE FROM THE AUTHOR – placeholder; no NAB author's note exists yet.
        2026-07-30: avatar switched to card_brain_superheros.jpg per Matt – this photo belongs on
        No Average Brain only (was also leaking onto Seven and Noble Island; fixed there too). -->
-  <section class="book-note reveal">
+  <!-- 2026-09-24: hidden until Matt writes this note (body is still a placeholder). Remove the hidden attribute to show it. -->
+  <section class="book-note reveal" hidden>
     <div class="book-note-inner">
       <div class="book-note-avatar"><img src="assets/card_brain_superheros.jpg" alt="Matt Goode" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="book-note-body">
@@ -117,7 +118,10 @@
 
   <div class="email-section" style="background:var(--gdc-cream);">
     <h2 class="email-heading">Follow No Average Brain</h2>
-    <form class="email-form" onsubmit="return false;"><input type="email" placeholder="you@example.com"><button class="btn-follow" style="background:var(--nab-accent);color:#fff;">Join the list</button></form>
+    <!-- Kit form: BRAIN - Updates · form ID 9742047 · UID d64b62821a (was a dead placeholder form until 2026-09-24). -->
+    <style>.formkit-form[data-uid="d64b62821a"] .formkit-alert{list-style:none;margin:0 0 10px;padding:0;font-size:14px;width:100%;}.formkit-form[data-uid="d64b62821a"] .formkit-alert:empty{display:none;}</style>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <form action="https://app.kit.com/forms/9742047/subscriptions" class="email-form seva-form formkit-form" method="post" data-sv-form="9742047" data-uid="d64b62821a" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><input type="email" name="email_address" aria-label="Email address" required placeholder="you@example.com"><button data-element="submit" class="btn-follow" style="background:var(--nab-accent);color:#fff;">Join the list</button></form>
     <!-- INTERNAL NOTE (was visible placeholder-flag span, hidden 2026-07-30 per Matt): Kit form UID needed – new form -->
   </div>
 

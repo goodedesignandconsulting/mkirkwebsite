@@ -53,7 +53,7 @@
 /* HERO – dual feature */
 .real-home .hero { background: var(--ink); padding: 56px 40px 64px; border-bottom: 1px solid rgba(91,166,124,0.12); }
 .real-home .hero-inner { max-width: 1200px; margin: 0 auto; }
-.real-home .hero-topline { max-width: 760px; margin-bottom: 44px; }
+.real-home .hero-topline { max-width: 1200px; margin-bottom: 44px; }
 .real-home .hero-quote { font-family: 'Lora', Georgia, serif; font-weight: 400; font-style: italic; font-size:clamp(30px,3.81vw,43px); line-height: 1.25; color: var(--warm); margin-bottom: 16px; }
 .real-home .qmark { color: var(--sage); font-size: 1.05em; line-height: 0; vertical-align: -0.18em; font-style: normal; }
 .real-home .qmark-close { margin-left: 2px; }
@@ -185,12 +185,12 @@
 .real-home .hq-stage { display:grid; }
 .real-home .hq-slide { grid-area:1/1; margin:0; opacity:0; visibility:hidden; transition:opacity .7s ease, visibility 0s linear .7s; }
 .real-home .hq-slide.is-active { opacity:1; visibility:visible; transition:opacity .7s ease; }
-.real-home .hq-text { margin:0 0 14px; line-height:1.25; color:var(--warm); font-size:clamp(28px,3.6vw,42px); }
+.real-home .hq-text { margin:0 0 18px; line-height:1.2; color:var(--warm); font-size:clamp(30px,4.6vw,64px); text-wrap:balance; }
 .real-home .voice-mk .hq-text { font-family:'Lora',Georgia,serif; font-style:italic; font-weight:400; }
 .real-home .voice-mg .hq-text { font-family:'Source Serif 4',Georgia,serif; font-style:normal; font-weight:600; letter-spacing:-.005em; }
 .real-home .hq-slide .qmark { color:var(--qc); font-size:1.05em; line-height:0; vertical-align:-0.18em; font-style:normal; }
-.real-home .hq-cite { display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-family:'Source Serif 4',Georgia,serif; font-size:14px; letter-spacing:.06em; color:rgba(237,233,226,.6); }
-.real-home .hq-rule { width:28px; height:2px; background:var(--qc); }
+.real-home .hq-cite { display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-family:'Source Serif 4',Georgia,serif; font-size:clamp(14px,1.2vw,16px); letter-spacing:.06em; color:rgba(237,233,226,.6); }
+.real-home .hq-rule { width:36px; height:2px; background:var(--qc); }
 .real-home .hq-book { color:var(--qc); }
 .real-home .hq-sep { opacity:.5; }
 .real-home .q-mk      { --qc:#5BA67C; }
@@ -203,7 +203,7 @@
 .real-home .q-seven   { --qc:#FF2F8F; }
 .real-home .q-seven .hq-book { font-family:'Lora',Georgia,serif; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
 .real-home .hero-quotes .carousel-dots { margin-top:16px; }
-.real-home .hq-long .hq-text { font-size:clamp(23px,2.7vw,32px); }
+.real-home .hq-long .hq-text { font-size:clamp(24px,3.3vw,46px); }
 .real-home .hero-quotes .cdot.active { background:var(--q); }
 @media (prefers-reduced-motion: reduce) { .real-home .hq-slide, .real-home .hq-slide.is-active { transition:none; } }
 @media (max-width: 1100px) { .real-home .feature-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -506,7 +506,7 @@
     <div class="nav-links">
       <a href="books.html" class="nav-link">Books</a>
       <a href="mkirk-about.html" class="nav-link">About</a>
-      <a href="mailto:matt@thatsgoodedesign.com" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </div>
 </nav>
@@ -540,15 +540,11 @@
   <div class="hero-inner">
     <div class="hero-topline">
       <!-- 2026-09-24: 8-quote rotation per Matt, alternating the two voices; each slide carries its
-           book's colour cue (quote marks, rule, credit, active dot). Quote 1's book credit TBC. -->
+           book's colour cue (quote marks, rule, credit, active dot). Quote 1 (unsourced) dropped per Matt. -->
       <h1 class="visually-hidden">m kirk and Matt Goode &ndash; books</h1>
       <figure class="hero-quotes" id="hero-quotes" aria-roledescription="carousel" aria-label="Lines from the books">
         <div class="hq-stage" aria-live="polite">
-          <blockquote class="hq-slide q-mk voice-mk is-active">
-            <p class="hq-text"><span class="qmark">&ldquo;</span>Most people are carrying something they haven&rsquo;t found words for yet.<span class="qmark">&rdquo;</span></p>
-            <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-author">m kirk</span></footer>
-          </blockquote>
-          <blockquote class="hq-slide q-balance voice-mk" aria-hidden="true">
+                    <blockquote class="hq-slide q-balance voice-mk is-active">
             <p class="hq-text"><span class="qmark">&ldquo;</span>What if the trick wasn&rsquo;t holding steady, but learning to hold more?<span class="qmark">&rdquo;</span></p>
             <footer class="hq-cite"><span class="hq-rule"></span><span class="hq-book">Balance</span><span class="hq-sep">&middot;</span><span class="hq-author">m kirk</span></footer>
           </blockquote>
@@ -578,7 +574,7 @@
           </blockquote>
         </div>
         <div class="carousel-dots" id="carousel-dots">
-          <button type="button" class="cdot active" data-i="0" aria-label="Quote 1 of 8: m kirk"></button><button type="button" class="cdot" data-i="1" aria-label="Quote 2 of 8: Balance"></button><button type="button" class="cdot" data-i="2" aria-label="Quote 3 of 8: CLUTCH"></button><button type="button" class="cdot" data-i="3" aria-label="Quote 4 of 8: The Wrath of Archie Ellis"></button><button type="button" class="cdot" data-i="4" aria-label="Quote 5 of 8: CLUTCH"></button><button type="button" class="cdot" data-i="5" aria-label="Quote 6 of 8: Seven"></button><button type="button" class="cdot" data-i="6" aria-label="Quote 7 of 8: CLUTCH"></button><button type="button" class="cdot" data-i="7" aria-label="Quote 8 of 8: The Wrath of Archie Ellis"></button>
+          <button type="button" class="cdot active" data-i="0" aria-label="Quote 1 of 7: Balance"></button><button type="button" class="cdot" data-i="1" aria-label="Quote 2 of 7: CLUTCH"></button><button type="button" class="cdot" data-i="2" aria-label="Quote 3 of 7: The Wrath of Archie Ellis"></button><button type="button" class="cdot" data-i="3" aria-label="Quote 4 of 7: CLUTCH"></button><button type="button" class="cdot" data-i="4" aria-label="Quote 5 of 7: Seven"></button><button type="button" class="cdot" data-i="5" aria-label="Quote 6 of 7: CLUTCH"></button><button type="button" class="cdot" data-i="6" aria-label="Quote 7 of 7: The Wrath of Archie Ellis"></button>
         </div>
       </figure>
     </div>
