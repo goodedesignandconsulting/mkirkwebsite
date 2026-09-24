@@ -131,6 +131,44 @@
 .real-home .feat-ft .feat-btn-ghost { border: 1px solid rgba(184,143,70,0.45); color: #B88F46; }
 .real-home .feat-ft .feat-btn-ghost:hover { border-color: #B88F46; background: rgba(184,143,70,0.08); }
 
+
+/* 2026-09-24: two author bars (m kirk / Matt Goode) + GDC strip */
+.real-home .author-bar { margin-top: 44px; }
+.real-home .author-bar + .author-bar { margin-top: 64px; }
+.real-home .author-bar-head { display:flex; align-items:baseline; gap:16px; margin-bottom:22px; flex-wrap:wrap; }
+.real-home .author-bar-name { margin:0; line-height:1; }
+.real-home .bar-mkirk .author-bar-name { font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:400; font-size:44px; color:#C9A85C; }
+.real-home .bar-goode .author-bar-name { font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; letter-spacing:.02em; color:#EDE5D6; }
+.real-home .author-bar-sub { font-family:'Source Serif 4',Georgia,serif; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(237,233,226,.55); }
+.real-home .author-bar-rule { flex:1; min-width:40px; height:1px; background:rgba(237,233,226,.18); align-self:center; }
+.real-home .gdc-strip { display:flex; align-items:center; gap:22px; margin-top:22px; padding:20px 24px; border:1px solid rgba(184,143,70,.35); border-left:4px solid #B88F46; background:rgba(255,255,255,.03); text-decoration:none; transition:background .2s, border-color .2s; }
+.real-home .gdc-strip:hover { background:rgba(184,143,70,.08); border-color:#B88F46; }
+.real-home .gdc-strip-label { font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:#EDE5D6; white-space:nowrap; }
+.real-home .gdc-strip-text { flex:1; font-family:'Source Serif 4',Georgia,serif; font-size:15.5px; line-height:1.5; color:rgba(237,229,214,.72); }
+.real-home .gdc-strip-cta { font-family:'Source Serif 4',Georgia,serif; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#B88F46; white-space:nowrap; }
+@media (max-width: 800px) { .real-home .gdc-strip { flex-direction:column; align-items:flex-start; gap:8px; } .real-home .bar-mkirk .author-bar-name { font-size:38px; } }
+.real-home .feat-seven { background:#1B1433; border-top:4px solid #FF2F8F; }
+.real-home .feat-seven .feat-pill { background:#FF2F8F; color:#0B0C1F; }
+.real-home .feat-seven .feat-title { font-family:'Lora',Georgia,serif; font-weight:700; font-size:28px; text-transform:uppercase; color:#F6EFE0; }
+.real-home .feat-seven .feat-desc { color:rgba(246,239,224,.75); }
+.real-home .feat-seven .feat-btn-primary { background:#FF2F8F; color:#0B0C1F; }
+.real-home .feat-seven .feat-btn-primary:hover { background:#ff5aa6; }
+.real-home .feat-seven .feat-btn-ghost { border:1px solid rgba(255,47,143,.45); color:#FF2F8F; }
+.real-home .feat-seven .feat-btn-ghost:hover { border-color:#FF2F8F; background:rgba(255,47,143,.08); }
+.real-home .feat-ni { background:#121915; border-top:4px solid #6E8C79; }
+.real-home .feat-ni .feat-pill { background:#6E8C79; color:#121915; }
+.real-home .feat-ni .feat-title { font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-style:italic; font-size:30px; color:#EDE9E2; }
+.real-home .feat-ni .feat-desc { color:rgba(237,233,226,.75); }
+.real-home .feat-ni .feat-btn-ghost { border:1px solid rgba(110,140,121,.5); color:#8FAE9A; }
+.real-home .feat-ni .feat-btn-ghost:hover { border-color:#8FAE9A; background:rgba(110,140,121,.1); }
+.real-home .feat-nab { background:#28271F; border-top:4px solid #7B2D74; }
+.real-home .feat-nab .feat-pill { background:#7B2D74; color:#F3EDE2; }
+.real-home .feat-nab .feat-title { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:27px; color:#F3EDE2; }
+.real-home .feat-nab .feat-desc { color:rgba(243,237,226,.78); }
+.real-home .feat-nab .feat-btn-primary { background:#7B2D74; color:#F3EDE2; }
+.real-home .feat-nab .feat-btn-primary:hover { background:#93418b; }
+.real-home .feat-nab .feat-btn-ghost { border:1px solid rgba(160,80,150,.55); color:#C58BBE; }
+.real-home .feat-nab .feat-btn-ghost:hover { border-color:#C58BBE; background:rgba(160,80,150,.1); }
 @media (max-width: 1100px) { .real-home .feature-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* EMAIL */
@@ -476,14 +514,22 @@
       <p class="hero-context">m kirk writes about the gap between the life people build and the life they actually meant to live. <span class="hero-cred">Sociologist &middot; Educator &middot; Executive coach</span></p>
     </div>
 
-    <div class="feature-grid">
+    <!-- 2026-09-24: home grid split into two author bars per Matt (m kirk / Matt Goode); the old
+         "Also in progress" section was folded into these. -->
+    <div class="author-bar bar-mkirk">
+      <div class="author-bar-head">
+        <h2 class="author-bar-name">m kirk</h2>
+        <span class="author-bar-sub">Fiction &amp; narrative nonfiction</span>
+        <span class="author-bar-rule"></span>
+      </div>
+      <div class="feature-grid">
 
       <div class="feature-card feat-balance">
         <div class="feat-cover-lg"><img src="assets/cover_balance2.png" alt="Balance – a novel by m kirk" onerror="this.classList.add('img-missing')"></div>
         <div class="feat-body">
           <span class="feat-pill">Out now</span>
           <h2 class="feat-title">Balance</h2>
-          <p class="feat-desc">A novel about two people who love each other &mdash; and what that costs.</p>
+          <p class="feat-desc">A novel about two people who love each other &ndash; and what that costs.</p>
         </div>
         <div class="feat-ctas">
           <a href="https://www.amazon.com/dp/B0GS75LMNX" target="_blank" rel="noopener" class="feat-btn feat-btn-primary">Buy on Amazon</a>
@@ -491,6 +537,61 @@
           <a href="mkirk-balance.html" class="feat-btn feat-btn-ghost">Learn more</a>
         </div>
       </div>
+
+      <div class="feature-card feat-wrath">
+        <div class="feat-cover-lg"><img src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-body">
+          <span class="feat-pill">Pre-sale · Nov 11</span>
+          <h2 class="feat-title">The Wrath of Archie Ellis</h2>
+          <p class="feat-desc">A structural retelling of the Iliad. Ypres, 1917.</p>
+        </div>
+        <div class="feat-ctas">
+          <!-- 2026-09-24: pre-launch CTAs per Matt – ARC call + free chapter replace the inactive
+               Buy on Amazon / Leave a review buttons. Swap back at launch. -->
+          <a href="mkirk-wrath-arc.html" class="feat-btn feat-btn-primary">Request an ARC</a>
+          <a href="mkirk-wrath-chapter.html" class="feat-btn feat-btn-ghost">Read a free chapter</a>
+          <a href="mkirk-wrath.html" class="feat-btn feat-btn-ghost">Learn more</a>
+        </div>
+      </div>
+
+      <div class="feature-card feat-seven">
+        <div class="feat-cover-lg"><img src="assets/cover_seven.png" alt="Seven – a biography, by m kirk" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-body">
+          <span class="feat-pill">In progress</span>
+          <h2 class="feat-title">Seven</h2>
+          <p class="feat-desc">Narrative nonfiction. The biography of a number.</p>
+        </div>
+        <div class="feat-ctas">
+          <a href="mkirk-seven-arc.html" class="feat-btn feat-btn-primary">Request an ARC</a>
+          <a href="mkirk-seven-chapter.html" class="feat-btn feat-btn-ghost">Read a free chapter</a>
+          <a href="mkirk-seven.html" class="feat-btn feat-btn-ghost">Learn more</a>
+        </div>
+      </div>
+
+      <div class="feature-card feat-ni">
+        <div class="feat-cover-lg"><img src="assets/cover_noble.png" alt="Noble Island – a novel by m kirk" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-body">
+          <span class="feat-pill">Currently writing</span>
+          <h2 class="feat-title">Noble Island</h2>
+          <p class="feat-desc">Magical realism. Early-stage.</p>
+        </div>
+        <div class="feat-ctas">
+          <a href="mkirk-nobelisland.html" class="feat-btn feat-btn-ghost">Learn more</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <!-- 2026-09-24: home grid split into two author bars per Matt (m kirk / Matt Goode); the old
+         "Also in progress" section was folded into these. -->
+    <div class="author-bar bar-goode">
+      <div class="author-bar-head">
+        <h2 class="author-bar-name">Matt Goode</h2>
+        <span class="author-bar-sub">Leadership &amp; learning</span>
+        <span class="author-bar-rule"></span>
+      </div>
+      <div class="feature-grid">
 
       <div class="feature-card feat-clutch">
         <div class="feat-cover-lg"><img src="assets/clutch_cover.png" alt="CLUTCH – by Matt Goode" onerror="this.classList.add('img-missing')"></div>
@@ -509,28 +610,6 @@
         </div>
       </div>
 
-      <!-- Moved up from "Also in progress" per Matt's 2026-07-29 direction – Wrath is close enough to
-           published to sit alongside Balance/Clutch. No real cover art yet, so this uses the same
-           placeholder-cover treatment as elsewhere on the site (clearly flagged), just scaled to fill
-           the new larger cover slot. Buy button is still a placeholder link – no ASIN yet. -->
-      <div class="feature-card feat-wrath">
-        <div class="feat-cover-lg"><img src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.classList.add('img-missing')"></div>
-        <div class="feat-body">
-          <span class="feat-pill">Pre-sale · Nov 11</span>
-          <h2 class="feat-title">The Wrath of Archie Ellis</h2>
-          <p class="feat-desc">A structural retelling of the Iliad. Ypres, 1917.</p>
-        </div>
-        <div class="feat-ctas">
-          <!-- 2026-09-24: pre-launch CTAs per Matt – ARC call + free chapter replace the inactive
-               Buy on Amazon / Leave a review buttons. Swap back at launch. -->
-          <a href="mkirk-wrath-arc.html" class="feat-btn feat-btn-primary">Request an ARC</a>
-          <a href="mkirk-wrath-chapter.html" class="feat-btn feat-btn-ghost">Read a free chapter</a>
-          <a href="mkirk-wrath.html" class="feat-btn feat-btn-ghost">Learn more</a>
-        </div>
-      </div>
-
-      <!-- Moved up from "Also in progress" per Matt's 2026-07-29 direction, same as Wrath. No real
-           cover art yet either – placeholder cover, clearly flagged. -->
       <div class="feature-card feat-ft">
         <div class="feat-cover-lg"><img src="assets/cover_field.png" alt="Field Tested – book cover" onerror="this.classList.add('img-missing')"></div>
         <div class="feat-body">
@@ -544,58 +623,35 @@
         </div>
       </div>
 
+      <div class="feature-card feat-nab">
+        <div class="feat-cover-lg"><img src="assets/cover_noAverage.png" alt="No Average Brain – by Matt Goode" onerror="this.classList.add('img-missing')"></div>
+        <div class="feat-body">
+          <span class="feat-pill">Coming early 2027</span>
+          <h2 class="feat-title">No Average Brain</h2>
+          <p class="feat-desc">Neuroinclusive leadership &ndash; a sibling to CLUTCH.</p>
+        </div>
+        <div class="feat-ctas">
+          <a href="mkirk-noaveragebrain-arc.html" class="feat-btn feat-btn-primary">Request an ARC</a>
+          <!-- Free chapter button held back until the Brain PDF + Kit form exist:
+          <a href="mkirk-noaveragebrain-chapter.html" class="feat-btn feat-btn-ghost">Read a free chapter</a> -->
+          <a href="mkirk-noaveragebrain.html" class="feat-btn feat-btn-ghost">Learn more</a>
+        </div>
+      </div>
+
+      </div>
+      <a class="gdc-strip" href="https://thatsgoodedesign.com" target="_blank" rel="noopener">
+        <span class="gdc-strip-label">Goode Design &amp; Consulting</span>
+        <span class="gdc-strip-text">Leadership coaching, workshops and speaking, built on the frameworks behind these books.</span>
+        <span class="gdc-strip-cta">thatsgoodedesign.com &rarr;</span>
+      </a>
     </div>
+
   </div>
 </section>
 
 
 
-<section class="books-section" id="the-work">
-  <div class="books-inner">
-    <div class="section-header">
-      <h2 class="section-title">Also in progress</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="books-grid">
 
-      <!-- Wrath and Field Tested moved UP into the feature-grid above per Matt's 2026-07-29 direction
-           (close enough to published to sit with Balance/Clutch) – removed from here to avoid
-           duplicating them. -->
-
-      <!-- 2026-09-24: Seven card moved to the .card-published pattern (like Wrath/Field Tested) so it
-           can carry a "Read the introduction" button to the Kit-gated free chapter page. -->
-      <div class="book-card card-seven card-published">
-        <a href="mkirk-seven.html" class="card-link-area">
-          <span class="card-tag">In progress</span>
-          <span class="seven-label">The Magnificent</span>
-          <span class="card-title">Seven</span>
-          <span class="card-desc">Narrative nonfiction. The biography of a number.</span>
-          <img class="book-card-mini-cover" src="assets/cover_seven.png" alt="" onerror="this.classList.add('img-missing')">
-        </a>
-        <a href="mkirk-seven-arc.html" class="card-buy-btn card-buy-primary">Request an ARC</a>
-        <a href="mkirk-seven-chapter.html" class="card-buy-btn">Read a free chapter</a>
-        <a href="mkirk-seven.html" class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></a>
-      </div>
-
-      <a href="mkirk-noaveragebrain.html" class="book-card card-nab">
-        <span class="card-tag">Coming December 1</span>
-        <span class="card-title">No Average Brain</span>
-        <span class="card-desc">Neuroinclusive leadership – a sibling to CLUTCH. Matt Goode.</span>
-        <img class="book-card-mini-cover" src="assets/cover_noAverage.png" alt="" onerror="this.classList.add('img-missing')">
-        <span class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></span>
-      </a>
-
-      <a href="mkirk-nobelisland.html" class="book-card card-ni">
-        <span class="card-tag">Currently writing</span>
-        <span class="card-title">Noble Island</span>
-        <span class="card-desc">Magical realism, m kirk. Early-stage – cover in progress, no style guide yet.</span>
-        <img class="book-card-mini-cover" src="assets/cover_noble.png" alt="" onerror="this.classList.add('img-missing')">
-        <span class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></span>
-      </a>
-
-      </div>
-  </div>
-</section>
 
 <section class="email-section">
   <div class="email-inner">
