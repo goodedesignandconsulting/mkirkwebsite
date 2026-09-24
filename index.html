@@ -138,19 +138,21 @@
 .real-home .author-bar-head { display:flex; align-items:baseline; gap:16px; margin-bottom:22px; flex-wrap:wrap; }
 .real-home .author-bar-name { margin:0; line-height:1; }
 .real-home .bar-mkirk .author-bar-name { font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:400; font-size:44px; color:#C9A85C; }
-.real-home .bar-goode .author-bar-name { font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; letter-spacing:.02em; color:#EDE5D6; }
+.real-home .bar-goode .author-bar-name { font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; letter-spacing:.02em; color:#4FB089; } /* GDC dark-theme green */
 .real-home .author-bar-sub { font-family:'Source Serif 4',Georgia,serif; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(237,233,226,.55); }
 .real-home .author-bar-rule { flex:1; min-width:40px; height:1px; background:rgba(237,233,226,.18); align-self:center; }
 .real-home .gdc-strip { display:flex; align-items:center; gap:22px; margin:0 0 24px; padding:20px 24px; background:#FBFAF7; border:1px solid #DDDAD1; border-left:4px solid #C4A26A; text-decoration:none; transition:background .2s; }
 .real-home .gdc-strip:hover { background:#F1EFE9; }
-.real-home .gdc-strip-label { font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:#242427; white-space:nowrap; }
+.real-home .gdc-strip-label { display:flex; align-items:center; gap:12px; font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:#242427; white-space:nowrap; }
+.real-home .gdc-strip-label em { font-style:normal; font-weight:500; color:#71706C; }
+.real-home .gdc-strip-mark { width:34px; height:34px; flex:none; }
 .real-home .gdc-strip-text { flex:1; font-family:'Source Serif 4',Georgia,serif; font-size:15.5px; line-height:1.5; color:#4B4B50; }
 .real-home .gdc-strip-cta { font-family:'Montserrat',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#856521; white-space:nowrap; }
 .real-home .two-voices { margin:56px 0 0; padding-top:28px; border-top:1px solid rgba(237,233,226,.14); max-width:760px; }
 .real-home .two-voices-kicker { font-family:'Source Serif 4',Georgia,serif; font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:#C9A85C; margin:0 0 10px; }
 .real-home .two-voices-text { font-family:'Source Serif 4',Georgia,serif; font-size:18px; line-height:1.65; color:rgba(237,233,226,.78); margin:0; }
 .real-home .two-voices .tv-mk { font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-size:21px; color:#C9A85C; }
-.real-home .two-voices .tv-mg { font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:#EDE5D6; }
+.real-home .two-voices .tv-mg { font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:#4FB089; }
 .real-home .two-voices + .author-bar { margin-top:36px; }
 @media (max-width: 800px) { .real-home .gdc-strip { flex-direction:column; align-items:flex-start; gap:8px; } .real-home .bar-mkirk .author-bar-name { font-size:38px; } }
 .real-home .feat-seven { background:#1B1433; border-top:4px solid #FF2F8F; }
@@ -665,7 +667,7 @@
         <span class="author-bar-rule"></span>
       </div>
       <a class="gdc-strip" href="https://thatsgoodedesign.com" target="_blank" rel="noopener">
-        <span class="gdc-strip-label">Goode Design &amp; Consulting</span>
+        <span class="gdc-strip-label"><img class="gdc-strip-mark" src="assets/gdc-mark.png" alt="" width="34" height="34"><span>Goode Design<em> &amp; Consulting</em></span></span>
         <span class="gdc-strip-text">Leadership coaching, workshops and speaking, built on the frameworks behind these books.</span>
         <span class="gdc-strip-cta">thatsgoodedesign.com &rarr;</span>
       </a>
