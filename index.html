@@ -227,6 +227,11 @@
 .real-home .card-seven .card-desc { color: rgba(246,239,224,0.75); }
 .real-home .card-seven .card-link-arrow { display: inline-block; vertical-align: middle; margin-left: 6px; }
 .real-home .card-seven .card-link { color: #FF2F8F; }
+.real-home .card-seven .card-buy-btn { color: #FF2F8F; }
+.real-home .card-seven .card-buy-btn:hover { background: #FF2F8F; color: #0B0C1F; }
+.real-home .card-seven .book-card-mini-cover { bottom: 112px; }
+.real-home .card-seven .card-desc { padding-right: 34%; }
+.real-home .card-seven .card-buy-btn { position: relative; z-index: 1; background: rgba(11,12,31,0.85); }
 
 .real-home .card-clutch { background: #000000; border-top: 4px solid #B88F46; }
 .real-home .card-clutch .card-tag { color: #B88F46; letter-spacing: 0.14em; }
@@ -555,14 +560,19 @@
            (close enough to published to sit with Balance/Clutch) – removed from here to avoid
            duplicating them. -->
 
-      <a href="mkirk-seven.html" class="book-card card-seven">
-        <span class="card-tag">In progress</span>
-        <span class="seven-label">The Magnificent</span>
-        <span class="card-title">Seven</span>
-        <span class="card-desc">Narrative nonfiction. The biography of a number.</span>
-        <img class="book-card-mini-cover" src="assets/cover_seven.png" alt="" onerror="this.classList.add('img-missing')">
-        <span class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></span>
-      </a>
+      <!-- 2026-09-24: Seven card moved to the .card-published pattern (like Wrath/Field Tested) so it
+           can carry a "Read the introduction" button to the Kit-gated free chapter page. -->
+      <div class="book-card card-seven card-published">
+        <a href="mkirk-seven.html" class="card-link-area">
+          <span class="card-tag">In progress</span>
+          <span class="seven-label">The Magnificent</span>
+          <span class="card-title">Seven</span>
+          <span class="card-desc">Narrative nonfiction. The biography of a number.</span>
+          <img class="book-card-mini-cover" src="assets/cover_seven.png" alt="" onerror="this.classList.add('img-missing')">
+        </a>
+        <a href="mkirk-seven-chapter.html" class="card-buy-btn">Read the introduction</a>
+        <a href="mkirk-seven.html" class="card-link">Learn more <svg width="10" height="10" viewBox="0 0 10 10" class="card-link-arrow"><polygon points="0,0 10,5 0,10" fill="currentColor"/></svg></a>
+      </div>
 
       <a href="mkirk-noaveragebrain.html" class="book-card card-nab">
         <span class="card-tag">Coming December 1</span>
