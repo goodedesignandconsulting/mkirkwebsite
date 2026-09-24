@@ -141,11 +141,17 @@
 .real-home .bar-goode .author-bar-name { font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; letter-spacing:.02em; color:#EDE5D6; }
 .real-home .author-bar-sub { font-family:'Source Serif 4',Georgia,serif; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(237,233,226,.55); }
 .real-home .author-bar-rule { flex:1; min-width:40px; height:1px; background:rgba(237,233,226,.18); align-self:center; }
-.real-home .gdc-strip { display:flex; align-items:center; gap:22px; margin-top:22px; padding:20px 24px; border:1px solid rgba(184,143,70,.35); border-left:4px solid #B88F46; background:rgba(255,255,255,.03); text-decoration:none; transition:background .2s, border-color .2s; }
-.real-home .gdc-strip:hover { background:rgba(184,143,70,.08); border-color:#B88F46; }
-.real-home .gdc-strip-label { font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:#EDE5D6; white-space:nowrap; }
-.real-home .gdc-strip-text { flex:1; font-family:'Source Serif 4',Georgia,serif; font-size:15.5px; line-height:1.5; color:rgba(237,229,214,.72); }
-.real-home .gdc-strip-cta { font-family:'Source Serif 4',Georgia,serif; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#B88F46; white-space:nowrap; }
+.real-home .gdc-strip { display:flex; align-items:center; gap:22px; margin:0 0 24px; padding:20px 24px; background:#FBFAF7; border:1px solid #DDDAD1; border-left:4px solid #C4A26A; text-decoration:none; transition:background .2s; }
+.real-home .gdc-strip:hover { background:#F1EFE9; }
+.real-home .gdc-strip-label { font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:#242427; white-space:nowrap; }
+.real-home .gdc-strip-text { flex:1; font-family:'Source Serif 4',Georgia,serif; font-size:15.5px; line-height:1.5; color:#4B4B50; }
+.real-home .gdc-strip-cta { font-family:'Montserrat',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#856521; white-space:nowrap; }
+.real-home .two-voices { margin:56px 0 0; padding-top:28px; border-top:1px solid rgba(237,233,226,.14); max-width:760px; }
+.real-home .two-voices-kicker { font-family:'Source Serif 4',Georgia,serif; font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:#C9A85C; margin:0 0 10px; }
+.real-home .two-voices-text { font-family:'Source Serif 4',Georgia,serif; font-size:18px; line-height:1.65; color:rgba(237,233,226,.78); margin:0; }
+.real-home .two-voices .tv-mk { font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-size:21px; color:#C9A85C; }
+.real-home .two-voices .tv-mg { font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:#EDE5D6; }
+.real-home .two-voices + .author-bar { margin-top:36px; }
 @media (max-width: 800px) { .real-home .gdc-strip { flex-direction:column; align-items:flex-start; gap:8px; } .real-home .bar-mkirk .author-bar-name { font-size:38px; } }
 .real-home .feat-seven { background:#1B1433; border-top:4px solid #FF2F8F; }
 .real-home .feat-seven .feat-pill { background:#FF2F8F; color:#0B0C1F; }
@@ -514,6 +520,12 @@
       <p class="hero-context">m kirk writes about the gap between the life people build and the life they actually meant to live. <span class="hero-cred">Sociologist &middot; Educator &middot; Executive coach</span></p>
     </div>
 
+    <!-- 2026-09-24: explains the two names before the two author bars. -->
+    <div class="two-voices">
+      <p class="two-voices-kicker">Two voices, one brain</p>
+      <p class="two-voices-text"><span class="tv-mk">m kirk</span> writes the novels and the narrative nonfiction. <span class="tv-mg">Matt Goode</span> writes the leadership books and runs the practice they come from. Same person, same question underneath: why people build the lives and the systems they do.</p>
+    </div>
+
     <!-- 2026-09-24: home grid split into two author bars per Matt (m kirk / Matt Goode); the old
          "Also in progress" section was folded into these. -->
     <div class="author-bar bar-mkirk">
@@ -591,6 +603,11 @@
         <span class="author-bar-sub">Leadership &amp; learning</span>
         <span class="author-bar-rule"></span>
       </div>
+      <a class="gdc-strip" href="https://thatsgoodedesign.com" target="_blank" rel="noopener">
+        <span class="gdc-strip-label">Goode Design &amp; Consulting</span>
+        <span class="gdc-strip-text">Leadership coaching, workshops and speaking, built on the frameworks behind these books.</span>
+        <span class="gdc-strip-cta">thatsgoodedesign.com &rarr;</span>
+      </a>
       <div class="feature-grid">
 
       <div class="feature-card feat-clutch">
@@ -639,11 +656,6 @@
       </div>
 
       </div>
-      <a class="gdc-strip" href="https://thatsgoodedesign.com" target="_blank" rel="noopener">
-        <span class="gdc-strip-label">Goode Design &amp; Consulting</span>
-        <span class="gdc-strip-text">Leadership coaching, workshops and speaking, built on the frameworks behind these books.</span>
-        <span class="gdc-strip-cta">thatsgoodedesign.com &rarr;</span>
-      </a>
     </div>
 
   </div>
