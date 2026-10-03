@@ -432,4 +432,6 @@ img.real-cover.img-missing{ opacity:0; }
    book-specific color that would otherwise win. */
 .btn-coming-soon{ background:#000 !important; border-color:#000 !important; color:#fff !important; }
 .btn-coming-soon:hover{ background:#000 !important; border-color:#000 !important; color:#fff !important; opacity:.82; }
-</style>
+
+/* 2026-10-03: keep intrinsic aspect ratio when <img> carries width/height (stops layout shift). Zero specificity, so any page rule still wins. */
+:where(img[width][height]) { height: auto; }

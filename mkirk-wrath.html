@@ -27,7 +27,7 @@
   #page-wrath .wr-teacher-companion .book-companion-cover{ width:92px; height:138px; }
   /* .wr-teacher-cover-tint (grayscale/sepia/hue-rotate filter) retired 2026-07-31 – was a stand-in
      treatment for the placeholder cover_wrath.png reuse; no longer applied now that Matt supplied
-     the real Teacher Supplement cover (assets/cover_wrath_teacher.png). Rule left here unused in
+     the real Teacher Supplement cover (assets/cover_wrath_teacher.webp). Rule left here unused in
      case a future placeholder cover needs the same tint trick. */
   #page-wrath .wr-teacher-cover-tint{ filter:grayscale(1) sepia(1) hue-rotate(240deg) saturate(3) brightness(.75) contrast(1.1); }
   #page-wrath .wr-teacher-stats{ list-style:none; margin:10px 0 0; padding:0; }
@@ -166,7 +166,7 @@
   #page-wrath .wr-ground-map .cp-flag{ position:absolute; top:10px; left:10px; right:10px; font-family:Arial,sans-serif; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:rgba(242,240,236,.4); }
   #page-wrath .wr-ground-map .cp-title{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:rgba(242,240,236,.75); }
   #page-wrath .wr-ground-map .cp-sub{ font-family:'Source Serif 4',serif; font-size:12.5px; color:rgba(242,240,236,.4); margin-top:8px; max-width:26ch; }
-  /* 2026-07-31: real map file supplied (assets/map_ypres.png) – .wr-ground-map now holds a real
+  /* 2026-07-31: real map file supplied (assets/map_ypres.webp) – .wr-ground-map now holds a real
      <img>, border switches from dashed to a plain hairline once it has a photo (same has-photo
      pattern as The Company avatars). Falls back to the dashed placeholder text if the file 404s. */
   #page-wrath .wr-ground-map.has-photo{ border-style:solid; border-color:rgba(196,154,82,.25); padding:12px; }
@@ -265,7 +265,7 @@
         </div>
       </div>
       <div class="wr-hero-cover">
-        <img class="real-cover" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.classList.add('img-missing')">
+        <img loading="lazy" decoding="async" width="700" height="1030" class="real-cover" src="assets/cover_wrath.png" alt="The Wrath of Archie Ellis – book cover" onerror="this.classList.add('img-missing')">
         <p class="wr-pub-line">29 December 2026 · The Fern · ISBN 979-8-9961025-0-1</p>
       </div>
     </div>
@@ -274,7 +274,7 @@
   <!-- 3. TEACHER SUPPLEMENT CALLOUT -->
   <div class="book-companion-wrap wr-teacher-companion reveal">
     <a href="mkirk-wrath-supplement.html" class="book-companion-card">
-      <img class="book-companion-cover" src="assets/cover_wrath_teacher.png" alt="Teaching Wrath – A Companion for the Classroom, book cover" onerror="this.classList.add('img-missing')">
+      <img loading="lazy" decoding="async" width="800" height="1200" class="book-companion-cover" src="assets/cover_wrath_teacher.webp" alt="Teaching Wrath – A Companion for the Classroom, book cover" onerror="this.classList.add('img-missing')">
       <div class="book-companion-card-body">
         <span class="book-companion-eyebrow">Teaching Wrath</span>
         <h3>Teaching Wrath: A Companion for the Classroom</h3>
@@ -384,7 +384,7 @@
     <div class="wr-pov-grid">
       <div class="wr-pov-card">
         <div class="wr-pov-num">I</div>
-        <img class="wr-pov-photo" src="assets/char_wrath_ellis.png" alt="Archie Ellis" onerror="this.classList.add('img-missing'); this.closest('.wr-pov-card').classList.add('photo-missing')">
+        <img loading="lazy" decoding="async" width="800" height="1000" class="wr-pov-photo" src="assets/char_wrath_ellis.webp" alt="Archie Ellis" onerror="this.classList.add('img-missing'); this.closest('.wr-pov-card').classList.add('photo-missing')">
         <div class="wr-pov-photo-ph"><span class="cp-flag">Placeholder photo</span><span class="cp-title">Archie Ellis</span></div>
         <div class="wr-pov-role">Achilles</div>
         <h3 class="wr-pov-name">Archie Ellis</h3>
@@ -393,7 +393,7 @@
       </div>
       <div class="wr-pov-card">
         <div class="wr-pov-num">II</div>
-        <img class="wr-pov-photo" src="assets/char_wrath_eck.png" alt="Harald Eck" onerror="this.classList.add('img-missing'); this.closest('.wr-pov-card').classList.add('photo-missing')">
+        <img loading="lazy" decoding="async" width="800" height="1000" class="wr-pov-photo" src="assets/char_wrath_eck.webp" alt="Harald Eck" onerror="this.classList.add('img-missing'); this.closest('.wr-pov-card').classList.add('photo-missing')">
         <div class="wr-pov-photo-ph"><span class="cp-flag">Placeholder photo</span><span class="cp-title">Harald Eck</span></div>
         <div class="wr-pov-role">Hector</div>
         <h3 class="wr-pov-name">Harald Eck</h3>
@@ -403,7 +403,7 @@
     </div>
   </div>
 
-  <!-- 8. THE GROUND – real campaign map wired in 2026-07-31 (assets/map_ypres.png). -->
+  <!-- 8. THE GROUND – real campaign map wired in 2026-07-31 (assets/map_ypres.webp). -->
   <div class="wr-ground reveal">
     <p class="wr-section-label">The Ground</p>
     <h2 class="wr-section-title">Third Ypres, Autumn 1917</h2>
@@ -412,7 +412,7 @@
         <p>The novel follows the real campaign, phase by phase: Pilckem Ridge on 31 July, the Menin Road and Broodseinde through September and October, Passchendaele itself in early November. The battalion's farmhouse headquarters at Vlamertinghe, the forward dugout at B7, the ridge at Zonnebeke – every position in the book sits on ground you can still find on a map today.</p>
       </div>
       <div class="wr-ground-map has-photo" id="wrGroundMap">
-        <img src="assets/map_ypres.png" alt="Campaign map – Third Ypres, 1917" loading="lazy" onerror="this.parentElement.classList.remove('has-photo'); this.outerHTML='&lt;span class=&quot;cp-flag&quot;&gt;Placeholder – campaign map&lt;/span&gt;&lt;span class=&quot;cp-title&quot;&gt;Third Ypres, 1917&lt;/span&gt;&lt;span class=&quot;cp-sub&quot;&gt;Image not found – check assets/ path&lt;/span&gt;'">
+        <img width="800" height="1041" src="assets/map_ypres.webp" alt="Campaign map – Third Ypres, 1917" loading="lazy" onerror="this.parentElement.classList.remove('has-photo'); this.outerHTML='&lt;span class=&quot;cp-flag&quot;&gt;Placeholder – campaign map&lt;/span&gt;&lt;span class=&quot;cp-title&quot;&gt;Third Ypres, 1917&lt;/span&gt;&lt;span class=&quot;cp-sub&quot;&gt;Image not found – check assets/ path&lt;/span&gt;'">
       </div>
     </div>
     <div class="wr-ground-timeline">
@@ -437,15 +437,15 @@
   <div class="wr-company reveal">
     <p class="wr-section-label" style="text-align:center;">The Cast</p>
     <div class="wr-company-row">
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_cross.png" alt="Clement Cross" loading="lazy" onerror="this.outerHTML='CC'"></div><div class="wr-company-name">Clement Cross</div><div class="wr-company-rank">Lieutenant</div><div class="wr-company-analog">Patroclus</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_mannon.png" alt="Arthur Mannon" loading="lazy" onerror="this.outerHTML='AM'"></div><div class="wr-company-name">Arthur Mannon</div><div class="wr-company-rank">Colonel</div><div class="wr-company-analog">Agamemnon</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_sayers.png" alt="Alden Sayers" loading="lazy" onerror="this.outerHTML='AS'"></div><div class="wr-company-name">Alden Sayers</div><div class="wr-company-rank">Major</div><div class="wr-company-analog">Odysseus</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_friemer.png" alt="Aldous Friemer" loading="lazy" onerror="this.outerHTML='AF'"></div><div class="wr-company-name">Aldous Friemer</div><div class="wr-company-rank">Oberst</div><div class="wr-company-analog">Priam</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_norris.png" alt="Conrad Norris" loading="lazy" onerror="this.outerHTML='CN'"></div><div class="wr-company-name">Conrad Norris</div><div class="wr-company-rank">Colonel</div><div class="wr-company-analog">Nestor</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_doyle.png" alt="Baldwin Doyle" loading="lazy" onerror="this.outerHTML='BD'"></div><div class="wr-company-name">Baldwin Doyle</div><div class="wr-company-rank">Lieutenant</div><div class="wr-company-analog">Diomedes</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_sarp.png" alt="Stefan Sarp" loading="lazy" onerror="this.outerHTML='SS'"></div><div class="wr-company-name">Stefan Sarp</div><div class="wr-company-rank">Hauptmann</div><div class="wr-company-analog">Sarpedon</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_parr.png" alt="Alexander Parr" loading="lazy" onerror="this.outerHTML='AP'"></div><div class="wr-company-name">Alexander Parr</div><div class="wr-company-rank">Leutnant</div><div class="wr-company-analog">Paris</div></div>
-      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img src="assets/char_wrath_jacks.png" alt="Stanley Jacks" loading="lazy" onerror="this.outerHTML='SJ'"></div><div class="wr-company-name">Stanley Jacks</div><div class="wr-company-rank">Company Sergeant Major</div><div class="wr-company-analog">Telamonian Ajax</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_cross.webp" alt="Clement Cross" loading="lazy" onerror="this.outerHTML='CC'"></div><div class="wr-company-name">Clement Cross</div><div class="wr-company-rank">Lieutenant</div><div class="wr-company-analog">Patroclus</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_mannon.webp" alt="Arthur Mannon" loading="lazy" onerror="this.outerHTML='AM'"></div><div class="wr-company-name">Arthur Mannon</div><div class="wr-company-rank">Colonel</div><div class="wr-company-analog">Agamemnon</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_sayers.webp" alt="Alden Sayers" loading="lazy" onerror="this.outerHTML='AS'"></div><div class="wr-company-name">Alden Sayers</div><div class="wr-company-rank">Major</div><div class="wr-company-analog">Odysseus</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_friemer.webp" alt="Aldous Friemer" loading="lazy" onerror="this.outerHTML='AF'"></div><div class="wr-company-name">Aldous Friemer</div><div class="wr-company-rank">Oberst</div><div class="wr-company-analog">Priam</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1202" src="assets/char_wrath_norris.webp" alt="Conrad Norris" loading="lazy" onerror="this.outerHTML='CN'"></div><div class="wr-company-name">Conrad Norris</div><div class="wr-company-rank">Colonel</div><div class="wr-company-analog">Nestor</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_doyle.webp" alt="Baldwin Doyle" loading="lazy" onerror="this.outerHTML='BD'"></div><div class="wr-company-name">Baldwin Doyle</div><div class="wr-company-rank">Lieutenant</div><div class="wr-company-analog">Diomedes</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_sarp.webp" alt="Stefan Sarp" loading="lazy" onerror="this.outerHTML='SS'"></div><div class="wr-company-name">Stefan Sarp</div><div class="wr-company-rank">Hauptmann</div><div class="wr-company-analog">Sarpedon</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_parr.webp" alt="Alexander Parr" loading="lazy" onerror="this.outerHTML='AP'"></div><div class="wr-company-name">Alexander Parr</div><div class="wr-company-rank">Leutnant</div><div class="wr-company-analog">Paris</div></div>
+      <div class="wr-company-person"><div class="wr-company-avatar has-photo"><img width="800" height="1000" src="assets/char_wrath_jacks.webp" alt="Stanley Jacks" loading="lazy" onerror="this.outerHTML='SJ'"></div><div class="wr-company-name">Stanley Jacks</div><div class="wr-company-rank">Company Sergeant Major</div><div class="wr-company-analog">Telamonian Ajax</div></div>
     </div>
   </div>
 
@@ -453,16 +453,16 @@
   <div class="carousel-section reveal" id="wrCarouselWrap">
     <h2 class="carousel-heading" style="color:var(--wrath-accent);">Early reads</h2>
     <div class="wr-carousel-track" id="wrCarouselTrack">
-      <div class="wr-slide active"><img class="wr-slide-img" src="assets/card_wrath_iliadOpening.png" alt="Homer – Opening Lines" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_andromache.png" alt="Homer – Andromache and Hector" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_achilles.png" alt="Homer – Achilles rebuilt" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_warth_eastWinds.png" alt="Our Brains Ache – East Winds" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_shawstewart.png" alt="Wrath poem excerpt – Shaw Stewart" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_owen.png" alt="Wrath war-poet excerpt – Owen" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_sorley.png" alt="Wrath war-poet excerpt – Sorley" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_dulce.png" alt="Wrath war-poet excerpt – Owen, Dulce et Decorum Est" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_gas.png" alt="Wrath – Pass C, green-tint gas scene" onerror="this.classList.add('img-missing')"></div>
-      <div class="wr-slide"><img class="wr-slide-img" src="assets/card_wrath_leaves.png" alt="Wrath – plate 2" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide active"><img loading="lazy" decoding="async" width="800" height="1000" class="wr-slide-img" src="assets/card_wrath_iliadOpening.webp" alt="Homer – Opening Lines" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="800" height="1000" class="wr-slide-img" src="assets/card_wrath_andromache.webp" alt="Homer – Andromache and Hector" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="1080" height="1350" class="wr-slide-img" src="assets/card_wrath_achilles.png" alt="Homer – Achilles rebuilt" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="800" height="1000" class="wr-slide-img" src="assets/card_warth_eastWinds.webp" alt="Our Brains Ache – East Winds" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="1080" height="1350" class="wr-slide-img" src="assets/card_wrath_shawstewart.png" alt="Wrath poem excerpt – Shaw Stewart" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="1059" height="1326" class="wr-slide-img" src="assets/card_wrath_owen.png" alt="Wrath war-poet excerpt – Owen" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="1080" height="1350" class="wr-slide-img" src="assets/card_wrath_sorley.png" alt="Wrath war-poet excerpt – Sorley" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="1080" height="1350" class="wr-slide-img" src="assets/card_wrath_dulce.png" alt="Wrath war-poet excerpt – Owen, Dulce et Decorum Est" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="800" height="1000" class="wr-slide-img" src="assets/card_wrath_gas.webp" alt="Wrath – Pass C, green-tint gas scene" onerror="this.classList.add('img-missing')"></div>
+      <div class="wr-slide"><img loading="lazy" decoding="async" width="800" height="1000" class="wr-slide-img" src="assets/card_wrath_leaves.webp" alt="Wrath – plate 2" onerror="this.classList.add('img-missing')"></div>
     </div>
     <div class="wr-carousel-nav">
       <button type="button" onclick="wrCarouselMove(-1)">← Prev</button>
@@ -499,7 +499,7 @@
        matter / its own page if Matt wants that built later. -->
   <section class="wr-note reveal">
     <div class="wr-note-inner">
-      <div class="wr-note-avatar"><img src="assets/author_goode.jpg" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
+      <div class="wr-note-avatar"><img width="800" height="800" src="assets/author_goode.webp" alt="m kirk" loading="lazy" onerror="this.outerHTML='mk'"></div>
       <div class="wr-note-body">
         <p class="wr-section-label" style="margin-bottom:20px;">A Note from the Author</p>
         <p>A note on what follows: I wrote this novel, and the guide that accompanies it, with a classroom in mind – a way to meet a young reader encountering Homer and the First World War for the first time. But the story doesn't belong only to that reader, any more than the <em>Iliad</em> it's built from does. Homer has outlasted every audience he was ever written for. Pride and what it costs the people around it. Grief with nowhere to go. What's owed to an enemy once he can no longer harm you. What a war is said to have accomplished, against what it actually cost. These aren't young readers' questions. They're everyone's.</p>
